@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npx turbo build --filter=@mula/main",
+  "installCommand": "npm install",
+  "outputDirectory": "apps/main/.next"
+}
