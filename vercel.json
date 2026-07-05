@@ -1,5 +1,1 @@
-{
-  "buildCommand": "npx turbo build --filter=@mula/main",
-  "installCommand": "npm install",
-  "outputDirectory": "apps/main/.next"
-}
+{ "buildCommand": "npx turbo build --filter=@mula/innovation", "installCommand": "npm install", "outputDirectory": "apps/innovation/.next" }

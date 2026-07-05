@@ -1,4 +1,4 @@
-import { Pillar, ProcessStep, TechItem, Product, CaseStudy, NavItem } from './types'
+import { Pillar, ProcessStep, MulaMethodItem, TechItem, Product, CaseStudy, NavItem } from './types'
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'O nas', href: '#about' },
@@ -11,16 +11,16 @@ export const NAV_ITEMS: NavItem[] = [
 export const COMPANY = {
   name: 'Mula Group',
   fullName: 'MULA GROUP SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ',
-  tagline: 'Zintegrowany Ekosystem Biznesowy',
+  tagline: 'Technologia, Automatyzacja i AI dla Biznesu',
   krs: '0001010842',
   regon: '524057460',
   nip: '718-216-41-12',
   address: 'ul. gen. Władysława Sikorskiego 166/0.03, 18-400 Łomża',
   email: 'info@mulagroup.eu',
   founded: 2023,
-  heroTitle: 'Zintegrowany Ekosystem Biznesowy',
-  heroSubtitle: 'Łączymy strategię, technologie AI, commerce, marketing i rozwój projektów w jeden spójny model działania.',
-  heroCTA: 'Umów bezpłatną rozmowę',
+  heroTitle: 'Mula Group — Technologia, automatyzacja i AI dla nowoczesnego biznesu.',
+  heroSubtitle: 'Projektujemy i wdrażamy rozwiązania, które pomagają firmom automatyzować procesy, rozwijać sprzedaż, budować silną obecność online i przygotować się na przyszłość opartą o AI.',
+  heroCTA: 'Porozmawiajmy o projekcie',
   aboutText: `Mula Group powstał dla sytuacji, w których jedna specjalizacja to za mało. Nie jesteśmy agencją, software housem ani doradztwem w izolacji — jesteśmy ekosystemem biznesowym. Pomagamy firmom przejść od rozproszonych potrzeb do czytelnego następnego kroku, łącząc strategię, systemy cyfrowe, commerce, kompetencje techniczne i rozwój projektów w jedno spójne środowisko operacyjne.`,
   founderName: 'Piotr Muła',
   founderRole: 'Założyciel i Prezes',
@@ -106,6 +106,30 @@ export const PROCESS_STEPS: ProcessStep[] = [
   { step: 3, title: 'Integrate', description: 'Połączenie właściwych filarów i kompetencji w jeden spójny system.', icon: 'Link2' },
   { step: 4, title: 'Execute', description: 'Od architektury do wdrożenia. Realizujemy z pełną odpowiedzialnością.', icon: 'Play' },
   { step: 5, title: 'Scale', description: 'System gotowy na rozwój, automatyzację i nowych partnerów.', icon: 'TrendingUp' },
+]
+
+export const MULA_METHOD: MulaMethodItem[] = [
+  {
+    id: 'tech',
+    title: 'Technologia',
+    description: 'Projektujemy i wdrażamy nowoczesne systemy cyfrowe — od architektury chmurowej po integracje API. Next.js, TypeScript, Python, Docker. Stack dopasowany do skali Twojego biznesu, nie odwrotnie.',
+    icon: 'Cpu',
+    color: '#3b82f6',
+  },
+  {
+    id: 'automation',
+    title: 'Automatyzacja',
+    description: 'Eliminujemy powtarzalne procesy i zastępujemy je inteligentnymi workflowami. Agentowe systemy AI, automatyzacja CRM/ERP, synchronizacja wielokanałowa. Mniej klikania, więcej wyników.',
+    icon: 'Workflow',
+    color: '#8b5cf6',
+  },
+  {
+    id: 'ai',
+    title: 'AI',
+    description: 'Wdrażamy sztuczną inteligencję tam, gdzie realnie zwiększa przewagę konkurencyjną. Agenci AI z pamięcią i RAG, analityka predykcyjna, rekomendacje biznesowe oparte na danych.',
+    icon: 'Bot',
+    color: '#10b981',
+  },
 ]
 
 export const TECH_STACK: TechItem[] = [

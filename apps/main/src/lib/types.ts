@@ -37,6 +37,14 @@ export interface CaseStudy {
   year: number
 }
 
+export interface MulaMethodItem {
+  id: string
+  title: string
+  description: string
+  icon: string
+  color: string
+}
+
 export interface NavItem {
   label: string
   href: string

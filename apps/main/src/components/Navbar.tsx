@@ -62,7 +62,7 @@ export function Navbar() {
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
             >
-              Umów rozmowę
+              Porozmawiajmy
             </a>
           </div>
 
@@ -106,7 +106,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="mt-4 px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-medium transition-all"
             >
-              Umów rozmowę
+              Porozmawiajmy
             </motion.a>
           </motion.div>
         )}

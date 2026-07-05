@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/HeroSection'
 import { AboutSection } from '@/components/AboutSection'
 import { PillarsGrid } from '@/components/PillarsGrid'
 import { ProcessSection } from '@/components/ProcessSection'
+import { MulaMethod } from '@/components/MulaMethod'
 import { WhyUsSection } from '@/components/WhyUsSection'
 import { TechnologyCloud } from '@/components/TechnologyCloud'
 import { ProductsPreview } from '@/components/ProductsPreview'
@@ -18,6 +19,7 @@ export default function HomePage() {
         <AboutSection />
         <PillarsGrid />
         <ProcessSection />
+        <MulaMethod />
         <WhyUsSection />
         <TechnologyCloud />
         <ProductsPreview />

@@ -11,20 +11,26 @@ interface NavLink {
 }
 
 interface NavbarProps {
-  logo: string
-  logoHref: string
-  links: NavLink[]
+  logo?: string
+  logoHref?: string
+  links?: NavLink[]
   ctaText?: string
   ctaHref?: string
   variant?: 'dark' | 'light'
 }
 
+const defaultLinks: NavLink[] = [
+  { label: 'O nas', href: '#about' },
+  { label: 'Usługi', href: '#services' },
+  { label: 'Kontakt', href: '#contact' },
+]
+
 export function Navbar({
-  logo,
-  logoHref,
-  links,
-  ctaText,
-  ctaHref,
+  logo = 'Mula Group',
+  logoHref = '/',
+  links = defaultLinks,
+  ctaText = 'Kontakt',
+  ctaHref = '#contact',
   variant = 'dark',
 }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)

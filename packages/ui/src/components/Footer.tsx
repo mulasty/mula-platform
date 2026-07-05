@@ -20,12 +20,20 @@ interface CompanyInfo {
 }
 
 interface FooterProps {
-  companyInfo: CompanyInfo
-  columns: FooterColumn[]
-  contactEmail: string
+  companyInfo?: CompanyInfo
+  columns?: FooterColumn[]
+  contactEmail?: string
 }
 
-export function Footer({ companyInfo, columns, contactEmail }: FooterProps) {
+const defaultCompanyInfo: CompanyInfo = {
+  name: 'Mula Group',
+  krs: '0001010842',
+  nip: '718-216-41-12',
+  regon: '524057460',
+  address: 'ul. gen. Władysława Sikorskiego 166/0.03, 18-400 Łomża',
+}
+
+export function Footer({ companyInfo = defaultCompanyInfo, columns = [], contactEmail = 'info@mulagroup.eu' }: FooterProps) {
   const currentYear = new Date().getFullYear()
 
   return (

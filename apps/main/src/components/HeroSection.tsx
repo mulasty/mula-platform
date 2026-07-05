@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowRight, Building2 } from 'lucide-react'
+import { ArrowRight, Building2, ChevronDown } from 'lucide-react'
 import { COMPANY } from '@/lib/data'
 
 const stats = [
-  { label: 'Założona', value: '2023', suffix: '' },
-  { label: 'Filarów', value: '7', suffix: '' },
-  { label: 'Projektów', value: '10', suffix: '+' },
-  { label: 'Zasięg', value: 'EU', suffix: '' },
+  { label: 'Założona', value: '2023' },
+  { label: 'Filarów', value: '7' },
+  { label: 'Projektów', value: '10+' },
+  { label: 'Zasięg', value: 'EU' },
 ]
 
 const containerVariants = {
@@ -32,13 +32,13 @@ const itemVariants = {
   },
 }
 
-function CountUpBadge({ label, value }: { label: string; value: string; suffix: string }) {
+function CountUpBadge({ label, value }: { label: string; value: string }) {
   return (
     <motion.div
-      className="flex flex-col items-center p-4 rounded-xl bg-mula-surface/50 border border-mula-border/50 backdrop-blur-sm"
+      className="flex flex-col items-center p-3 md:p-4 rounded-xl bg-mula-surface/50 border border-mula-border/50 backdrop-blur-sm"
       variants={itemVariants}
     >
-      <span className="text-2xl md:text-3xl font-bold text-mula-text">{value}</span>
+      <span className="text-xl md:text-2xl font-bold text-mula-text">{value}</span>
       <span className="text-xs text-mula-text-dim mt-1">{label}</span>
     </motion.div>
   )
@@ -116,6 +116,15 @@ export function HeroSection() {
         }}
       />
 
+      {/* Dot pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
+          backgroundSize: '24px 24px',
+        }}
+      />
+
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <motion.div
           className="max-w-4xl"
@@ -136,7 +145,7 @@ export function HeroSection() {
 
           {/* H1 */}
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] mb-6"
             variants={itemVariants}
           >
             <span className="bg-gradient-to-r from-mula-accent via-mula-accent-light to-mula-purple bg-clip-text text-transparent">
@@ -146,7 +155,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg md:text-xl text-mula-text-muted max-w-2xl mb-10 leading-relaxed"
+            className="text-base md:text-lg text-mula-text-muted max-w-2xl mb-10 leading-relaxed"
             variants={itemVariants}
           >
             {COMPANY.heroSubtitle}
@@ -163,15 +172,24 @@ export function HeroSection() {
               {COMPANY.heroCTA}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
+            <motion.a
+              href="#pillars"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-mula-border hover:border-mula-accent/50 text-mula-text-muted hover:text-mula-text transition-colors duration-200"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              Zobacz obszary działalności
+              <ChevronDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </motion.a>
           </motion.div>
 
           {/* Stats */}
           <motion.div
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl"
+            className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-2xl"
             variants={containerVariants}
           >
             {stats.map((stat) => (
-              <CountUpBadge key={stat.label} label={stat.label} value={stat.value} suffix={stat.suffix} />
+              <CountUpBadge key={stat.label} label={stat.label} value={stat.value} />
             ))}
           </motion.div>
         </motion.div>
