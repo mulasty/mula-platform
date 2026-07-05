@@ -64,6 +64,10 @@
 | Document | Location | Status | Description |
 |---|---|---|---|
 | GRAPHICS_PIPELINE.md | docs/design/ | ACTIVE | Graphics pipeline: image specs (desktop hero, card, mobile, OG), file naming convention, color palette per competency, design rules |
+| GRAPHICS_ASSET_REQUIREMENTS.md | docs/design/ | ACTIVE | Complete asset demand: 89 assets across 11 base graphics, 10 backgrounds, 15 icons, 8 OG images, 5 social templates, 7 subdomain heroes |
+| GRAPHICS_SYSTEM.md | docs/design/ | ACTIVE | Mission 004 — Complete graphics system: visual direction, 7 competency colors, 4 format specs, optimization rules, development process |
+| IMAGE_PROMPTS.md | docs/design/ | ACTIVE | Mission 004 — Universal base prompt + negative prompt + per-competency AI generation prompts for all 7 competencies |
+| IMAGE_QA_CHECKLIST.md | docs/design/ | ACTIVE | Per-asset QA verification: text ban, color consistency, format checks, responsive breakpoints, performance, per-phase sign-off |
 
 ---
 
@@ -126,6 +130,7 @@
 | GRAPHICS_SYSTEM.md | docs/design/ | ACTIVE | Mission 004 — Complete graphics system: image specs, competency color palette, visual direction, prompt system, style prototype process |
 | IMAGE_PROMPTS.md | docs/design/ | ACTIVE | Mission 004 — Universal base prompt + negative prompt + per-competency AI generation prompts |
 | MISSION_004_REPORT.md | docs/missions/ | ACTIVE | Mission 004 — Final report: commit SHA, CI, Vercel, preview URL, screenshots, style decision |
+| MISSION_004_GRAPHICS_REPORT.md | docs/missions/ | ACTIVE | Mission 004 — Graphics asset report: 89-asset demand, 8-phase production plan, directory structure, quality standards |
 
 ---
 
