@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/Navbar'
 import { HeroSection } from '@/components/HeroSection'
+import { ClientNeedsSection } from '@/components/ClientNeedsSection'
 import { AboutSection } from '@/components/AboutSection'
 import { PillarsGrid } from '@/components/PillarsGrid'
 import { CTASection } from '@/components/CTASection'
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <HeroSection />
+        <ClientNeedsSection />
         <AboutSection />
         <PillarsGrid />
         <CTASection

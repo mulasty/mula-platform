@@ -29,7 +29,7 @@ const faqs = [
   {
     question: 'Ile trwa wdrożenie projektu?',
     answer:
-      'Czas wdrożenia zależy od skali i złożoności projektu — od kilku tygodni dla mniejszych wdrożeń, po kilka miesięcy dla kompleksowych systemów. Na etapie Design przedstawiamy szczegółowy harmonogram z kamieniami milowymi, dzięki czemu zawsze wiesz, na jakim etapie jesteśmy.',
+      'Czas wdrożenia zależy od skali i złożoności projektu — od kilku tygodni dla prostych wdrożeń, po kilka miesięcy dla rozbudowanych systemów. Na etapie Design przedstawiamy szczegółowy harmonogram z kamieniami milowymi, dzięki czemu zawsze wiesz, na jakim etapie jesteśmy.',
   },
   {
     question: 'Czy oferujecie wsparcie po wdrożeniu?',

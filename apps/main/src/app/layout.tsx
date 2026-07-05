@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: `${COMPANY.name} — ${COMPANY.tagline}`,
     template: `%s | ${COMPANY.name}`,
   },
-  description: `${COMPANY.name} — ${COMPANY.tagline}. Kompleksowy ekosystem biznesowy łączący strategię cyfrową, sztuczną inteligencję, automatyzację procesów, e-commerce, marketing, cyberbezpieczeństwo oraz inżynierię w jeden spójny model operacyjny. Wdrażamy, integrujemy i skalujemy technologie dla firm w Polsce i UE.`,
+  description: `${COMPANY.name} — ${COMPANY.tagline}. Ekosystem biznesowy łączący strategię cyfrową, sztuczną inteligencję, automatyzację procesów, e-commerce, marketing, cyberbezpieczeństwo oraz inżynierię w jeden spójny model operacyjny. Projektujemy, wdrażamy i skalujemy technologie dla firm w Polsce i UE.`,
   metadataBase: new URL('https://mulagroup.eu'),
   keywords: ['Mula Group', 'AI', 'automatyzacja', 'e-commerce', 'marketing', 'cyberbezpieczeństwo', 'transformacja cyfrowa', 'budownictwo', 'startupy', 'Next.js', 'sztuczna inteligencja', 'automatyzacja procesów', 'ekosystem biznesowy'],
   authors: [{ name: COMPANY.name }],
@@ -22,12 +22,12 @@ export const metadata: Metadata = {
     url: 'https://mulagroup.eu',
     siteName: COMPANY.name,
     title: `${COMPANY.name} — ${COMPANY.tagline}`,
-    description: 'Kompleksowy ekosystem biznesowy: AI, automatyzacja, e-commerce, marketing, cyberbezpieczeństwo i inżynieria. Jeden partner, jedna odpowiedzialność — od diagnozy po skalowanie.',
+    description: 'Ekosystem biznesowy: AI, automatyzacja, e-commerce, marketing, cyberbezpieczeństwo i inżynieria. Jeden partner, jedna odpowiedzialność — od diagnozy po skalowanie.',
   },
   twitter: {
     card: 'summary_large_image',
     title: `${COMPANY.name} — ${COMPANY.tagline}`,
-    description: 'Kompleksowy ekosystem biznesowy: AI, automatyzacja, e-commerce, marketing, cyberbezpieczeństwo i inżynieria. Jeden partner, jedna odpowiedzialność.',
+    description: 'Ekosystem biznesowy: AI, automatyzacja, e-commerce, marketing, cyberbezpieczeństwo i inżynieria. Jeden partner, jedna odpowiedzialność.',
   },
   robots: {
     index: true,

@@ -22,6 +22,9 @@
 | Document | Location | Status | Description |
 |---|---|---|---|
 | BRAND_GUIDELINES.md | docs/ | ACTIVE | Brand identity, visual palette, typography, iconography, imagery rules, animation conventions, anti-patterns |
+| BRAND_MANIFESTO.md | docs/brand/ | ACTIVE | Mission 002 — Brand identity: who we are, what we believe, brand promise, guiding sentence, what we're not, what we want to be |
+| TONE_OF_VOICE.md | docs/brand/ | ACTIVE | Mission 002 — Tone of voice: rules, banned words, approved verbs |
+| TRUST_SIGNALS.md | docs/brand/ | ACTIVE | Mission 002 — Trust signals: implemented and planned credibility indicators |
 | COPYWRITING_GUIDE.md | playbooks/ | ACTIVE | Brand voice, headline formula, CTA formula, 15 banned words, 13 approved verbs, tone by section, SEO writing, current copy audit |
 
 ---
@@ -63,6 +66,7 @@
 | Enterprise Pack 03 | (tracked in PROJECT_STATUS.md) | PLANNED | Test & CI/CD: Vitest, Playwright, Lighthouse CI, GitHub Actions, Renovate |
 | Enterprise Pack 04 | (tracked in PROJECT_STATUS.md) | PLANNED | Security & Compliance: CSP headers, security audit, GDPR review, cookie consent, privacy policy, accessibility audit |
 | Mission 001 | (tracked in decisions_log.md) | COMPLETED | Full Platform Bootstrap: WordPress migration, 8 apps, landing page, subdomain scaffolds, Vercel, SEO, 10 components, dark design system |
+| Mission 002 | (tracked in decisions_log.md) | COMPLETED | Brand Authority: BRAND_MANIFESTO.md, TONE_OF_VOICE.md, TRUST_SIGNALS.md, ClientNeedsSection component, page.tsx integration |
 
 ---
 
@@ -165,6 +169,13 @@ SPRINT_03_REPORT.md           PLANNED
 SPRINT_04_REPORT.md           PLANNED
 ```
 
+### docs/brand/
+```
+BRAND_MANIFESTO.md            ACTIVE — Mission 002: Brand identity & manifesto
+TONE_OF_VOICE.md              ACTIVE — Mission 002: Tone of voice guidelines
+TRUST_SIGNALS.md              ACTIVE — Mission 002: Trust signals & credibility
+```
+
 ### playbooks/
 ```
 ANALYTICS_PLAN.md             ACTIVE (plan) — Analytics architecture
@@ -200,9 +211,14 @@ components/FAQSection.tsx      PLANNED — Accordion FAQ
 components/PartnersSection.tsx PLANNED — Partner logo grid/carousel
 ```
 
+### apps/main/src/components/ (app-level components)
+```
+ClientNeedsSection.tsx         ACTIVE — Mission 002: Client needs/problem cards (7 pillars)
+```
+
 ### apps/ (8 apps)
 ```
-main/                          DEPLOYED — mulagroup.eu (full content, 14 sections)
+main/                          DEPLOYED — mulagroup.eu (full content, 15 sections)
 construction/                  DEPLOYED — construction.mulagroup.eu (full content)
 ai/                            DEPLOYED — ai.mulagroup.eu (scaffold)
 digital/                       DEPLOYED — digital.mulagroup.eu (scaffold)
@@ -218,10 +234,12 @@ innovation/                    DEPLOYED — innovation.mulagroup.eu (scaffold)
 
 | Category | ACTIVE | PLANNED | TOTAL |
 |---|---|---|---|
-| Documentation files (docs/) | 14 (+ 3 planned sprint reports) | 3 | 17 |
+| Documentation files (docs/) | 17 (+ 3 planned sprint reports) | 3 | 20 |
 | Playbooks | 2 | 2 | 4 |
 | Decisions | 1 | 0 | 1 |
 | Shared components | 10 | 2 | 12 |
+| App-level components | 1 | 0 | 1 |
+| Brand docs (docs/brand/) | 3 | 0 | 3 |
 | Design system files | 1 (tokens.css) | 0 | 1 |
 | Apps deployed | 8 | 0 | 8 |
-| **TOTAL ARTIFACTS** | **36** | **7** | **43** |
+| **TOTAL ARTIFACTS** | **43** | **7** | **50** |

@@ -8,7 +8,9 @@
 | Build success | 8/8 | 8 | ✅ |
 | TypeScript errors | 0 | 0 | ✅ |
 | Shared components | 10 implemented, 2 planned | 12 | 🟡 |
+| App-level components | 1 (ClientNeedsSection) | — | ✅ |
 | Documented components | 10/12 | 12 | 🟡 |
+| Brand authority docs | 3/3 (BRAND_MANIFESTO, TONE_OF_VOICE, TRUST_SIGNALS) | 3 | ✅ |
 | SSL coverage | 8/8 domains | 8 | ✅ |
 | DNS propagation | 8/8 domains | 8 | ✅ |
 | Lighthouse score | TBD | >90 | 🔴 |
@@ -31,4 +33,4 @@
 | Recovery & Alignment Pack | ✅ Complete | ✅ |
 | Mission 001 | ✅ Complete | ✅ |
 | Recovery Fix Pack 001 | ✅ Complete | N/A |
-| Mission 002 | Planned | ❌ |
+| Mission 002 | ✅ Complete | ✅ |
