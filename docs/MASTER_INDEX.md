@@ -2,7 +2,7 @@
 
 **Single Source of Truth for all project artifacts.**
 **Generated:** 2026-07-05
-**Commit:** `057c41af08b75633c6d0ccf57ad695507e9bd3db`
+**Commit:** `856a0f0`
 
 ---
 
@@ -116,6 +116,16 @@
 | MISSION_003_REPORT.md | docs/missions/ | ACTIVE | Mission 003 — Premium Landing Experience: Hero Enterprise variant, streamlined 8-section flow, visual polish, cohesive hierarchy |
 | MISSION_003_1_REPORT.md | docs/missions/ | ACTIVE | Mission 003.1 — Customer Journey Blueprint: Mula Method 6 steps, JSDoc business purpose, journey verification |
 | MISSION_003_2_REPORT.md | docs/missions/ | ACTIVE | Mission 003.2 — Domain & Deployment Governance: Vercel domain audit (9 domains), legacy repo archive recommendation, master index update |
+
+---
+
+## Mission 004 — Premium Graphics System
+
+| Document | Location | Status | Description |
+|---|---|---|---|
+| GRAPHICS_SYSTEM.md | docs/design/ | ACTIVE | Mission 004 — Complete graphics system: image specs, competency color palette, visual direction, prompt system, style prototype process |
+| IMAGE_PROMPTS.md | docs/design/ | ACTIVE | Mission 004 — Universal base prompt + negative prompt + per-competency AI generation prompts |
+| MISSION_004_REPORT.md | docs/missions/ | ACTIVE | Mission 004 — Final report: commit SHA, CI, Vercel, preview URL, screenshots, style decision |
 
 ---
 

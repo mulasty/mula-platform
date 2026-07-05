@@ -21,8 +21,21 @@ export function PillarsGrid() {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PILLARS.map((pillar, index) => (
-            <PillarCard key={pillar.id} pillar={pillar} index={index} />
+          <div
+            className="relative overflow-hidden rounded-2xl"
+            style={{
+              backgroundImage: 'url(/images/competencies/ai-style-prototype.svg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          >
+            <div className="bg-mula-surface/90 backdrop-blur-sm rounded-2xl">
+              <PillarCard pillar={PILLARS[0]} index={0} />
+            </div>
+          </div>
+          {PILLARS.slice(1).map((pillar, index) => (
+            <PillarCard key={pillar.id} pillar={pillar} index={index + 1} />
           ))}
         </div>
       </div>

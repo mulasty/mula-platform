@@ -70,8 +70,8 @@ export function WhyUsSection() {
             </p>
             <p className="mt-6 text-mula-text-muted leading-relaxed">
               Każdy projekt przechodzi przez nasz{' '}
-              <span className="text-mula-accent">5-letni model ekosystemowy</span>:
-              Discover → Design → Integrate → Execute → Scale. Od diagnozy po
+              <span className="text-mula-accent">6-etapowy model ekosystemowy</span>:
+              Analiza → Strategia → Projekt → Wdrożenie → Automatyzacja → Rozwój. Od diagnozy po
               długoterminowe partnerstwo — jeden partner, jedna odpowiedzialność.
             </p>
           </motion.div>

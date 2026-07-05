@@ -22,8 +22,8 @@ export const HERO_VARIANTS = {
     ],
   },
   business: {
-    headline: "Od chaosu operacyjnego do skalowalnego systemu — w 5 krokach.",
-    subheadline: "Mula Method to nasz sprawdzony proces: Discover → Design → Integrate → Execute → Scale. Każdy projekt przechodzi tę samą ścieżkę — od diagnozy po wzrost.",
+    headline: "Od chaosu operacyjnego do skalowalnego systemu — w 6 krokach.",
+    subheadline: "Mula Method to nasz sprawdzony proces: Analiza → Strategia → Projekt → Wdrożenie → Automatyzacja → Rozwój. Każdy projekt przechodzi tę samą ścieżkę — od diagnozy po wzrost.",
     stats: [
       { label: "Rok założenia", value: "2023" },
       { label: "Filary kompetencji", value: "7" },
@@ -239,7 +239,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Jak wygląda proces współpracy?',
     answer:
-      'Pracujemy w 5-etapowym modelu: Discover (diagnoza), Design (projekt rozwiązania), Integrate (łączenie kompetencji), Execute (wdrożenie) oraz Scale (rozwój i optymalizacja). Każdy projekt zaczynamy od dogłębnego zrozumienia Twojego biznesu, wyzwań i celów — dopiero potem projektujemy rozwiązanie.',
+      'Pracujemy w 6-etapowym modelu: Analiza (diagnoza), Strategia (projekt rozwiązania), Projekt (architektura i integracje), Wdrożenie (realizacja techniczna), Automatyzacja (łączenie kompetencji i workflow) oraz Rozwój (skalowanie i optymalizacja). Każdy projekt zaczynamy od dogłębnego zrozumienia Twojego biznesu, wyzwań i celów — dopiero potem projektujemy rozwiązanie.',
   },
   {
     question: 'Czy pracujecie z małymi firmami?',
