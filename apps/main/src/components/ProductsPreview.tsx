@@ -33,7 +33,7 @@ const statusConfig: Record<
 
 export function ProductsPreview() {
   return (
-    <section id="products" className="py-24">
+    <section id="products" className="py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Produkty w rozwoju"
@@ -51,7 +51,7 @@ export function ProductsPreview() {
                 className="rounded-2xl bg-mula-surface border border-mula-border p-6 flex gap-5 items-start"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
+                viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.4, delay: index * 0.1, ease: 'easeOut' }}
                 whileHover={{ y: -3, borderColor: '#3b82f640' }}
               >

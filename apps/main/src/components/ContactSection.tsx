@@ -7,7 +7,7 @@ import { COMPANY } from '@/lib/data'
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-24 bg-mula-surface/50">
+    <section id="contact" className="py-24 bg-mula-surface/50 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Kontakt"
@@ -18,7 +18,7 @@ export function ContactSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
+            viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             <h3 className="text-2xl font-bold text-mula-text mb-6">
@@ -54,7 +54,7 @@ export function ContactSection() {
             className="rounded-2xl bg-mula-surface border border-mula-border p-10 flex flex-col justify-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-60px' }}
+            viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
           >
             <p className="text-lg text-mula-text-muted leading-relaxed mb-8">

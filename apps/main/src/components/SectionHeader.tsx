@@ -14,7 +14,7 @@ export function SectionHeader({ title, subtitle, align = 'center' }: SectionHead
       className={`mb-16 ${align === 'center' ? 'text-center' : 'text-left'}`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
+      viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <h2 className="text-3xl md:text-4xl font-bold text-mula-text mb-4">

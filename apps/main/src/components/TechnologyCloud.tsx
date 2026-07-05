@@ -6,7 +6,7 @@ import { TECH_STACK } from '@/lib/data'
 
 export function TechnologyCloud() {
   return (
-    <section id="tech" className="py-24 bg-mula-surface/50">
+    <section id="tech" className="py-24 bg-mula-surface/50 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Technologie"
@@ -17,7 +17,7 @@ export function TechnologyCloud() {
           className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-40px' }}
+          viewport={{ once: true, margin: '-50px' }}
           variants={{
             hidden: {},
             visible: { transition: { staggerChildren: 0.04 } },

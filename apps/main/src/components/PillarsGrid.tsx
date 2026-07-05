@@ -7,7 +7,7 @@ import { PILLARS } from '@/lib/data'
 
 export function PillarsGrid() {
   return (
-    <section id="pillars" className="py-24">
+    <section id="pillars" className="py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Działalność"

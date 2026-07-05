@@ -47,7 +47,7 @@ const stats = [
 
 export function WhyUsSection() {
   return (
-    <section id="why-us" className="py-24">
+    <section id="why-us" className="py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader title="Dlaczego Mula Group" />
 
@@ -55,7 +55,7 @@ export function WhyUsSection() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
+            viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <p className="text-xl md:text-2xl text-mula-text leading-relaxed">
@@ -76,7 +76,7 @@ export function WhyUsSection() {
             className="grid grid-cols-2 gap-4"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
+            viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             {stats.map((stat, i) => (
@@ -85,7 +85,7 @@ export function WhyUsSection() {
                 className="rounded-2xl bg-mula-surface border border-mula-border p-6 flex flex-col items-center text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
+                viewport={{ once: true, margin: '-50px' }}
                 transition={{ duration: 0.4, delay: 0.15 * i, ease: 'easeOut' }}
                 whileHover={{ y: -4, borderColor: '#3b82f640' }}
               >

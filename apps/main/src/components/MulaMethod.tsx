@@ -27,7 +27,7 @@ const cardVariant = {
 
 export function MulaMethod() {
   return (
-    <section id="mula-method" className="relative py-24 px-6 overflow-hidden">
+    <section id="method" className="relative py-24 px-6 overflow-hidden scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-to-b from-mula-bg via-mula-surface/30 to-mula-bg pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
@@ -40,7 +40,7 @@ export function MulaMethod() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
+          viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer}
         >
           {MULA_METHOD.map((item) => {

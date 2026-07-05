@@ -22,7 +22,7 @@ const staggerContainer = {
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-24 px-6">
+    <section id="about" className="relative py-24 px-6 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <SectionHeader title="O Mula Group" />
 
@@ -31,7 +31,7 @@ export function AboutSection() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
+            viewport={{ once: true, margin: '-50px' }}
             variants={staggerContainer}
           >
             <motion.p
@@ -64,7 +64,7 @@ export function AboutSection() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
+            viewport={{ once: true, margin: '-50px' }}
             variants={staggerContainer}
           >
             {/* Mission card */}

@@ -29,7 +29,7 @@ const cardVariant = {
 
 export function ProcessSection() {
   return (
-    <section id="process" className="relative py-24 px-6">
+    <section id="process" className="relative py-24 px-6 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <SectionHeader
           title="Jak pracujemy"
@@ -41,7 +41,7 @@ export function ProcessSection() {
           className="hidden md:flex items-start gap-0 relative"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer}
         >
           {/* Gradient connecting line */}
@@ -85,7 +85,7 @@ export function ProcessSection() {
           className="md:hidden flex flex-col gap-4"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer}
         >
           {PROCESS_STEPS.map((step, i) => {
