@@ -17,7 +17,7 @@ Images are served via `https://mulagroup.eu/images/competencies/{slug}-{format}.
 
 ## Generated Assets
 
-Phase 2 generated the first production card set:
+Phase 4 generated the complete minimal landing page responsive set: 11 base graphics x 4 formats = 44 WebP files.
 
 | Slug | SVG | WebP |
 |------|-----|------|
@@ -32,6 +32,18 @@ Phase 2 generated the first production card set:
 | method | `method-card.svg` | `method-card.webp` |
 | about | `about-card.svg` | `about-card.webp` |
 | contact | `contact-card.svg` | `contact-card.webp` |
+
+For every slug above, the following WebP variants exist:
+
+- `{slug}-desktop.webp` (3840x2160)
+- `{slug}-card.webp` (1600x1200)
+- `{slug}-mobile.webp` (1080x1350)
+- `{slug}-og.webp` (1200x630)
+
+Editable SVG sources:
+
+- `{slug}-card.svg`
+- `{slug}-source.svg`
 
 ## Competency Slugs
 

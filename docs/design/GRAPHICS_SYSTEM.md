@@ -88,9 +88,9 @@ public/images/competencies/
 | AI style prototype | COMPLETED |
 | 7 competency card WebP assets | COMPLETED |
 | 4 landing expansion card WebP assets | COMPLETED |
-| Desktop variants | PENDING |
-| Mobile variants | PENDING |
-| Open Graph variants | PENDING |
+| Desktop variants | COMPLETED |
+| Mobile variants | COMPLETED |
+| Open Graph variants | COMPLETED |
 | Background assets | PENDING |
 | Premium icons | PENDING |
 

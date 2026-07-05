@@ -18,6 +18,13 @@ const competencies = [
   { slug: 'contact', color: '#10b981', motif: 'gateway' },
 ]
 
+const formats = [
+  { name: 'desktop', width: 3840, height: 2160 },
+  { name: 'card', width: 1600, height: 1200 },
+  { name: 'mobile', width: 1080, height: 1350 },
+  { name: 'og', width: 1200, height: 630 },
+]
+
 function lines(color) {
   const horizontal = Array.from({ length: 8 }, (_, index) => {
     const y = 120 + index * 135
@@ -182,11 +189,20 @@ async function main() {
 
   for (const item of competencies) {
     const svgContent = svg(item)
-    const svgPath = path.join(outDir, `${item.slug}-card.svg`)
-    const webpPath = path.join(outDir, `${item.slug}-card.webp`)
+    const sourceSvgPath = path.join(outDir, `${item.slug}-source.svg`)
+    const cardSvgPath = path.join(outDir, `${item.slug}-card.svg`)
 
-    fs.writeFileSync(svgPath, svgContent)
-    await sharp(Buffer.from(svgContent)).webp({ quality: 90 }).toFile(webpPath)
+    fs.writeFileSync(sourceSvgPath, svgContent)
+    fs.writeFileSync(cardSvgPath, svgContent)
+
+    for (const format of formats) {
+      const webpPath = path.join(outDir, `${item.slug}-${format.name}.webp`)
+
+      await sharp(Buffer.from(svgContent))
+        .resize(format.width, format.height, { fit: 'cover', position: 'center' })
+        .webp({ quality: 90 })
+        .toFile(webpPath)
+    }
   }
 }
 

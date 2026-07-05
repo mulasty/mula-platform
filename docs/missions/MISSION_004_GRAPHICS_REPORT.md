@@ -1,7 +1,7 @@
 # Mission 004 — Graphics System Report
 
 **Status:** ACTIVE
-**Phase:** 3 (Main Landing Expansion — COMPLETED)
+**Phase:** 4 (Responsive Variants — COMPLETED)
 
 ## Commit SHA
 
@@ -38,7 +38,7 @@ https://mulagroup.eu
 | 1 | Style Prototype (AI card) | 1 | COMPLETED |
 | 2 | Core Competency Cards | 7 | COMPLETED |
 | 3 | Main Landing Expansion | 4 | COMPLETED |
-| 4 | Responsive Variants | 33 | PENDING |
+| 4 | Responsive Variants | 33 | COMPLETED |
 | 5 | Background Assets | 10 | PENDING |
 | 6 | Premium Icons | 15 | PENDING |
 | 7 | Subdomain Heroes | 7 | PENDING |
@@ -94,6 +94,23 @@ Phase 3 generated 4 additional base card assets in both editable SVG and optimiz
 | CTA / Kontakt | `public/images/competencies/contact-card.svg` | `public/images/competencies/contact-card.webp` | `ContactSection` contact card background |
 
 Phase 3 also regenerated the 7 Phase 2 competency assets to remove all embedded technical labels/text, keeping every image compliant with the no-text-on-image rule.
+
+---
+
+## Generated Responsive Variants
+
+Phase 4 generated the complete minimal landing page responsive set: 11 base graphics x 4 formats = 44 WebP files.
+
+| Format | Dimensions | Count | Naming |
+|--------|------------|-------|--------|
+| Desktop | 3840x2160 | 11 | `*-desktop.webp` |
+| Card | 1600x1200 | 11 | `*-card.webp` |
+| Mobile | 1080x1350 | 11 | `*-mobile.webp` |
+| Open Graph | 1200x630 | 11 | `*-og.webp` |
+
+Generated slugs: `home`, `ai`, `digital`, `ecommerce`, `marketing`, `cyber`, `construction`, `innovation`, `method`, `about`, `contact`.
+
+Open Graph integration: `home-og.webp` is connected to the main app metadata for `mulagroup.eu` and Twitter large image previews.
 
 ---
 
