@@ -7,6 +7,8 @@
     "./tokens.css": "./tokens.css"
   },
   "scripts": {
-    "typecheck": "tsc --noEmit"
+    "typecheck": "echo 'CSS-only package — no TypeScript check needed'",
+    "lint": "echo 'CSS-only package — no lint needed'",
+    "build": "echo 'CSS-only package — no build needed'"
   }
 }
