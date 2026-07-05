@@ -29,6 +29,16 @@ export function MulaMethod() {
   return (
     <section id="method" className="relative py-20 px-6 overflow-hidden scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-to-b from-mula-bg via-mula-surface/30 to-mula-bg pointer-events-none" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-y-10 right-0 w-full md:w-1/2 opacity-20 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/images/competencies/method-card.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          maskImage: 'linear-gradient(to left, black, transparent)',
+        }}
+      />
 
       <div className="relative max-w-7xl mx-auto">
         <SectionHeader

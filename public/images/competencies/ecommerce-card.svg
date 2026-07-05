@@ -25,8 +25,4 @@
       <circle cx="800" cy="520" r="11" fill="#f59e0b" opacity="0.45"/>
       <circle cx="800" cy="520" r="70" fill="none" stroke="#f59e0b" stroke-width="0.6" opacity="0.28"/>
     </g>
-  <g opacity="0.065" fill="#f59e0b" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="4">
-    <text x="80" y="1080">COMMERCE ENGINE</text>
-    <text x="80" y="1112">MULA GROUP OPERATING SYSTEM</text>
-  </g>
 </svg>

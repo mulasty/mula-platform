@@ -26,8 +26,4 @@
       <circle cx="800" cy="520" r="11" fill="#ec4899" opacity="0.45"/>
       <circle cx="800" cy="520" r="70" fill="none" stroke="#ec4899" stroke-width="0.6" opacity="0.28"/>
     </g>
-  <g opacity="0.065" fill="#ec4899" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="4">
-    <text x="80" y="1080">SIGNAL REACH</text>
-    <text x="80" y="1112">MULA GROUP OPERATING SYSTEM</text>
-  </g>
 </svg>

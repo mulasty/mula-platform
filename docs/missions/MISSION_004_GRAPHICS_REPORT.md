@@ -1,7 +1,7 @@
 # Mission 004 — Graphics System Report
 
 **Status:** ACTIVE
-**Phase:** 2 (Core Competency Cards — COMPLETED)
+**Phase:** 3 (Main Landing Expansion — COMPLETED)
 
 ## Commit SHA
 
@@ -37,7 +37,7 @@ https://mulagroup.eu
 |-------|-------------|--------|--------|
 | 1 | Style Prototype (AI card) | 1 | COMPLETED |
 | 2 | Core Competency Cards | 7 | COMPLETED |
-| 3 | Main Landing Expansion | 4 | PENDING |
+| 3 | Main Landing Expansion | 4 | COMPLETED |
 | 4 | Responsive Variants | 33 | PENDING |
 | 5 | Background Assets | 10 | PENDING |
 | 6 | Premium Icons | 15 | PENDING |
@@ -79,6 +79,21 @@ Phase 2 generated 7 premium card assets in both editable SVG and optimized WebP 
 | Innowacje i Startup Studio | `public/images/competencies/innovation-card.svg` | `public/images/competencies/innovation-card.webp` |
 
 All 7 WebP files are integrated into the landing page `PillarCard` component as decorative background layers with readable HTML content above them.
+
+---
+
+## Generated Main Landing Expansion Assets
+
+Phase 3 generated 4 additional base card assets in both editable SVG and optimized WebP format.
+
+| Section | SVG | WebP | Integration |
+|---------|-----|------|-------------|
+| Hero / Mula Group | `public/images/competencies/home-card.svg` | `public/images/competencies/home-card.webp` | `HeroSection` background layer |
+| Mula Method | `public/images/competencies/method-card.svg` | `public/images/competencies/method-card.webp` | `MulaMethod` right-side ambient layer |
+| O nas / Ekosystem firmy | `public/images/competencies/about-card.svg` | `public/images/competencies/about-card.webp` | `AboutSection` mission card background |
+| CTA / Kontakt | `public/images/competencies/contact-card.svg` | `public/images/competencies/contact-card.webp` | `ContactSection` contact card background |
+
+Phase 3 also regenerated the 7 Phase 2 competency assets to remove all embedded technical labels/text, keeping every image compliant with the no-text-on-image rule.
 
 ---
 

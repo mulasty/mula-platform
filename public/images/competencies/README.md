@@ -28,6 +28,10 @@ Phase 2 generated the first production card set:
 | cyber | `cyber-card.svg` | `cyber-card.webp` |
 | construction | `construction-card.svg` | `construction-card.webp` |
 | innovation | `innovation-card.svg` | `innovation-card.webp` |
+| home | `home-card.svg` | `home-card.webp` |
+| method | `method-card.svg` | `method-card.webp` |
+| about | `about-card.svg` | `about-card.webp` |
+| contact | `contact-card.svg` | `contact-card.webp` |
 
 ## Competency Slugs
 

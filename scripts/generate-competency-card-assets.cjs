@@ -5,13 +5,17 @@ const sharp = require('sharp')
 const outDir = path.join(__dirname, '..', 'public', 'images', 'competencies')
 
 const competencies = [
-  { slug: 'ai', color: '#3b82f6', label: 'AGENT NETWORK', motif: 'nodes' },
-  { slug: 'digital', color: '#8b5cf6', label: 'WORKFLOW MAP', motif: 'flow' },
-  { slug: 'ecommerce', color: '#f59e0b', label: 'COMMERCE ENGINE', motif: 'channels' },
-  { slug: 'marketing', color: '#ec4899', label: 'SIGNAL REACH', motif: 'rings' },
-  { slug: 'cyber', color: '#10b981', label: 'SECURITY LAYERS', motif: 'shield' },
-  { slug: 'construction', color: '#ef4444', label: 'ENGINEERING GRID', motif: 'structure' },
-  { slug: 'innovation', color: '#06b6d4', label: 'PROTOTYPE PATH', motif: 'roadmap' },
+  { slug: 'ai', color: '#3b82f6', motif: 'nodes' },
+  { slug: 'digital', color: '#8b5cf6', motif: 'flow' },
+  { slug: 'ecommerce', color: '#f59e0b', motif: 'channels' },
+  { slug: 'marketing', color: '#ec4899', motif: 'rings' },
+  { slug: 'cyber', color: '#10b981', motif: 'shield' },
+  { slug: 'construction', color: '#ef4444', motif: 'structure' },
+  { slug: 'innovation', color: '#06b6d4', motif: 'roadmap' },
+  { slug: 'home', color: '#3b82f6', motif: 'ecosystem' },
+  { slug: 'method', color: '#8b5cf6', motif: 'pipeline' },
+  { slug: 'about', color: '#06b6d4', motif: 'constellation' },
+  { slug: 'contact', color: '#10b981', motif: 'gateway' },
 ]
 
 function lines(color) {
@@ -95,6 +99,44 @@ function motifSvg(item) {
       </g>${commonNodes}`
   }
 
+  if (item.motif === 'ecosystem') {
+    return `
+      <g opacity="0.2" stroke="${c}" fill="none" stroke-width="2">
+        <circle cx="800" cy="540" r="120"/>
+        <circle cx="800" cy="540" r="250" opacity="0.65"/>
+        <circle cx="800" cy="540" r="390" opacity="0.35"/>
+        <path d="M800 540 L480 330 M800 540 L1120 330 M800 540 L430 680 M800 540 L1170 680 M800 540 L640 890 M800 540 L960 890" opacity="0.8"/>
+      </g>${commonNodes}`
+  }
+
+  if (item.motif === 'pipeline') {
+    return `
+      <g opacity="0.22" stroke="${c}" fill="none" stroke-width="2">
+        <path d="M260 720 C410 540 520 620 640 500 C780 360 880 710 1020 560 C1140 430 1260 470 1360 340"/>
+        <circle cx="260" cy="720" r="22"/><circle cx="500" cy="595" r="22"/><circle cx="720" cy="485" r="22"/>
+        <circle cx="920" cy="650" r="22"/><circle cx="1130" cy="460" r="22"/><circle cx="1360" cy="340" r="22"/>
+      </g>${commonNodes}`
+  }
+
+  if (item.motif === 'constellation') {
+    return `
+      <g opacity="0.2" stroke="${c}" fill="none" stroke-width="2">
+        <path d="M360 310 L610 430 L820 300 L1060 450 L1240 360 M610 430 L520 720 L800 840 L1060 690 L1240 360 M820 300 L800 840"/>
+        <circle cx="360" cy="310" r="18"/><circle cx="610" cy="430" r="24"/><circle cx="820" cy="300" r="18"/>
+        <circle cx="1060" cy="450" r="24"/><circle cx="1240" cy="360" r="18"/><circle cx="520" cy="720" r="22"/>
+        <circle cx="800" cy="840" r="26"/><circle cx="1060" cy="690" r="20"/>
+      </g>${commonNodes}`
+  }
+
+  if (item.motif === 'gateway') {
+    return `
+      <g opacity="0.22" stroke="${c}" fill="none" stroke-width="2">
+        <path d="M520 850 V420 C520 340 585 280 665 280 H935 C1015 280 1080 340 1080 420 V850"/>
+        <path d="M610 850 V455 C610 420 640 390 675 390 H925 C960 390 990 420 990 455 V850" opacity="0.58"/>
+        <path d="M300 850 H1300 M390 760 H1210 M470 670 H1130" opacity="0.5"/>
+      </g>${commonNodes}`
+  }
+
   return `
     <g opacity="0.2" stroke="${c}" fill="none" stroke-width="2">
       <line x1="800" y1="520" x2="420" y2="300"/>
@@ -132,10 +174,6 @@ function svg(item) {
   <rect width="1600" height="1200" fill="url(#accent)"/>
   ${lines(item.color)}
   ${motifSvg(item)}
-  <g opacity="0.065" fill="${item.color}" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="4">
-    <text x="80" y="1080">${item.label}</text>
-    <text x="80" y="1112">MULA GROUP OPERATING SYSTEM</text>
-  </g>
 </svg>`
 }
 

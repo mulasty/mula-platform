@@ -75,13 +75,23 @@ export function AboutSection() {
           >
             {/* Mission card */}
             <motion.div
-              className="p-8 rounded-2xl bg-gradient-to-br from-mula-accent/10 to-mula-purple/10 border border-mula-border mb-10"
+              className="relative overflow-hidden p-8 rounded-2xl bg-gradient-to-br from-mula-accent/10 to-mula-purple/10 border border-mula-border mb-10"
               variants={fadeInVariant}
             >
-              <h3 className="text-sm uppercase tracking-wider text-mula-accent mb-3 font-semibold">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 opacity-25"
+                style={{
+                  backgroundImage: 'url(/images/competencies/about-card.webp)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
+              <div className="absolute inset-0 bg-mula-bg/60" />
+              <h3 className="relative z-10 text-sm uppercase tracking-wider text-mula-accent mb-3 font-semibold">
                 Misja
               </h3>
-              <p className="text-lg text-mula-text leading-relaxed">{COMPANY.mission}</p>
+              <p className="relative z-10 text-lg text-mula-text leading-relaxed">{COMPANY.mission}</p>
             </motion.div>
 
             {/* Values grid */}

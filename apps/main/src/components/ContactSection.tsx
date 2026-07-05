@@ -55,19 +55,29 @@ export function ContactSection() {
           </motion.div>
 
           <motion.div
-            className="rounded-2xl bg-mula-surface border border-mula-border p-10 flex flex-col justify-center"
+            className="relative overflow-hidden rounded-2xl bg-mula-surface border border-mula-border p-10 flex flex-col justify-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
           >
-            <p className="text-lg text-mula-text-muted leading-relaxed mb-8">
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-25"
+              style={{
+                backgroundImage: 'url(/images/competencies/contact-card.webp)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            />
+            <div className="absolute inset-0 bg-mula-surface/80 backdrop-blur-[1px]" />
+            <p className="relative z-10 text-lg text-mula-text-muted leading-relaxed mb-8">
               {COMPANY.contactWriteText}
             </p>
 
             <motion.a
               href={`mailto:${COMPANY.email}?subject=Nowy%20projekt%20-%20Mula%20Group`}
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-mula-accent hover:bg-blue-500 text-white font-medium rounded-full transition-all duration-200 text-lg self-start"
+              className="relative z-10 inline-flex items-center justify-center gap-2 px-8 py-4 bg-mula-accent hover:bg-blue-500 text-white font-medium rounded-full transition-all duration-200 text-lg self-start"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >

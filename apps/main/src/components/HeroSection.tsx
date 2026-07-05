@@ -65,6 +65,15 @@ export function HeroSection() {
     >
       {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: 'url(/images/competencies/home-card.webp)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center right',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-mula-bg via-mula-bg/85 to-mula-bg/35" />
         <motion.div
           className="absolute w-[600px] h-[600px] rounded-full bg-mula-accent/10 blur-[120px]"
           animate={{

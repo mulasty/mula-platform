@@ -15,12 +15,11 @@
   <rect width="1600" height="1200" fill="url(#accent)"/>
   <g opacity="0.045" stroke="#06b6d4" stroke-width="0.75"><line x1="0" y1="120" x2="1600" y2="120" /><line x1="0" y1="255" x2="1600" y2="255" /><line x1="0" y1="390" x2="1600" y2="390" /><line x1="0" y1="525" x2="1600" y2="525" /><line x1="0" y1="660" x2="1600" y2="660" /><line x1="0" y1="795" x2="1600" y2="795" /><line x1="0" y1="930" x2="1600" y2="930" /><line x1="0" y1="1065" x2="1600" y2="1065" /><line x1="150" y1="0" x2="150" y2="1200" /><line x1="340" y1="0" x2="340" y2="1200" /><line x1="530" y1="0" x2="530" y2="1200" /><line x1="720" y1="0" x2="720" y2="1200" /><line x1="910" y1="0" x2="910" y2="1200" /><line x1="1100" y1="0" x2="1100" y2="1200" /><line x1="1290" y1="0" x2="1290" y2="1200" /><line x1="1480" y1="0" x2="1480" y2="1200" /></g>
   
-      <g opacity="0.22" stroke="#06b6d4" fill="none" stroke-width="2">
-        <path d="M300 810 C450 660 550 720 650 570 C760 405 910 660 1030 480 C1140 315 1230 380 1320 280"/>
-        <circle cx="300" cy="810" r="24"/>
-        <circle cx="650" cy="570" r="24"/>
-        <circle cx="1030" cy="480" r="24"/>
-        <circle cx="1320" cy="280" r="24"/>
+      <g opacity="0.2" stroke="#06b6d4" fill="none" stroke-width="2">
+        <path d="M360 310 L610 430 L820 300 L1060 450 L1240 360 M610 430 L520 720 L800 840 L1060 690 L1240 360 M820 300 L800 840"/>
+        <circle cx="360" cy="310" r="18"/><circle cx="610" cy="430" r="24"/><circle cx="820" cy="300" r="18"/>
+        <circle cx="1060" cy="450" r="24"/><circle cx="1240" cy="360" r="18"/><circle cx="520" cy="720" r="22"/>
+        <circle cx="800" cy="840" r="26"/><circle cx="1060" cy="690" r="20"/>
       </g>
     <g filter="url(#glow)">
       <circle cx="800" cy="520" r="34" fill="#07111f" stroke="#06b6d4" stroke-width="2"/>
