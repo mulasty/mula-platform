@@ -40,7 +40,7 @@ All landing pages, subdomain apps, and marketing materials reference this docume
 - **Description:** Realizujemy projekty konstrukcji stalowych, montaż hal, wykończenia i dokumentację techniczną. Łączymy doświadczenie inżynierskie z nowoczesnymi narzędziami AI.
 - **Color:** #ef4444
 
-## 7. Produkty własne i startupy
+## 7. Innowacje i Startup Studio
 - **Subtitle:** Własne produkty i nowe przedsięwzięcia
 - **Subdomain:** innovation.mulagroup.eu
 - **Description:** Rozwijamy własne produkty SaaS, budujemy MVP, prowadzimy badania i rozwój. Szukamy nowych modeli biznesowych na styku AI, automatyzacji i realnych potrzeb rynku.

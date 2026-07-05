@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
+import { COMPANY } from '@/lib/data'
 
 export function StickyCTA() {
   const [visible, setVisible] = useState(false)
@@ -27,7 +28,7 @@ export function StickyCTA() {
             <div className="flex items-center justify-center gap-3 px-6 py-4">
               <MessageCircle className="w-5 h-5 text-white" />
               <span className="text-white font-semibold text-sm">
-                Porozmawiajmy o projekcie
+                {COMPANY.heroCTA}
               </span>
             </div>
           </div>

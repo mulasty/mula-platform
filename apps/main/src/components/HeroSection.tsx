@@ -180,7 +180,7 @@ export function HeroSection() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Zobacz jak pracujemy
+              {COMPANY.heroSecondaryCTA}
               <ChevronDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
           </motion.div>

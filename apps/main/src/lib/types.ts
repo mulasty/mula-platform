@@ -49,3 +49,24 @@ export interface NavItem {
   label: string
   href: string
 }
+
+export interface FAQItem {
+  question: string
+  answer: string
+}
+
+export interface ClientNeed {
+  icon: string
+  title: string
+  desc: string
+  href: string
+  color: string
+}
+
+export interface WhyUsStat {
+  value: number
+  suffix: string
+  label: string
+  icon: string
+  raw?: boolean
+}

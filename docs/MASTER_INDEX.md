@@ -47,6 +47,18 @@
 
 ---
 
+## Recovery & Governance
+
+| Document | Location | Status | Description |
+|---|---|---|---|
+| DEPLOYMENT_AUDIT.md | docs/recovery/ | ACTIVE | Recovery Pack — Full deployment audit: DNS, Vercel project-to-domain mapping, critical findings, recommended actions |
+| REPOSITORY_SOURCE_OF_TRUTH_REPORT.md | docs/recovery/ | ACTIVE | Recovery Pack — Source of truth migration: competency sync, data parity, repository status (ACTIVE vs LEGACY) |
+| PRODUCTION_CONSOLIDATION_REPORT.md | docs/recovery/ | ACTIVE | Recovery Pack — Production consolidation: single repo, single production, single domain config achieved |
+| VERCEL_DOMAIN_AUDIT.md | docs/recovery/ | ACTIVE | Mission 003.2 — Complete domain audit: 9 domains, Vercel project mappings, DNS verification, governance rules |
+| LEGACY_REPO_ARCHIVE_RECOMMENDATION.md | docs/recovery/ | ACTIVE | Mission 003.2 — Archive recommendation for mulagroup-landing: rationale, pre-archive verification, instructions |
+
+---
+
 ## Design
 
 | Document | Location | Status | Description |
@@ -103,6 +115,7 @@
 | Mission 002 | (tracked in decisions_log.md) | COMPLETED | Brand Authority: BRAND_MANIFESTO.md, TONE_OF_VOICE.md, TRUST_SIGNALS.md, ClientNeedsSection component, page.tsx integration |
 | MISSION_003_REPORT.md | docs/missions/ | ACTIVE | Mission 003 — Premium Landing Experience: Hero Enterprise variant, streamlined 8-section flow, visual polish, cohesive hierarchy |
 | MISSION_003_1_REPORT.md | docs/missions/ | ACTIVE | Mission 003.1 — Customer Journey Blueprint: Mula Method 6 steps, JSDoc business purpose, journey verification |
+| MISSION_003_2_REPORT.md | docs/missions/ | ACTIVE | Mission 003.2 — Domain & Deployment Governance: Vercel domain audit (9 domains), legacy repo archive recommendation, master index update |
 
 ---
 
@@ -207,6 +220,15 @@ SPRINT_03_REPORT.md           PLANNED
 SPRINT_04_REPORT.md           PLANNED
 ```
 
+### docs/recovery/
+```
+DEPLOYMENT_AUDIT.md                    ACTIVE — Full deployment audit
+REPOSITORY_SOURCE_OF_TRUTH_REPORT.md   ACTIVE — Source of truth migration report
+PRODUCTION_CONSOLIDATION_REPORT.md     ACTIVE — Production consolidation report
+VERCEL_DOMAIN_AUDIT.md                 ACTIVE — Domain audit & governance (Mission 003.2)
+LEGACY_REPO_ARCHIVE_RECOMMENDATION.md  ACTIVE — Legacy repo archive recommendation (Mission 003.2)
+```
+
 ### docs/brand/
 ```
 BRAND_MANIFESTO.md            ACTIVE — Mission 002: Brand identity & manifesto
@@ -223,6 +245,7 @@ GRAPHICS_PIPELINE.md          ACTIVE — Graphics pipeline: image specs, naming,
 ```
 MISSION_003_REPORT.md         ACTIVE — Mission 003: Premium Landing Experience
 MISSION_003_1_REPORT.md       ACTIVE — Mission 003.1: Customer Journey Blueprint
+MISSION_003_2_REPORT.md       ACTIVE — Mission 003.2: Domain & Deployment Governance
 ```
 
 ### docs/customer-journey/
@@ -295,8 +318,9 @@ innovation/                    DEPLOYED — innovation.mulagroup.eu (scaffold)
 | App-level components | 1 | 0 | 1 |
 | Brand docs (docs/brand/) | 3 | 0 | 3 |
 | Design docs (docs/design/) | 1 | 0 | 1 |
-| Mission reports (docs/missions/) | 2 | 0 | 2 |
+| Mission reports (docs/missions/) | 3 | 0 | 3 |
 | Customer journey (docs/customer-journey/) | 1 | 0 | 1 |
+| Recovery docs (docs/recovery/) | 5 | 0 | 5 |
 | Design system files | 1 (tokens.css) | 0 | 1 |
 | Apps deployed | 8 | 0 | 8 |
-| **TOTAL ARTIFACTS** | **48** | **7** | **55** |
+| **TOTAL ARTIFACTS** | **55** | **7** | **62** |

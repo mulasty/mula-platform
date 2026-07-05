@@ -1,4 +1,4 @@
-import { Pillar, ProcessStep, MulaMethodItem, TechItem, Product, CaseStudy, NavItem } from './types'
+import { Pillar, ProcessStep, MulaMethodItem, TechItem, Product, CaseStudy, NavItem, FAQItem, ClientNeed, WhyUsStat } from './types'
 
 export const HERO_VARIANTS = {
   enterprise: {
@@ -55,6 +55,8 @@ export const COMPANY = {
   heroSubtitle: 'Mula Group to grupa technologiczna łącząca 7 kompetencji w jeden spójny ekosystem. Nie jesteśmy agencją. Nie jesteśmy software housem. Jesteśmy partnerem technologicznym, który bierze odpowiedzialność za efekt biznesowy.',
   heroCTA: 'Porozmawiajmy o projekcie',
   aboutText: 'Mula Group to grupa technologiczna łącząca AI, software, e-commerce, marketing, cyberbezpieczeństwo i inżynierię. Pomagamy firmom przechodzić od chaosu operacyjnego do uporządkowanych, skalowalnych systemów działania.',
+  heroSecondaryCTA: 'Zobacz jak pracujemy',
+  navCTA: 'Porozmawiajmy',
   founderName: 'Piotr Muła',
   founderRole: 'Założyciel i Prezes',
   founderBio: 'Od lat związany z e-commerce, technologią i transformacją cyfrową. Łączy praktyczne doświadczenie operacyjne z myśleniem strategicznym.',
@@ -64,7 +66,13 @@ export const COMPANY = {
     { title: 'Najpierw zrozumieć, potem działać', description: 'Żadnego rozwiązania bez diagnozy' },
     { title: 'Wykonanie, nie prezentacje', description: 'Naszą rolą jest przejść od architektury do realizacji' },
     { title: 'Skalowalność od pierwszego dnia', description: 'Projektujemy systemy gotowe na rozwój' },
-  ]
+  ],
+  contactTitle: 'Kontakt',
+  contactSubtitle: 'Porozmawiajmy o Twoim projekcie',
+  contactHeading: 'Umów bezpłatną rozmowę',
+  contactText: 'Pierwsza konsultacja to bezpłatna, 30-minutowa rozmowa, podczas której zrozumiemy Twoje wyzwania i zaproponujemy konkretny następny krok. Bez zobowiązań — tylko wartość.',
+  contactWriteText: 'Napisz do nas bezpośrednio. Odpowiadamy zazwyczaj w ciągu kilku godzin w dni robocze. Opisz krótko swój projekt, a my odezwiemy się z konkretną propozycją.',
+  contactButtonLabel: 'Wyślij wiadomość',
 }
 
 export const PILLARS: Pillar[] = [
@@ -124,9 +132,9 @@ export const PILLARS: Pillar[] = [
   },
   {
     id: 'innovation',
-    title: 'Produkty własne i startupy',
+    title: 'Innowacje i Startup Studio',
     subtitle: 'Własne produkty i nowe przedsięwzięcia',
-    description: 'Tworzymy własne produkty SaaS i MVP, które rozwiązują realne problemy rynku. Inwestujemy w badania i rozwój na styku AI i automatyzacji, dostarczając narzędzia, które zmieniają sposób działania firm.',
+    description: 'Rozwijamy własne produkty SaaS, budujemy MVP, prowadzimy badania i rozwój. Szukamy nowych modeli biznesowych na styku AI, automatyzacji i realnych potrzeb rynku.',
     icon: 'Lightbulb',
     href: 'https://innovation.mulagroup.eu',
     color: '#06b6d4',
@@ -220,4 +228,54 @@ export const CASE_STUDIES: CaseStudy[] = [
     technologies: ['Next.js', 'Tailwind', 'WordPress', 'Google Ads', 'GA4'],
     year: 2025,
   },
+]
+
+export const FAQ_ITEMS: FAQItem[] = [
+  {
+    question: 'Czym zajmuje się Mula Group?',
+    answer:
+      'Mula Group to ekosystem biznesowy łączący 7 kompetencji w jednym środowisku operacyjnym. Zajmujemy się technologiami AI, transformacją cyfrową, e-commerce, marketingiem, cyberbezpieczeństwem, budownictwem oraz innowacjami. Zamiast szukać wielu dostawców, otrzymujesz jednego partnera z pełnym spektrum usług.',
+  },
+  {
+    question: 'Jak wygląda proces współpracy?',
+    answer:
+      'Pracujemy w 5-etapowym modelu: Discover (diagnoza), Design (projekt rozwiązania), Integrate (łączenie kompetencji), Execute (wdrożenie) oraz Scale (rozwój i optymalizacja). Każdy projekt zaczynamy od dogłębnego zrozumienia Twojego biznesu, wyzwań i celów — dopiero potem projektujemy rozwiązanie.',
+  },
+  {
+    question: 'Czy pracujecie z małymi firmami?',
+    answer:
+      'Tak, współpracujemy zarówno z małymi firmami, jak i średnimi przedsiębiorstwami. Nasze rozwiązania skalujemy odpowiednio do wielkości organizacji i budżetu. Wierzymy, że dostęp do nowoczesnych technologii i automatyzacji powinien być możliwy na każdym etapie rozwoju firmy.',
+  },
+  {
+    question: 'Jakie technologie wykorzystujecie?',
+    answer:
+      'Korzystamy z nowoczesnego stacku technologicznego obejmującego Next.js, TypeScript, React, Python, LangChain, OpenAI API, PostgreSQL, Supabase, Docker i wiele innych. Nie narzucamy jednej technologii — dobieramy narzędzia optymalne do skali i potrzeb Twojego biznesu.',
+  },
+  {
+    question: 'Ile trwa wdrożenie projektu?',
+    answer:
+      'Czas wdrożenia zależy od skali i złożoności projektu — od kilku tygodni dla prostych wdrożeń, po kilka miesięcy dla rozbudowanych systemów. Na etapie Design przedstawiamy szczegółowy harmonogram z kamieniami milowymi, dzięki czemu zawsze wiesz, na jakim etapie jesteśmy.',
+  },
+  {
+    question: 'Czy oferujecie wsparcie po wdrożeniu?',
+    answer:
+      'Tak, wsparcie powdrożeniowe to integralna część naszej oferty. Zapewniamy monitoring, utrzymanie i rozwój wdrożonych systemów. Model Scale w naszej metodyce oznacza, że nie zostawiamy Cię po uruchomieniu — budujemy długoterminowe partnerstwo.',
+  },
+]
+
+export const CLIENT_NEEDS: ClientNeed[] = [
+  { icon: 'Brain', title: 'Chcesz wykorzystać AI w firmie', desc: 'Od audytu po wdrożenie agentów', href: 'https://ai.mulagroup.eu', color: '#3b82f6' },
+  { icon: 'TrendingUp', title: 'Chcesz zdobywać więcej klientów', desc: 'Marketing, SEO, kampanie, lejek sprzedażowy', href: 'https://marketing.mulagroup.eu', color: '#ec4899' },
+  { icon: 'ShoppingCart', title: 'Chcesz rozwijać sprzedaż online', desc: 'E-commerce, marketplace, automatyzacja', href: 'https://ecommerce.mulagroup.eu', color: '#f59e0b' },
+  { icon: 'RefreshCw', title: 'Chcesz zautomatyzować procesy', desc: 'Workflow, integracje, eliminacja ręcznej pracy', href: 'https://digital.mulagroup.eu', color: '#8b5cf6' },
+  { icon: 'Shield', title: 'Chcesz zabezpieczyć firmę', desc: 'NIS2, audyty, monitoring, zgodność', href: 'https://cyber.mulagroup.eu', color: '#10b981' },
+  { icon: 'Building2', title: 'Potrzebujesz hali lub konstrukcji', desc: 'Projekt, produkcja, montaż', href: 'https://construction.mulagroup.eu', color: '#ef4444' },
+  { icon: 'Lightbulb', title: 'Chcesz stworzyć nowy produkt', desc: 'MVP, prototyp, SaaS, startup studio', href: 'https://innovation.mulagroup.eu', color: '#06b6d4' },
+]
+
+export const WHY_US_STATS: WhyUsStat[] = [
+  { value: 7, suffix: '', label: 'filarów', icon: 'Grid3X3' },
+  { value: 10, suffix: '+', label: 'projektów', icon: 'Briefcase' },
+  { value: 5, suffix: '', label: 'letni model', icon: 'GitBranch' },
+  { value: 0, suffix: '', label: 'EU-based Poland', icon: 'MapPin', raw: true },
 ]

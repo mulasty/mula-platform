@@ -16,8 +16,8 @@ export function ContactSection() {
     <section id="contact" className="py-20 bg-mula-surface/50 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          title="Kontakt"
-          subtitle="Porozmawiajmy o Twoim projekcie"
+          title={COMPANY.contactTitle}
+          subtitle={COMPANY.contactSubtitle}
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -28,13 +28,11 @@ export function ContactSection() {
             transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             <h3 className="text-2xl font-bold text-mula-text mb-6">
-              Umów bezpłatną rozmowę
+              {COMPANY.contactHeading}
             </h3>
 
             <p className="text-mula-text-muted leading-relaxed mb-10">
-              Pierwsza konsultacja to bezpłatna, 30-minutowa rozmowa, podczas
-              której zrozumiemy Twoje wyzwania i zaproponujemy konkretny
-              następny krok. Bez zobowiązań — tylko wartość.
+              {COMPANY.contactText}
             </p>
 
             <div className="space-y-6">
@@ -64,9 +62,7 @@ export function ContactSection() {
             transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
           >
             <p className="text-lg text-mula-text-muted leading-relaxed mb-8">
-              Napisz do nas bezpośrednio. Odpowiadamy zazwyczaj w ciągu kilku
-              godzin w dni robocze. Opisz krótko swój projekt, a my odezwiemy
-              się z konkretną propozycją.
+              {COMPANY.contactWriteText}
             </p>
 
             <motion.a
@@ -76,7 +72,7 @@ export function ContactSection() {
               whileTap={{ scale: 0.98 }}
             >
               <Mail className="w-5 h-5" />
-              Wyślij wiadomość
+              {COMPANY.contactButtonLabel}
             </motion.a>
           </motion.div>
         </div>

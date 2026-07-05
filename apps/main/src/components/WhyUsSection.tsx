@@ -3,7 +3,16 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Grid3X3, Briefcase, GitBranch, MapPin } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 import { SectionHeader } from '@/components/SectionHeader'
+import { WHY_US_STATS } from '@/lib/data'
+
+const iconMap: Record<string, LucideIcon> = {
+  Grid3X3,
+  Briefcase,
+  GitBranch,
+  MapPin,
+}
 
 function AnimatedNumber({ target, suffix = '' }: { target: number; suffix?: string }) {
   const [count, setCount] = useState(0)
@@ -38,12 +47,7 @@ function AnimatedNumber({ target, suffix = '' }: { target: number; suffix?: stri
   return <span ref={ref}>{count}{suffix}</span>
 }
 
-const stats = [
-  { value: 7, suffix: '', label: 'filarów', icon: Grid3X3 },
-  { value: 10, suffix: '+', label: 'projektów', icon: Briefcase },
-  { value: 5, suffix: '', label: 'letni model', icon: GitBranch },
-  { value: 0, suffix: '', label: 'EU-based Poland', icon: MapPin, raw: true },
-]
+const stats = WHY_US_STATS
 
 export function WhyUsSection() {
   return (
@@ -79,7 +83,9 @@ export function WhyUsSection() {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            {stats.map((stat, i) => (
+            {stats.map((stat, i) => {
+              const Icon = iconMap[stat.icon] || Grid3X3
+              return (
               <motion.div
                 key={stat.label}
                 className="rounded-2xl bg-mula-surface border border-mula-border p-6 flex flex-col items-center text-center"
@@ -90,7 +96,7 @@ export function WhyUsSection() {
                 whileHover={{ y: -4, borderColor: '#3b82f640' }}
               >
                 <div className="w-12 h-12 rounded-xl bg-mula-accent/10 flex items-center justify-center mb-4">
-                  <stat.icon className="w-6 h-6 text-mula-accent" />
+                  <Icon className="w-6 h-6 text-mula-accent" />
                 </div>
                 <span className="text-3xl font-bold text-mula-text mb-1">
                   {stat.raw ? (
@@ -101,7 +107,8 @@ export function WhyUsSection() {
                 </span>
                 <span className="text-sm text-mula-text-muted">{stat.label}</span>
               </motion.div>
-            ))}
+              )
+            })}
           </motion.div>
         </div>
       </div>

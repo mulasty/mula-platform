@@ -19,6 +19,8 @@
 | Architecture alignment | 0 HIGH conflicts | 0 | ✅ |
 | Token naming consistency | All docs aligned with tokens.css | 100% | ✅ |
 | @mula/design-system package | Proper npm workspace + exports | importable | ✅ |
+| Vercel domain audit | 9/9 domains verified & documented | 9 | ✅ |
+| Legacy repo archive | mulagroup-landing recommendation complete | Archived | ✅ |
 
 ## Sprint Progress
 
@@ -36,3 +38,5 @@
 | Mission 002 | ✅ Complete | ✅ |
 | Mission 003 | ✅ Complete | ✅ |
 | Mission 003.1 | ✅ Complete | ✅ |
+| Mission 003.2 | ✅ Complete | ✅ |
+| Mission 003.2 | ✅ Complete | ✅ |
