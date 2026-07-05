@@ -1,0 +1,1 @@
+{ "buildCommand": "npx turbo build --filter=@mula/ai", "installCommand": "npm install", "outputDirectory": "apps/ai/.next" }

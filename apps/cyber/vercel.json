@@ -1,0 +1,1 @@
+{ "buildCommand": "npx turbo build --filter=@mula/cyber", "installCommand": "npm install", "outputDirectory": "apps/cyber/.next" }
