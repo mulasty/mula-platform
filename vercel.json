@@ -1,1 +1,1 @@
-{"buildCommand":"cd apps/innovation && npx next build","installCommand":"npm install","outputDirectory":"apps/innovation/.next","framework":"nextjs"}
+{ "buildCommand": "cd apps/main && npx next build", "installCommand": "npm install", "outputDirectory": "apps/main/.next", "framework": "nextjs" }
