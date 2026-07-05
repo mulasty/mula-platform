@@ -55,6 +55,16 @@ Each of the 8 apps (`apps/*`) imports components from `@mula/ui` and composes th
 
 ## Token System
 
+### Single Source of Truth
+
+All design tokens are defined in `packages/design-system/tokens.css` — the canonical source for every CSS custom property in the platform. Tokens are consumed by importing:
+
+```css
+@import '@mula/design-system/tokens.css';
+```
+
+This import is available because `@mula/design-system` is a separate npm workspace package (see [Design Decision: Separate Package](#why-a-separate-design-system-package)). No other file in the project defines design tokens. ARCHITECTURE.md, BRAND_GUIDELINES.md, and this document all derive their token references from `tokens.css`.
+
 ### Token Categories
 
 | Category | Prefix | Tokens | Description |
@@ -376,6 +386,15 @@ export default function Page() {
 ---
 
 ## Design Decisions
+
+### Why a Separate Design System Package?
+
+The design tokens live in `packages/design-system/` as a standalone npm workspace package (`@mula/design-system`), not embedded inside `@mula/ui`. This is **Option A from Recovery Fix Pack 001**: the design system is a dependency of the component library, not a subfolder within it. Rationale:
+
+- **Framework-agnostic tokens** — CSS custom properties work without React, enabling future non-React consumers (documentation sites, marketing pages, email templates) to use the same token set.
+- **Independent versioning** — Tokens can change without bumping the component library version, and vice versa. A color palette refresh doesn't force a component rebuild.
+- **Clear dependency graph** — `@mula/design-system` → `@mula/ui` → apps. Each layer depends on the one below it, never the inverse.
+- **Import ergonomics** — `@import '@mula/design-system/tokens.css'` is explicit about what's being pulled in, unlike a bundled approach where tokens are invisible dependencies.
 
 ### Why CSS Custom Properties Instead of Tailwind Config Extensions?
 

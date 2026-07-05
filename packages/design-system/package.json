@@ -1,0 +1,9 @@
+{
+  "name": "@mula/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Mula Platform Design System — design tokens and CSS custom properties",
+  "exports": {
+    "./tokens.css": "./tokens.css"
+  }
+}

@@ -94,10 +94,18 @@
 
 ---
 
+## Recovery Fix Pack 001 — Documentation Alignment
+
+| Date | Decision | Rationale | Alternatives Considered | Scope | Reversible? |
+|---|---|---|---|---|---|
+| 2026-07-05 | ADR-011: Design System as separate npm package (`@mula/design-system`) | Design tokens in `packages/design-system/` as standalone workspace package rather than embedded in `@mula/ui`. Framework-agnostic CSS custom properties work without React; independent versioning; clear dependency graph (`@mula/design-system` → `@mula/ui` → apps). This is Option A from the Recovery Fix Pack 001. | Option B: Embed tokens inside `@mula/ui` (tighter coupling, mixed concerns). Option C: Flat file at repo root (no package resolution, fragile paths). | Entire platform | No — separation of concerns is foundational |
+
+---
+
 ## Summary Statistics
 
 | Category | Decisions |
-|---|---|
+|---|---|---|
 | Sprint 01 — Foundation | 14 |
 | Sprint 02 — Content & CMS | 4 |
 | Sprint 03 — Subdomain Apps | 3 |
@@ -105,4 +113,5 @@
 | Enterprise Pack 02 — Brand & Analytics | 8 |
 | Mission 001 — Full Platform Bootstrap | 8 |
 | Sprint 04 — Analytics & Optimization | 3 |
-| **Total** | **46** |
+| Recovery Fix Pack 001 — Documentation Alignment | 1 |
+| **Total** | **47** |

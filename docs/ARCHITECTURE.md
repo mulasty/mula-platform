@@ -26,17 +26,35 @@ mula-platform/
 │   └── innovation/                # @mula/innovation → innovation.mulagroup.eu
 │
 ├── packages/                      # Shared packages
-│   └── ui/                        # @mula/ui — 10 reusable React components
+│   ├── ui/                        # @mula/ui — 10 implemented, 2 planned (FAQSection, PartnersSection)
+│   └── design-system/             # @mula/design-system — design tokens (tokens.css)
 │
 ├── decisions/                     # Architectural Decision Records
 │   └── decisions_log.md
 │
 ├── docs/                          # Project documentation
-│   ├── PROJECT_STATUS.md
-│   ├── SPRINT_01_REPORT.md
-│   ├── DOCUMENTATION_STANDARD.md
-│   ├── RELEASE_CHECKLIST.md
-│   └── ARCHITECTURE.md           # (this file)
+│   ├── core/                      # Strategic & architectural foundations
+│   │   ├── NORTH_STAR.md
+│   │   ├── MATRIX_DIRECTIVE.md
+│   │   ├── ARCHITECTURE.md       # (this file)
+│   │   ├── DESIGN_SYSTEM.md
+│   │   ├── COMPONENT_LIBRARY.md
+│   │   └── BRAND_GUIDELINES.md
+│   ├── status/                    # Live project health & tracking
+│   │   ├── PROJECT_STATUS.md
+│   │   ├── PROJECT_HEALTH_CHECK.md
+│   │   ├── PRODUCT_HEALTH_DASHBOARD.md
+│   │   └── MASTER_INDEX.md
+│   ├── quality/                   # Process & quality assurance
+│   │   ├── QA_ACCEPTANCE.md
+│   │   ├── RELEASE_CHECKLIST.md
+│   │   └── DOCUMENTATION_STANDARD.md
+│   ├── recovery/                  # Alignment & recovery artifacts
+│   │   ├── RECOVERY_ALIGNMENT_REPORT.md
+│   │   ├── ARCHITECTURE_ALIGNMENT.md
+│   │   └── TECHNICAL_DEBT_REGISTER.md
+│   └── missions/                  # Sprint & mission reports
+│       └── SPRINT_01_REPORT.md
 │
 ├── playbooks/                     # Operational guides
 │   ├── COPYWRITING_GUIDE.md
@@ -433,18 +451,20 @@ Vercel's global edge network caches static assets (JS bundles, CSS, images, font
 ### 9.1 CSS Custom Properties (Tailwind v4 Theme)
 
 ```css
---mula-bg:            #0a0a0a    /* Page background */
---mula-surface:       #1a1a2e    /* Card / elevated surface */
---mula-border:        rgba(255,255,255,0.06)   /* Subtle borders */
+--mula-bg-primary:    #0a0a0a    /* Page background */
+--mula-bg-tertiary:   #1a1a1a    /* Card / elevated surface */
+--mula-border:        rgba(255,255,255,0.08)   /* Subtle borders */
 --mula-accent:        #3b82f6    /* Primary blue */
 --mula-accent-light:  #60a5fa    /* Lighter blue for hover/gradients */
 --mula-purple:        #8b5cf6    /* Secondary purple */
---mula-text:          #ffffff    /* Primary text */
---mula-text-muted:    rgba(255,255,255,0.7)    /* Secondary text */
---mula-text-dim:      rgba(255,255,255,0.4)    /* Tertiary/muted text */
+--mula-text-primary:  #f8fafc    /* Primary text */
+--mula-text-secondary:#94a3b8    /* Secondary text */
+--mula-text-dim:      #64748b    /* Tertiary/muted text */
 --mula-success:       #10b981    /* Success/positive state */
 --mula-warning:       #f59e0b    /* Warning/attention state */
 ```
+
+> **Note:** All token names and values are sourced from `packages/design-system/tokens.css`, the canonical single source of truth for design tokens.
 
 ### 9.2 Typography
 
