@@ -19,5 +19,8 @@
   },
   "peerDependencies": {
     "next": "^16.0.0"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
   }
 }
