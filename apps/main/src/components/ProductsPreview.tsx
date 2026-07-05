@@ -31,6 +31,12 @@ const statusConfig: Record<
   },
 }
 
+/**
+ * SECTION: Produkty
+ * BUSINESS GOAL: Show long-term vision and innovation capability.
+ * USER QUESTION: "Are they just a service company?"
+ * EMOTIONAL TARGET: "They build their own products too — impressive."
+ */
 export function ProductsPreview() {
   return (
     <section id="products" className="py-20 scroll-mt-24">

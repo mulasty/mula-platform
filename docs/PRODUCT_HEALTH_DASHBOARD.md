@@ -35,3 +35,4 @@
 | Recovery Fix Pack 001 | ✅ Complete | N/A |
 | Mission 002 | ✅ Complete | ✅ |
 | Mission 003 | ✅ Complete | ✅ |
+| Mission 003.1 | ✅ Complete | ✅ |

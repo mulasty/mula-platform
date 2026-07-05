@@ -37,6 +37,12 @@ const faqs = [
   },
 ]
 
+/**
+ * SECTION: FAQ
+ * BUSINESS GOAL: Remove objections before contact. Reduce friction.
+ * USER QUESTION: "Will this work for me? What about X?"
+ * EMOTIONAL TARGET: "My concerns are addressed."
+ */
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 

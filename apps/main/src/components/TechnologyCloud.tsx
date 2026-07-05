@@ -4,6 +4,12 @@ import { motion } from 'framer-motion'
 import { SectionHeader } from '@/components/SectionHeader'
 import { TECH_STACK } from '@/lib/data'
 
+/**
+ * SECTION: Technologie
+ * BUSINESS GOAL: Show tools as business enablers, not logo wall.
+ * USER QUESTION: "Do they use modern tools?"
+ * EMOTIONAL TARGET: "They use professional-grade technology."
+ */
 export function TechnologyCloud() {
   return (
     <section id="tech" className="py-20 bg-mula-surface/50 scroll-mt-24">

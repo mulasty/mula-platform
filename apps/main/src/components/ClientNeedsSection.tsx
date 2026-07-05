@@ -13,11 +13,17 @@ const clientNeeds = [
   { icon: Lightbulb, title: 'Chcesz stworzyć nowy produkt', desc: 'MVP, prototyp, SaaS, startup studio', href: 'https://innovation.mulagroup.eu', color: '#06b6d4' },
 ]
 
+/**
+ * SECTION: W czym możemy pomóc?
+ * BUSINESS GOAL: Connect user's problem with Mula Group's solution.
+ * USER QUESTION: "Can they help with MY problem?"
+ * EMOTIONAL TARGET: "They understand my needs."
+ */
 export function ClientNeedsSection() {
   return (
     <section id="needs" className="py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4">
-        <SectionHeader title="W czym możemy pomóc?" subtitle="Nie sprzedajemy usług — rozwiązujemy problemy biznesowe" />
+        <SectionHeader title="W czym możemy pomóc?" subtitle="Wybierz obszar, w którym potrzebujesz wsparcia — wskażemy Ci drogę." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
           {clientNeeds.map((need, i) => (
             <motion.a

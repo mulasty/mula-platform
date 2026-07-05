@@ -20,6 +20,12 @@ const staggerContainer = {
   },
 }
 
+/**
+ * SECTION: Kim jesteśmy
+ * BUSINESS GOAL: Build credibility. Show business understanding.
+ * USER QUESTION: "Can I trust them?"
+ * EMOTIONAL TARGET: "These people understand business, not just tech."
+ */
 export function AboutSection() {
   return (
     <section id="about" className="relative py-20 px-6 scroll-mt-24">

@@ -29,6 +29,14 @@
 
 ---
 
+## Customer Journey
+
+| Document | Location | Status | Description |
+|---|---|---|---|
+| CUSTOMER_JOURNEY_BLUEPRINT.md | docs/customer-journey/ | ACTIVE | Mission 003.1 — Complete customer journey: 9-section map, business goals, user questions, emotional arc, 30s conversion path |
+
+---
+
 ## Platform
 
 | Document | Location | Status | Description |
@@ -76,6 +84,7 @@
 | Mission 001 | (tracked in decisions_log.md) | COMPLETED | Full Platform Bootstrap: WordPress migration, 8 apps, landing page, subdomain scaffolds, Vercel, SEO, 10 components, dark design system |
 | Mission 002 | (tracked in decisions_log.md) | COMPLETED | Brand Authority: BRAND_MANIFESTO.md, TONE_OF_VOICE.md, TRUST_SIGNALS.md, ClientNeedsSection component, page.tsx integration |
 | MISSION_003_REPORT.md | docs/missions/ | ACTIVE | Mission 003 — Premium Landing Experience: Hero Enterprise variant, streamlined 8-section flow, visual polish, cohesive hierarchy |
+| MISSION_003_1_REPORT.md | docs/missions/ | ACTIVE | Mission 003.1 — Customer Journey Blueprint: Mula Method 6 steps, JSDoc business purpose, journey verification |
 
 ---
 
@@ -189,6 +198,12 @@ TRUST_SIGNALS.md              ACTIVE — Mission 002: Trust signals & credibilit
 ### docs/missions/
 ```
 MISSION_003_REPORT.md         ACTIVE — Mission 003: Premium Landing Experience
+MISSION_003_1_REPORT.md       ACTIVE — Mission 003.1: Customer Journey Blueprint
+```
+
+### docs/customer-journey/
+```
+CUSTOMER_JOURNEY_BLUEPRINT.md ACTIVE — Mission 003.1: Journey map, emotional arc, conversion path
 ```
 
 ### playbooks/
@@ -249,13 +264,14 @@ innovation/                    DEPLOYED — innovation.mulagroup.eu (scaffold)
 
 | Category | ACTIVE | PLANNED | TOTAL |
 |---|---|---|---|
-| Documentation files (docs/) | 18 (+ 3 planned sprint reports) | 3 | 21 |
+| Documentation files (docs/) | 18 (+ 3 planned sprint reports) | 3 | 24 |
 | Playbooks | 2 | 2 | 4 |
 | Decisions | 1 | 0 | 1 |
 | Shared components | 10 | 2 | 12 |
 | App-level components | 1 | 0 | 1 |
 | Brand docs (docs/brand/) | 3 | 0 | 3 |
-| Mission reports (docs/missions/) | 1 | 0 | 1 |
+| Mission reports (docs/missions/) | 2 | 0 | 2 |
+| Customer journey (docs/customer-journey/) | 1 | 0 | 1 |
 | Design system files | 1 (tokens.css) | 0 | 1 |
 | Apps deployed | 8 | 0 | 8 |
-| **TOTAL ARTIFACTS** | **45** | **7** | **52** |
+| **TOTAL ARTIFACTS** | **47** | **7** | **54** |

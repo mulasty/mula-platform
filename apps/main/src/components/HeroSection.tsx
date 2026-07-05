@@ -39,6 +39,12 @@ function CountUpBadge({ label, value }: { label: string; value: string }) {
   )
 }
 
+/**
+ * SECTION: Hero
+ * BUSINESS GOAL: User understands Mula Group in 5 seconds.
+ * USER QUESTION: "Where am I? Is this for me?"
+ * EMOTIONAL TARGET: "This looks professional."
+ */
 export function HeroSection() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const sectionRef = useRef<HTMLElement>(null)

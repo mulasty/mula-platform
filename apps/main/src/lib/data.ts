@@ -134,11 +134,12 @@ export const PILLARS: Pillar[] = [
 ]
 
 export const PROCESS_STEPS: ProcessStep[] = [
-  { step: 1, title: 'Discover', description: 'Analizujemy Twój biznes, identyfikujemy wąskie gardła i wyznaczamy cele. Zaczynamy od konkretnych danych, nie domysłów.', icon: 'Search' },
-  { step: 2, title: 'Design', description: 'Projektujemy ścieżkę od stanu obecnego do celu — z konkretnym harmonogramem, budżetem i kamieniami milowymi.', icon: 'PenTool' },
-  { step: 3, title: 'Integrate', description: 'Łączymy odpowiednie kompetencje, narzędzia i systemy w jedno środowisko operacyjne bez zbędnych zależności.', icon: 'Link2' },
-  { step: 4, title: 'Execute', description: 'Wdrażamy rozwiązanie krok po kroku, z pełną odpowiedzialnością za termin, budżet i jakość wdrożenia.', icon: 'Play' },
-  { step: 5, title: 'Scale', description: 'Zostajemy z Tobą po wdrożeniu. Monitorujemy, optymalizujemy i rozwijamy system wraz z Twoim biznesem.', icon: 'TrendingUp' },
+  { step: 1, title: 'Analiza', description: 'Diagnozujemy procesy, identyfikujemy wąskie gardła i możliwości. Zaczynamy od zrozumienia Twojego biznesu.', icon: 'Search' },
+  { step: 2, title: 'Strategia', description: 'Opracowujemy plan działania dopasowany do celów biznesowych. Każdy krok ma uzasadnienie i mierzalny cel.', icon: 'Compass' },
+  { step: 3, title: 'Projekt', description: 'Projektujemy architekturę rozwiązania: od integracji systemów po interfejs użytkownika.', icon: 'PenTool' },
+  { step: 4, title: 'Wdrożenie', description: 'Realizujemy projekt zgodnie z harmonogramem. Kod, konfiguracja, testy — wszystko w jednym procesie.', icon: 'Play' },
+  { step: 5, title: 'Automatyzacja', description: 'Eliminujemy ręczne zadania. Łączymy systemy w zautomatyzowany workflow, który działa 24/7.', icon: 'RefreshCw' },
+  { step: 6, title: 'Rozwój', description: 'System gotowy na skalowanie. Monitorujemy, optymalizujemy i rozwijamy wraz z Twoim biznesem.', icon: 'TrendingUp' },
 ]
 
 export const MULA_METHOD: MulaMethodItem[] = [

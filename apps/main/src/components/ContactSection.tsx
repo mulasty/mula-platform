@@ -5,6 +5,12 @@ import { Mail, MapPin, ArrowRight } from 'lucide-react'
 import { SectionHeader } from '@/components/SectionHeader'
 import { COMPANY } from '@/lib/data'
 
+/**
+ * SECTION: Kontakt
+ * BUSINESS GOAL: Convert interest into contact.
+ * USER QUESTION: "What's the next step?"
+ * EMOTIONAL TARGET: "I want to talk to them."
+ */
 export function ContactSection() {
   return (
     <section id="contact" className="py-20 bg-mula-surface/50 scroll-mt-24">

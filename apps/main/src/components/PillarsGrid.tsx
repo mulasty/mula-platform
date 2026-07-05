@@ -5,6 +5,12 @@ import { SectionHeader } from '@/components/SectionHeader'
 import { PillarCard } from '@/components/PillarCard'
 import { PILLARS } from '@/lib/data'
 
+/**
+ * SECTION: Filary Mula Group
+ * BUSINESS GOAL: Show competence breadth. Drive to subdomains.
+ * USER QUESTION: "What exactly do they do?"
+ * EMOTIONAL TARGET: "They can help in my area."
+ */
 export function PillarsGrid() {
   return (
     <section id="pillars" className="py-20 scroll-mt-24">

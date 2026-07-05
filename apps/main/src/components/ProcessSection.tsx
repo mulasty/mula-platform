@@ -1,16 +1,17 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Search, PenTool, Link2, Play, TrendingUp } from 'lucide-react'
+import { Search, Compass, PenTool, Play, RefreshCw, TrendingUp } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { PROCESS_STEPS } from '@/lib/data'
 import { SectionHeader } from '@/components/SectionHeader'
 
 const iconMap: Record<string, LucideIcon> = {
   Search,
+  Compass,
   PenTool,
-  Link2,
   Play,
+  RefreshCw,
   TrendingUp,
 }
 
@@ -27,6 +28,12 @@ const cardVariant = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' as const } },
 }
 
+/**
+ * SECTION: Mula Method
+ * BUSINESS GOAL: Demystify the process. Set expectations.
+ * USER QUESTION: "How will this work?"
+ * EMOTIONAL TARGET: "I know what to expect."
+ */
 export function ProcessSection() {
   return (
     <section id="process" className="relative py-20 px-6 scroll-mt-24">
