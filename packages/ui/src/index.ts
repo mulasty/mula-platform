@@ -1,0 +1,5 @@
+export { Navbar } from './components/Navbar'
+export { HeroSection } from './components/HeroSection'
+export { PillarCard } from './components/PillarCard'
+export { CTASection } from './components/CTASection'
+export { Footer } from './components/Footer'

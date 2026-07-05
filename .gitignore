@@ -1,0 +1,7 @@
+node_modules/
+.turbo/
+.next/
+*.log
+.env*
+.DS_Store
+Thumbs.db

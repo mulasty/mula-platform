@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mula-bg: #0a0a0a;
+  --color-mula-surface: #111111;
+  --color-mula-border: #1a1a1a;
+  --color-mula-accent: #3b82f6;
+  --color-mula-accent-light: #60a5fa;
+  --color-mula-purple: #8b5cf6;
+  --color-mula-text: #f8fafc;
+  --color-mula-text-muted: #94a3b8;
+  --color-mula-text-dim: #64748b;
+  --color-mula-success: #10b981;
+  --color-mula-warning: #f59e0b;
+  --color-construction: #ef4444;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--color-mula-bg); color: var(--color-mula-text); font-family: system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+}

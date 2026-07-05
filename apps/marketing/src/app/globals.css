@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mula-bg: #0a0a0a;
+  --color-mula-surface: #111111;
+  --color-mula-border: #1a1a1a;
+  --color-mula-accent: #ec4899;
+  --color-mula-accent-light: #f472b6;
+  --color-mula-purple: #8b5cf6;
+  --color-mula-text: #f8fafc;
+  --color-mula-text-muted: #94a3b8;
+  --color-mula-text-dim: #64748b;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--color-mula-bg); color: var(--color-mula-text); font-family: system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+}
