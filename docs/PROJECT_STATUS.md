@@ -11,6 +11,8 @@
 
 Mula Platform is a Next.js 16 monorepo powering the Mula Group technology ecosystem. Eight subdomain apps share a single codebase, unified design system, and automated Vercel deployment pipeline.
 
+**Repository consolidation:** As of 2026-07-05, `mulasty/mula-platform` is the single source of truth for all Mula Group development. The legacy `mulasty/mulagroup-landing` repository has been archived and must not receive new commits. All value from the legacy repo (company data, pillar definitions, products, case studies, tech stack) has been migrated and refined in mula-platform.
+
 **Enterprise Packs executed:** 01 (Documentation & Process), 02 (Brand & Analytics)
 **Enterprise Packs pending:** 03 (Test & CI/CD), 04 (Security & Compliance)
 

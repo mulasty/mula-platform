@@ -6,6 +6,15 @@
 
 ---
 
+## Repository Source of Truth
+
+| Repo | Status | Purpose |
+|---|---|---|
+| [mulasty/mula-platform](https://github.com/mulasty/mula-platform) | **ACTIVE / MAIN** | Primary development, all apps, CI/CD, docs |
+| [mulasty/mulagroup-landing](https://github.com/mulasty/mulagroup-landing) | **LEGACY / REFERENCE** | Historical reference, do not develop |
+
+---
+
 ## Strategy
 
 | Document | Location | Status | Description |
@@ -14,6 +23,7 @@
 | MATRIX_DIRECTIVE.md | docs/ | ACTIVE | 7 operating rules: verify build, commit+push+deploy, log decisions, consult North Star, update tech debt, health dashboard, QA gate |
 | decisions_log.md | decisions/ | ACTIVE | 46 architectural decisions across Sprint 01-04, Enterprise Packs 01-02, Mission 001 |
 | RECOVERY_ALIGNMENT_REPORT.md | docs/ | ACTIVE | Cohesion assessment, document audit, recommendations, ready-for-next-mission verdict |
+| COMPETENCIES.md | docs/ | ACTIVE | Single source of truth for 7 competencies: names, subtitles, subdomains, descriptions, colors, excluded competencies |
 
 ---
 
@@ -34,6 +44,14 @@
 | Document | Location | Status | Description |
 |---|---|---|---|
 | CUSTOMER_JOURNEY_BLUEPRINT.md | docs/customer-journey/ | ACTIVE | Mission 003.1 — Complete customer journey: 9-section map, business goals, user questions, emotional arc, 30s conversion path |
+
+---
+
+## Design
+
+| Document | Location | Status | Description |
+|---|---|---|---|
+| GRAPHICS_PIPELINE.md | docs/design/ | ACTIVE | Graphics pipeline: image specs (desktop hero, card, mobile, OG), file naming convention, color palette per competency, design rules |
 
 ---
 
@@ -168,6 +186,7 @@ vercel.json                   ACTIVE — Vercel build configuration
 ARCHITECTURE.md               ACTIVE — System architecture (619 lines)
 ARCHITECTURE_ALIGNMENT.md     ACTIVE — Consistency verification report
 BRAND_GUIDELINES.md           ACTIVE — Brand identity & visual system
+COMPETENCIES.md               ACTIVE — 7 competencies source of truth
 COMPONENT_LIBRARY.md          ACTIVE — Shared component API reference
 DEMO_STANDARD.md              ACTIVE — Matrix Demo Standard v2.0 (Lean)
 DESIGN_SYSTEM.md              ACTIVE — Design token system & integration
@@ -193,6 +212,11 @@ SPRINT_04_REPORT.md           PLANNED
 BRAND_MANIFESTO.md            ACTIVE — Mission 002: Brand identity & manifesto
 TONE_OF_VOICE.md              ACTIVE — Mission 002: Tone of voice guidelines
 TRUST_SIGNALS.md              ACTIVE — Mission 002: Trust signals & credibility
+```
+
+### docs/design/
+```
+GRAPHICS_PIPELINE.md          ACTIVE — Graphics pipeline: image specs, naming, color palette
 ```
 
 ### docs/missions/
@@ -264,14 +288,15 @@ innovation/                    DEPLOYED — innovation.mulagroup.eu (scaffold)
 
 | Category | ACTIVE | PLANNED | TOTAL |
 |---|---|---|---|
-| Documentation files (docs/) | 18 (+ 3 planned sprint reports) | 3 | 24 |
+| Documentation files (docs/) | 19 (+ 3 planned sprint reports) | 3 | 25 |
 | Playbooks | 2 | 2 | 4 |
 | Decisions | 1 | 0 | 1 |
 | Shared components | 10 | 2 | 12 |
 | App-level components | 1 | 0 | 1 |
 | Brand docs (docs/brand/) | 3 | 0 | 3 |
+| Design docs (docs/design/) | 1 | 0 | 1 |
 | Mission reports (docs/missions/) | 2 | 0 | 2 |
 | Customer journey (docs/customer-journey/) | 1 | 0 | 1 |
 | Design system files | 1 (tokens.css) | 0 | 1 |
 | Apps deployed | 8 | 0 | 8 |
-| **TOTAL ARTIFACTS** | **47** | **7** | **54** |
+| **TOTAL ARTIFACTS** | **48** | **7** | **55** |

@@ -6,6 +6,9 @@
 [![Node.js](https://img.shields.io/badge/Node.js-20-green)](https://nodejs.org/)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
 
+> **This is the main source of truth for Mula Group platform development.**
+> Legacy landing page repository: `mulasty/mulagroup-landing` is used only as reference/archive.
+
 Monorepo grupy technologicznej Mula Group — 8 serwisów, 1 kod, 0 WordPressa.
 
 ## Continuous Integration

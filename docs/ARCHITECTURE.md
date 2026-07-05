@@ -5,6 +5,12 @@
 
 ---
 
+## Repository Source of Truth
+
+**Mula Platform (`mulasty/mula-platform`) is the main and only active repository for the Mula Group platform.** The legacy `mulasty/mulagroup-landing` repository is archived and must not be developed against. All development, CI/CD, documentation, and deployment flows from this repository.
+
+---
+
 ## 1. Executive Summary
 
 Mula Platform is a TypeScript monorepo powering the Mula Group technology ecosystem. Eight Next.js 16 applications — one per business pillar — share a single codebase, a unified design system, and an automated deployment pipeline. The architecture prioritizes component reuse, static-first data delivery, and zero-infrastructure content management.
