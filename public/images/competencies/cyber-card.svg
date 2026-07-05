@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#101927"/>
+      <stop offset="58%" stop-color="#06101d"/>
+      <stop offset="100%" stop-color="#020509"/>
+    </radialGradient>
+    <radialGradient id="accent" cx="50%" cy="42%" r="38%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#bg)"/>
+  <rect width="1600" height="1200" fill="url(#accent)"/>
+  <g opacity="0.045" stroke="#10b981" stroke-width="0.75"><line x1="0" y1="120" x2="1600" y2="120" /><line x1="0" y1="255" x2="1600" y2="255" /><line x1="0" y1="390" x2="1600" y2="390" /><line x1="0" y1="525" x2="1600" y2="525" /><line x1="0" y1="660" x2="1600" y2="660" /><line x1="0" y1="795" x2="1600" y2="795" /><line x1="0" y1="930" x2="1600" y2="930" /><line x1="0" y1="1065" x2="1600" y2="1065" /><line x1="150" y1="0" x2="150" y2="1200" /><line x1="340" y1="0" x2="340" y2="1200" /><line x1="530" y1="0" x2="530" y2="1200" /><line x1="720" y1="0" x2="720" y2="1200" /><line x1="910" y1="0" x2="910" y2="1200" /><line x1="1100" y1="0" x2="1100" y2="1200" /><line x1="1290" y1="0" x2="1290" y2="1200" /><line x1="1480" y1="0" x2="1480" y2="1200" /></g>
+  
+      <g opacity="0.2" stroke="#10b981" fill="none" stroke-width="2">
+        <path d="M800 260 L1050 360 L1000 720 C940 850 860 930 800 970 C740 930 660 850 600 720 L550 360 Z"/>
+        <path d="M800 330 L965 395 L930 685 C890 775 840 835 800 865 C760 835 710 775 670 685 L635 395 Z" opacity="0.55"/>
+      </g>
+    <g filter="url(#glow)">
+      <circle cx="800" cy="520" r="34" fill="#07111f" stroke="#10b981" stroke-width="2"/>
+      <circle cx="800" cy="520" r="11" fill="#10b981" opacity="0.45"/>
+      <circle cx="800" cy="520" r="70" fill="none" stroke="#10b981" stroke-width="0.6" opacity="0.28"/>
+    </g>
+  <g opacity="0.065" fill="#10b981" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="4">
+    <text x="80" y="1080">SECURITY LAYERS</text>
+    <text x="80" y="1112">MULA GROUP OPERATING SYSTEM</text>
+  </g>
+</svg>

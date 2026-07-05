@@ -15,6 +15,20 @@ Images are served via `https://mulagroup.eu/images/competencies/{slug}-{format}.
 | Mobile | 1080x1350 | Mobile-optimized hero |
 | Open Graph | 1200x630 | Social media sharing |
 
+## Generated Assets
+
+Phase 2 generated the first production card set:
+
+| Slug | SVG | WebP |
+|------|-----|------|
+| ai | `ai-card.svg` | `ai-card.webp` |
+| digital | `digital-card.svg` | `digital-card.webp` |
+| ecommerce | `ecommerce-card.svg` | `ecommerce-card.webp` |
+| marketing | `marketing-card.svg` | `marketing-card.webp` |
+| cyber | `cyber-card.svg` | `cyber-card.webp` |
+| construction | `construction-card.svg` | `construction-card.webp` |
+| innovation | `innovation-card.svg` | `innovation-card.webp` |
+
 ## Competency Slugs
 
 | Slug | Competency | Color |

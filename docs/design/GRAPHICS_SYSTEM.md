@@ -75,10 +75,23 @@ public/images/competencies/
 
 1. Create AI style prototype (`ai-style-prototype.webp`, 1600x1200)
 2. Review and approve the visual direction
-3. If approved: scale to all 7 competencies x 3 formats
-4. If not approved: redesign visual direction
+3. Generate 7 core competency card assets (`*-card.webp`) — completed in Mission 004 Phase 2
+4. If approved: scale to remaining desktop, mobile, and OG formats
+5. If not approved: redesign visual direction
 
 **Do not generate all 28 final images before prototype approval.**
+
+## Current Asset Status
+
+| Asset Group | Status |
+|-------------|--------|
+| AI style prototype | COMPLETED |
+| 7 competency card WebP assets | COMPLETED |
+| Desktop variants | PENDING |
+| Mobile variants | PENDING |
+| Open Graph variants | PENDING |
+| Background assets | PENDING |
+| Premium icons | PENDING |
 
 ## Optimization
 

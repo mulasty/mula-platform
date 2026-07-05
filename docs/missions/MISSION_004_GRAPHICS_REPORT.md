@@ -1,7 +1,7 @@
 # Mission 004 — Graphics System Report
 
 **Status:** ACTIVE
-**Phase:** 1 (Style Prototype — COMPLETED)
+**Phase:** 2 (Core Competency Cards — COMPLETED)
 
 ## Commit SHA
 
@@ -36,7 +36,7 @@ https://mulagroup.eu
 | Phase | Description | Assets | Status |
 |-------|-------------|--------|--------|
 | 1 | Style Prototype (AI card) | 1 | COMPLETED |
-| 2 | Core Competency Cards | 7 | PENDING |
+| 2 | Core Competency Cards | 7 | COMPLETED |
 | 3 | Main Landing Expansion | 4 | PENDING |
 | 4 | Responsive Variants | 33 | PENDING |
 | 5 | Background Assets | 10 | PENDING |
@@ -61,6 +61,24 @@ https://mulagroup.eu
 | 9 | Mula Method | `method` | desktop, card, mobile, OG |
 | 10 | Ekosystem firmy | `about` | desktop, card, mobile, OG |
 | 11 | CTA / Kontakt | `contact` | desktop, card, mobile, OG |
+
+---
+
+## Generated Core Competency Card Assets
+
+Phase 2 generated 7 premium card assets in both editable SVG and optimized WebP format.
+
+| Competency | SVG | WebP |
+|------------|-----|------|
+| Technologie AI | `public/images/competencies/ai-card.svg` | `public/images/competencies/ai-card.webp` |
+| Transformacja Cyfrowa | `public/images/competencies/digital-card.svg` | `public/images/competencies/digital-card.webp` |
+| E-commerce | `public/images/competencies/ecommerce-card.svg` | `public/images/competencies/ecommerce-card.webp` |
+| Marketing i Media | `public/images/competencies/marketing-card.svg` | `public/images/competencies/marketing-card.webp` |
+| Cyberbezpieczenstwo | `public/images/competencies/cyber-card.svg` | `public/images/competencies/cyber-card.webp` |
+| Budownictwo i Inzynieria | `public/images/competencies/construction-card.svg` | `public/images/competencies/construction-card.webp` |
+| Innowacje i Startup Studio | `public/images/competencies/innovation-card.svg` | `public/images/competencies/innovation-card.webp` |
+
+All 7 WebP files are integrated into the landing page `PillarCard` component as decorative background layers with readable HTML content above them.
 
 ---
 
