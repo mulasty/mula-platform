@@ -3,14 +3,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Building2, ChevronDown } from 'lucide-react'
-import { COMPANY } from '@/lib/data'
+import { COMPANY, HERO_VARIANTS } from '@/lib/data'
 
-const stats = [
-  { label: 'Założona', value: '2023' },
-  { label: 'Filarów', value: '7' },
-  { label: 'Projektów', value: '10+' },
-  { label: 'Zasięg', value: 'EU' },
-]
+const stats = HERO_VARIANTS.enterprise.stats
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -174,12 +169,12 @@ export function HeroSection() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.a
-              href="#pillars"
+              href="#needs"
               className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-mula-border hover:border-mula-accent/50 text-mula-text-muted hover:text-mula-text transition-colors duration-200"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Zobacz obszary działalności
+              Zobacz jak pracujemy
               <ChevronDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
           </motion.div>

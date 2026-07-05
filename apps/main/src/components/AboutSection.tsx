@@ -22,7 +22,7 @@ const staggerContainer = {
 
 export function AboutSection() {
   return (
-    <section id="about" className="relative py-24 px-6 scroll-mt-24">
+    <section id="about" className="relative py-20 px-6 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         <SectionHeader title="O Mula Group" />
 

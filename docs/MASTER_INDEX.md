@@ -53,6 +53,14 @@
 
 ---
 
+## Quality
+
+| Document | Location | Status | Description |
+|---|---|---|---|
+| DEMO_STANDARD.md | docs/ | ACTIVE | Matrix Demo Standard v2.0 (Lean): mandatory post-Mission report format, screenshot requirements, quality metrics, optimization principles |
+
+---
+
 ## Mission Packs — History
 
 | Document | Location | Status | Description |
@@ -67,6 +75,7 @@
 | Enterprise Pack 04 | (tracked in PROJECT_STATUS.md) | PLANNED | Security & Compliance: CSP headers, security audit, GDPR review, cookie consent, privacy policy, accessibility audit |
 | Mission 001 | (tracked in decisions_log.md) | COMPLETED | Full Platform Bootstrap: WordPress migration, 8 apps, landing page, subdomain scaffolds, Vercel, SEO, 10 components, dark design system |
 | Mission 002 | (tracked in decisions_log.md) | COMPLETED | Brand Authority: BRAND_MANIFESTO.md, TONE_OF_VOICE.md, TRUST_SIGNALS.md, ClientNeedsSection component, page.tsx integration |
+| MISSION_003_REPORT.md | docs/missions/ | ACTIVE | Mission 003 — Premium Landing Experience: Hero Enterprise variant, streamlined 8-section flow, visual polish, cohesive hierarchy |
 
 ---
 
@@ -151,6 +160,7 @@ ARCHITECTURE.md               ACTIVE — System architecture (619 lines)
 ARCHITECTURE_ALIGNMENT.md     ACTIVE — Consistency verification report
 BRAND_GUIDELINES.md           ACTIVE — Brand identity & visual system
 COMPONENT_LIBRARY.md          ACTIVE — Shared component API reference
+DEMO_STANDARD.md              ACTIVE — Matrix Demo Standard v2.0 (Lean)
 DESIGN_SYSTEM.md              ACTIVE — Design token system & integration
 DOCUMENTATION_STANDARD.md     ACTIVE — DDD standard & enforcement
 MASTER_INDEX.md               ACTIVE — (this file)
@@ -174,6 +184,11 @@ SPRINT_04_REPORT.md           PLANNED
 BRAND_MANIFESTO.md            ACTIVE — Mission 002: Brand identity & manifesto
 TONE_OF_VOICE.md              ACTIVE — Mission 002: Tone of voice guidelines
 TRUST_SIGNALS.md              ACTIVE — Mission 002: Trust signals & credibility
+```
+
+### docs/missions/
+```
+MISSION_003_REPORT.md         ACTIVE — Mission 003: Premium Landing Experience
 ```
 
 ### playbooks/
@@ -234,12 +249,13 @@ innovation/                    DEPLOYED — innovation.mulagroup.eu (scaffold)
 
 | Category | ACTIVE | PLANNED | TOTAL |
 |---|---|---|---|
-| Documentation files (docs/) | 17 (+ 3 planned sprint reports) | 3 | 20 |
+| Documentation files (docs/) | 18 (+ 3 planned sprint reports) | 3 | 21 |
 | Playbooks | 2 | 2 | 4 |
 | Decisions | 1 | 0 | 1 |
 | Shared components | 10 | 2 | 12 |
 | App-level components | 1 | 0 | 1 |
 | Brand docs (docs/brand/) | 3 | 0 | 3 |
+| Mission reports (docs/missions/) | 1 | 0 | 1 |
 | Design system files | 1 (tokens.css) | 0 | 1 |
 | Apps deployed | 8 | 0 | 8 |
-| **TOTAL ARTIFACTS** | **43** | **7** | **50** |
+| **TOTAL ARTIFACTS** | **45** | **7** | **52** |

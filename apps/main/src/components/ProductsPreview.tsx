@@ -33,7 +33,7 @@ const statusConfig: Record<
 
 export function ProductsPreview() {
   return (
-    <section id="products" className="py-24 scroll-mt-24">
+    <section id="products" className="py-20 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Produkty w rozwoju"

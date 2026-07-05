@@ -1,5 +1,38 @@
 import { Pillar, ProcessStep, MulaMethodItem, TechItem, Product, CaseStudy, NavItem } from './types'
 
+export const HERO_VARIANTS = {
+  enterprise: {
+    headline: "Technologia, automatyzacja i AI — dla firm, które chcą rosnąć szybciej.",
+    subheadline: "Mula Group to grupa technologiczna łącząca 7 kompetencji w jeden spójny ekosystem. Nie jesteśmy agencją. Nie jesteśmy software housem. Jesteśmy partnerem technologicznym, który bierze odpowiedzialność za efekt biznesowy.",
+    stats: [
+      { label: "Rok założenia", value: "2023" },
+      { label: "Filary kompetencji", value: "7" },
+      { label: "Zrealizowanych projektów", value: "10+" },
+      { label: "Działamy w", value: "EU" },
+    ],
+  },
+  ai: {
+    headline: "AI nie jest przyszłością. AI jest teraz. Wykorzystaj ją zanim zrobi to konkurencja.",
+    subheadline: "Wdrażamy agentów AI, automatyzujemy procesy, budujemy przewagę operacyjną. Od audytu po produkcję — w jednym ekosystemie.",
+    stats: [
+      { label: "Rok założenia", value: "2023" },
+      { label: "Filary kompetencji", value: "7" },
+      { label: "Zrealizowanych projektów", value: "10+" },
+      { label: "Działamy w", value: "EU" },
+    ],
+  },
+  business: {
+    headline: "Od chaosu operacyjnego do skalowalnego systemu — w 5 krokach.",
+    subheadline: "Mula Method to nasz sprawdzony proces: Discover → Design → Integrate → Execute → Scale. Każdy projekt przechodzi tę samą ścieżkę — od diagnozy po wzrost.",
+    stats: [
+      { label: "Rok założenia", value: "2023" },
+      { label: "Filary kompetencji", value: "7" },
+      { label: "Zrealizowanych projektów", value: "10+" },
+      { label: "Działamy w", value: "EU" },
+    ],
+  },
+} as const
+
 export const NAV_ITEMS: NavItem[] = [
   { label: 'O nas', href: '#about' },
   { label: 'Działalność', href: '#pillars' },
@@ -18,8 +51,8 @@ export const COMPANY = {
   address: 'ul. gen. Władysława Sikorskiego 166/0.03, 18-400 Łomża',
   email: 'info@mulagroup.eu',
   founded: 2023,
-  heroTitle: 'Mula Group — Technologia, automatyzacja i AI dla nowoczesnego biznesu.',
-  heroSubtitle: 'Projektujemy i wdrażamy rozwiązania, które pomagają firmom porządkować procesy, rozwijać sprzedaż, budować silną obecność online i przygotować się na przyszłość opartą o AI.',
+  heroTitle: 'Technologia, automatyzacja i AI — dla firm, które chcą rosnąć szybciej.',
+  heroSubtitle: 'Mula Group to grupa technologiczna łącząca 7 kompetencji w jeden spójny ekosystem. Nie jesteśmy agencją. Nie jesteśmy software housem. Jesteśmy partnerem technologicznym, który bierze odpowiedzialność za efekt biznesowy.',
   heroCTA: 'Porozmawiajmy o projekcie',
   aboutText: 'Mula Group to grupa technologiczna łącząca AI, software, e-commerce, marketing, cyberbezpieczeństwo i inżynierię. Pomagamy firmom przechodzić od chaosu operacyjnego do uporządkowanych, skalowalnych systemów działania.',
   founderName: 'Piotr Muła',

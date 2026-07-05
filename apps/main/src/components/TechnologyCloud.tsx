@@ -6,7 +6,7 @@ import { TECH_STACK } from '@/lib/data'
 
 export function TechnologyCloud() {
   return (
-    <section id="tech" className="py-24 bg-mula-surface/50 scroll-mt-24">
+    <section id="tech" className="py-20 bg-mula-surface/50 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Technologie"

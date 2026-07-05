@@ -15,7 +15,7 @@ const clientNeeds = [
 
 export function ClientNeedsSection() {
   return (
-    <section id="needs" className="py-20 scroll-mt-24">
+    <section id="needs" className="py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4">
         <SectionHeader title="W czym możemy pomóc?" subtitle="Nie sprzedajemy usług — rozwiązujemy problemy biznesowe" />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">

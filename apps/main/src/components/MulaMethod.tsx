@@ -27,7 +27,7 @@ const cardVariant = {
 
 export function MulaMethod() {
   return (
-    <section id="method" className="relative py-24 px-6 overflow-hidden scroll-mt-24">
+    <section id="method" className="relative py-20 px-6 overflow-hidden scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-to-b from-mula-bg via-mula-surface/30 to-mula-bg pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">

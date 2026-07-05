@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, Minus } from 'lucide-react'
 import { SectionHeader } from '@/components/SectionHeader'
 
@@ -46,7 +45,7 @@ export function FAQSection() {
   }
 
   return (
-    <section id="faq" className="py-24 px-6">
+    <section id="faq" className="py-16 px-6">
       <div className="max-w-3xl mx-auto">
         <SectionHeader
           title="Często zadawane pytania"
@@ -58,13 +57,9 @@ export function FAQSection() {
             const isOpen = openIndex === index
 
             return (
-              <motion.div
+              <div
                 key={index}
                 className="rounded-xl bg-mula-surface border border-mula-border overflow-hidden"
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.4, delay: index * 0.08, ease: 'easeOut' }}
               >
                 <button
                   className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
@@ -73,36 +68,30 @@ export function FAQSection() {
                   <h3 className="text-base md:text-lg font-medium text-mula-text pr-4">
                     {faq.question}
                   </h3>
-                  <motion.div
-                    className="flex-shrink-0 w-8 h-8 rounded-lg bg-mula-accent/10 flex items-center justify-center"
-                    animate={{ rotate: isOpen ? 180 : 0 }}
-                    transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  <div
+                    className="flex-shrink-0 w-8 h-8 rounded-lg bg-mula-accent/10 flex items-center justify-center transition-transform duration-300"
+                    style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
                   >
                     {isOpen ? (
                       <Minus className="w-4 h-4 text-mula-accent" />
                     ) : (
                       <Plus className="w-4 h-4 text-mula-accent" />
                     )}
-                  </motion.div>
+                  </div>
                 </button>
 
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <motion.div
-                      key="content"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-5 text-mula-text-muted leading-relaxed text-sm">
-                        {faq.answer}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+                <div
+                  className="overflow-hidden transition-all duration-300 ease-in-out"
+                  style={{
+                    maxHeight: isOpen ? '300px' : '0px',
+                    opacity: isOpen ? 1 : 0,
+                  }}
+                >
+                  <div className="px-6 pb-5 text-mula-text-muted leading-relaxed text-sm">
+                    {faq.answer}
+                  </div>
+                </div>
+              </div>
             )
           })}
         </div>
