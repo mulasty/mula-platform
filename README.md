@@ -1,6 +1,26 @@
 # Mula Platform
 
+[![CI](https://github.com/mulasty/mula-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/mulasty/mula-platform/actions/workflows/ci.yml)
+[![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=mulagroup-landing)](https://mulagroup.eu)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-20-green)](https://nodejs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
+
 Monorepo grupy technologicznej Mula Group — 8 serwisów, 1 kod, 0 WordPressa.
+
+## Continuous Integration
+
+Każdy `push` i `pull request` do `master` przechodzi automatyczną kontrolę:
+
+| Etap | Opis |
+|---|---|
+| Install | `npm ci` — czysta instalacja zależności |
+| Lint | `turbo lint` — ESLint |
+| Typecheck | `turbo typecheck` — `tsc --noEmit` dla wszystkich pakietów |
+| Audit | `npm audit` — raport bezpieczeństwa (bez blokowania) |
+| Build | `turbo build` — pełny build produkcyjny wszystkich 8 aplikacji |
+
+Workflow: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 
 ## Architektura
 

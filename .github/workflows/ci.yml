@@ -32,5 +32,8 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
+      - name: Audit (report only)
+        run: npm audit || true
+
       - name: Build
         run: npm run build
