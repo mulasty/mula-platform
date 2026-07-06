@@ -63,16 +63,19 @@ export function HeroSection() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden scroll-mt-24"
     >
-      {/* Animated background blobs */}
+      {/* Hero background video */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute inset-0 opacity-30"
-          style={{
-            backgroundImage: 'url(/images/competencies/home-card.webp)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center right',
-          }}
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/competencies/home-hero-poster.webp"
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          style={{ filter: 'saturate(1.1) brightness(0.7)' }}
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-mula-bg via-mula-bg/85 to-mula-bg/35" />
         <motion.div
           className="absolute w-[600px] h-[600px] rounded-full bg-mula-accent/10 blur-[120px]"
