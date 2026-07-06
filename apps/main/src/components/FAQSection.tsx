@@ -19,8 +19,15 @@ export function FAQSection() {
   }
 
   return (
-    <section id="faq" className="py-16 px-6">
-      <div className="max-w-3xl mx-auto">
+    <section id="faq" className="relative py-16 px-6 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center opacity-[0.05]"
+        style={{ backgroundImage: 'url(/images/backgrounds/bg-dark-surface.webp)' }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-mula-bg/90 to-mula-bg/70" />
+
+      <div className="relative max-w-3xl mx-auto">
         <SectionHeader
           title="Często zadawane pytania"
           subtitle="Znajdź odpowiedzi na najczęściej pojawiające się pytania"

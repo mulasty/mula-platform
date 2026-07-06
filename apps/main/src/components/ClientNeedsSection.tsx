@@ -23,8 +23,15 @@ const iconMap: Record<string, LucideIcon> = {
  */
 export function ClientNeedsSection() {
   return (
-    <section id="needs" className="py-24 scroll-mt-24">
-      <div className="max-w-7xl mx-auto px-4">
+    <section id="needs" className="relative py-24 scroll-mt-24 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
+        style={{ backgroundImage: 'url(/images/backgrounds/bg-gradient-mesh.webp)' }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/80 via-mula-bg/90 to-mula-bg/80" />
+
+      <div className="relative max-w-7xl mx-auto px-4">
         <SectionHeader title="W czym możemy pomóc?" subtitle="Wybierz obszar, w którym potrzebujesz wsparcia — wskażemy Ci drogę." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
           {CLIENT_NEEDS.map((need, i) => {

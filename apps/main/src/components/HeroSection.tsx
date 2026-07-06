@@ -63,8 +63,13 @@ export function HeroSection() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden scroll-mt-24"
     >
-      {/* Hero background video */}
+      {/* Hero background video + grid texture */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-cover bg-center opacity-[0.06]"
+          style={{ backgroundImage: 'url(/images/backgrounds/bg-hero-grid.webp)' }}
+        />
         <video
           autoPlay
           loop

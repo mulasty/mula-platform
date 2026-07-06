@@ -36,8 +36,15 @@ const cardVariant = {
  */
 export function ProcessSection() {
   return (
-    <section id="process" className="relative py-20 px-6 scroll-mt-24">
-      <div className="max-w-7xl mx-auto">
+    <section id="process" className="relative py-20 px-6 scroll-mt-24 overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-cover bg-center opacity-[0.05]"
+        style={{ backgroundImage: 'url(/images/backgrounds/bg-subtle-grid.webp)' }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/0 via-mula-bg/60 to-mula-bg/0" />
+
+      <div className="relative max-w-7xl mx-auto">
         <SectionHeader
           title="Jak pracujemy"
           subtitle="Model operacyjny Mula Group"
