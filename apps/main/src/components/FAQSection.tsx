@@ -22,10 +22,10 @@ export function FAQSection() {
     <section id="faq" className="relative py-16 px-6 overflow-hidden">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center opacity-[0.05]"
+        className="absolute inset-0 bg-cover bg-center opacity-[0.35]"
         style={{ backgroundImage: 'url(/images/backgrounds/bg-dark-surface.webp)' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-mula-bg/90 to-mula-bg/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/60 via-mula-bg/80 to-mula-bg/60" />
 
       <div className="relative max-w-3xl mx-auto">
         <SectionHeader

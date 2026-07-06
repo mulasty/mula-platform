@@ -67,10 +67,10 @@ export function HeroSection() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center opacity-[0.18]"
+          className="absolute inset-0 bg-cover bg-center opacity-[0.45]"
           style={{ backgroundImage: 'url(/images/backgrounds/bg-hero-grid.webp)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-mula-bg via-mula-bg/90 to-mula-bg/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-mula-bg via-mula-bg/75 to-mula-bg/40" />
         <motion.div
           className="absolute w-[600px] h-[600px] rounded-full bg-mula-accent/10 blur-[120px]"
           animate={{
