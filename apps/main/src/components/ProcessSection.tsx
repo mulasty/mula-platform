@@ -39,10 +39,10 @@ export function ProcessSection() {
     <section id="process" className="relative py-20 px-6 scroll-mt-24 overflow-hidden">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center opacity-[0.35]"
+        className="absolute inset-0 bg-cover bg-center opacity-[0.45]"
         style={{ backgroundImage: 'url(/images/backgrounds/bg-subtle-grid.webp)' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-mula-bg/80 to-mula-bg/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-mula-bg/85 to-mula-bg/70" />
 
       <div className="relative max-w-7xl mx-auto">
         <SectionHeader

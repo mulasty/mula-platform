@@ -63,25 +63,14 @@ export function HeroSection() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden scroll-mt-24"
     >
-      {/* Hero background video + premium grid texture */}
+      {/* Hero background: premium Data 1 grid texture */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center opacity-[0.12]"
+          className="absolute inset-0 bg-cover bg-center opacity-[0.65]"
           style={{ backgroundImage: 'url(/images/backgrounds/bg-hero-grid.webp)' }}
         />
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/images/competencies/home-hero-poster.webp"
-          className="absolute inset-0 w-full h-full object-cover opacity-35"
-          style={{ filter: 'saturate(1.1) brightness(0.75)' }}
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-mula-bg via-mula-bg/85 to-mula-bg/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-mula-bg/95 via-mula-bg/65 to-mula-bg/40" />
         <motion.div
           className="absolute w-[600px] h-[600px] rounded-full bg-mula-accent/10 blur-[120px]"
           animate={{
