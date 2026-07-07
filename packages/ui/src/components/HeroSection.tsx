@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Building2 } from 'lucide-react'
 
@@ -38,6 +38,14 @@ const itemVariants = {
   },
 }
 
+const PARTICLE_COUNT = 8
+
+function seededRandom(seed: number) {
+  // Linear congruential generator for deterministic pseudo-random values
+  const x = Math.sin(seed * 12.9898) * 43758.5453
+  return x - Math.floor(x)
+}
+
 export function HeroSection({
   title,
   subtitle,
@@ -47,6 +55,18 @@ export function HeroSection({
   brandName = 'Mula Group',
 }: HeroSectionProps) {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  const particles = useMemo(
+    () =>
+      Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
+        key: i,
+        left: seededRandom(i * 3) * 100,
+        top: seededRandom(i * 3 + 1) * 100,
+        duration: 4 + seededRandom(i * 3 + 2) * 4,
+        delay: seededRandom(i * 3 + 3) * 4,
+      })),
+    []
+  )
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -79,22 +99,22 @@ export function HeroSection({
       </div>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {particles.map((p) => (
           <motion.div
-            key={i}
+            key={p.key}
             className="absolute w-1 h-1 rounded-full bg-mula-accent/30"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: `${p.left}%`,
+              top: `${p.top}%`,
             }}
             animate={{
               y: [0, -30, 0],
               opacity: [0, 0.8, 0],
             }}
             transition={{
-              duration: 4 + Math.random() * 4,
+              duration: p.duration,
               repeat: Infinity,
-              delay: Math.random() * 4,
+              delay: p.delay,
               ease: 'easeInOut',
             }}
           />

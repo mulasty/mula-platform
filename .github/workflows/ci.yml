@@ -6,12 +6,16 @@ on:
   pull_request:
     branches: [master]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   quality:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [22]
 
     steps:
       - name: Checkout
@@ -32,8 +36,8 @@ jobs:
       - name: Type check
         run: npm run typecheck
 
-      - name: Audit (report only)
-        run: npm audit || true
+      - name: Audit
+        run: npm audit --audit-level=moderate
 
       - name: Build
         run: npm run build

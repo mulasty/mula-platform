@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import * as Icons from 'lucide-react'
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+const iconMap: Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>> = {
   Brain: Icons.Brain,
   Zap: Icons.Zap,
   ShoppingCart: Icons.ShoppingCart,

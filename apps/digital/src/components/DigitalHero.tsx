@@ -1,8 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Zap } from 'lucide-react'
+
+const PARTICLE_COUNT = 12
+
+function seededRandom(seed: number) {
+  const x = Math.sin(seed * 12.9898) * 43758.5453
+  return x - Math.floor(x)
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,6 +27,18 @@ const itemVariants = {
 export function DigitalHero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const sectionRef = useRef<HTMLElement>(null)
+
+  const particles = useMemo(
+    () =>
+      Array.from({ length: PARTICLE_COUNT }, (_, i) => ({
+        key: i,
+        left: seededRandom(i * 3) * 100,
+        top: seededRandom(i * 3 + 1) * 100,
+        duration: 4 + seededRandom(i * 3 + 2) * 4,
+        delay: seededRandom(i * 3 + 3) * 4,
+      })),
+    []
+  )
 
   useEffect(() => {
     const handler = (e: MouseEvent) => setMousePos({ x: e.clientX, y: e.clientY })
@@ -43,16 +62,16 @@ export function DigitalHero() {
       </div>
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(12)].map((_, i) => (
+        {particles.map((p) => (
           <motion.div
-            key={i}
+            key={p.key}
             className="absolute w-1 h-1 rounded-full bg-mula-purple/30"
-            style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+            style={{ left: `${p.left}%`, top: `${p.top}%` }}
             animate={{ y: [0, -30, 0], opacity: [0, 0.7, 0] }}
             transition={{
-              duration: 4 + Math.random() * 4,
+              duration: p.duration,
               repeat: Infinity,
-              delay: Math.random() * 4,
+              delay: p.delay,
               ease: 'easeInOut',
             }}
           />

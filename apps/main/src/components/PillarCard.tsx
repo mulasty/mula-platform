@@ -5,7 +5,9 @@ import { ArrowUpRight } from 'lucide-react'
 import type { Pillar } from '@/lib/types'
 import * as Icons from 'lucide-react'
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+type IconComponent = React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+
+const iconMap: Record<string, IconComponent> = {
   Brain: Icons.Brain,
   Zap: Icons.Zap,
   ShoppingCart: Icons.ShoppingCart,

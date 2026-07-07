@@ -1,11 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Warehouse, Factory, Tractor, Trophy } from 'lucide-react'
+import { Warehouse, Factory, Tractor, Trophy } from 'lucide-react'
 import { SectionHeader } from '@/components/SectionHeader'
 import { HALL_TYPES } from '@/lib/data'
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+type IconComponent = React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+
+const iconMap: Record<string, IconComponent> = {
   Warehouse,
   Factory,
   Tractor,

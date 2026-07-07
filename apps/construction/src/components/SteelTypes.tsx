@@ -5,7 +5,9 @@ import { ArrowRight, TrendingUp, Triangle } from 'lucide-react'
 import { SectionHeader } from '@/components/SectionHeader'
 import { STEEL_TYPES } from '@/lib/data'
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+type IconComponent = React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+
+const iconMap: Record<string, IconComponent> = {
   TrendingUp,
   Triangle,
 }

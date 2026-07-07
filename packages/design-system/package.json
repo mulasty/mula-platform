@@ -1,14 +1,14 @@
 {
-  "name": "@mula/design-system",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Mula Platform Design System \u00e2\u20ac\u201d design tokens and CSS custom properties",
-  "exports": {
-    "./tokens.css": "./tokens.css"
-  },
-  "scripts": {
-    "typecheck": "echo 'CSS-only package — no TypeScript check needed'",
-    "lint": "echo 'CSS-only package — no lint needed'",
-    "build": "echo 'CSS-only package — no build needed'"
-  }
+    "name":  "@mula/design-system",
+    "version":  "0.1.0",
+    "private":  true,
+    "description":  "Mula Platform Design System — design tokens and CSS custom properties",
+    "exports":  {
+                    "./tokens.css":  "./tokens.css"
+                },
+    "scripts":  {
+                    "typecheck":  "echo \u0027CSS-only package — no TypeScript check needed\u0027",
+                    "lint":  "echo \"CSS-only package - no lint needed\"",
+                    "build":  "echo \u0027CSS-only package — no build needed\u0027"
+                }
 }

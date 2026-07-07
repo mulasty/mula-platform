@@ -1,17 +1,15 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowRight, Brain } from 'lucide-react'
 
-const particles = Array.from({ length: 20 }, (_, i) => ({
-  id: i,
-  x: Math.random() * 100,
-  y: Math.random() * 100,
-  size: Math.random() * 2 + 1,
-  speed: 3 + Math.random() * 5,
-  delay: Math.random() * 3,
-}))
+const CODE_SNIPPETS = ['{ }', '() =>', 'if', 'RAG', 'LLM', 'API']
+
+function seededRandom(seed: number) {
+  const x = Math.sin(seed * 12.9898) * 43758.5453
+  return x - Math.floor(x)
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -29,6 +27,31 @@ const itemVariants = {
 export function AIHero() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const sectionRef = useRef<HTMLElement>(null)
+
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 20 }, (_, i) => ({
+        id: i,
+        x: seededRandom(i * 5) * 100,
+        y: seededRandom(i * 5 + 1) * 100,
+        size: seededRandom(i * 5 + 2) * 2 + 1,
+        speed: 3 + seededRandom(i * 5 + 3) * 5,
+        delay: seededRandom(i * 5 + 4) * 3,
+      })),
+    []
+  )
+
+  const codeParticles = useMemo(
+    () =>
+      Array.from({ length: CODE_SNIPPETS.length }, (_, i) => ({
+        id: i,
+        left: 10 + seededRandom(i * 4) * 80,
+        top: 10 + seededRandom(i * 4 + 1) * 80,
+        duration: 4 + seededRandom(i * 4 + 2) * 3,
+        delay: seededRandom(i * 4 + 3) * 2,
+      })),
+    []
+  )
 
   useEffect(() => {
     const handler = (e: MouseEvent) => setMousePos({ x: e.clientX, y: e.clientY })
@@ -61,15 +84,15 @@ export function AIHero() {
             transition={{ duration: p.speed, repeat: Infinity, delay: p.delay, ease: 'easeInOut' }}
           />
         ))}
-        {[...Array(6)].map((_, i) => (
+        {codeParticles.map((p) => (
           <motion.div
-            key={`code-${i}`}
+            key={`code-${p.id}`}
             className="absolute text-[10px] font-mono text-mula-accent/15 select-none"
-            style={{ left: `${10 + Math.random() * 80}%`, top: `${10 + Math.random() * 80}%` }}
+            style={{ left: `${p.left}%`, top: `${p.top}%` }}
             animate={{ y: [0, -20, 0], opacity: [0.1, 0.3, 0.1] }}
-            transition={{ duration: 4 + Math.random() * 3, repeat: Infinity, delay: Math.random() * 2, ease: 'easeInOut' }}
+            transition={{ duration: p.duration, repeat: Infinity, delay: p.delay, ease: 'easeInOut' }}
           >
-            {['{ }', '() =>', 'if', 'RAG', 'LLM', 'API'][i]}
+            {CODE_SNIPPETS[p.id]}
           </motion.div>
         ))}
       </div>

@@ -14,7 +14,7 @@ interface ProcessTimelineProps {
   steps: ProcessStep[]
 }
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+const iconMap: Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>> = {
   Search: Icons.Search,
   PenTool: Icons.PenTool,
   Link2: Icons.Link2,

@@ -21,7 +21,7 @@ export function TestimonialCard({ quote, author, role }: TestimonialCardProps) {
     >
       <Quote className="w-8 h-8 text-mula-accent/30 mb-4" />
       <p className="text-mula-text-muted leading-relaxed text-sm flex-1 mb-6">
-        "{quote}"
+        &ldquo;{quote}&rdquo;
       </p>
       <div>
         <p className="text-mula-text font-semibold text-sm">{author}</p>

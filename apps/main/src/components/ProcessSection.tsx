@@ -61,7 +61,7 @@ export function ProcessSection() {
           {/* Gradient connecting line */}
           <div className="absolute top-10 left-8 right-8 h-0.5 bg-gradient-to-r from-mula-accent via-mula-purple to-mula-accent/20" />
 
-          {PROCESS_STEPS.map((step, i) => {
+          {PROCESS_STEPS.map((step) => {
             const Icon = iconMap[step.icon] || Search
             return (
               <motion.div
@@ -102,7 +102,7 @@ export function ProcessSection() {
           viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer}
         >
-          {PROCESS_STEPS.map((step, i) => {
+          {PROCESS_STEPS.map((step) => {
             const Icon = iconMap[step.icon] || Search
             return (
               <motion.div

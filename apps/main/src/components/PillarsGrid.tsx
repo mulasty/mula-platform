@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { SectionHeader } from '@/components/SectionHeader'
 import { PillarCard } from '@/components/PillarCard'
 import { PILLARS } from '@/lib/data'

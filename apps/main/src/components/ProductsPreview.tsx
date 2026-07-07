@@ -6,7 +6,9 @@ import type { Product } from '@/lib/types'
 import { SectionHeader } from '@/components/SectionHeader'
 import { PRODUCTS } from '@/lib/data'
 
-const iconMap: Record<string, React.ComponentType<any>> = {
+type IconComponent = React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+
+const iconMap: Record<string, IconComponent> = {
   Bot,
   Clock,
   ShieldCheck,
