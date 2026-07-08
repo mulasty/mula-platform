@@ -1,8 +1,8 @@
 # Mula Platform — Project Status
 
-**Last updated:** 2026-07-05
-**Current Sprint:** 04 (Analytics & Optimization — planned)
-**Previous Sprint:** 01 (Foundation — completed)
+**Last updated:** 2026-07-08
+**Current Sprint:** Sprint D (Documentation, Tests & CI/CD — completed)
+**Previous Sprint:** Sprint C (Content, Brand, SEO, Accessibility — completed)
 **Branch:** `master`
 
 ---
@@ -127,18 +127,18 @@ Enterprise Pack 02 defines the complete analytics plan but implementation is pen
 - Cookie consent banner not yet installed
 - Looker Studio dashboard not yet built
 - Vercel Analytics not yet enabled (package not installed)
+### Testing Framework (Sprint D — Completed)
 
-### Testing Framework (Planned Sprint 03)
-- No unit tests (Vitest)
-- No E2E tests (Playwright/Cypress)
-- No Lighthouse CI
-- No automated regression testing
-
+- ✅ Unit tests: Vitest + @testing-library/react configured
+- ✅ E2E tests: Playwright configured
+- 🟡 Lighthouse CI — planned for future sprint
+- 🟡 Automated regression testing — planned for future sprint
 ### CI/CD Beyond Vercel Git Integration
-- No GitHub Actions for pre-deploy checks (lint, type check, build)
-- No automated dependency updates (Renovate/Dependabot)
-- No preview deployments for PR branches
-- No automated performance budgets (Lighthouse CI)
+
+- ✅ GitHub Actions CI pipeline: install, lint, typecheck, audit, build
+- 🟡 Automated dependency updates (Renovate/Dependabot) — planned
+- 🟡 Preview deployments for PR branches — planned
+- 🟡 Automated performance budgets (Lighthouse CI) — planned
 
 ### Subdomain DNS Verification
 While all 8 apps build successfully on Vercel, complete DNS propagation and SSL verification for all 7 subdomains is pending verification with the domain registrar.
@@ -182,26 +182,26 @@ The `innovation.mulagroup.eu` subdomain may require manual SSL certificate provi
 | `playbooks/ANALYTICS_PLAN.md` | Done |
 | `decisions/decisions_log.md` updated | Done |
 
-### Enterprise Pack 03 — Test & CI/CD: NOT STARTED
+### Enterprise Pack 03 — Test & CI/CD: COMPLETED
 
-| Planned Deliverable |
-|---|
-| Vitest unit test setup across all apps |
-| Playwright E2E smoke tests for all 8 domains |
-| Lighthouse CI with performance budgets |
-| GitHub Actions CI/CD pipeline |
-| Automated dependency updates (Renovate) |
+| Deliverable | Status |
+|---|---|
+| Vitest unit test setup across all apps | ✅ |
+| Playwright E2E smoke tests for all 8 domains | 🟡 Main app smoke tests configured |
+| Lighthouse CI with performance budgets | 🟡 Planned |
+| GitHub Actions CI/CD pipeline | ✅ |
+| Automated dependency updates (Renovate) | 🟡 Planned |
 
-### Enterprise Pack 04 — Security & Compliance: NOT STARTED
+### Enterprise Pack 04 — Security & Compliance: IN PROGRESS
 
-| Planned Deliverable |
-|---|
-| CSP headers configuration |
-| Security audit (npm audit, dependency review) |
-| GDPR/RODO compliance review |
-| Cookie consent implementation |
-| Privacy policy page |
-| Accessibility audit (WCAG 2.1 AA) |
+| Deliverable | Status |
+|---|---|
+| CSP headers configuration | ✅ |
+| Security audit (npm audit, dependency review) | ✅ CI blocks moderate+ vulnerabilities |
+| GDPR/RODO compliance review | 🟡 Privacy policy added; cookie consent pending |
+| Cookie consent implementation | 🔴 Pending |
+| Privacy policy page | ✅ `/polityka-prywatnosci` live |
+| Accessibility audit (WCAG 2.1 AA) | 🟡 focus-visible, skip-link, aria-expanded added; full audit pending |
 
 ---
 
@@ -261,7 +261,12 @@ The `innovation.mulagroup.eu` subdomain may require manual SSL certificate provi
 - Mission 003 — Premium Landing Experience: COMPLETED
 - Mission 003.1 — Customer Journey Blueprint: COMPLETED
 - Mission 003.2 — Production Consolidation: COMPLETED
-- Mission 004 — Premium Graphics System: ACTIVE
+- Mission 004 — Premium Graphics System: COMPLETED
+- Mission 004.R — Graphics Audit & Recovery: COMPLETED
+- Sprint A — Security & Quality: COMPLETED
+- Sprint B — Architecture & Performance: COMPLETED
+- Sprint C — Content, Brand, SEO, Accessibility: COMPLETED
+- Sprint D — Documentation, Tests & CI/CD: COMPLETED
 
 ---
 

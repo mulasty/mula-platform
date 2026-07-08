@@ -2,18 +2,20 @@
 
 | ID | Description | Priority | Sprint | Status |
 |---|---|---|---|---|
-| TD-001 | No automated tests | High | TBD | Open |
+| TD-001 | No automated tests | High | Sprint D | ✅ Resolved — Vitest + Playwright configured |
 | TD-002 | No Storybook/component explorer | Medium | TBD | Open |
-| TD-003 | No CI/CD pipeline beyond Vercel auto-deploy | Low | TBD | Open |
+| TD-003 | No CI/CD pipeline beyond Vercel auto-deploy | Low | Sprint D | ✅ Resolved — GitHub Actions CI with lint, typecheck, build, audit |
 | TD-004 | No error monitoring (Sentry/Datadog) | Medium | TBD | Open |
 | TD-005 | No CMS integration (Sanity planned) | Medium | TBD | Open |
-| TD-006 | Placeholder images/partners/testimonials | Medium | TBD | Open |
+| TD-006 | Placeholder images/partners/testimonials | Medium | Sprint B/C | 🟡 Mitigated — sections activated, real assets pending |
 | TD-007 | No i18n infrastructure | Low | TBD | Open |
-| TD-008 | No automated Lighthouse checks in CI | Low | TBD | Open |
+| TD-008 | No automated Lighthouse checks in CI | Low | Sprint D | 🟡 Partial — CI build catches errors; Lighthouse budget pending |
 | TD-009 | Missing playbook files (SEO_PLAYBOOK.md, DEPLOYMENT_PLAYBOOK.md) | Low | TBD | Open |
-| TD-010 | 5 of 8 apps are scaffold-only with placeholder content | Medium | Mission 002 | Open |
+| TD-010 | 5 of 8 apps are scaffold-only with placeholder content | Medium | Mission 002 | 🟡 In progress — main + construction full; subdomains scaffolded |
 | TD-011 | No cookie consent banner (GDPR/RODO legal requirement) | High | Sprint 04 | Open |
 | TD-012 | GA4 measurement ID still placeholder (G-XXXXXXXXXX) | Medium | Sprint 04 | Open |
+| TD-013 | No AGENTS.md | High | Sprint D | ✅ Resolved |
+| TD-014 | Dead components/assets in apps/main | Medium | Sprint B | ✅ Resolved |
 
 ## Recovery Fix Pack 001 — Resolved
 

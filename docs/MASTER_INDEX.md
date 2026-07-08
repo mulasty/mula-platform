@@ -1,8 +1,8 @@
 # Mula Platform — Master Index
 
 **Single Source of Truth for all project artifacts.**
-**Generated:** 2026-07-05
-**Commit:** `856a0f0`
+**Generated:** 2026-07-08
+**Commit:** `TBD_AFTER_SPRINT_D`
 
 ---
 
@@ -82,6 +82,7 @@
 | PROJECT_HEALTH_CHECK.md | docs/ | ACTIVE | Full health audit: directory tree, app statuses, document audit (ACTIVE/PLANNED/DRAFT/DEPRECATED), open issues, blockers, risks, roadmap |
 | ARCHITECTURE_ALIGNMENT.md | docs/ | ACTIVE | Cross-reference verification: repo structure vs ARCHITECTURE.md, package naming vs imports, tokens vs components, docs vs files |
 | README.md | root | ACTIVE | Project overview: architecture tree, tech stack, hosting table, shared UI inventory, dev commands, deployment commands |
+| AGENTS.md | root | ACTIVE | Instructions for AI agents: project overview, workflow, coding standards, testing, deployment, common tasks |
 
 ---
 
@@ -131,6 +132,17 @@
 | IMAGE_PROMPTS.md | docs/design/ | ACTIVE | Mission 004 — Universal base prompt + negative prompt + per-competency AI generation prompts |
 | MISSION_004_REPORT.md | docs/missions/ | ACTIVE | Mission 004 — Final report: commit SHA, CI, Vercel, preview URL, screenshots, style decision |
 | MISSION_004_GRAPHICS_REPORT.md | docs/missions/ | ACTIVE | Mission 004 — Graphics asset report: 89-asset demand, 8-phase production plan, directory structure, quality standards |
+| SUPER_AUDIT_REPORT.md | docs/reports/ | ACTIVE | 8 parallel audits: code, performance, security, SEO/a11y, repo/docs, graphics, CI/CD, content/brand |
+| GRAPHICS_AUDIT_RECOVERY_REPORT.md | docs/reports/ | ACTIVE | Mission 004.R — Graphics inventory, premium asset integration, usage map |
+
+## Security & Quality Sprints
+
+| Sprint | Location | Status | Description |
+|---|---|---|---|
+| Sprint A | `chore(security): ...` | COMPLETED | ESLint fix, security headers, postcss CVE, CI tighten |
+| Sprint B | `feat: Sprint B ...` | COMPLETED | @mula/ui refactor, dead asset removal, next/image, throttle, design-system tokens |
+| Sprint C | `feat: Sprint C ...` | COMPLETED | Privacy policy, a11y fixes, SEO sitemaps/robots, content/brand cleanup |
+| Sprint D | `feat: Sprint D ...` | COMPLETED | AGENTS.md, tests (Vitest + Playwright), vercel.json unification, .nvmrc, engines |
 
 ---
 
@@ -164,8 +176,8 @@ All components in `packages/ui/src/components/`. Imported via `@mula/ui`.
 | 8 | TechnologyCloud | TechnologyCloud.tsx | IMPLEMENTED | main app |
 | 9 | ContactForm | ContactForm.tsx | IMPLEMENTED | All apps with contact sections |
 | 10 | TestimonialCard | TestimonialCard.tsx | IMPLEMENTED | main app TestimonialsSection |
-| 11 | FAQSection | FAQSection.tsx | PLANNED | main app FAQSection |
-| 12 | PartnersSection | PartnersSection.tsx | PLANNED | main app PartnersSection |
+| 11 | FAQSection | FAQSection.tsx | IMPLEMENTED | main app FAQSection |
+| 12 | PartnersSection | PartnersSection.tsx | IMPLEMENTED | main app PartnersSection |
 
 ### Shared Patterns (applies to all components)
 - Tailwind CSS v4 utility classes exclusively
@@ -176,6 +188,16 @@ All components in `packages/ui/src/components/`. Imported via `@mula/ui`.
 - Data-agnostic: receive data via props, never import from `data.ts`
 
 ---
+
+## Testing
+
+| Tool | Location | Status | Description |
+|---|---|---|---|
+| Vitest | root | ACTIVE | Unit tests for shared UI components and app logic |
+| Playwright | root | ACTIVE | E2E smoke tests for `apps/main` |
+| @testing-library/react | root | ACTIVE | React component testing utilities |
+
+Run tests with `npm run test` (unit) and `npm run test:e2e` (E2E).
 
 ## AI & Analytics
 
@@ -204,9 +226,16 @@ Implementation status: NOT YET STARTED. GA4 measurement ID is still placeholder 
 ### Root
 ```
 README.md                     ACTIVE — Project overview
-package.json                  ACTIVE — Workspace config, turbo scripts
+AGENTS.md                     ACTIVE — Agent instructions
+package.json                  ACTIVE — Workspace config, turbo scripts, engines
 turbo.json                    ACTIVE — Turborepo task pipeline
 vercel.json                   ACTIVE — Vercel build configuration
+vitest.config.ts              ACTIVE — Vitest unit test configuration
+playwright.config.ts          ACTIVE — Playwright E2E configuration
+vitest.setup.ts               ACTIVE — Test setup (jest-dom, IntersectionObserver mock)
+.nvmrc                        ACTIVE — Node version pinning (v22)
+.env.example                  ACTIVE — Environment variables template
+.vercelignore                 ACTIVE — Vercel ignore rules
 ```
 
 ### docs/
@@ -293,7 +322,7 @@ components/Navbar.tsx          IMPLEMENTED — Fixed navigation + mobile menu
 components/Footer.tsx          IMPLEMENTED — Multi-column footer
 components/HeroSection.tsx     IMPLEMENTED — Full-viewport hero with animations
 components/SectionHeader.tsx   IMPLEMENTED — Animated section titles
-components/PillarCard.tsx      IMPLEMENTED — Business pillar card
+components/PillarCard.tsx      IMPLEMENTED — Business pillar card (supports backgroundImage + stagger index)
 components/CTASection.tsx      IMPLEMENTED — CTA banner
 components/ProcessTimeline.tsx IMPLEMENTED — Step-by-step timeline
 components/TechnologyCloud.tsx IMPLEMENTED — Tech tag cloud
@@ -306,6 +335,21 @@ components/PartnersSection.tsx PLANNED — Partner logo grid/carousel
 ### apps/main/src/components/ (app-level components)
 ```
 ClientNeedsSection.tsx         ACTIVE — Mission 002: Client needs/problem cards (7 pillars)
+AboutSection.tsx               ACTIVE — Company story, mission, founder bio, values
+WhyUsSection.tsx               ACTIVE — Animated stat counters
+ProcessSection.tsx             ACTIVE — 6-step operational model
+MulaMethod.tsx                 ACTIVE — 3-pillar acceleration framework
+TechnologyCloud.tsx            ACTIVE — Tech stack tag cloud
+ProductsPreview.tsx            ACTIVE — Product cards
+CTASection.tsx                 ACTIVE — Mid-page call-to-action
+TestimonialsSection.tsx        ACTIVE — Client testimonial placeholders
+PartnersSection.tsx            ACTIVE — Partner logo placeholders
+FAQSection.tsx                 ACTIVE — Accordion FAQ
+ContactSection.tsx             ACTIVE — Contact CTA
+HeroSection.tsx                ACTIVE — Enterprise hero with stats
+Footer.tsx                     ACTIVE — Multi-column footer
+Navbar.tsx                     ACTIVE — Fixed navigation + mobile menu
+StickyCTA.tsx                  ACTIVE — Mobile sticky call-to-action
 ```
 
 ### apps/ (8 apps)
@@ -330,7 +374,7 @@ innovation/                    DEPLOYED — innovation.mulagroup.eu (scaffold)
 | Playbooks | 2 | 2 | 4 |
 | Decisions | 1 | 0 | 1 |
 | Shared components | 10 | 2 | 12 |
-| App-level components | 1 | 0 | 1 |
+| App-level components | 15 | 0 | 15 |
 | Brand docs (docs/brand/) | 3 | 0 | 3 |
 | Design docs (docs/design/) | 1 | 0 | 1 |
 | Mission reports (docs/missions/) | 3 | 0 | 3 |

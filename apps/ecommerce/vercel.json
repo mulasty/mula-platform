@@ -1,1 +1,1 @@
-{ "buildCommand": "npx turbo build --filter=@mula/ecommerce", "installCommand": "npm install", "outputDirectory": "apps/ecommerce/.next" }
+{ "buildCommand": "npx turbo build --filter=@mula/ecommerce", "installCommand": "npm ci", "outputDirectory": "apps/ecommerce/.next" }

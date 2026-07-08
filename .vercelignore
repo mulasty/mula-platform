@@ -1,0 +1,10 @@
+.git
+.github
+node_modules
+*.log
+docs
+playbooks
+scripts
+.turbo
+.vscode
+.idea

@@ -1,1 +1,6 @@
-{ "buildCommand": "cd apps/main && npx next build", "installCommand": "npm install", "outputDirectory": "apps/main/.next", "framework": "nextjs" }
+{
+  "buildCommand": "npx turbo build --filter=@mula/main",
+  "installCommand": "npm ci",
+  "outputDirectory": "apps/main/.next",
+  "framework": "nextjs"
+}

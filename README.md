@@ -96,6 +96,8 @@ Full competency definitions → [`docs/COMPETENCIES.md`](docs/COMPETENCIES.md)
 
 Component documentation → [`docs/COMPONENT_LIBRARY.md`](docs/COMPONENT_LIBRARY.md)
 
+Agent instructions → [`AGENTS.md`](AGENTS.md)
+
 ---
 
 ## Domain Map
@@ -155,6 +157,12 @@ npm run typecheck
 
 # Lint
 npm run lint
+
+# Unit tests
+npm run test
+
+# E2E tests
+npm run test:e2e
 ```
 
 ---
@@ -166,8 +174,10 @@ npm run lint
 | CI | ![CI](https://github.com/mulasty/mula-platform/actions/workflows/ci.yml/badge.svg) |
 | Build (9 packages) | Passing |
 | TypeScript | 0 errors |
+| Lint | 10/10 packages pass |
+| Tests | Vitest + Playwright configured |
 | Domains | 9/9 active |
-| Documentation | 60+ docs |
+| Documentation | 60+ docs + AGENTS.md |
 | Cohesion Score | 94/100 |
 
 Full dashboard → [`docs/PRODUCT_HEALTH_DASHBOARD.md`](docs/PRODUCT_HEALTH_DASHBOARD.md)
@@ -200,6 +210,12 @@ Full index → [`docs/MASTER_INDEX.md`](docs/MASTER_INDEX.md)
 | Mission 003 | Premium Landing Experience | ✅ |
 | Mission 003.1 | Customer Journey Blueprint | ✅ |
 | Mission 003.2 | Production Consolidation | ✅ |
+| Mission 004 | Premium Graphics System | ✅ |
+| Mission 004.R | Graphics Audit & Recovery | ✅ |
+| Sprint A | Security & Quality (ESLint, headers, CVE, CI) | ✅ |
+| Sprint B | Architecture & Performance | ✅ |
+| Sprint C | Content, Brand, SEO, Accessibility | ✅ |
+| Sprint D | Documentation, Tests, CI/CD | ✅ |
 | Sprint 01-04 | Foundation & Design System | ✅ |
 | Enterprise 01-02 | Documentation & Content | ✅ |
 | Fix Pack 001 | Architecture Alignment | ✅ |
