@@ -20,7 +20,7 @@
 | Contact form | CTA only, no form | Form | 🔴 |
 | Privacy policy | /polityka-prywatnosci live | Yes | ✅ |
 | Security headers | CSP, HSTS, X-Frame, etc. | Yes | ✅ |
-| Cookie consent | Not implemented | Required | 🔴 |
+| Cookie consent | Implemented in apps/main | Required | ✅ |
 | Recovery Fix Pack 001 | ✅ Complete | ✅ | ✅ |
 | Architecture alignment | 0 HIGH conflicts | 0 | ✅ |
 | Token naming consistency | All docs aligned with tokens.css | 100% | ✅ |

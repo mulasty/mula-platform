@@ -12,7 +12,7 @@
 | TD-008 | No automated Lighthouse checks in CI | Low | Sprint D | 🟡 Partial — CI build catches errors; Lighthouse budget pending |
 | TD-009 | Missing playbook files (SEO_PLAYBOOK.md, DEPLOYMENT_PLAYBOOK.md) | Low | TBD | Open |
 | TD-010 | 5 of 8 apps are scaffold-only with placeholder content | Medium | Mission 002 | 🟡 In progress — main + construction full; subdomains scaffolded |
-| TD-011 | No cookie consent banner (GDPR/RODO legal requirement) | High | Sprint 04 | Open |
+| TD-011 | No cookie consent banner (GDPR/RODO legal requirement) | High | Sprint 04 | ✅ Resolved — banner with accept-all / necessary-only choices, link to privacy policy, consent persisted in localStorage |
 | TD-012 | GA4 measurement ID still placeholder (G-XXXXXXXXXX) | Medium | Sprint 04 | Open |
 | TD-013 | No AGENTS.md | High | Sprint D | ✅ Resolved |
 | TD-014 | Dead components/assets in apps/main | Medium | Sprint B | ✅ Resolved |

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { COMPANY } from '@/lib/data'
+import { CookieConsentProvider } from '@/components/CookieConsentProvider'
+import { CookieConsentBanner } from '@/components/CookieConsentBanner'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -83,10 +85,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
-        <a href="#main-content" className="skip-link">
-          Przejdź do treści
-        </a>
-        {children}
+        <CookieConsentProvider>
+          <a href="#main-content" className="skip-link">
+            Przejdź do treści
+          </a>
+          {children}
+          <CookieConsentBanner />
+        </CookieConsentProvider>
       </body>
     </html>
   )
