@@ -1,7 +1,6 @@
 'use client'
 
-import { SectionHeader } from '@/components/SectionHeader'
-import { PillarCard } from '@/components/PillarCard'
+import { SectionHeader, PillarCard } from '@mula/ui'
 import { PILLARS } from '@/lib/data'
 
 /**
@@ -21,7 +20,17 @@ export function PillarsGrid() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PILLARS.map((pillar, index) => (
-            <PillarCard key={pillar.id} pillar={pillar} index={index} />
+            <PillarCard
+              key={pillar.id}
+              title={pillar.title}
+              subtitle={pillar.subtitle}
+              description={pillar.description}
+              icon={pillar.icon}
+              href={pillar.href}
+              color={pillar.color}
+              backgroundImage={`/images/competencies/${pillar.id}-card.webp`}
+              index={index}
+            />
           ))}
         </div>
       </div>

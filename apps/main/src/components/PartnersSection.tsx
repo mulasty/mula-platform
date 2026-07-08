@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 
 const partnerSlots = Array.from({ length: 6 }, (_, i) => i)
 

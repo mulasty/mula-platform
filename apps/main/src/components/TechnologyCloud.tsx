@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 import { TECH_STACK } from '@/lib/data'
 
 /**

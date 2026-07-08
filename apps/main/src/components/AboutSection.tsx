@@ -1,9 +1,10 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Layers, Search, Play, TrendingUp, User } from 'lucide-react'
 import { COMPANY } from '@/lib/data'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 
 const valueIcons = [Layers, Search, Play, TrendingUp]
 
@@ -78,14 +79,12 @@ export function AboutSection() {
               className="relative overflow-hidden p-8 rounded-2xl bg-gradient-to-br from-mula-accent/10 to-mula-purple/10 border border-mula-border mb-10"
               variants={fadeInVariant}
             >
-              <div
+              <Image
+                src="/images/competencies/about-card.webp"
+                alt=""
+                fill
+                className="object-cover opacity-25"
                 aria-hidden="true"
-                className="absolute inset-0 opacity-25"
-                style={{
-                  backgroundImage: 'url(/images/competencies/about-card.webp)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
               />
               <div className="absolute inset-0 bg-mula-bg/60" />
               <h3 className="relative z-10 text-sm uppercase tracking-wider text-mula-accent mb-3 font-semibold">

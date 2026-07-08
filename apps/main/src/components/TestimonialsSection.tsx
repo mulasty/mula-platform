@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Quote } from 'lucide-react'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 
 const testimonialSlots = [
   {

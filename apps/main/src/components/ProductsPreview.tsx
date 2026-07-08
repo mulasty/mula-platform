@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Bot, Clock, ShieldCheck, Smartphone } from 'lucide-react'
 import type { Product } from '@/lib/types'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 import { PRODUCTS } from '@/lib/data'
 
 type IconComponent = React.ComponentType<{ className?: string; style?: React.CSSProperties }>

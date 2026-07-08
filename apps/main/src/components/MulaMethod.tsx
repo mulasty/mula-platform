@@ -1,10 +1,11 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Cpu, Workflow, Bot } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { MULA_METHOD } from '@/lib/data'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 
 const iconMap: Record<string, LucideIcon> = {
   Cpu,
@@ -32,13 +33,15 @@ export function MulaMethod() {
       <div
         aria-hidden="true"
         className="absolute inset-y-10 right-0 w-full md:w-1/2 opacity-20 pointer-events-none"
-        style={{
-          backgroundImage: 'url(/images/competencies/method-card.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          maskImage: 'linear-gradient(to left, black, transparent)',
-        }}
-      />
+        style={{ maskImage: 'linear-gradient(to left, black, transparent)' }}
+      >
+        <Image
+          src="/images/competencies/method-card.webp"
+          alt=""
+          fill
+          className="object-cover"
+        />
+      </div>
 
       <div className="relative max-w-7xl mx-auto">
         <SectionHeader

@@ -94,14 +94,14 @@ export function Footer() {
       <div className="border-t border-mula-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-mula-text-dim text-xs">
-            &copy; {currentYear} {COMPANY.name}. All rights reserved.
+            &copy; {currentYear} {COMPANY.name}. Wszelkie prawa zastrzeżone.
           </p>
-          <a
-            href="#"
+          <Link
+            href="/polityka-prywatnosci"
             className="text-mula-text-dim hover:text-mula-text-muted text-xs transition-colors"
           >
             Polityka prywatności
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

@@ -23,7 +23,7 @@ export const HERO_VARIANTS = {
   },
   business: {
     headline: "Od chaosu operacyjnego do skalowalnego systemu — w 6 krokach.",
-    subheadline: "Mula Method to nasz sprawdzony proces: Analiza → Strategia → Projekt → Wdrożenie → Automatyzacja → Rozwój. Każdy projekt przechodzi tę samą ścieżkę — od diagnozy po wzrost.",
+    subheadline: "Model operacyjny Mula Group to sprawdzony proces: Analiza → Strategia → Projekt → Wdrożenie → Automatyzacja → Rozwój. Każdy projekt przechodzi tę samą ścieżkę — od diagnozy po wzrost.",
     stats: [
       { label: "Rok założenia", value: "2023" },
       { label: "Filary kompetencji", value: "7" },
@@ -206,7 +206,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     industry: 'Dystrybucja',
     challenge: '200+ zapytań tygodniowo bez segmentacji i scoringu — obsługa ręczna',
     solution: 'Agent AI z routingiem intencji, weryfikacją w KRS/GUS i pętlą akceptacji',
-    results: 'Czas pierwszego kontaktu z 48h do 15min. Wykrywalność leadów high-priority +40%',
+    results: 'Czas pierwszego kontaktu z 48h do 15min. Wykrywalność leadów priorytetowych +40%',
     technologies: ['Python', 'LangChain', 'OpenAI', 'CRM API', 'Slack'],
     year: 2025,
   },
@@ -259,7 +259,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: 'Czy oferujecie wsparcie po wdrożeniu?',
     answer:
-      'Tak, wsparcie powdrożeniowe to integralna część naszej oferty. Zapewniamy monitoring, utrzymanie i rozwój wdrożonych systemów. Model Scale w naszej metodyce oznacza, że nie zostawiamy Cię po uruchomieniu — budujemy długoterminowe partnerstwo.',
+      'Tak, wsparcie powdrożeniowe to integralna część naszej oferty. Zapewniamy monitoring, utrzymanie i rozwój wdrożonych systemów. Faza skalowania w naszej metodyce oznacza, że nie zostawiamy Cię po uruchomieniu — budujemy długoterminowe partnerstwo.',
   },
 ]
 
@@ -276,6 +276,6 @@ export const CLIENT_NEEDS: ClientNeed[] = [
 export const WHY_US_STATS: WhyUsStat[] = [
   { value: 7, suffix: '', label: 'filarów', icon: 'Grid3X3' },
   { value: 10, suffix: '+', label: 'projektów', icon: 'Briefcase' },
-  { value: 5, suffix: '', label: 'letni model', icon: 'GitBranch' },
-  { value: 0, suffix: '', label: 'EU-based Poland', icon: 'MapPin', raw: true },
+  { value: 3, suffix: '+', label: 'lata na rynku', icon: 'GitBranch' },
+  { value: 0, suffix: '', label: 'Polska / UE', icon: 'MapPin', raw: true },
 ]

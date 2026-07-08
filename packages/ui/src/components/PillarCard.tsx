@@ -57,6 +57,8 @@ interface PillarCardProps {
   icon: string
   href: string
   color: string
+  backgroundImage?: string
+  index?: number
 }
 
 export function PillarCard({
@@ -66,15 +68,18 @@ export function PillarCard({
   icon,
   href,
   color,
+  backgroundImage,
+  index = 0,
 }: PillarCardProps) {
   const Icon = iconMap[icon] || Icons.Box
 
   return (
     <motion.div
-      className="group relative rounded-2xl bg-mula-surface border border-mula-border p-6 flex flex-col transition-all duration-300 hover:border-transparent"
+      className="group relative overflow-hidden rounded-2xl bg-mula-surface border border-mula-border p-6 flex flex-col transition-all duration-300 hover:border-transparent"
       style={
         {
           '--pillar-color': color,
+          boxShadow: `0 0 0 0 transparent`,
         } as React.CSSProperties
       }
       onMouseEnter={(e) => {
@@ -88,29 +93,46 @@ export function PillarCard({
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: 'easeOut' }}
       whileHover={{ y: -4 }}
     >
+      {backgroundImage && (
+        <>
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-25 transition-opacity duration-500 group-hover:opacity-40"
+            style={{
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+          <div className="absolute inset-0 bg-mula-surface/82 backdrop-blur-[1px]" />
+        </>
+      )}
+
       <div
-        className="w-14 h-14 rounded-xl flex items-center justify-center mb-5"
+        className="relative z-10 w-14 h-14 rounded-xl flex items-center justify-center mb-5"
         style={{ backgroundColor: `${color}18` }}
       >
         <Icon className="w-7 h-7" style={{ color }} />
       </div>
 
-      <h3 className="text-lg font-semibold text-mula-text mb-1">{title}</h3>
+      <h3 className="relative z-10 text-lg font-semibold text-mula-text mb-1">{title}</h3>
 
-      <p className="text-sm font-medium mb-3" style={{ color }}>
+      <p className="relative z-10 text-sm font-medium mb-3" style={{ color }}>
         {subtitle}
       </p>
 
-      <p className="text-sm text-mula-text-muted leading-relaxed flex-1 mb-5">
+      <p className="relative z-10 text-sm text-mula-text-muted leading-relaxed flex-1 mb-5">
         {description}
       </p>
 
       <a
         href={href}
-        className="inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative z-10 inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-200"
         style={{ color }}
       >
         Dowiedz się więcej

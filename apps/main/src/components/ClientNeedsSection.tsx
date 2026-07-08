@@ -1,8 +1,9 @@
 'use client'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Brain, TrendingUp, ShoppingCart, RefreshCw, Shield, Building2, Lightbulb, ArrowRight } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 import { CLIENT_NEEDS } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {
@@ -24,10 +25,12 @@ const iconMap: Record<string, LucideIcon> = {
 export function ClientNeedsSection() {
   return (
     <section id="needs" className="relative py-24 scroll-mt-24 overflow-hidden">
-      <div
+      <Image
+        src="/images/backgrounds/bg-gradient-mesh.webp"
+        alt=""
+        fill
+        className="object-cover opacity-[0.50]"
         aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center opacity-[0.50]"
-        style={{ backgroundImage: 'url(/images/backgrounds/bg-gradient-mesh.webp)' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/65 via-mula-bg/80 to-mula-bg/65" />
 

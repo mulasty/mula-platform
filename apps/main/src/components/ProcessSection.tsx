@@ -1,10 +1,11 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Search, Compass, PenTool, Play, RefreshCw, TrendingUp } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { PROCESS_STEPS } from '@/lib/data'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 
 const iconMap: Record<string, LucideIcon> = {
   Search,
@@ -37,10 +38,12 @@ const cardVariant = {
 export function ProcessSection() {
   return (
     <section id="process" className="relative py-20 px-6 scroll-mt-24 overflow-hidden">
-      <div
+      <Image
+        src="/images/backgrounds/bg-subtle-grid.webp"
+        alt=""
+        fill
+        className="object-cover opacity-[0.45]"
         aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center opacity-[0.45]"
-        style={{ backgroundImage: 'url(/images/backgrounds/bg-subtle-grid.webp)' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-mula-bg/85 to-mula-bg/70" />
 

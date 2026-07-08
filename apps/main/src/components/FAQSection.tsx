@@ -1,8 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Plus, Minus } from 'lucide-react'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 import { FAQ_ITEMS } from '@/lib/data'
 
 /**
@@ -20,10 +21,12 @@ export function FAQSection() {
 
   return (
     <section id="faq" className="relative py-16 px-6 overflow-hidden">
-      <div
+      <Image
+        src="/images/backgrounds/bg-dark-surface.webp"
+        alt=""
+        fill
+        className="object-cover opacity-[0.45]"
         aria-hidden="true"
-        className="absolute inset-0 bg-cover bg-center opacity-[0.45]"
-        style={{ backgroundImage: 'url(/images/backgrounds/bg-dark-surface.webp)' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/60 via-mula-bg/80 to-mula-bg/60" />
 
@@ -45,13 +48,16 @@ export function FAQSection() {
                 <button
                   className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"
                   onClick={() => toggle(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-answer-${index}`}
                 >
-                  <h3 className="text-base md:text-lg font-medium text-mula-text pr-4">
+                  <h3 id={`faq-question-${index}`} className="text-base md:text-lg font-medium text-mula-text pr-4">
                     {faq.question}
                   </h3>
                   <div
                     className="flex-shrink-0 w-8 h-8 rounded-lg bg-mula-accent/10 flex items-center justify-center transition-transform duration-300"
                     style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    aria-hidden="true"
                   >
                     {isOpen ? (
                       <Minus className="w-4 h-4 text-mula-accent" />
@@ -62,11 +68,14 @@ export function FAQSection() {
                 </button>
 
                 <div
+                  id={`faq-answer-${index}`}
                   className="overflow-hidden transition-all duration-300 ease-in-out"
                   style={{
                     maxHeight: isOpen ? '300px' : '0px',
                     opacity: isOpen ? 1 : 0,
                   }}
+                  role="region"
+                  aria-labelledby={`faq-question-${index}`}
                 >
                   <div className="px-6 pb-5 text-mula-text-muted leading-relaxed text-sm">
                     {faq.answer}

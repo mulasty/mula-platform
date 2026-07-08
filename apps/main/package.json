@@ -10,7 +10,8 @@
                     "lint":  "eslint ."
                 },
     "dependencies":  {
-                         "@mula/ui":  "*",
+                          "@mula/ui":  "*",
+                          "@mula/design-system": "*",
                          "framer-motion":  "^12.0.0",
                          "lucide-react":  "^1.0.0",
                          "next":  "^16.0.0",

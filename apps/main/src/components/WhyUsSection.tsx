@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Grid3X3, Briefcase, GitBranch, MapPin } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 import { WHY_US_STATS } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {

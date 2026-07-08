@@ -1,8 +1,9 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Mail, MapPin, ArrowRight } from 'lucide-react'
-import { SectionHeader } from '@/components/SectionHeader'
+import { SectionHeader } from '@mula/ui'
 import { COMPANY } from '@/lib/data'
 
 /**
@@ -61,14 +62,12 @@ export function ContactSection() {
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
           >
-            <div
+            <Image
+              src="/images/competencies/contact-card.webp"
+              alt=""
+              fill
+              className="object-cover opacity-25"
               aria-hidden="true"
-              className="absolute inset-0 opacity-25"
-              style={{
-                backgroundImage: 'url(/images/competencies/contact-card.webp)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
             />
             <div className="absolute inset-0 bg-mula-surface/80 backdrop-blur-[1px]" />
             <p className="relative z-10 text-lg text-mula-text-muted leading-relaxed mb-8">

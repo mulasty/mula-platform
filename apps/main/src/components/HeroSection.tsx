@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Building2, ChevronDown } from 'lucide-react'
 import { COMPANY, HERO_VARIANTS } from '@/lib/data'
@@ -69,11 +70,23 @@ export function HeroSection() {
   )
 
   useEffect(() => {
+    let rafId: number | null = null
+    let pendingPos = { x: 0, y: 0 }
+
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY })
+      pendingPos = { x: e.clientX, y: e.clientY }
+      if (rafId !== null) return
+      rafId = window.requestAnimationFrame(() => {
+        setMousePos(pendingPos)
+        rafId = null
+      })
     }
+
     window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+      if (rafId !== null) window.cancelAnimationFrame(rafId)
+    }
   }, [])
 
   return (
@@ -84,10 +97,13 @@ export function HeroSection() {
     >
       {/* Hero background: premium Data 1 grid texture */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
+        <Image
+          src="/images/backgrounds/bg-hero-grid.webp"
+          alt=""
+          fill
+          className="object-cover opacity-[0.65]"
           aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center opacity-[0.65]"
-          style={{ backgroundImage: 'url(/images/backgrounds/bg-hero-grid.webp)' }}
+          priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-mula-bg/95 via-mula-bg/65 to-mula-bg/40" />
         <motion.div
@@ -200,7 +216,7 @@ export function HeroSection() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.a
-              href="#needs"
+              href="#process"
               className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-mula-border hover:border-mula-accent/50 text-mula-text-muted hover:text-mula-text transition-colors duration-200"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
