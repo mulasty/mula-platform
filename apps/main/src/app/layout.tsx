@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { COMPANY } from '@/lib/data'
-import { CookieConsentProvider } from '@/components/CookieConsentProvider'
-import { CookieConsentBanner } from '@/components/CookieConsentBanner'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -72,6 +71,9 @@ const jsonLd = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const cookiebotCid = process.env.NEXT_PUBLIC_COOKIEBOT_CID
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID
+
   return (
     <html lang="pl" className="dark">
       <head>
@@ -83,15 +85,54 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {cookiebotCid ? (
+          <Script
+            id="cookiebot-cmp"
+            src="https://consent.cookiebot.com/uc.js"
+            strategy="beforeInteractive"
+            data-cbid={cookiebotCid}
+            data-blockingmode="auto"
+          />
+        ) : null}
+        {ga4Id && ga4Id !== 'G-XXXXXXXXXX' ? (
+          <Script id="ga4-cookiebot-loader" strategy="afterInteractive">
+            {`
+              (function () {
+                function loadGa4() {
+                  if (!window.Cookiebot || !Cookiebot.consent || !Cookiebot.consent.statistics) return;
+                  if (document.getElementById('ga4-script')) return;
+
+                  window.dataLayer = window.dataLayer || [];
+                  window.gtag = function gtag() { dataLayer.push(arguments); };
+
+                  var script = document.createElement('script');
+                  script.id = 'ga4-script';
+                  script.async = true;
+                  script.src = 'https://www.googletagmanager.com/gtag/js?id=${ga4Id}';
+                  document.head.appendChild(script);
+
+                  var inline = document.createElement('script');
+                  inline.id = 'ga4-config';
+                  inline.innerHTML = "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${ga4Id}', { anonymize_ip: true });";
+                  document.head.appendChild(inline);
+                }
+
+                window.addEventListener('CookiebotOnLoad', loadGa4);
+                window.addEventListener('CookiebotOnAccept', loadGa4);
+
+                if (window.Cookiebot && Cookiebot.consent && Cookiebot.consent.statistics) {
+                  loadGa4();
+                }
+              })();
+            `}
+          </Script>
+        ) : null}
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
-        <CookieConsentProvider>
-          <a href="#main-content" className="skip-link">
-            Przejdź do treści
-          </a>
-          {children}
-          <CookieConsentBanner />
-        </CookieConsentProvider>
+        <a href="#main-content" className="skip-link">
+          Przejdź do treści
+        </a>
+        {children}
       </body>
     </html>
   )
