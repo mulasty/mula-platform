@@ -71,8 +71,8 @@ const jsonLd = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const cookiebotCid = process.env.NEXT_PUBLIC_COOKIEBOT_CID
-  const ga4Id = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID
+  const cookiebotCid = process.env.NEXT_PUBLIC_COOKIEBOT_CID ?? '00fbcf56-8c0a-49cd-8ba3-f3f46426a347'
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID ?? 'G-6JQ5E47WYP'
 
   return (
     <html lang="pl" className="dark">
