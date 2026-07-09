@@ -87,7 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         {cookiebotCid ? (
           <Script
-            id="cookiebot-cmp"
+            id="Cookiebot"
             src="https://consent.cookiebot.com/uc.js"
             strategy="beforeInteractive"
             data-cbid={cookiebotCid}
@@ -95,37 +95,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         ) : null}
         {ga4Id && ga4Id !== 'G-XXXXXXXXXX' ? (
-          <Script id="ga4-cookiebot-loader" strategy="afterInteractive">
-            {`
-              (function () {
-                function loadGa4() {
-                  if (!window.Cookiebot || !Cookiebot.consent || !Cookiebot.consent.statistics) return;
-                  if (document.getElementById('ga4-script')) return;
-
-                  window.dataLayer = window.dataLayer || [];
-                  window.gtag = function gtag() { dataLayer.push(arguments); };
-
-                  var script = document.createElement('script');
-                  script.id = 'ga4-script';
-                  script.async = true;
-                  script.src = 'https://www.googletagmanager.com/gtag/js?id=${ga4Id}';
-                  document.head.appendChild(script);
-
-                  var inline = document.createElement('script');
-                  inline.id = 'ga4-config';
-                  inline.innerHTML = "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${ga4Id}', { anonymize_ip: true });";
-                  document.head.appendChild(inline);
-                }
-
-                window.addEventListener('CookiebotOnLoad', loadGa4);
-                window.addEventListener('CookiebotOnAccept', loadGa4);
-
-                if (window.Cookiebot && Cookiebot.consent && Cookiebot.consent.statistics) {
-                  loadGa4();
-                }
-              })();
-            `}
-          </Script>
+          <>
+            <Script
+              id="ga4-script"
+              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
+              strategy="afterInteractive"
+              type="text/plain"
+              data-cookieconsent="statistics"
+            />
+            <Script
+              id="ga4-config"
+              strategy="afterInteractive"
+              type="text/plain"
+              data-cookieconsent="statistics"
+            >
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${ga4Id}', { anonymize_ip: true });
+              `}
+            </Script>
+          </>
         ) : null}
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
