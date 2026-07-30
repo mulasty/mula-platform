@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { headers } from 'next/headers'
 import { Navbar } from '@/components/Navbar'
 import { HeroSection } from '@/components/HeroSection'
@@ -18,14 +19,30 @@ import { FAQSection } from '@/components/FAQSection'
 import { ContactSection } from '@/components/ContactSection'
 import { Footer } from '@/components/Footer'
 import { StickyCTA } from '@/components/StickyCTA'
+import { GuardianJsonLdScript, guardianMetadata } from '@/lib/guardianSeo'
 
 export const revalidate = 3600
+
+export async function generateMetadata(): Promise<Metadata> {
+  const host = (await headers()).get('host')?.toLowerCase().split(':')[0]
+
+  if (host === 'guardian.mulagroup.eu') {
+    return guardianMetadata
+  }
+
+  return {}
+}
 
 export default async function HomePage() {
   const host = (await headers()).get('host')?.toLowerCase().split(':')[0]
 
   if (host === 'guardian.mulagroup.eu') {
-    return <GuardianLandingPage />
+    return (
+      <>
+        <GuardianJsonLdScript />
+        <GuardianLandingPage />
+      </>
+    )
   }
 
   return (
