@@ -7,12 +7,7 @@ export async function GET() {
     status: 'ok',
     service: 'mula-platform-main',
     timestamp: new Date().toISOString(),
-    uptime: process.uptime(),
-    memory: process.memoryUsage() ? {
-      heapUsed: Math.round(process.memoryUsage().heapUsed / 1024 / 1024),
-      heapTotal: Math.round(process.memoryUsage().heapTotal / 1024 / 1024),
-    } : null,
-    node: process.version,
+    runtime: typeof process !== 'undefined' ? process.version : 'edge',
   };
 
   return NextResponse.json(status, {
