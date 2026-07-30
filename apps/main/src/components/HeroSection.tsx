@@ -93,7 +93,7 @@ export function HeroSection() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden scroll-mt-24"
+      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden scroll-mt-24 bg-gradient-to-br from-white via-slate-50 to-blue-50/70"
     >
       {/* Hero background: premium Data 1 grid texture */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -101,13 +101,13 @@ export function HeroSection() {
           src="/images/backgrounds/bg-hero-grid.webp"
           alt=""
           fill
-          className="object-cover opacity-[0.65]"
+          className="object-cover opacity-[0.16] mix-blend-multiply"
           aria-hidden="true"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-mula-bg/95 via-mula-bg/65 to-mula-bg/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/78 to-blue-50/45" />
         <motion.div
-          className="absolute w-[600px] h-[600px] rounded-full bg-mula-accent/10 blur-[120px]"
+          className="absolute w-[600px] h-[600px] rounded-full bg-blue-300/25 blur-[120px]"
           animate={{
             x: mousePos.x * 0.05 - 200,
             y: mousePos.y * 0.05 - 200,
@@ -115,14 +115,14 @@ export function HeroSection() {
           transition={{ type: 'spring', stiffness: 30, damping: 30 }}
         />
         <motion.div
-          className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full bg-mula-purple/10 blur-[120px]"
+          className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full bg-cyan-300/25 blur-[120px]"
           animate={{
             x: mousePos.x * -0.03 + 100,
             y: mousePos.y * -0.03 + 100,
           }}
           transition={{ type: 'spring', stiffness: 20, damping: 30 }}
         />
-        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-mula-accent-light/5 blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-purple-200/25 blur-[100px]" />
       </div>
 
       {/* Floating particles */}
@@ -130,7 +130,7 @@ export function HeroSection() {
         {particles.map((p) => (
           <motion.div
             key={p.key}
-            className="absolute w-1 h-1 rounded-full bg-mula-accent/30"
+            className="absolute w-1 h-1 rounded-full bg-blue-500/25"
             style={{
               left: `${p.left}%`,
               top: `${p.top}%`,
@@ -154,7 +154,7 @@ export function HeroSection() {
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            'linear-gradient(rgba(15,23,42,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.06) 1px, transparent 1px)',
           backgroundSize: '80px 80px',
         }}
       />
@@ -163,7 +163,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 opacity-[0.015] pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, rgba(37,99,235,0.35) 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
       />
@@ -177,11 +177,11 @@ export function HeroSection() {
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-mula-surface border border-mula-border mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-blue-100 shadow-sm shadow-blue-100/60 mb-8"
             variants={itemVariants}
           >
             <Building2 className="w-4 h-4 text-mula-accent" />
-            <span className="text-xs text-mula-text-muted uppercase tracking-wide">
+              <span className="text-xs text-slate-600 uppercase tracking-wide">
               {COMPANY.name}
             </span>
           </motion.div>
@@ -207,12 +207,12 @@ export function HeroSection() {
           {/* CTA */}
           <motion.div className="flex flex-col sm:flex-row gap-4 mb-16" variants={itemVariants}>
             <motion.a
-              href="#contact"
+              href="#guardian-ai"
               className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-mula-accent hover:bg-mula-accent-light text-white font-semibold transition-colors duration-200"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {COMPANY.heroCTA}
+              Poznaj MULA Guardian AI
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.a

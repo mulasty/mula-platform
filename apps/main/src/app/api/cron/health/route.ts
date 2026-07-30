@@ -7,7 +7,7 @@ export async function GET() {
     status: 'ok',
     service: 'mula-platform-main',
     timestamp: new Date().toISOString(),
-    runtime: typeof process !== 'undefined' ? process.version : 'edge',
+    runtime: 'edge',
   };
 
   return NextResponse.json(status, {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useMemo, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { TrendingUp, ArrowRight } from 'lucide-react'
 
@@ -42,12 +42,8 @@ const stats = [
 
 export default function MarketingHero() {
   const [mousePos, setMousePos] = useState({ x: 50, y: 50 })
-  const [particles, setParticles] = useState<Particle[]>([])
+  const particles = useMemo(() => generateParticles(20, 42), [])
   const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    setParticles(generateParticles(20, 42))
-  }, [])
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = sectionRef.current?.getBoundingClientRect()

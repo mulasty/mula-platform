@@ -2,15 +2,15 @@
 @import "@mula/design-system/tokens.css";
 
 @theme {
-  --color-mula-bg: #0a0a0a;
-  --color-mula-surface: #111111;
-  --color-mula-border: #1a1a1a;
+  --color-mula-bg: #f8fafc;
+  --color-mula-surface: #ffffff;
+  --color-mula-border: #e2e8f0;
   --color-mula-accent: #3b82f6;
-  --color-mula-accent-light: #60a5fa;
+  --color-mula-accent-light: #2563eb;
   --color-mula-purple: #8b5cf6;
-  --color-mula-text: #f8fafc;
-  --color-mula-text-muted: #94a3b8;
-  --color-mula-text-dim: #94a3b8;
+  --color-mula-text: #0f172a;
+  --color-mula-text-muted: #475569;
+  --color-mula-text-dim: #64748b;
   --color-mula-success: #10b981;
   --color-mula-warning: #f59e0b;
 }
@@ -43,11 +43,11 @@
   .mula-card {
     @apply bg-mula-surface border border-mula-border rounded-2xl transition-all duration-300;
     &:hover {
-      @apply border-white/10 shadow-xl shadow-black/20 -translate-y-1;
+      @apply border-blue-200 shadow-xl shadow-slate-200/70 -translate-y-1;
     }
   }
   .mula-gradient-text {
-    @apply bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent;
   }
 }
 

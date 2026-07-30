@@ -77,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const ga4Id = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID ?? ''
 
   return (
-    <html lang="pl" className="dark">
+    <html lang="pl" className="theme-light">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />

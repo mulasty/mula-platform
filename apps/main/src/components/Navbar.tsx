@@ -32,14 +32,14 @@ export function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-black/90 backdrop-blur-xl shadow-lg shadow-black/20 py-3'
-            : 'bg-transparent py-5'
+            ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm py-3'
+            : 'bg-white/70 backdrop-blur-md py-5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <Link
             href="#hero"
-            className="flex items-center gap-2 text-white font-bold text-xl tracking-tight"
+            className="flex items-center gap-2 text-slate-950 font-bold text-xl tracking-tight"
           >
             <Building2 className="w-6 h-6 text-mula-accent" />
             <span>{COMPANY.name}</span>
@@ -50,7 +50,7 @@ export function Navbar() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-mula-text-muted hover:text-white transition-colors"
+                className="text-sm text-slate-600 hover:text-blue-700 transition-colors"
               >
                 {item.label}
               </a>
@@ -67,7 +67,7 @@ export function Navbar() {
           </div>
 
           <button
-            className="md:hidden p-2 text-white"
+            className="md:hidden p-2 text-slate-950"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -83,7 +83,7 @@ export function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {NAV_ITEMS.map((item, i) => (
               <motion.a
@@ -93,7 +93,7 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 onClick={() => setMobileOpen(false)}
-                className="text-2xl font-medium text-mula-text-muted hover:text-white transition-colors"
+                className="text-2xl font-medium text-slate-700 hover:text-blue-700 transition-colors"
               >
                 {item.label}
               </motion.a>

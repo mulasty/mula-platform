@@ -25,10 +25,10 @@ export function FAQSection() {
         src="/images/backgrounds/bg-dark-surface.webp"
         alt=""
         fill
-        className="object-cover opacity-[0.45]"
+        className="object-cover opacity-[0.12] mix-blend-multiply"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/60 via-mula-bg/80 to-mula-bg/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-slate-50/95 to-white/90" />
 
       <div className="relative max-w-3xl mx-auto">
         <SectionHeader
@@ -43,7 +43,7 @@ export function FAQSection() {
             return (
               <div
                 key={index}
-                className="rounded-xl bg-mula-surface border border-mula-border overflow-hidden"
+                className="rounded-xl bg-white border border-slate-200 overflow-hidden shadow-sm"
               >
                 <button
                   className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left cursor-pointer"

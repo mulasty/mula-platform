@@ -42,10 +42,10 @@ export function ProcessSection() {
         src="/images/backgrounds/bg-subtle-grid.webp"
         alt=""
         fill
-        className="object-cover opacity-[0.45]"
+        className="object-cover opacity-[0.16] mix-blend-multiply"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-mula-bg/85 to-mula-bg/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-slate-50/95 to-white/85" />
 
       <div className="relative max-w-7xl mx-auto">
         <SectionHeader
@@ -69,17 +69,17 @@ export function ProcessSection() {
             return (
               <motion.div
                 key={step.step}
-                className="relative flex-1 p-6 rounded-2xl bg-mula-surface border border-mula-border hover:border-mula-accent/40 transition-all duration-300 group mx-1 first:ml-0 last:mr-0"
+                className="relative flex-1 p-6 rounded-2xl bg-white border border-slate-200 hover:border-blue-200 transition-all duration-300 group mx-1 first:ml-0 last:mr-0 shadow-sm"
                 variants={cardVariant}
-                whileHover={{ y: -6, boxShadow: '0 0 40px rgba(59,130,246,0.1)' }}
+                whileHover={{ y: -6, boxShadow: '0 22px 55px rgba(59,130,246,0.14)' }}
               >
                 {/* Step number */}
-                <span className="absolute top-4 right-5 text-7xl font-bold text-white/[0.04] select-none pointer-events-none tabular-nums">
+                <span className="absolute top-4 right-5 text-7xl font-bold text-slate-900/[0.05] select-none pointer-events-none tabular-nums">
                   {String(step.step).padStart(2, '0')}
                 </span>
 
                 {/* Icon circle */}
-                <div className="relative z-10 w-12 h-12 rounded-xl bg-mula-accent/10 flex items-center justify-center mb-5 ring-4 ring-mula-bg">
+                <div className="relative z-10 w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-5 ring-4 ring-white">
                   <Icon className="w-6 h-6 text-mula-accent group-hover:text-mula-accent-light transition-colors" />
                 </div>
 
@@ -91,7 +91,7 @@ export function ProcessSection() {
                 </p>
 
                 {/* Connecting dot on line */}
-                <div className="absolute top-[41px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-mula-accent ring-4 ring-mula-bg z-10" />
+                <div className="absolute top-[41px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-mula-accent ring-4 ring-white z-10" />
               </motion.div>
             )
           })}
@@ -110,10 +110,10 @@ export function ProcessSection() {
             return (
               <motion.div
                 key={step.step}
-                className="relative flex items-start gap-4 p-5 rounded-xl bg-mula-surface border border-mula-border"
+                className="relative flex items-start gap-4 p-5 rounded-xl bg-white border border-slate-200 shadow-sm"
                 variants={cardVariant}
               >
-                <span className="absolute top-3 right-4 text-5xl font-bold text-white/[0.05] select-none pointer-events-none tabular-nums">
+                <span className="absolute top-3 right-4 text-5xl font-bold text-slate-900/[0.05] select-none pointer-events-none tabular-nums">
                   {String(step.step).padStart(2, '0')}
                 </span>
                 <div className="relative z-10 flex-shrink-0 w-10 h-10 rounded-lg bg-mula-accent/10 flex items-center justify-center mt-0.5">

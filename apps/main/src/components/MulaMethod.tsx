@@ -29,10 +29,10 @@ const cardVariant = {
 export function MulaMethod() {
   return (
     <section id="method" className="relative py-20 px-6 overflow-hidden scroll-mt-24">
-      <div className="absolute inset-0 bg-gradient-to-b from-mula-bg via-mula-surface/30 to-mula-bg pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/40 to-white pointer-events-none" />
       <div
         aria-hidden="true"
-        className="absolute inset-y-10 right-0 w-full md:w-1/2 opacity-20 pointer-events-none"
+        className="absolute inset-y-10 right-0 w-full md:w-1/2 opacity-10 pointer-events-none mix-blend-multiply"
         style={{ maskImage: 'linear-gradient(to left, black, transparent)' }}
       >
         <Image
@@ -67,8 +67,9 @@ export function MulaMethod() {
                 <div
                   className="relative rounded-2xl p-8 h-full transition-all duration-500 group-hover:-translate-y-2"
                   style={{
-                    border: '1px solid #1a1a1a',
-                    background: 'linear-gradient(145deg, #111111 0%, #0d0d0d 100%)',
+                    border: '1px solid #e2e8f0',
+                    background: 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
+                    boxShadow: '0 18px 45px rgba(15, 23, 42, 0.08)',
                   }}
                 >
                   <div
@@ -79,7 +80,7 @@ export function MulaMethod() {
                   />
 
                   <div
-                    className="relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ring-1 ring-white/5"
+                    className="relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ring-1 ring-slate-200"
                     style={{ backgroundColor: `${item.color}15` }}
                   >
                     <Icon className="w-8 h-8" style={{ color: item.color }} />
@@ -93,7 +94,7 @@ export function MulaMethod() {
                     {item.description}
                   </p>
 
-                  <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 <div

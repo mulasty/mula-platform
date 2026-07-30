@@ -9,11 +9,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-mula-surface border-t border-mula-border">
+    <footer className="bg-white border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-2">
-            <Link href="#hero" className="flex items-center gap-2 text-white font-bold text-xl tracking-tight mb-4">
+            <Link href="#hero" className="flex items-center gap-2 text-slate-950 font-bold text-xl tracking-tight mb-4">
               <Building2 className="w-6 h-6 text-mula-accent" />
               <span>{COMPANY.name}</span>
             </Link>
@@ -31,7 +31,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
+            <h4 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider">
               Usługi
             </h4>
             <ul className="space-y-3">
@@ -41,7 +41,7 @@ export function Footer() {
                     href={pillar.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-mula-text-muted hover:text-white text-sm transition-colors"
+                    className="text-slate-600 hover:text-blue-700 text-sm transition-colors"
                   >
                     {pillar.title}
                   </a>
@@ -51,7 +51,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider invisible sm:visible">
+            <h4 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider invisible sm:visible">
               &nbsp;
             </h4>
             <ul className="space-y-3">
@@ -61,7 +61,7 @@ export function Footer() {
                     href={pillar.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-mula-text-muted hover:text-white text-sm transition-colors"
+                    className="text-slate-600 hover:text-blue-700 text-sm transition-colors"
                   >
                     {pillar.title}
                   </a>
@@ -71,13 +71,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
+            <h4 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider">
               Kontakt
             </h4>
             <div className="space-y-4">
               <a
                 href={`mailto:${COMPANY.email}`}
-                className="flex items-center gap-2 text-mula-text-muted hover:text-white text-sm transition-colors"
+                className="flex items-center gap-2 text-slate-600 hover:text-blue-700 text-sm transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 <span>{COMPANY.email}</span>

@@ -2,8 +2,8 @@ import { Pillar, ProcessStep, MulaMethodItem, TechItem, Product, CaseStudy, NavI
 
 export const HERO_VARIANTS = {
   enterprise: {
-    headline: "Technologia, automatyzacja i AI — dla firm, które chcą rosnąć szybciej.",
-    subheadline: "Mula Group to grupa technologiczna łącząca 7 kompetencji w jeden spójny ekosystem. Nie jesteśmy agencją. Nie jesteśmy software housem. Jesteśmy partnerem technologicznym, który bierze odpowiedzialność za efekt biznesowy.",
+    headline: "Budujemy produkty AI i systemy operacyjne dla firm, które chcą działać szybciej i bezpieczniej.",
+    subheadline: "Mula Group łączy strategię, automatyzację, cyberbezpieczeństwo i własne produkty AI. Naszym flagowym kierunkiem jest MULA Guardian AI — system, który ma pomagać firmom chronić dane, procesy i decyzje w erze automatyzacji.",
     stats: [
       { label: "Rok założenia", value: "2023" },
       { label: "Filary kompetencji", value: "7" },
@@ -35,9 +35,9 @@ export const HERO_VARIANTS = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: 'O nas', href: '#about' },
+  { label: 'Guardian AI', href: '#guardian-ai' },
   { label: 'Działalność', href: '#pillars' },
   { label: 'Jak pracujemy', href: '#process' },
-  { label: 'Technologie', href: '#tech' },
   { label: 'Kontakt', href: '#contact' },
 ]
 
@@ -51,8 +51,8 @@ export const COMPANY = {
   address: 'ul. gen. Władysława Sikorskiego 166/0.03, 18-400 Łomża',
   email: 'info@mulagroup.eu',
   founded: 2023,
-  heroTitle: 'Technologia, automatyzacja i AI — dla firm, które chcą rosnąć szybciej.',
-  heroSubtitle: 'Mula Group to grupa technologiczna łącząca 7 kompetencji w jeden spójny ekosystem. Nie jesteśmy agencją. Nie jesteśmy software housem. Jesteśmy partnerem technologicznym, który bierze odpowiedzialność za efekt biznesowy.',
+  heroTitle: 'Budujemy produkty AI i systemy operacyjne dla firm, które chcą działać szybciej i bezpieczniej.',
+  heroSubtitle: 'Mula Group łączy strategię, automatyzację, cyberbezpieczeństwo i własne produkty AI. Naszym flagowym kierunkiem jest MULA Guardian AI — system, który ma pomagać firmom chronić dane, procesy i decyzje w erze automatyzacji.',
   heroCTA: 'Porozmawiajmy o projekcie',
   aboutText: 'Mula Group to grupa technologiczna łącząca AI, software, e-commerce, marketing, cyberbezpieczeństwo i inżynierię. Pomagamy firmom przechodzić od chaosu operacyjnego do uporządkowanych, skalowalnych systemów działania.',
   heroSecondaryCTA: 'Zobacz jak pracujemy',
@@ -194,11 +194,32 @@ export const TECH_STACK: TechItem[] = [
 ]
 
 export const PRODUCTS: Product[] = [
+  { name: 'MULA Guardian AI', description: 'Flagowy produkt Mula Group: inteligentna platforma cyberbezpieczeństwa i compliance dla firm, łącząca monitoring ryzyk, automatyzację dokumentacji, analizę zgodności NIS2/RODO i agentów AI wspierających decyzje operacyjne.', status: 'beta', icon: 'ShieldCheck' },
   { name: 'Automation Audit Robot', description: 'Autonomiczny system audytu procesów biznesowych z rekomendacjami AI', status: 'development', icon: 'Bot' },
   { name: 'Presence System', description: 'Inteligentny system rejestracji czasu pracy z analizą produktywności', status: 'beta', icon: 'Clock' },
-  { name: 'Cyber Guardian NIS2', description: 'Platforma do zarządzania zgodnością z NIS2 dla MŚP z automatycznym monitoringiem', status: 'beta', icon: 'ShieldCheck' },
   { name: 'Mula Mobile AI Commander', description: 'Mobilny asystent AI do zarządzania projektami i zadaniami zespołu', status: 'development', icon: 'Smartphone' },
 ]
+
+export const GUARDIAN_AI = {
+  eyebrow: 'Produkt flagowy Mula Group',
+  name: 'MULA Guardian AI',
+  headline: 'AI, które pilnuje bezpieczeństwa, zgodności i operacji firmy.',
+  description:
+    'MULA Guardian AI to kierunek produktowy, w którym łączymy cyberbezpieczeństwo, automatyzację compliance i agentów AI. System ma wspierać firmy w monitorowaniu ryzyk, porządkowaniu dokumentacji NIS2/RODO, analizie incydentów i podejmowaniu bezpiecznych decyzji operacyjnych.',
+  bullets: [
+    'monitorowanie ryzyk i incydentów bezpieczeństwa',
+    'automatyzacja dokumentacji NIS2, RODO i polityk bezpieczeństwa',
+    'agenci AI do analizy procesów, danych i decyzji operacyjnych',
+    'dashboard zarządczy: co jest krytyczne, co wymaga reakcji, co można zautomatyzować',
+  ],
+  metrics: [
+    { value: 'NIS2', label: 'gotowość regulacyjna' },
+    { value: 'AI', label: 'agenci i automatyzacja' },
+    { value: '24/7', label: 'monitoring i alerty' },
+  ],
+  cta: 'Porozmawiaj o Guardian AI',
+  secondaryCta: 'Zobacz cyberbezpieczeństwo',
+}
 
 export const CASE_STUDIES: CaseStudy[] = [
   {

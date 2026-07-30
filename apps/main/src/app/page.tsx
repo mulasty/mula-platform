@@ -1,5 +1,6 @@
 import { Navbar } from '@/components/Navbar'
 import { HeroSection } from '@/components/HeroSection'
+import { GuardianAISection } from '@/components/GuardianAISection'
 import { ClientNeedsSection } from '@/components/ClientNeedsSection'
 import { AboutSection } from '@/components/AboutSection'
 import { WhyUsSection } from '@/components/WhyUsSection'
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
+        <GuardianAISection />
         <ClientNeedsSection />
         <AboutSection />
         <WhyUsSection />
