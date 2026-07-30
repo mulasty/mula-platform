@@ -26,6 +26,17 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  async redirects() {
+    return [
+      { source: "/o-nas", destination: "/#process", permanent: false },
+      { source: "/blog", destination: "/#portfolio", permanent: false },
+      {
+        source: "/polityka-prywatnosci",
+        destination: "https://mulagroup.eu/polityka-prywatnosci",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
