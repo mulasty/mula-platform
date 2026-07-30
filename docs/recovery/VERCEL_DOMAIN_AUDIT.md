@@ -35,20 +35,21 @@
 | Primary domain (mulagroup.eu) serves from mula-platform | ✅ Verified |
 | www.mulagroup.eu redirects/aliases to mulagroup.eu | ✅ Verified |
 | Subdomain apps use shared @mula/ui components | ✅ Verified |
-| Root vercel.json remains cron-only; build routing handled by app configs/build router | ✅ Verified by CI |
+| Root vercel.json uses project-aware build router and keeps health cron | ✅ Verified by CI |
 | SSL certificates active (auto-renew Vercel) | ✅ Verified |
 | Production smoke monitoring | ✅ Every 15 minutes via GitHub Actions |
-| DNS nameservers | mixed third-party/Vercel-managed records depending on domain |
+| DNS nameservers | ns1.vercel-dns.com / ns2.vercel-dns.com |
 
 ---
 
 ## DNS Configuration Note
 
-Some DNS records remain at third-party DNS while selected domains use Vercel-managed records. Full migration to Vercel DNS (ns1.vercel-dns.com / ns2.vercel-dns.com) is recommended for:
-- Automatic SSL validation and renewal visibility
-- Edge configuration management
-- DDoS protection and CDN optimization
-- DNS propagation speed
+`mulagroup.eu` is delegated to Vercel DNS:
+
+- `ns1.vercel-dns.com`
+- `ns2.vercel-dns.com`
+
+Manage production domain records through Vercel domain/project settings. If a registrar panel shows stale LH.pl nameservers, verify public delegation first with `Resolve-DnsName -Server 8.8.8.8 -Name mulagroup.eu -Type NS` before making changes.
 
 ---
 
@@ -64,7 +65,7 @@ Some DNS records remain at third-party DNS while selected domains use Vercel-man
 ## Governance Rules
 
 1. All new subdomains MUST be created as Vercel projects linked to `mulasty/mula-platform`
-2. Root `vercel.json` MUST remain cron-only; app build settings belong in `apps/<name>/vercel.json`
+2. Root `vercel.json` MUST keep `node vercel-build.mjs`, `npm install`, `nextjs`, and the health cron; it MUST NOT set a global `outputDirectory`
 3. Domain aliases (www → apex) MUST be configured in Vercel project settings
 4. Third-party DNS coordination: update A records within 24h of any Vercel project migration
 5. Audit this file after any domain addition, removal, or Vercel project change

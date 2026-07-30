@@ -23,17 +23,16 @@ Mula Platform is a Turborepo monorepo with 8 Next.js 16 applications (App Router
 | mula-construction | construction.mulagroup.eu | `@mula/construction` | Next.js 16 |
 | mula-innovation | innovation.mulagroup.eu | `@mula/innovation` | Next.js 16 |
 
-All 9 projects source from `mulasty/mula-platform` on the `master` branch. Each subdomain app has its own `vercel.json` specifying the root directory and build filter.
+All 9 projects source from `mulasty/mula-platform` on the `master` branch. The root `vercel.json` keeps the shared health cron and project-aware build router; each subdomain app also has an app-level `vercel.json` documenting its expected Turbo build filter and output directory.
 
 ### 1.2 DNS
 
 | Resource | Record | Target |
 |---|---|---|
-| `mulagroup.eu` (apex) | A | `76.76.21.21` (Vercel) |
-| `*.mulagroup.eu` (wildcard) | CNAME | `cname.vercel-dns.com` |
-| `www.mulagroup.eu` | CNAME | `cname.vercel-dns.com` |
+| `mulagroup.eu` | NS | `ns1.vercel-dns.com`, `ns2.vercel-dns.com` |
+| Vercel project domains | managed | Vercel DNS/project domain settings |
 
-Nameservers are currently at third-party provider (lighthosting: `ns.lh.pl` / `ns2.lighthosting.net`) with A/CNAME records pointing to Vercel. Full migration to Vercel DNS (`ns1.vercel-dns.com` / `ns2.vercel-dns.com`) is recommended for auto-SSL visibility and edge configuration.
+Nameservers are delegated to Vercel DNS. Use Vercel domain/project settings for production record changes. If DNS appears wrong, verify public delegation with a public resolver before trusting cached local/registrar panel views.
 
 ### 1.3 SSL
 
@@ -106,8 +105,11 @@ Git push → master branch
     ↓
 Vercel Git Integration detects push
     ↓
-Each project runs:
-  npm ci                          (root, respects package-lock.json)
+Each project runs either its Vercel project build command or the root router:
+  npm install                     (root project router path)
+  node vercel-build.mjs           (routes by Vercel project ID/domain)
+  # or project setting/app config:
+  npm ci
   npx turbo build --filter=@mula/[app]
     ↓
 Turborepo builds dependency graph, builds app and its deps
@@ -122,10 +124,13 @@ Deployed to Vercel Edge Network
 Custom domain resolves → live at production URL
 ```
 
-### 3.4 Root `vercel.json` (shared cron guardrail)
+### 3.4 Root `vercel.json` (build router + shared cron guardrail)
 
 ```json
 {
+  "buildCommand": "node vercel-build.mjs",
+  "installCommand": "npm install",
+  "framework": "nextjs",
   "crons": [
     {
       "path": "/api/cron/health",
@@ -135,9 +140,9 @@ Custom domain resolves → live at production URL
 }
 ```
 
-The root file owns only the production health cron. Build settings live in each app-level `vercel.json` at `apps/[name]/vercel.json` with the corresponding `--filter=@mula/[name]` and `outputDirectory`.
+The root file owns the production health cron and the project-aware fallback build router. `vercel-build.mjs` selects the correct Turbo filter from Vercel project ID/domain hints and defaults to `@mula/main`.
 
-Do not commit root-level `buildCommand`, `installCommand`, `outputDirectory`, or `framework`, and do not remove the cron. Vercel CLI can rewrite the root file when linked to a monorepo project. CI runs `npm run validate:vercel-config` to catch this before release.
+Do not commit a root-level `outputDirectory`, do not remove `node vercel-build.mjs`, and do not remove the cron. App-level `apps/[name]/vercel.json` files remain the expected app build contract. CI runs `npm run validate:vercel-config` to catch drift before release.
 
 ---
 
@@ -294,8 +299,9 @@ Variables prefixed with `NEXT_PUBLIC_` are inlined at build time and visible in 
 
 1. Verify DNS records: `nslookup mulagroup.eu`
 2. Check Vercel project domain settings: Settings → Domains
-3. Ensure A record points to `76.76.21.21` (Vercel)
-4. Propagation can take up to 24 hours after DNS changes
+3. Verify public delegation: `Resolve-DnsName -Server 8.8.8.8 -Name mulagroup.eu -Type NS`
+4. Expected nameservers: `ns1.vercel-dns.com` and `ns2.vercel-dns.com`
+5. Propagation can take up to 24 hours after DNS changes
 
 ### 8.3 SSL Certificate Issues
 

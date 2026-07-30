@@ -30,8 +30,11 @@ This runbook is the operational source of truth for release, monitoring, rollbac
 
 ### 1.2 DNS and SSL
 
-- Apex `mulagroup.eu` uses Vercel A record `76.76.21.21`.
-- Subdomains use Vercel CNAME / wildcard routing where configured.
+- `mulagroup.eu` is delegated to Vercel DNS:
+  - `ns1.vercel-dns.com`
+  - `ns2.vercel-dns.com`
+- Vercel owns authoritative DNS for the main domain and competency subdomains.
+- Authoritative records are managed through Vercel domain/project configuration.
 - SSL is Vercel-managed and auto-renewed.
 - If SSL fails, verify the domain mapping first, then DNS records, then re-issue from Vercel only if needed.
 
@@ -112,10 +115,15 @@ scripts/validate-vercel-config.mjs
 
 Purpose:
 
-- Root `vercel.json` must remain cron-only.
-- App build settings must live in `apps/<name>/vercel.json`.
-- Each app config must point to the expected `@mula/<app>` Turbo filter and output directory.
-- Prevents accidental Vercel CLI rewrites from entering production.
+- Root `vercel.json` must keep the project-aware build router:
+  - `buildCommand: node vercel-build.mjs`
+  - `installCommand: npm install`
+  - `framework: nextjs`
+  - health cron at `/api/cron/health` every 5 minutes
+- Root `vercel.json` must **not** define a global `outputDirectory`.
+- App-level `apps/<name>/vercel.json` files must point to the expected `@mula/<app>` Turbo filter and `apps/<name>/.next` output.
+- `vercel-build.mjs` routes builds by Vercel project ID/domain hints and defaults to `@mula/main`.
+- This prevents the historical failure mode where every subdomain deploy served `@mula/main`.
 
 ### 3.3 Audit gate
 
@@ -291,19 +299,26 @@ Merge only after CI/review unless emergency governance has been explicitly appro
 git status -sb
 
 # CI runs
+gh run list --limit 10
 
 # Production smoke runs
+gh run list --workflow "Production Smoke" --limit 10
 
 # Manual production smoke
+gh workflow run "Production Smoke" --ref master
 
 # Local production smoke
 npm run smoke:production
 
 # Vercel production deployments
-npx vercel@latest ls --prod
+npx vercel@latest ls
 
 # Vercel aliases
 npx vercel@latest alias list
 
 # Smoke alert issues
+gh issue list --state open --label production-smoke
+
+# DNS delegation
+Resolve-DnsName -Server 8.8.8.8 -Name mulagroup.eu -Type NS
 ```
