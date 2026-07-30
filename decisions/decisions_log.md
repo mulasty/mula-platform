@@ -102,6 +102,20 @@
 
 ---
 
+---
+
+## Sprint Stabilizacyjny "Zero" — 2026-07-30 MATRIX Audit
+
+| Date | Decision | Rationale | Alternatives Considered | Scope | Reversible? |
+|---|---|---|---|---|---|
+| 2026-07-30 | **ADR-047: Sanity CMS — odwołany.** Statyczne dane w `data.ts` są akceptowane jako rozwiązanie permanentne na obecnym etapie. | CMS był przekładany Sprint 02 → 03 → cisza. Koszt integracji Sanity (schematy, migracja danych, ISR, szkolenie content teamu) przewyższa korzyści przy obecnej skali. Statyczne dane są type-safe, nie wymagają infrastruktury i nie blokują developmentu. | Sanity CMS (odłożony), Contentful (droższy), Strapi (self-hosted overhead) | Wszystkie 8 appów | Tak — można wrócić do CMS gdy skala urośnie |
+| 2026-07-30 | **ADR-048: Analytics/GA4 — rozwiązany.** GA4 measurement ID (`G-6JQ5E47WYP`) skonfigurowany jako Vercel environment variable na wszystkich 9 projektach. Cookiebot CID również w env vars. Hardcodowane sekrety usunięte z kodu. Decyzje #32–#35 i #43–#45 zamknięte. | Analityka była zablokowana przez brak provisioning GA4 — w rzeczywistości ID istniało ale było zahardcodowane w kodzie. Przeniesienie do Vercel env vars rozwiązuje problem bezpieczeństwa i konfiguracji. | Hardcodowane wartości (ryzyko wycieku), brak analytics | Wszystkie 8 appów | Nie — analytics są kluczowe dla pomiaru konwersji |
+| 2026-07-30 | **ADR-049: Testy automatyczne — plan konkretny.** Testy Vitest (unit) + Playwright (E2E) zostaną wdrożone w Sprint PROD-01 jako P3. Minimum: 1 smoke test per app + 1 E2E test dla głównej ścieżki konwersji. Decyzja #41 zamknięta. | Infrastruktura testowa (Vitest, Playwright) jest już skonfigurowana od Sprint D. Brakuje tylko testów. Priorytetyzacja w PROD-01 zamiast dalszego odkładania. | Cypress (inny ekosystem), tylko unit testy (niewystarczające), odłożenie na później (powtarzanie błędu) | Wszystkie 8 appów | Tak — zakres testów może być rozszerzony |
+| 2026-07-30 | **ADR-050: Deployment domain audit — rozwiązany.** Konflikt domeny `mulagroup.eu` między `mula-platform`, `mulagroup-landing` i `mulagroup-portal` rozwiązany. Domeny prawidłowo przypisane do `mula-platform`. Env vars skonfigurowane. Legacy projekty do ręcznej deprecjacji przez Vercel Dashboard. | Deployment Audit z Recovery Pack miał 6 otwartych akcji — wszystkie rozwiązane oprócz migracji DNS (wymaga dostępu do rejestratora domen). | Pozostawienie konfliktu (ryzyko serwowania złej wersji) | Wszystkie 9 projektów Vercel | Nie — deprecjacja legacy jest ostateczna |
+| 2026-07-30 | **ADR-051: Hardcoded secrets ban.** Żadne wartości produkcyjne (GA4 ID, Cookiebot CID, klucze API) nie mogą być hardcodowane w kodzie źródłowym. Wszystkie sekrety muszą pochodzić z environment variables (Vercel lub .env.local). Fallbacki muszą być bezpieczne (puste stringi, nie produkcyjne wartości). | Zapobiega wyciekom przy upublicznieniu repo, umożliwia różne konfiguracje per środowisko, zgodne z security best practices. | Hardcodowane fallbacki (ryzyko wycieku), brak fallbacków (błędy w dev) | Cała platforma | Nie — wymóg bezpieczeństwa |
+
+---
+
 ## Summary Statistics
 
 | Category | Decisions |
@@ -114,4 +128,5 @@
 | Mission 001 — Full Platform Bootstrap | 8 |
 | Sprint 04 — Analytics & Optimization | 3 |
 | Recovery Fix Pack 001 — Documentation Alignment | 1 |
-| **Total** | **47** |
+| Sprint Stabilizacyjny "Zero" | 5 |
+| **Total** | **52** |

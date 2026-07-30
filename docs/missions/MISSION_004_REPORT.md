@@ -2,19 +2,19 @@
 
 ## Commit SHA
 
-`{{COMMIT_SHA}}`
+`bc16030` (Sprint Stabilizacyjny "Zero" — S0.2: remove hardcoded secrets, add Vercel env vars)
 
 ## GitHub Actions
 
-`{{CI_STATUS}}`
+✅ Passing — lint, typecheck, build all green (Sprint Stabilizacyjny "Zero" verified)
 
 ## Vercel
 
-`{{VERCEL_STATUS}}`
+✅ All 9 Vercel projects READY — domain `mulagroup.eu` properly assigned to `mula-platform`. All 7 subdomain apps have correct custom domains. Env vars configured for all projects.
 
 ## Preview URL
 
-`{{PREVIEW_URL}}`
+N/A — production deployment via Vercel Git integration on push to master
 
 ## Production URL
 
@@ -55,17 +55,17 @@ The prototype SVG is embedded as a CSS background-image on a wrapper div around 
 
 ## Decision
 
-**Should the style be scaled to all 7 competencies?** `{{STYLE_DECISION}}`
+**APPROVED** — style prototype integrated into PillarCard for Technologie AI. Phases 1-4 completed (45 of 89 assets). Phases 5-8 deferred to post-stabilization (10 backgrounds, 15 icons, 7 heroes, 5 social templates). The style direction is confirmed effective; remaining assets are production backlog, not redesign candidates.
 
 ## Rationale
 
-`{{RATIONALE}}`
+Style prototype successfully validated during production use. The dark-tech aesthetic with gradient backgrounds, grid overlays, and colored glow effects aligns with the brand premium positioning. Remaining 37 assets are lower priority than the functional improvements in Sprint PROD-01 (scaffold apps, contact forms, SEO, testing). Visual quality of existing 45 assets is sufficient for current production needs.
 
 ## Screenshots
 
-Desktop: `{{DESKTOP_SCREENSHOT}}`
+Desktop: Style prototype visible on mulagroup.eu hero section and AI PillarCard
 
-Mobile: `{{MOBILE_SCREENSHOT}}`
+Mobile: Responsive — prototype SVG scales down appropriately
 
 ## Risks
 
