@@ -4,7 +4,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Mula Digital – Transformacja Cyfrowa',
+  title: {
+    default: 'Mula Digital – Transformacja Cyfrowa',
+    template: '%s | Mula Digital',
+  },
   description:
     'CRM, ERP, workflow, automatyzacja dokumentów i cyfryzacja firm. Projektujemy i wdrażamy rozwiązania, które realnie usprawniają operacje biznesowe.',
   metadataBase: new URL('https://digital.mulagroup.eu'),
@@ -22,6 +25,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Mula Group' }],
   creator: 'Mula Group',
   publisher: 'Mula Group',
+  alternates: {
+    canonical: 'https://digital.mulagroup.eu',
+  },
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
@@ -30,16 +36,32 @@ export const metadata: Metadata = {
     title: 'Mula Digital – Transformacja Cyfrowa',
     description:
       'CRM, ERP, workflow, automatyzacja dokumentów i cyfryzacja firm.',
+    images: [
+      {
+        url: '/images/og/home-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Mula Digital – Transformacja Cyfrowa',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mula Digital – Transformacja Cyfrowa',
     description:
       'CRM, ERP, workflow, automatyzacja dokumentów i cyfryzacja firm.',
+    images: ['/images/og/home-og.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

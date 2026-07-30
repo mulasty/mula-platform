@@ -4,7 +4,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Mula Cyber – Cyberbezpieczeństwo dla Firm',
+  title: {
+    default: 'Mula Cyber – Cyberbezpieczeństwo dla Firm',
+    template: '%s | Mula Cyber',
+  },
   description:
     'Kompleksowa ochrona infrastruktury IT: audyty bezpieczeństwa, monitoring SOC 24/7, zarządzanie incydentami, pentesty, zgodność RODO/GDPR. Chronimy firmy przed realnymi zagrożeniami.',
   metadataBase: new URL('https://cyber.mulagroup.eu'),
@@ -27,6 +30,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Mula Group' }],
   creator: 'Mula Group',
   publisher: 'Mula Group',
+  alternates: {
+    canonical: 'https://cyber.mulagroup.eu',
+  },
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
@@ -35,16 +41,32 @@ export const metadata: Metadata = {
     title: 'Mula Cyber – Cyberbezpieczeństwo dla Firm',
     description:
       'Kompleksowa ochrona infrastruktury IT: audyty, monitoring SOC 24/7, zarządzanie incydentami, pentesty i zgodność RODO/GDPR.',
+    images: [
+      {
+        url: '/images/og/home-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Mula Cyber – Cyberbezpieczeństwo dla Firm',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mula Cyber – Cyberbezpieczeństwo dla Firm',
     description:
       'Kompleksowa ochrona infrastruktury IT: audyty, monitoring SOC 24/7, zarządzanie incydentami, pentesty i zgodność RODO/GDPR.',
+    images: ['/images/og/home-og.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

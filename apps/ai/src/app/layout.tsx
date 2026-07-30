@@ -4,7 +4,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Mula AI – Sztuczna Inteligencja i Automatyzacja',
+  title: {
+    default: 'Mula AI – Sztuczna Inteligencja i Automatyzacja',
+    template: '%s | Mula AI',
+  },
   description:
     'Agenci AI, automatyzacja procesów biznesowych, systemy RAG z wiedzą firmową i architektury multi-agent. Projektujemy inteligentne rozwiązania, które realnie przyspieszają Twój biznes.',
   metadataBase: new URL('https://ai.mulagroup.eu'),
@@ -23,6 +26,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Mula Group' }],
   creator: 'Mula Group',
   publisher: 'Mula Group',
+  alternates: {
+    canonical: 'https://ai.mulagroup.eu',
+  },
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
@@ -31,16 +37,32 @@ export const metadata: Metadata = {
     title: 'Mula AI – Sztuczna Inteligencja i Automatyzacja',
     description:
       'Agenci AI, automatyzacja, RAG i systemy multi-agent dla biznesu.',
+    images: [
+      {
+        url: '/images/og/home-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Mula AI – Sztuczna Inteligencja i Automatyzacja',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mula AI – Sztuczna Inteligencja i Automatyzacja',
     description:
       'Agenci AI, automatyzacja, RAG i systemy multi-agent dla biznesu.',
+    images: ['/images/og/home-og.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

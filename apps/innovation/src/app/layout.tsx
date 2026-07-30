@@ -4,7 +4,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Mula Innovation – Technologie Przyszłości',
+  title: {
+    default: 'Mula Innovation – Technologie Przyszłości',
+    template: '%s | Mula Innovation',
+  },
   description:
     'Konsulting innowacyjny, prototypowanie MVP, transformacja cyfrowa, IoT, automatyzacja i venture building. Budujemy produkty future-proof, które realnie zmieniają biznes.',
   metadataBase: new URL('https://innovation.mulagroup.eu'),
@@ -24,6 +27,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Mula Group' }],
   creator: 'Mula Group',
   publisher: 'Mula Group',
+  alternates: {
+    canonical: 'https://innovation.mulagroup.eu',
+  },
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
@@ -32,16 +38,32 @@ export const metadata: Metadata = {
     title: 'Mula Innovation – Technologie Przyszłości',
     description:
       'Konsulting innowacyjny, prototypowanie MVP, IoT i venture building. Budujemy produkty future-proof.',
+    images: [
+      {
+        url: '/images/og/home-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Mula Innovation – Technologie Przyszłości',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mula Innovation – Technologie Przyszłości',
     description:
       'Konsulting innowacyjny, prototypowanie MVP, IoT i venture building. Budujemy produkty future-proof.',
+    images: ['/images/og/home-og.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 

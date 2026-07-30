@@ -4,7 +4,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Mula E-Commerce – Handel Internetowy i Marketplace',
+  title: {
+    default: 'Mula E-Commerce – Handel Internetowy i Marketplace',
+    template: '%s | Mula E-Commerce',
+  },
   description:
     'Sklepy internetowe, integracje marketplace (Allegro, Amazon, Shopify), optymalizacja konwersji, automatyzacja logistyki i analityka sprzedaży. Zwiększamy przychody e-commerce.',
   metadataBase: new URL('https://ecommerce.mulagroup.eu'),
@@ -16,6 +19,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Mula Group' }],
   creator: 'Mula Group',
   publisher: 'Mula Group',
+  alternates: {
+    canonical: 'https://ecommerce.mulagroup.eu',
+  },
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
@@ -24,14 +30,33 @@ export const metadata: Metadata = {
     title: 'Mula E-Commerce – Handel Internetowy i Marketplace',
     description:
       'Sklepy internetowe, integracje marketplace, optymalizacja konwersji i automatyzacja logistyki dla e-commerce.',
+    images: [
+      {
+        url: '/images/og/home-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Mula E-Commerce – Handel Internetowy i Marketplace',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mula E-Commerce – Handel Internetowy i Marketplace',
     description:
       'Sklepy internetowe, integracje marketplace, optymalizacja konwersji i automatyzacja logistyki dla e-commerce.',
+    images: ['/images/og/home-og.webp'],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 const jsonLd = {

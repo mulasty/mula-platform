@@ -4,7 +4,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Mula Marketing – Marketing Cyfrowy i Wzrost',
+  title: {
+    default: 'Mula Marketing – Marketing Cyfrowy i Wzrost',
+    template: '%s | Mula Marketing',
+  },
   description:
     'SEO, Google Ads, Social Media, content marketing, email marketing i marketing automation. Strategie marketingowe oparte na danych, ktore zwiekszaja zasieg i generuja leady.',
   metadataBase: new URL('https://marketing.mulagroup.eu'),
@@ -26,6 +29,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Mula Group' }],
   creator: 'Mula Group',
   publisher: 'Mula Group',
+  alternates: {
+    canonical: 'https://marketing.mulagroup.eu',
+  },
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
@@ -34,16 +40,32 @@ export const metadata: Metadata = {
     title: 'Mula Marketing – Marketing Cyfrowy i Wzrost',
     description:
       'SEO, Google Ads, Social Media, content marketing i marketing automation. Strategie oparte na danych, ktore zwiekszaja zasieg i generuja leady.',
+    images: [
+      {
+        url: '/images/og/home-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Mula Marketing – Marketing Cyfrowy i Wzrost',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Mula Marketing – Marketing Cyfrowy i Wzrost',
     description:
       'SEO, Google Ads, Social Media, content marketing i marketing automation. Strategie oparte na danych.',
+    images: ['/images/og/home-og.webp'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
