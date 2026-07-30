@@ -30,14 +30,14 @@ function assert(condition, message) {
 
 const rootConfigPath = join(root, 'vercel.json')
 const rootConfig = readJson(rootConfigPath)
-const rootBuildKeys = ['buildCommand', 'installCommand', 'outputDirectory', 'framework']
 
-for (const key of rootBuildKeys) {
-  assert(
-    !(key in rootConfig),
-    `Root vercel.json must not contain ${key}. Build settings belong in apps/<name>/vercel.json.`,
-  )
-}
+assert(
+  rootConfig.buildCommand === 'node vercel-build.mjs',
+  'Root vercel.json must use the project-aware Vercel build router.',
+)
+assert(rootConfig.installCommand === 'npm install', 'Root vercel.json installCommand must be npm install.')
+assert(rootConfig.framework === 'nextjs', 'Root vercel.json framework must be nextjs.')
+assert(!('outputDirectory' in rootConfig), 'Root vercel.json must not set a global outputDirectory.')
 
 assert(Array.isArray(rootConfig.crons), 'Root vercel.json must keep the production health cron.')
 assert(rootConfig.crons.length === 1, 'Root vercel.json must define exactly one cron.')
