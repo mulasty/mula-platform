@@ -1,5 +1,16 @@
 import { defineConfig, devices } from '@playwright/test'
 
+const APPS = [
+  { name: 'main', port: 3001 },
+  { name: 'construction', port: 3002 },
+  { name: 'ai', port: 3003 },
+  { name: 'digital', port: 3004 },
+  { name: 'ecommerce', port: 3005 },
+  { name: 'marketing', port: 3006 },
+  { name: 'cyber', port: 3007 },
+  { name: 'innovation', port: 3008 },
+]
+
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
@@ -8,7 +19,6 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'list',
   use: {
-    baseURL: 'http://localhost:3001',
     trace: 'on-first-retry',
   },
   projects: [
@@ -17,9 +27,10 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
   ],
-  webServer: {
-    command: 'cd apps/main && npm run build && npm run start',
-    url: 'http://localhost:3001',
+  webServer: APPS.map(({ name, port }) => ({
+    command: `cd apps/${name} && npx next dev --port ${port}`,
+    url: `http://localhost:${port}`,
     reuseExistingServer: !process.env.CI,
-  },
+    timeout: 60000,
+  })),
 })
