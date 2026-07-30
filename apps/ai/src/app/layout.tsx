@@ -86,6 +86,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const cookiebotCid = process.env.NEXT_PUBLIC_COOKIEBOT_CID ?? ''
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID ?? ''
+
   return (
     <html lang="pl" className="dark">
       <head>
@@ -94,6 +97,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <ConsentAnalyticsScripts cookiebotCid={cookiebotCid} ga4Id={ga4Id} />
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
         {children}
