@@ -72,7 +72,7 @@ export function Footer() {
             &copy; {currentYear} {COMPANY.name}. Wszelkie prawa zastrzeżone.
           </p>
           <a
-            href="/polityka-prywatnosci"
+            href="https://mulagroup.eu/polityka-prywatnosci"
             className="text-mula-text-dim hover:text-mula-text-muted text-xs transition-colors"
           >
             Polityka prywatności

@@ -34,8 +34,8 @@ function generateParticles(count: number, seed: number): Particle[] {
 }
 
 const stats = [
-  { value: '+320%', label: 'Wzrost przychodow' },
-  { value: '-42%', label: 'Nizszy CPA' },
+  { value: '+320%', label: 'Wzrost przychodów' },
+  { value: '-42%', label: 'Niższy CPA' },
   { value: '850+', label: 'Leadów B2B' },
   { value: '+210%', label: 'Ruch organiczny' },
 ]
@@ -145,7 +145,7 @@ export default function MarketingHero() {
             Marketing Cyfrowy
           </span>
           <br />
-          <span>ktory naprawde dziala</span>
+          <span>który naprawdę działa</span>
         </motion.h1>
 
         <motion.p
@@ -154,9 +154,9 @@ export default function MarketingHero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-mula-text-muted max-w-2xl mx-auto mb-10"
         >
-          Zwiekszamy zasieg, generujemy leady i optymalizujemy konwersje. Od SEO po
-          kampanie performance — strategie marketingowe oparte na danych, ktore
-          przynosza mierzalne wyniki.
+          Zwiększamy zasięg, generujemy leady i optymalizujemy konwersje. Od SEO po
+          kampanie performance — strategie marketingowe oparte na danych, które
+          przynoszą mierzalne wyniki.
         </motion.p>
 
         <motion.div
@@ -171,7 +171,7 @@ export default function MarketingHero() {
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-mula-purple to-mula-accent text-white font-semibold text-lg shadow-lg shadow-mula-purple/25 hover:shadow-xl hover:shadow-mula-purple/30 transition-shadow"
           >
-            Zwieksz zasieg
+            Zwiększ zasięg
             <ArrowRight className="w-5 h-5" />
           </motion.a>
           <motion.a
@@ -180,7 +180,7 @@ export default function MarketingHero() {
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-mula-border bg-mula-surface/50 text-mula-text font-semibold text-lg hover:border-mula-accent/50 transition-colors"
           >
-            Nasze uslugi
+            Nasze usługi
           </motion.a>
         </motion.div>
 

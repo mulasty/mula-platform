@@ -33,9 +33,9 @@ export const FOOTER_COLUMNS = [
   {
     title: 'Firma',
     links: [
-      { label: 'O nas', href: '/o-nas' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'Polityka prywatności', href: '/polityka-prywatnosci' },
+      { label: 'O nas', href: '#process' },
+      { label: 'Realizacje', href: '#portfolio' },
+      { label: 'Polityka prywatności', href: 'https://mulagroup.eu/polityka-prywatnosci' },
     ],
   },
 ]

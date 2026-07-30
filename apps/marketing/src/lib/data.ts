@@ -5,42 +5,42 @@ export const marketingServices: MarketingService[] = [
     id: 'seo-sem',
     title: 'SEO / SEM',
     description:
-      'Pozycjonowanie i kampanie w wyszukiwarkach, ktore zwiekszaja widocznosc Twojej firmy w Google. Optymalizacja techniczna, link building, analiza slow kluczowych i audyty SEO.',
+      'Pozycjonowanie i kampanie w wyszukiwarkach, które zwiększają widoczność Twojej firmy w Google. Optymalizacja techniczna, link building, analiza słów kluczowych i audyty SEO.',
     icon: 'Search',
   },
   {
     id: 'social-media',
     title: 'Social Media Marketing',
     description:
-      'Strategie social media na Facebooku, Instagramie, LinkedIn i TikToku. Kreacja tresci, moderacja spolecznosci, kampanie reklamowe i raportowanie efektow.',
+      'Strategie social media na Facebooku, Instagramie, LinkedIn i TikToku. Kreacja treści, moderacja społeczności, kampanie reklamowe i raportowanie efektów.',
     icon: 'Share2',
   },
   {
     id: 'content-marketing',
     title: 'Content Marketing',
     description:
-      'Tworzenie tresci, ktore buduja autorytet marki i generuja leady. Artykuly blogowe, e-booki, infografiki, case studies i strategie contentowe szyte na miare.',
+      'Tworzenie treści, które budują autorytet marki i generują leady. Artykuły blogowe, e-booki, infografiki, case studies i strategie contentowe szyte na miarę.',
     icon: 'FileText',
   },
   {
     id: 'email-marketing',
     title: 'Email Marketing',
     description:
-      'Newslettery, driptowe kampanie i automatyzacja mailingu, ktore zwiekszaja konwersje. Segmentacja bazy, testy A/B, personalizacja i analityka kampanii.',
+      'Newslettery, driptowe kampanie i automatyzacja mailingu, które zwiększają konwersje. Segmentacja bazy, testy A/B, personalizacja i analityka kampanii.',
     icon: 'Mail',
   },
   {
     id: 'marketing-automation',
     title: 'Marketing Automation',
     description:
-      'Automatyzacja procesow marketingowych od lead generation po remarketing. Scoring leadow, workflowy, integracje CRM i automatyczne kampanie omnichannel.',
+      'Automatyzacja procesów marketingowych od lead generation po remarketing. Scoring leadów, workflowy, integracje CRM i automatyczne kampanie omnichannel.',
     icon: 'Workflow',
   },
   {
     id: 'performance-marketing',
     title: 'Performance Marketing',
     description:
-      'Kampanie Google Ads i Facebook Ads optymalizowane pod katem ROI. Retargeting, kampanie produktowe, testy kreacji i zaawansowana analityka konwersji.',
+      'Kampanie Google Ads i Facebook Ads optymalizowane pod kątem ROI. Retargeting, kampanie produktowe, testy kreacji i zaawansowana analityka konwersji.',
     icon: 'BarChart3',
   },
 ]
@@ -50,10 +50,10 @@ export const marketingChannels: MarketingChannel[] = [
     id: 'google-ads',
     name: 'Google Ads',
     description:
-      'Kampanie w sieci wyszukiwania, reklamy produktowe (Shopping) i kampanie displayowe. Precyzyjne targetowanie intencji zakupowych uzytkownikow.',
+      'Kampanie w sieci wyszukiwania, reklamy produktowe (Shopping) i kampanie displayowe. Precyzyjne targetowanie intencji zakupowych użytkowników.',
     metrics: [
-      { label: 'Srednie ROAS', value: '450%' },
-      { label: 'Sredni CTR', value: '5.8%' },
+      { label: 'Średnie ROAS', value: '450%' },
+      { label: 'Średni CTR', value: '5.8%' },
       { label: 'Redukcja CPA', value: '-35%' },
     ],
     icon: 'Globe',
@@ -62,11 +62,11 @@ export const marketingChannels: MarketingChannel[] = [
     id: 'social-ads',
     name: 'Social Media Ads',
     description:
-      'Reklamy na Facebooku, Instagramie i LinkedIn precyzyjnie targetowane na demografie, zainteresowania i zachowania. Kampanie lead gen i konwersyjne.',
+      'Reklamy na Facebooku, Instagramie i LinkedIn precyzyjnie targetowane na demografię, zainteresowania i zachowania. Kampanie lead gen i konwersyjne.',
     metrics: [
-      { label: 'Sredni CPM', value: '12 zl' },
-      { label: 'Koszt leada', value: '8 zl' },
-      { label: 'Zasieg mies.', value: '500K+' },
+      { label: 'Średni CPM', value: '12 zł' },
+      { label: 'Koszt leada', value: '8 zł' },
+      { label: 'Zasięg mies.', value: '500K+' },
     ],
     icon: 'MessageCircle',
   },
@@ -74,7 +74,7 @@ export const marketingChannels: MarketingChannel[] = [
     id: 'email',
     name: 'Email Marketing',
     description:
-      'Zautomatyzowane kampanie email z segmentacja i personalizacja. Sciezki powitalne, porzucone koszyki, rekomendacje produktowe i newslettery.',
+      'Zautomatyzowane kampanie email z segmentacją i personalizacją. Ścieżki powitalne, porzucone koszyki, rekomendacje produktowe i newslettery.',
     metrics: [
       { label: 'Open Rate', value: '32%' },
       { label: 'CTR', value: '4.2%' },
@@ -86,7 +86,7 @@ export const marketingChannels: MarketingChannel[] = [
     id: 'seo',
     name: 'SEO & Content',
     description:
-      'Pozycjonowanie organiczne i content marketing jako dlugoterminowa strategia budowania ruchu. Artykuly, link building i optymalizacja techniczna.',
+      'Pozycjonowanie organiczne i content marketing jako długoterminowa strategia budowania ruchu. Artykuły, link building i optymalizacja techniczna.',
     metrics: [
       { label: 'Wzrost ruchu', value: '+180%' },
       { label: 'Top 10 fraz', value: '350+' },
@@ -99,18 +99,18 @@ export const marketingChannels: MarketingChannel[] = [
 export const marketingCases: MarketingCase[] = [
   {
     id: 'ecommerce-fashion',
-    title: 'Skalowanie sprzedazy e-commerce o 320% w 6 miesiecy',
+    title: 'Skalowanie sprzedaży e-commerce o 320% w 6 miesięcy',
     client: 'Marka modowa B2C',
     channel: 'Performance Marketing + Social Media',
     challenge:
-      'Klient notowal stagnacje sprzedazy przy rosnacych kosztach reklam. Kampanie Google Ads i Facebook Ads nie byly zoptymalizowane pod katem ROAS, a struktura kont reklamowych byla chaotyczna.',
+      'Klient notował stagnację sprzedaży przy rosnących kosztach reklam. Kampanie Google Ads i Facebook Ads nie były zoptymalizowane pod kątem ROAS, a struktura kont reklamowych była chaotyczna.',
     solution:
-      'Przebudowa struktury kampanii Google Ads (Performance Max + Search), wdrozenie dynamicznego retargetingu na Facebooku i Instagramie, optymalizacja feedu produktowego oraz testy A/B kreacji. Dodatkowo uruchomiono kampanie TikTok Ads dla nowej grupy docelowej.',
+      'Przebudowa struktury kampanii Google Ads (Performance Max + Search), wdrożenie dynamicznego retargetingu na Facebooku i Instagramie, optymalizacja feedu produktowego oraz testy A/B kreacji. Dodatkowo uruchomiono kampanie TikTok Ads dla nowej grupy docelowej.',
     result:
-      'Wzrost przychodow o 320% przy jednoczesnym obnizeniu CPA o 42%. ROAS z poziomu 1.8 wzrosl do 5.2 w ciagu 6 miesiecy.',
+      'Wzrost przychodów o 320% przy jednoczesnym obniżeniu CPA o 42%. ROAS z poziomu 1.8 wzrósł do 5.2 w ciągu 6 miesięcy.',
     resultMetrics: [
-      { label: 'Wzrost przychodow', value: '+320%' },
-      { label: 'Obnizenie CPA', value: '-42%' },
+      { label: 'Wzrost przychodów', value: '+320%' },
+      { label: 'Obniżenie CPA', value: '-42%' },
       { label: 'Wzrost ROAS', value: '1.8 → 5.2' },
     ],
     tech: ['Google Ads', 'Meta Ads', 'TikTok Ads', 'Google Merchant Center', 'GA4'],
@@ -118,15 +118,15 @@ export const marketingCases: MarketingCase[] = [
   },
   {
     id: 'saas-leadgen',
-    title: 'Lead generation B2B: 850+ kwalifikowanych leadow w 4 miesiace',
+    title: 'Lead generation B2B: 850+ kwalifikowanych leadów w 4 miesiące',
     client: 'Firma SaaS B2B',
     channel: 'LinkedIn Ads + Email Marketing',
     challenge:
-      'Firma potrzebowala stabilnego doplywu leadow B2B z sektora MŚP i enterprise. Dotychczasowe dzialania opieraly sie wylacznie na cold mailingu z niska skutecznoscia (ponizej 2% response rate).',
+      'Firma potrzebowała stabilnego dopływu leadów B2B z sektora MŚP i enterprise. Dotychczasowe działania opierały się wyłącznie na cold mailingu z niską skutecznością (poniżej 2% response rate).',
     solution:
-      'Opracowanie strategii ABM (Account-Based Marketing) na LinkedIn z precyzyjnym targetowaniem firm i decydentow. Uruchomienie kampanii Lead Gen Forms, polaczonej z automatyczna sciezka email marketingowa (5-etapowa sekwencja). Wdrozenie lead scoringu i integracji z CRM.',
+      'Opracowanie strategii ABM (Account-Based Marketing) na LinkedIn z precyzyjnym targetowaniem firm i decydentów. Uruchomienie kampanii Lead Gen Forms, połączonej z automatyczną ścieżką email marketingową (5-etapowa sekwencja). Wdrożenie lead scoringu i integracji z CRM.',
     result:
-      '850+ kwalifikowanych leadow w 4 miesiace. Response rate email wzrosl do 18%, a koszt pozyskania leada spadl o 60% wzgledem poprzednich dzialan.',
+      '850+ kwalifikowanych leadów w 4 miesiące. Response rate email wzrósł do 18%, a koszt pozyskania leada spadł o 60% względem poprzednich działań.',
     resultMetrics: [
       { label: 'Kwalifikowane leady', value: '850+' },
       { label: 'Response rate', value: '2% → 18%' },
@@ -137,15 +137,15 @@ export const marketingCases: MarketingCase[] = [
   },
   {
     id: 'local-retail',
-    title: 'Zwiekszenie ruchu lokalnego o 210% dla sieci punktow stacjonarnych',
+    title: 'Zwiększenie ruchu lokalnego o 210% dla sieci punktów stacjonarnych',
     client: 'Sieć handlowa (15 lokalizacji)',
     channel: 'SEO Lokalne + Google Ads',
     challenge:
-      'Sieć 15 punktow stacjonarnych mierzyla sie z malejacym ruchem i niska widocznoscia w wyszukiwarce Google. Wizytowki Google Business Profile byly niekompletne, a strona nie miala zoptymalizowanych podstron lokalnych.',
+      'Sieć 15 punktów stacjonarnych mierzyła się z malejącym ruchem i niską widocznością w wyszukiwarce Google. Wizytówki Google Business Profile były niekompletne, a strona nie miała zoptymalizowanych podstron lokalnych.',
     solution:
-      'Kompleksowa optymalizacja Google Business Profile dla wszystkich 15 lokalizacji (GPB posts, zdjecia, Q&A, opinie). Stworzenie dedykowanych landing page dla kazdej lokalizacji z lokalnymi slowami kluczowymi. Kampanie Google Ads z targetowaniem geograficznym i rozszerzeniami lokalizacji.',
+      'Kompleksowa optymalizacja Google Business Profile dla wszystkich 15 lokalizacji (GBP posts, zdjęcia, Q&A, opinie). Stworzenie dedykowanych landing page dla każdej lokalizacji z lokalnymi słowami kluczowymi. Kampanie Google Ads z targetowaniem geograficznym i rozszerzeniami lokalizacji.',
     result:
-      'Wzrost ruchu organicznego o 210%, ruchu bezposredniego z Google Maps o 175%. Kampanie Google Ads wygenerowaly dodatkowe 1200+ wizyt w punktach miesiecznie.',
+      'Wzrost ruchu organicznego o 210%, ruchu bezpośredniego z Google Maps o 175%. Kampanie Google Ads wygenerowały dodatkowe 1200+ wizyt w punktach miesięcznie.',
     resultMetrics: [
       { label: 'Wzrost ruchu org.', value: '+210%' },
       { label: 'Wzrost z Maps', value: '+175%' },

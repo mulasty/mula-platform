@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s | Mula Marketing',
   },
   description:
-    'SEO, Google Ads, Social Media, content marketing, email marketing i marketing automation. Strategie marketingowe oparte na danych, ktore zwiekszaja zasieg i generuja leady.',
+    'SEO, Google Ads, Social Media, content marketing, email marketing i marketing automation. Strategie marketingowe oparte na danych, które zwiększają zasięg i generują leady.',
   metadataBase: new URL('https://marketing.mulagroup.eu'),
   keywords: [
     'marketing',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: 'Mula Marketing',
     title: 'Mula Marketing – Marketing Cyfrowy i Wzrost',
     description:
-      'SEO, Google Ads, Social Media, content marketing i marketing automation. Strategie oparte na danych, ktore zwiekszaja zasieg i generuja leady.',
+      'SEO, Google Ads, Social Media, content marketing i marketing automation. Strategie oparte na danych, które zwiększają zasięg i generują leady.',
     images: [
       {
         url: '/images/og/home-og.webp',

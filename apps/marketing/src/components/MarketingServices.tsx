@@ -41,7 +41,7 @@ export default function MarketingServices() {
       <div className="max-w-6xl mx-auto">
         <SectionHeader
           title="Co robimy"
-          subtitle="Kompleksowe uslugi marketingowe oparte na danych i najlepszych praktykach"
+          subtitle="Kompleksowe usługi marketingowe oparte na danych i najlepszych praktykach"
         />
 
         <motion.div

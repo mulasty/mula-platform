@@ -29,9 +29,9 @@ export default function MarketingCTA() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-mula-text mb-6"
           >
-            Zwieksz{' '}
+            Zwiększ{' '}
             <span className="bg-gradient-to-r from-mula-purple to-mula-accent bg-clip-text text-transparent">
-              zasieg
+              zasięg
             </span>{' '}
             swojej marki
           </motion.h2>
@@ -43,8 +43,8 @@ export default function MarketingCTA() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg text-mula-text-muted max-w-xl mx-auto mb-10"
           >
-            Umow bezplatna konsultacje i dowiedz sie, jak mozemy pomoc Ci
-            zwiekszyc zasieg, generowac wiecej leadow i skalowac sprzedaz.
+            Umów bezpłatną konsultację i dowiedz się, jak możemy pomóc Ci
+            zwiększyć zasięg, generować więcej leadów i skalować sprzedaż.
           </motion.p>
         </motion.div>
 
