@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       'Sklepy internetowe, integracje marketplace, optymalizacja konwersji i automatyzacja logistyki dla e-commerce.',
     images: [
       {
-        url: '/images/og/home-og.webp',
+        url: '/images/og/home-og.svg',
         width: 1200,
         height: 630,
         alt: 'Mula E-Commerce – Handel Internetowy i Marketplace',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: 'Mula E-Commerce – Handel Internetowy i Marketplace',
     description:
       'Sklepy internetowe, integracje marketplace, optymalizacja konwersji i automatyzacja logistyki dla e-commerce.',
-    images: ['/images/og/home-og.webp'],
+    images: ['/images/og/home-og.svg'],
   },
   robots: {
     index: true,
