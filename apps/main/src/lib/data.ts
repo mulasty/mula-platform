@@ -217,8 +217,8 @@ export const GUARDIAN_AI = {
     { value: 'AI', label: 'agenci i automatyzacja' },
     { value: '24/7', label: 'monitoring i alerty' },
   ],
-  cta: 'Porozmawiaj o Guardian AI',
-  secondaryCta: 'Zobacz cyberbezpieczeństwo',
+  cta: 'Poznaj Guardian AI',
+  secondaryCta: 'Zaloguj się do aplikacji',
 }
 
 export const CASE_STUDIES: CaseStudy[] = [

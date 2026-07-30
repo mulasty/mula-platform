@@ -62,14 +62,14 @@ export function GuardianAISection() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="#contact"
+                href="/guardian"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-slate-950 hover:bg-blue-700 text-white font-semibold transition-colors"
               >
                 {GUARDIAN_AI.cta}
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="https://cyber.mulagroup.eu"
+                href="https://app.guardian.mulagroup.eu/login"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white border border-slate-200 hover:border-blue-300 text-slate-800 font-semibold transition-colors shadow-sm"

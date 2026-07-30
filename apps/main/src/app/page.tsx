@@ -1,6 +1,8 @@
+import { headers } from 'next/headers'
 import { Navbar } from '@/components/Navbar'
 import { HeroSection } from '@/components/HeroSection'
 import { GuardianAISection } from '@/components/GuardianAISection'
+import { GuardianLandingPage } from '@/components/GuardianLandingPage'
 import { ClientNeedsSection } from '@/components/ClientNeedsSection'
 import { AboutSection } from '@/components/AboutSection'
 import { WhyUsSection } from '@/components/WhyUsSection'
@@ -19,7 +21,13 @@ import { StickyCTA } from '@/components/StickyCTA'
 
 export const revalidate = 3600
 
-export default function HomePage() {
+export default async function HomePage() {
+  const host = (await headers()).get('host')?.toLowerCase().split(':')[0]
+
+  if (host === 'guardian.mulagroup.eu') {
+    return <GuardianLandingPage />
+  }
+
   return (
     <>
       <Navbar />
