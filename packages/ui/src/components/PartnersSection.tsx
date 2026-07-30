@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ExternalLink } from 'lucide-react'
+import Image from 'next/image'
 
 interface Partner {
   name: string
@@ -65,12 +66,15 @@ export function PartnersSection({ title, subtitle, partners }: PartnersSectionPr
                 variants={cardVariant}
                 whileHover={{ borderColor: '#3b82f640', y: -4 }}
               >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="w-full h-full object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                  loading="lazy"
-                />
+                <div className="relative h-full w-full">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
+                    className="object-contain grayscale opacity-60 transition-all duration-300 group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                </div>
                 {partner.url && (
                   <ExternalLink className="w-3.5 h-3.5 text-mula-text-dim opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2" />
                 )}

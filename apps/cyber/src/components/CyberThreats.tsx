@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { AlertTriangle, AlertCircle, Info, ShieldAlert } from 'lucide-react'
+import { AlertTriangle, AlertCircle, ShieldAlert } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { SectionHeader } from '@mula/ui'
 import { threats } from '@/lib/data'

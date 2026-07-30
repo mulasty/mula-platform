@@ -2,18 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Shield, Zap, Activity, Siren, FileCheck, Terminal } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
 import { SectionHeader } from '@mula/ui'
 import { services } from '@/lib/data'
-
-const iconMap: Record<string, LucideIcon> = {
-  Shield,
-  Zap,
-  Activity,
-  Siren,
-  FileCheck,
-  Terminal,
-}
 
 const icons = [Shield, Zap, Activity, Siren, FileCheck, Terminal]
 

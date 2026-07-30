@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ShieldCheck, ArrowRight, Clock } from 'lucide-react'
+import { ShieldCheck, ArrowRight } from 'lucide-react'
 import { SectionHeader } from '@mula/ui'
 import { cases } from '@/lib/data'
 

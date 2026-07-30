@@ -2,8 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { SectionHeader } from '@mula/ui'
-import { ArrowUpRight, ShoppingBag, Target, MapPin, LucideIcon } from 'lucide-react'
-import type { MarketingCase } from '@/lib/types'
+import { ShoppingBag, Target, MapPin, LucideIcon } from 'lucide-react'
 import { marketingCases } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {

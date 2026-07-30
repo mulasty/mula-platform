@@ -11,7 +11,6 @@ import {
   BarChart3,
   LucideIcon,
 } from 'lucide-react'
-import type { MarketingService } from '@/lib/types'
 import { marketingServices } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {

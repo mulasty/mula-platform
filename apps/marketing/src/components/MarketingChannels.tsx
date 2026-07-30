@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { SectionHeader } from '@mula/ui'
 import { Globe, MessageCircle, AtSign, TrendingUp, LucideIcon } from 'lucide-react'
-import type { MarketingChannel } from '@/lib/types'
 import { marketingChannels } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {
