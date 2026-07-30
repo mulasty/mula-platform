@@ -11,8 +11,8 @@
 
 | Property | Measurement ID | Status |
 |---|---|---|
-| Mula Group (global) | `G-XXXXXXXXXX` | Pending — replace with actual ID |
-| Mula Group (staging) | `G-YYYYYYYYYY` | Pending — replace with actual ID |
+| Mula Group (global) | `G-6JQ5E47WYP` | ✅ Configured — in Vercel env vars across all 9 projects |
+| Mula Group (staging) | TBD | Pending — staging property not yet needed |
 
 **Setup:** Add Google Analytics script to each app's root layout via `@next/third-parties/google` (`GoogleAnalytics` component) or via a custom `<Script>` tag. Place the GA4 tag in `<head>` for accurate page_view measurement.
 
@@ -183,13 +183,14 @@ The analytics dashboard (GA4 Explore or Looker Studio) must have these sections 
 
 ## 5. Implementation Plan
 
-### 5.1 Phase 1: Baseline (Sprint 02)
+### 5.1 Phase 1: Baseline (Sprint 02) — 🟡 Partially Done
 
-- Install `@next/third-parties` package
-- Add `<GoogleAnalytics gaId="G-XXXXXXXXXX" />` to all 8 app layouts
-- Implement custom event tracking for: `cta_click`, `pillar_click`, `contact_form_submit`
-- Implement scroll depth tracking (50%, 75%, 100%)
-- Configure GA4 custom dimensions: `cta_label`, `pillar_id`, `form_section`
+- ✅ Install `@next/third-parties` package
+- ✅ Add `<GoogleAnalytics gaId="G-6JQ5E47WYP" />` to all 9 app layouts (ID in Vercel env vars)
+- ✅ Cookiebot consent banner active — GA4 fires only after consent
+- ⏳ Implement custom event tracking for: `cta_click`, `pillar_click`, `contact_form_submit` (pending)
+- ⏳ Implement scroll depth tracking (50%, 75%, 100%) (pending)
+- ⏳ Configure GA4 custom dimensions: `cta_label`, `pillar_id`, `form_section` (pending)
 
 ### 5.2 Phase 2: Funnel (Sprint 03)
 
@@ -338,13 +339,13 @@ if (hasConsentedTo('analytics')) {
 
 | App | GA4 Tag | Vercel Analytics | Custom Events | Cookie Consent |
 |---|---|---|---|---|
-| main | Not yet | Not yet | Not yet | Not yet |
-| construction | Not yet | Not yet | Not yet | Not yet |
-| ai | Not yet | Not yet | Not yet | Not yet |
-| digital | Not yet | Not yet | Not yet | Not yet |
-| ecommerce | Not yet | Not yet | Not yet | Not yet |
-| marketing | Not yet | Not yet | Not yet | Not yet |
-| cyber | Not yet | Not yet | Not yet | Not yet |
-| innovation | Not yet | Not yet | Not yet | Not yet |
+| main | ✅ | ✅ | ⏳ | ✅ Cookiebot |
+| construction | ✅ | ✅ | ⏳ | ✅ Cookiebot |
+| ai | ✅ | ✅ | ⏳ | ✅ Cookiebot |
+| digital | ✅ | ✅ | ⏳ | ✅ Cookiebot |
+| ecommerce | ✅ | ✅ | ⏳ | ✅ Cookiebot |
+| marketing | ✅ | ✅ | ⏳ | ✅ Cookiebot |
+| cyber | ✅ | ✅ | ⏳ | ✅ Cookiebot |
+| innovation | ✅ | ✅ | ⏳ | ✅ Cookiebot |
 
 **Target:** All 8 apps instrumented by end of Sprint 03.

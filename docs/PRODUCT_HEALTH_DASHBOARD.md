@@ -16,11 +16,12 @@
 | Brand authority docs | 3/3 (BRAND_MANIFESTO, TONE_OF_VOICE, TRUST_SIGNALS) | 3 | ✅ |
 | SSL coverage | 8/8 domains | 8 | ✅ |
 | DNS propagation | 8/8 domains | 8 | ✅ |
-| Lighthouse score | TBD | >90 | 🔴 |
+| Lighthouse score | CI audit on push; baseline pending | >90 | 🟡 |
 | Contact form | CTA only, no form | Form | 🔴 |
 | Privacy policy | /polityka-prywatnosci live | Yes | ✅ |
 | Security headers | CSP, HSTS, X-Frame, etc. | Yes | ✅ |
-| Cookie consent | Implemented in apps/main | Required | ✅ |
+| GA4 measurement ID | G-6JQ5E47WYP in Vercel env vars | Configured | ✅ |
+| Cookie consent | Cookiebot active across all 9 projects | Required | ✅ |
 | Recovery Fix Pack 001 | ✅ Complete | ✅ | ✅ |
 | Architecture alignment | 0 HIGH conflicts | 0 | ✅ |
 | Token naming consistency | All docs aligned with tokens.css | 100% | ✅ |

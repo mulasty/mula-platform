@@ -535,12 +535,12 @@ Navigation collapses to hamburger below `md`. Grids switch from multi-column to 
 - `dangerouslySetInnerHTML` used only for JSON-LD script injection (trusted static content)
 - No eval(), no inline event handlers
 - Forms use client-side validation; server-side validation enforced at API endpoint (when implemented)
-- CSP headers planned but not yet configured (low risk for static sites)
+- CSP, HSTS, X-Frame-Options, and X-Content-Type-Options configured via next.config.ts security headers
 
 ### 11.2 Dependency Security
 
 - Dependencies pinned with `^` ranges in `package.json`; `package-lock.json` locks exact versions
-- Regular `npm audit` runs recommended (not yet automated)
+- GitHub Actions CI runs `npm audit` on every push
 - No runtime dependency on user-controlled npm packages — all imports are from workspace or well-known packages
 
 ### 11.3 Infrastructure Security
