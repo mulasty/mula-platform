@@ -36,6 +36,18 @@ jobs:
           echo "status=${status}" >> "$GITHUB_OUTPUT"
           exit 0
 
+      - name: Ensure smoke alert label exists
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if ! gh label list --search production-smoke --json name --jq '.[].name' | grep -Fxq production-smoke; then
+            gh label create production-smoke \
+              --color D73A4A \
+              --description "Automated production smoke alert"
+          fi
+
       - name: Open or update failure issue
         if: steps.smoke.outputs.status != '0'
         env:
