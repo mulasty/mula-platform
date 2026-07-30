@@ -10,9 +10,18 @@
   --color-mula-text: #f8fafc;
   --color-mula-text-muted: #94a3b8;
   --color-mula-text-dim: #64748b;
+  --color-mula-success: #10b981;
+  --color-mula-warning: #f59e0b;
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
-  body { background-color: var(--color-mula-bg); color: var(--color-mula-text); font-family: system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-mula-bg);
+    color: var(--color-mula-text);
+    font-family: system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
 }

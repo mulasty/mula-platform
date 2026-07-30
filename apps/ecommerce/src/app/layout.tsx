@@ -4,24 +4,44 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Mula E-commerce – Handel Internetowy',
-  description: 'Sklepy internetowe, marketplace, BaseLinker, fulfillment, automatyzacja sprzedaży',
+  title: 'Mula E-Commerce – Handel Internetowy i Marketplace',
+  description:
+    'Sklepy internetowe, integracje marketplace (Allegro, Amazon, Shopify), optymalizacja konwersji, automatyzacja logistyki i analityka sprzedaży. Zwiększamy przychody e-commerce.',
   metadataBase: new URL('https://ecommerce.mulagroup.eu'),
-  keywords: ['e-commerce', 'sklep internetowy', 'marketplace', 'BaseLinker', 'fulfillment', 'automatyzacja sprzedaży', 'Mula Group'],
+  keywords: [
+    'e-commerce', 'sklep internetowy', 'marketplace', 'Allegro', 'Amazon',
+    'Shopify', 'WooCommerce', 'optymalizacja konwersji', 'automatyzacja logistyki',
+    'analityka sprzedaży', 'mobile commerce', 'Mula Group',
+  ],
+  authors: [{ name: 'Mula Group' }],
+  creator: 'Mula Group',
+  publisher: 'Mula Group',
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
     url: 'https://ecommerce.mulagroup.eu',
-    siteName: 'Mula E-commerce',
-    title: 'Mula E-commerce – Handel Internetowy',
-    description: 'Sklepy internetowe, marketplace, BaseLinker, fulfillment, automatyzacja sprzedaży',
+    siteName: 'Mula E-Commerce',
+    title: 'Mula E-Commerce – Handel Internetowy i Marketplace',
+    description:
+      'Sklepy internetowe, integracje marketplace, optymalizacja konwersji i automatyzacja logistyki dla e-commerce.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mula E-commerce – Handel Internetowy',
-    description: 'Sklepy internetowe, marketplace, BaseLinker, fulfillment, automatyzacja sprzedaży',
+    title: 'Mula E-Commerce – Handel Internetowy i Marketplace',
+    description:
+      'Sklepy internetowe, integracje marketplace, optymalizacja konwersji i automatyzacja logistyki dla e-commerce.',
   },
   robots: { index: true, follow: true },
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Mula E-Commerce',
+  url: 'https://ecommerce.mulagroup.eu',
+  description:
+    'Kompleksowa obsługa e-commerce — sklepy internetowe, marketplace, optymalizacja konwersji, automatyzacja logistyki i analityka sprzedaży.',
+  publisher: { '@type': 'Organization', name: 'Mula Group', url: 'https://mulagroup.eu' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,6 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pl" className="dark">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
         {children}
