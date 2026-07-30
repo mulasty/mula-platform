@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-export const guardianUrl = 'https://guardian.mulagroup.eu'
+export const guardianUrl = 'https://guardian.mulagroup.eu/'
 export const guardianAppUrl = 'https://app.guardian.mulagroup.eu/login'
 export const guardianTitle = 'MULA Guardian AI — vCISO as a Service dla MŚP'
 export const guardianDescription =
