@@ -5,12 +5,12 @@
 | TD-001 | No automated tests | High | Sprint D | ✅ Resolved — Vitest + Playwright configured |
 | TD-002 | No Storybook/component explorer | Medium | TBD | Open |
 | TD-003 | No CI/CD pipeline beyond Vercel auto-deploy | Low | Sprint D | ✅ Resolved — GitHub Actions CI with lint, typecheck, build, audit |
-| TD-004 | No error monitoring (Sentry/Datadog) | Medium | TBD | Open |
+| TD-004 | No error monitoring (Sentry/Datadog) | Medium | TBD | 🟡 Mitigated — health check cron (every 5 min via `/api/cron/health`) + Vercel deployment monitoring; Sentry integration planned for future sprint |
 | TD-005 | No CMS integration (Sanity planned) | Medium | TBD | 🚫 Canceled per ADR-047 |
 | TD-006 | Placeholder images/partners/testimonials | Medium | Sprint B/C | 🟡 Mitigated — sections activated, real assets pending |
 | TD-007 | No i18n infrastructure | Low | TBD | Open |
 | TD-008 | No automated Lighthouse checks in CI | Low | Sprint D | 🟡 Partial — CI build catches errors; Lighthouse budget pending |
-| TD-009 | Missing playbook files (SEO_PLAYBOOK.md, DEPLOYMENT_PLAYBOOK.md) | Low | TBD | 🟡 In Progress — ANALYTICS_PLAN and COPYWRITING_GUIDE exist |
+| TD-009 | Missing playbook files (SEO_PLAYBOOK.md, DEPLOYMENT_PLAYBOOK.md) | Low | TBD | ✅ Resolved — SEO_PLAYBOOK.md + DEPLOYMENT_PLAYBOOK.md now exist alongside ANALYTICS_PLAN.md and COPYWRITING_GUIDE.md |
 | TD-010 | 5 of 8 apps are scaffold-only with placeholder content | Medium | Mission 002 | 🟡 In progress — main + construction full; subdomains scaffolded |
 | TD-011 | No cookie consent banner (GDPR/RODO legal requirement) | High | Sprint 04 | ✅ Resolved — banner with accept-all / necessary-only choices, link to privacy policy, consent persisted in localStorage |
 | TD-012 | GA4 measurement ID still placeholder (G-XXXXXXXXXX) | Medium | Sprint 04 | ✅ Resolved — G-6JQ5E47WYP configured in Vercel env vars across all 9 projects |

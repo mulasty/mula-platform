@@ -1,6 +1,6 @@
 # Product Health Dashboard
 
-## Current State (2026-07-08)
+## Current State (2026-07-30)
 
 | Metric | Value | Target | Status |
 |---|---|---|---|
@@ -54,3 +54,13 @@
 | Sprint B | ✅ Complete | N/A |
 | Sprint C | ✅ Complete | N/A |
 | Sprint D | ✅ Complete | N/A |
+
+## Monitoring
+
+| System | Status | Details |
+|---|---|---|
+| Health check endpoint | ✅ Active | `GET /api/cron/health` — pinged every 5 minutes via Vercel Cron Job. Returns `{ status: "ok", service, timestamp, runtime }` on Edge Runtime with no cache. |
+| Deployment monitoring | ✅ Active | Vercel Dashboard provides build status, deploy history, runtime logs, and request analytics for all 9 projects under `mula-group-s-projects`. |
+| Error tracking | 🟡 Planned | Sentry integration scoped for future sprint (tracked as TD-004 in Technical Debt Register). Current mitigation: Vercel deployment monitoring + health check cron. |
+| Uptime | ✅ Active | Health endpoint timestamp allows uptime calculation from last successful ping. |
+| Playbooks | ✅ Complete | SEO_PLAYBOOK.md, DEPLOYMENT_PLAYBOOK.md, ANALYTICS_PLAN.md, COPYWRITING_GUIDE.md all exist in `playbooks/`. |
