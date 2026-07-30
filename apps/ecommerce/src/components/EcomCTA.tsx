@@ -1,15 +1,17 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, ShoppingBag } from 'lucide-react'
+import { ShoppingBag } from 'lucide-react'
+import { ContactForm } from '@mula/ui'
 
 export function EcomCTA() {
   return (
     <section id="contact" className="py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-mula-accent/5 to-transparent" />
 
-      <div className="relative max-w-4xl mx-auto px-6 text-center">
+      <div className="relative max-w-4xl mx-auto px-6">
         <motion.div
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
@@ -29,23 +31,7 @@ export function EcomCTA() {
           </p>
         </motion.div>
 
-        <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
-        >
-          <motion.a
-            href="mailto:ecommerce@mulagroup.eu"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-mula-accent hover:bg-mula-accent-light text-black font-semibold transition-colors duration-200"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Umów bezpłatny audyt
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </motion.a>
-        </motion.div>
+        <ContactForm competency="E-commerce" />
       </div>
     </section>
   )

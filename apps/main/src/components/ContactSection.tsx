@@ -1,9 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Mail, MapPin, ArrowRight } from 'lucide-react'
-import { SectionHeader } from '@mula/ui'
+import { SectionHeader, ContactForm } from '@mula/ui'
 import { COMPANY } from '@/lib/data'
 
 /**
@@ -55,35 +54,7 @@ export function ContactSection() {
             </div>
           </motion.div>
 
-          <motion.div
-            className="relative overflow-hidden rounded-2xl bg-mula-surface border border-mula-border p-10 flex flex-col justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5, delay: 0.15, ease: 'easeOut' }}
-          >
-            <Image
-              src="/images/competencies/contact-card.webp"
-              alt=""
-              fill
-              className="object-cover opacity-25"
-              aria-hidden="true"
-            />
-            <div className="absolute inset-0 bg-mula-surface/80 backdrop-blur-[1px]" />
-            <p className="relative z-10 text-lg text-mula-text-muted leading-relaxed mb-8">
-              {COMPANY.contactWriteText}
-            </p>
-
-            <motion.a
-              href={`mailto:${COMPANY.email}?subject=Nowy%20projekt%20-%20Mula%20Group`}
-              className="relative z-10 inline-flex items-center justify-center gap-2 px-8 py-4 bg-mula-accent hover:bg-blue-500 text-white font-medium rounded-full transition-all duration-200 text-lg self-start"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Mail className="w-5 h-5" />
-              {COMPANY.contactButtonLabel}
-            </motion.a>
-          </motion.div>
+          <ContactForm />
         </div>
       </div>
     </section>

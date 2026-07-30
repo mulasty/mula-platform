@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, HardHat } from 'lucide-react'
+import { HardHat } from 'lucide-react'
+import { ContactForm } from '@mula/ui'
 
 interface CTASectionProps {
   title: string
@@ -15,19 +16,18 @@ export function CTASection({ title, subtitle, ctaText, ctaHref }: CTASectionProp
     <section id="contact" className="relative py-24 px-6">
       <div className="absolute inset-0 bg-gradient-to-b from-mula-surface/30 to-mula-bg" />
 
-      <div className="relative z-10 max-w-3xl mx-auto text-center">
+      <div className="relative z-10 max-w-3xl mx-auto">
         <motion.div
-          className="rounded-3xl bg-mula-surface border border-mula-border p-12 md:p-16 relative overflow-hidden"
+          className="rounded-3xl bg-mula-surface border border-mula-border p-12 md:p-16 relative overflow-hidden mb-12"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          {/* Decorative background */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-construction/5 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-mula-accent/5 rounded-full blur-3xl" />
 
-          <div className="relative z-10">
+          <div className="relative z-10 text-center">
             <motion.div
               className="w-16 h-16 rounded-2xl bg-construction/10 flex items-center justify-center mx-auto mb-6"
               initial={{ scale: 0 }}
@@ -52,10 +52,11 @@ export function CTASection({ title, subtitle, ctaText, ctaHref }: CTASectionProp
               whileTap={{ scale: 0.98 }}
             >
               {ctaText}
-              <ArrowRight className="w-5 h-5" />
             </motion.a>
           </div>
         </motion.div>
+
+        <ContactForm competency="Budownictwo" />
       </div>
     </section>
   )
