@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       'Kompleksowa ochrona infrastruktury IT: audyty, monitoring SOC 24/7, zarządzanie incydentami, pentesty i zgodność RODO/GDPR.',
     images: [
       {
-        url: '/images/og/home-og.webp',
+        url: '/images/og/home-og.svg',
         width: 1200,
         height: 630,
         alt: 'Mula Cyber – Cyberbezpieczeństwo dla Firm',
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: 'Mula Cyber – Cyberbezpieczeństwo dla Firm',
     description:
       'Kompleksowa ochrona infrastruktury IT: audyty, monitoring SOC 24/7, zarządzanie incydentami, pentesty i zgodność RODO/GDPR.',
-    images: ['/images/og/home-og.webp'],
+    images: ['/images/og/home-og.svg'],
   },
   robots: {
     index: true,

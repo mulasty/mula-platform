@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       'Konsulting innowacyjny, prototypowanie MVP, IoT i venture building. Budujemy produkty future-proof.',
     images: [
       {
-        url: '/images/og/home-og.webp',
+        url: '/images/og/home-og.svg',
         width: 1200,
         height: 630,
         alt: 'Mula Innovation – Technologie Przyszłości',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: 'Mula Innovation – Technologie Przyszłości',
     description:
       'Konsulting innowacyjny, prototypowanie MVP, IoT i venture building. Budujemy produkty future-proof.',
-    images: ['/images/og/home-og.webp'],
+    images: ['/images/og/home-og.svg'],
   },
   robots: {
     index: true,
