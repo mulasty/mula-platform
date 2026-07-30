@@ -11,6 +11,12 @@ const VALID_COMPETENCIES = [
   'Inne',
 ] as const
 
+const MAX_NAME_LENGTH = 100
+const MAX_EMAIL_LENGTH = 254
+const MAX_COMPANY_LENGTH = 200
+const MAX_MESSAGE_LENGTH = 5_000
+const MIN_MESSAGE_LENGTH = 10
+
 interface ContactBody {
   name: string
   email: string
@@ -29,12 +35,20 @@ function validate(body: ContactBody): ValidationError[] {
 
   if (!body.name || typeof body.name !== 'string' || !body.name.trim()) {
     errors.push({ field: 'name', message: 'Imię i nazwisko jest wymagane' })
+  } else if (body.name.trim().length > MAX_NAME_LENGTH) {
+    errors.push({ field: 'name', message: `Imię i nazwisko nie może przekraczać ${MAX_NAME_LENGTH} znaków` })
   }
 
   if (!body.email || typeof body.email !== 'string' || !body.email.trim()) {
     errors.push({ field: 'email', message: 'Adres email jest wymagany' })
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email.trim())) {
     errors.push({ field: 'email', message: 'Podaj prawidłowy adres email' })
+  } else if (body.email.trim().length > MAX_EMAIL_LENGTH) {
+    errors.push({ field: 'email', message: 'Adres email jest zbyt długi' })
+  }
+
+  if (body.company && typeof body.company === 'string' && body.company.trim().length > MAX_COMPANY_LENGTH) {
+    errors.push({ field: 'company', message: `Nazwa firmy nie może przekraczać ${MAX_COMPANY_LENGTH} znaków` })
   }
 
   if (!body.competency || typeof body.competency !== 'string' || !body.competency.trim()) {
@@ -45,20 +59,57 @@ function validate(body: ContactBody): ValidationError[] {
 
   if (!body.message || typeof body.message !== 'string' || !body.message.trim()) {
     errors.push({ field: 'message', message: 'Wiadomość jest wymagana' })
-  } else if (body.message.trim().length < 10) {
-    errors.push({ field: 'message', message: 'Wiadomość musi mieć co najmniej 10 znaków' })
+  } else if (body.message.trim().length < MIN_MESSAGE_LENGTH) {
+    errors.push({ field: 'message', message: `Wiadomość musi mieć co najmniej ${MIN_MESSAGE_LENGTH} znaków` })
+  } else if (body.message.trim().length > MAX_MESSAGE_LENGTH) {
+    errors.push({ field: 'message', message: `Wiadomość nie może przekraczać ${MAX_MESSAGE_LENGTH} znaków` })
   }
 
   return errors
 }
 
+// Simple in-edge request deduplication to guard against rapid-fire submissions.
+// Stateless and scoped to a single edge function instance — not a full rate
+// limiter, but catches bots that submit the same payload repeatedly in one burst.
+const RECENT_WINDOW_MS = 10_000
+const recentSubmissions = new Map<string, number>()
+
+function isRecentDuplicate(fingerprint: string): boolean {
+  const now = Date.now()
+
+  // Periodic cleanup of expired entries
+  if (recentSubmissions.size > 200) {
+    for (const [key, ts] of recentSubmissions) {
+      if (now - ts > RECENT_WINDOW_MS) recentSubmissions.delete(key)
+    }
+  }
+
+  const last = recentSubmissions.get(fingerprint)
+  if (last && now - last < RECENT_WINDOW_MS) {
+    return true
+  }
+
+  recentSubmissions.set(fingerprint, now)
+  return false
+}
+
+function buildFingerprint(request: Request, body: ContactBody): string {
+  const ip = request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? 'unknown'
+  return [ip, body.email.trim().toLowerCase(), body.name.trim(), body.message.trim().slice(0, 50)].join('|')
+}
+
 export async function POST(request: Request) {
   try {
+    // Only accept JSON payloads
+    const contentType = request.headers.get('content-type') ?? ''
+    if (!contentType.includes('application/json')) {
+      return Response.json({ success: false, errors: [{ field: 'server', message: 'Nieprawidłowy format żądania' }] }, { status: 415 })
+    }
+
     const body = (await request.json()) as ContactBody & Record<string, unknown>
 
     // Honeypot anti-spam check — bots fill hidden fields
     if (body.website && typeof body.website === 'string' && body.website.length > 0) {
-      // Silently accept to not reveal the honeypot
       return Response.json({ success: true })
     }
 
@@ -68,17 +119,19 @@ export async function POST(request: Request) {
       return Response.json({ success: false, errors }, { status: 400 })
     }
 
-    // TODO: Integrate with email service (e.g. Resend, SendGrid, or SMTP)
-    // TODO: Add rate limiting (e.g. 5 submissions per IP per hour using Vercel KV or Upstash)
+    // Guard against rapid duplicate submissions
+    const fingerprint = buildFingerprint(request, body)
+    if (isRecentDuplicate(fingerprint)) {
+      return Response.json({ success: true })
+    }
 
-    console.log('[contact] Nowa wiadomość:', {
-      name: body.name.trim(),
-      email: body.email.trim(),
-      company: body.company?.trim() || '(nie podano)',
-      competency: body.competency,
-      message: body.message.trim(),
-      timestamp: new Date().toISOString(),
-    })
+    // TODO: Integrate with email service (e.g. Resend, SendGrid, or SMTP)
+
+    console.log('[contact] New submission from %s (%s) regarding %s',
+      body.name.trim(),
+      body.email.trim(),
+      body.competency,
+    )
 
     return Response.json({ success: true })
   } catch {
