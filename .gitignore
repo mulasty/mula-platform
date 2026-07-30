@@ -12,3 +12,4 @@ Thumbs.db
 *.tsbuildinfo
 
 .vercel
+.vercel-build.mjs
