@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import { ArrowRight, Bot, CheckCircle2, ClipboardCheck, FileText, Gauge, LockKeyhole, ShieldCheck, Siren, Users } from 'lucide-react'
 import { Footer } from '@/components/Footer'
+import { GuardianTrackedLink } from '@/components/GuardianTrackedLink'
 import { Navbar } from '@/components/Navbar'
 
 const appUrl = 'https://app.guardian.mulagroup.eu'
@@ -46,13 +46,24 @@ export function GuardianLandingPage() {
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href={`${appUrl}/login`} className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-blue-700">
+                <GuardianTrackedLink
+                  href={`${appUrl}/login`}
+                  eventName="guardian_login_click"
+                  eventProperties={{ location: 'hero' }}
+                  external
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-blue-700"
+                >
                   Zaloguj się do aplikacji
                   <ArrowRight className="h-5 w-5" />
-                </a>
-                <Link href="/#contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-3.5 font-semibold text-slate-800 shadow-sm transition-colors hover:border-blue-300">
+                </GuardianTrackedLink>
+                <GuardianTrackedLink
+                  href="/#contact"
+                  eventName="guardian_demo_click"
+                  eventProperties={{ location: 'hero' }}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-3.5 font-semibold text-slate-800 shadow-sm transition-colors hover:border-blue-300"
+                >
                   Umów demo
-                </Link>
+                </GuardianTrackedLink>
               </div>
             </div>
 
@@ -145,8 +156,24 @@ export function GuardianLandingPage() {
             <h2 className="text-3xl font-bold tracking-tight text-slate-950 md:text-5xl">Gotowy zobaczyć aplikację?</h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">Obecny MVP działa jako beta: dashboard, audyty, GraphQL i podstawowe AI scoring. Dostęp aplikacyjny jest wydzielony na osobnej subdomenie.</p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <a href={`${appUrl}/login`} className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500">Przejdź do logowania<ArrowRight className="h-5 w-5" /></a>
-              <a href={appUrl} className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-3.5 font-semibold text-slate-800 shadow-sm transition-colors hover:border-blue-300">Otwórz demo aplikacji</a>
+              <GuardianTrackedLink
+                href={`${appUrl}/login`}
+                eventName="guardian_login_click"
+                eventProperties={{ location: 'final_cta' }}
+                external
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 font-semibold text-white transition-colors hover:bg-blue-500"
+              >
+                Przejdź do logowania<ArrowRight className="h-5 w-5" />
+              </GuardianTrackedLink>
+              <GuardianTrackedLink
+                href={appUrl}
+                eventName="guardian_app_open_click"
+                eventProperties={{ location: 'final_cta' }}
+                external
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-7 py-3.5 font-semibold text-slate-800 shadow-sm transition-colors hover:border-blue-300"
+              >
+                Otwórz demo aplikacji
+              </GuardianTrackedLink>
             </div>
           </div>
         </section>
