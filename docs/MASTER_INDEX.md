@@ -76,6 +76,7 @@
 | Document | Location | Status | Description |
 |---|---|---|---|
 | ARCHITECTURE.md | docs/ | ACTIVE | Full system architecture (619 lines): monorepo structure, app composition, data flow, build pipeline, DNS/hosting, security |
+| PRODUCTION_RUNBOOK.md | docs/ | ACTIVE | Production operations: domain map, release governance, CI guardrails, smoke monitoring, alerting, Guardian SEO/analytics, rollback |
 | DESIGN_SYSTEM.md | docs/ | ACTIVE | Design token system, color hierarchy, spacing scale, typography, component architecture, animation tiers, responsive strategy |
 | DESIGN_TOKENS | packages/design-system/tokens.css | ACTIVE | 163 CSS custom properties: colors (35), spacing (28), typography (28), radius (8), shadows (10), z-index (8), animation (8), breakpoints (5), layout (5) |
 | PROJECT_STATUS.md | docs/ | ACTIVE | Current state: apps deployed, infrastructure, documentation inventory, what's missing, risks, enterprise pack status, next sprint priorities |
