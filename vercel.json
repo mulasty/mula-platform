@@ -1,4 +1,7 @@
 {
+  "buildCommand": "node vercel-build.mjs",
+  "installCommand": "npm install",
+  "framework": "nextjs",
   "crons": [
     {
       "path": "/api/cron/health",
