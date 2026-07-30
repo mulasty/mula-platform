@@ -121,7 +121,7 @@ Deployed to Vercel Edge Network
 Custom domain resolves → live at production URL
 ```
 
-### 3.4 Root `vercel.json` (primary project)
+### 3.4 Root `vercel.json` (primary project guardrail)
 
 ```json
 {
@@ -138,7 +138,9 @@ Custom domain resolves → live at production URL
 }
 ```
 
-Each subdomain app has its own `vercel.json` at `apps/[name]/vercel.json` with the corresponding `--filter=@mula/[name]` and `outputDirectory`.
+The root file is the primary `@mula/main` project config and owns the production health cron. Each subdomain app also has its own `vercel.json` at `apps/[name]/vercel.json` with the corresponding `--filter=@mula/[name]` and `outputDirectory`.
+
+Do not commit a root `vercel.json` pointing at any app other than `@mula/main`, and do not remove the cron. Vercel CLI can rewrite the root file when linked to a different monorepo project. CI runs `npm run validate:vercel-config` to catch this before release.
 
 ---
 
