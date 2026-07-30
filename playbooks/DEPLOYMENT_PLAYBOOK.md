@@ -121,14 +121,10 @@ Deployed to Vercel Edge Network
 Custom domain resolves → live at production URL
 ```
 
-### 3.4 Root `vercel.json` (primary project guardrail)
+### 3.4 Root `vercel.json` (shared cron guardrail)
 
 ```json
 {
-  "buildCommand": "npx turbo build --filter=@mula/main",
-  "installCommand": "npm ci",
-  "outputDirectory": "apps/main/.next",
-  "framework": "nextjs",
   "crons": [
     {
       "path": "/api/cron/health",
@@ -138,9 +134,9 @@ Custom domain resolves → live at production URL
 }
 ```
 
-The root file is the primary `@mula/main` project config and owns the production health cron. Each subdomain app also has its own `vercel.json` at `apps/[name]/vercel.json` with the corresponding `--filter=@mula/[name]` and `outputDirectory`.
+The root file owns only the production health cron. Build settings live in each app-level `vercel.json` at `apps/[name]/vercel.json` with the corresponding `--filter=@mula/[name]` and `outputDirectory`.
 
-Do not commit a root `vercel.json` pointing at any app other than `@mula/main`, and do not remove the cron. Vercel CLI can rewrite the root file when linked to a different monorepo project. CI runs `npm run validate:vercel-config` to catch this before release.
+Do not commit root-level `buildCommand`, `installCommand`, `outputDirectory`, or `framework`, and do not remove the cron. Vercel CLI can rewrite the root file when linked to a monorepo project. CI runs `npm run validate:vercel-config` to catch this before release.
 
 ---
 

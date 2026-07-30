@@ -30,11 +30,15 @@ function assert(condition, message) {
 
 const rootConfigPath = join(root, 'vercel.json')
 const rootConfig = readJson(rootConfigPath)
+const rootBuildKeys = ['buildCommand', 'installCommand', 'outputDirectory', 'framework']
 
-assert(rootConfig.buildCommand === 'npx turbo build --filter=@mula/main', 'Root vercel.json must build @mula/main.')
-assert(rootConfig.installCommand === 'npm ci', 'Root vercel.json installCommand must be npm ci.')
-assert(rootConfig.outputDirectory === 'apps/main/.next', 'Root vercel.json outputDirectory must be apps/main/.next.')
-assert(rootConfig.framework === 'nextjs', 'Root vercel.json framework must be nextjs.')
+for (const key of rootBuildKeys) {
+  assert(
+    !(key in rootConfig),
+    `Root vercel.json must not contain ${key}. Build settings belong in apps/<name>/vercel.json.`,
+  )
+}
+
 assert(Array.isArray(rootConfig.crons), 'Root vercel.json must keep the production health cron.')
 assert(rootConfig.crons.length === 1, 'Root vercel.json must define exactly one cron.')
 assert(rootConfig.crons[0]?.path === '/api/cron/health', 'Root cron path must be /api/cron/health.')
