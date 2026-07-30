@@ -8,6 +8,8 @@ import { PortfolioSection } from '@/components/PortfolioSection'
 import { FAQSection } from '@/components/FAQSection'
 import { CTASection } from '@/components/CTASection'
 
+export const revalidate = 3600
+
 export default function ConstructionPage() {
   return (
     <>

@@ -5,6 +5,8 @@ import { AIArchitecture } from '@/components/AIArchitecture'
 import { AICases } from '@/components/AICases'
 import { CTASection } from '@/components/CTASection'
 
+export const revalidate = 3600
+
 export default function AIPage() {
   return (
     <>

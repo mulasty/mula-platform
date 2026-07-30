@@ -16,6 +16,8 @@ import { ContactSection } from '@/components/ContactSection'
 import { Footer } from '@/components/Footer'
 import { StickyCTA } from '@/components/StickyCTA'
 
+export const revalidate = 3600
+
 export default function HomePage() {
   return (
     <>

@@ -14,6 +14,7 @@ const cspHeader = `
 `.replace(/\s+/g, " ").trim();
 
 const nextConfig: NextConfig = {
+  transpilePackages: ['@mula/ui'],
   async headers() {
     return [
       {
