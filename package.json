@@ -28,7 +28,7 @@
     "vitest": "^4.1.10"
   },
   "overrides": {
-    "postcss": "^8.5.16"
+    "postcss": "^8.5.25"
   },
   "engines": {
     "node": ">=22.0.0",

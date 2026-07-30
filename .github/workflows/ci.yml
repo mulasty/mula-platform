@@ -37,7 +37,7 @@ jobs:
         run: npm run typecheck
 
       - name: Audit
-        run: npm audit --audit-level=moderate
+        run: node scripts/audit-gate.mjs
 
       - name: Build
         run: npm run build
