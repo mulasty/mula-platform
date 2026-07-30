@@ -54,9 +54,9 @@ export function Footer({ companyInfo = defaultCompanyInfo, columns = [], contact
 
           {columns.map((column) => (
             <div key={column.title}>
-              <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
+              <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
                 {column.title}
-              </h4>
+              </h3>
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.label}>
@@ -73,9 +73,9 @@ export function Footer({ companyInfo = defaultCompanyInfo, columns = [], contact
           ))}
 
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
+            <h3 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">
               Kontakt
-            </h4>
+            </h3>
             <div className="space-y-4">
               <a
                 href={`mailto:${contactEmail}`}

@@ -11,7 +11,7 @@ export default function EcommercePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <EcomHero />
         <EcomServices />
         <EcomPlatforms />

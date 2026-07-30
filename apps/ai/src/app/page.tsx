@@ -11,7 +11,7 @@ export default function AIPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <AIHero />
         <AIServices />
         <AIArchitecture />

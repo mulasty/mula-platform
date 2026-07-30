@@ -77,6 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
+        <a href="#main-content" className="skip-link">Przejdü do treúci</a>
         {children}
         <SpeedInsights />
         <Analytics />

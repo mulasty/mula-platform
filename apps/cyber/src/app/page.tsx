@@ -32,7 +32,7 @@ export default function CyberPage() {
         ctaText="Bezpłatny audyt"
         ctaHref="#contact"
       />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <CyberHero />
         <CyberServices />
         <CyberThreats />

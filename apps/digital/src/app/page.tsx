@@ -11,7 +11,7 @@ export default function DigitalPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <DigitalHero />
         <DigitalServices />
         <DigitalProcess />

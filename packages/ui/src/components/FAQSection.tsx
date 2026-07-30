@@ -59,12 +59,14 @@ export function FAQSection({ title, subtitle, items }: FAQSectionProps) {
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <h3
+                  <span
+                    role="heading"
+                    aria-level={3}
                     id={`faq-question-${index}`}
                     className="text-base md:text-lg font-medium text-mula-text pr-4"
                   >
                     {faq.question}
-                  </h3>
+                  </span>
                   <motion.div
                     className="flex-shrink-0 w-8 h-8 rounded-lg bg-mula-accent/10 flex items-center justify-center"
                     animate={{ rotate: isOpen ? 180 : 0 }}

@@ -11,7 +11,7 @@ export default function InnovationPage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <InnovationHero />
         <InnovationServices />
         <InnovationProducts />
