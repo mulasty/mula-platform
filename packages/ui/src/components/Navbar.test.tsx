@@ -20,18 +20,18 @@ describe('Navbar', () => {
   it('has mobile menu toggle button', () => {
     render(<Navbar />)
 
-    const toggle = screen.getByRole('button', { name: /Toggle menu/ })
+    const toggle = screen.getByRole('button', { name: /menu/i })
     expect(toggle).toBeInTheDocument()
   })
 
   it('toggles mobile menu on click', () => {
     render(<Navbar />)
 
-    const toggle = screen.getByRole('button', { name: /Toggle menu/ })
+    const toggle = screen.getByRole('button', { name: /menu/i })
     fireEvent.click(toggle)
 
-    // After opening, the button label remains "Toggle menu" and the X icon appears
-    const closedToggle = screen.getByRole('button', { name: /Toggle menu/ })
+    // After opening, the button label changes to "Zamknij menu"
+    const closedToggle = screen.getByRole('button', { name: /menu/i })
     expect(closedToggle).toBeInTheDocument()
   })
 
