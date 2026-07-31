@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: 'Ekosystem biznesowy: AI, automatyzacja, e-commerce, marketing, cyberbezpieczeństwo i inżynieria. Jeden partner, jedna odpowiedzialność — od diagnozy po skalowanie.',
     images: [
       {
-        url: '/images/competencies/home-og.webp',
+        url: '/images/competencies/home-og.svg',
         width: 1200,
         height: 630,
         alt: `${COMPANY.name} — ${COMPANY.tagline}`,
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${COMPANY.name} — ${COMPANY.tagline}`,
     description: 'Ekosystem biznesowy: AI, automatyzacja, e-commerce, marketing, cyberbezpieczeństwo i inżynieria. Jeden partner, jedna odpowiedzialność.',
-    images: ['/images/competencies/home-og.webp'],
+    images: ['/images/competencies/home-og.svg'],
   },
   robots: {
     index: true,

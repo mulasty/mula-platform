@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       'SEO, Google Ads, Social Media, content marketing i marketing automation. Strategie oparte na danych, które zwiększają zasięg i generują leady.',
     images: [
       {
-        url: '/images/og/home-og.webp',
+        url: '/images/og/home-og.svg',
         width: 1200,
         height: 630,
         alt: 'Mula Marketing – Marketing Cyfrowy i Wzrost',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: 'Mula Marketing – Marketing Cyfrowy i Wzrost',
     description:
       'SEO, Google Ads, Social Media, content marketing i marketing automation. Strategie oparte na danych.',
-    images: ['/images/og/home-og.webp'],
+    images: ['/images/og/home-og.svg'],
   },
   robots: {
     index: true,

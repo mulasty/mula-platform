@@ -44,6 +44,7 @@ Vercel auto-provisions and renews Let's Encrypt certificates for all 9 domains. 
 - [ARCHITECTURE.md](../docs/ARCHITECTURE.md) — Full architecture, component hierarchy, data flow
 - [VERCEL_DOMAIN_AUDIT.md](../docs/recovery/VERCEL_DOMAIN_AUDIT.md) — Domain-to-project verification
 - [DEPLOYMENT_AUDIT.md](../docs/recovery/DEPLOYMENT_AUDIT.md) — Historical deployment audit and migration record
+- [PRODUCTION_RUNBOOK.md](../docs/PRODUCTION_RUNBOOK.md) — Current operational runbook for releases, monitoring, alerting, and rollback
 - [TECHNICAL_DEBT_REGISTER.md](../docs/TECHNICAL_DEBT_REGISTER.md) — Known tech debt and resolutions
 - [PRODUCT_HEALTH_DASHBOARD.md](../docs/PRODUCT_HEALTH_DASHBOARD.md) — Live project health metrics
 
@@ -315,3 +316,4 @@ Variables prefixed with `NEXT_PUBLIC_` are inlined at build time and visible in 
 | Date | Change |
 |---|---|
 | 2026-07-30 | Created deployment playbook; documented pre-deploy checklist, pipeline, rollback, env vars |
+| 2026-07-30 | Added production runbook covering PR governance, smoke monitoring, issue alerting, Guardian SEO/analytics, and rollback |
