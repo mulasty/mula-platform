@@ -150,6 +150,138 @@ export function GuardianLandingPage() {
           </div>
         </section>
 
+        <section className="py-20 bg-slate-50">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">Cennik</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-5xl">Jeden abonament. Pełne cyber-GRC dla MŚP.</h2>
+              <p className="mt-4 text-lg text-slate-600">Bez ukrytych kosztów. Bez długich wdrożeń. Subskrypcja miesięczna z możliwością rezygnacji w każdej chwili.</p>
+            </div>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {[
+                {
+                  name: 'Starter',
+                  price: '2 490',
+                  unit: 'zł / mc',
+                  desc: 'Dla małych firm, które potrzebują pierwszego audytu i podstaw compliance.',
+                  features: ['Audit Manager — 1 audyt / mc', 'Checklisty NIS2', 'Dashboard z wynikami', 'Wsparcie e-mail'],
+                  cta: 'Zacznij za darmo',
+                  highlight: false,
+                },
+                {
+                  name: 'Essential',
+                  price: '4 990',
+                  unit: 'zł / mc',
+                  desc: 'Dla firm 50–250 pracowników, które muszą spełnić NIS2 i zbudować dokumentację.',
+                  features: ['Wszystko ze Startera', 'Compliance Manager (NIS2/RODO/DORA)', 'Document Generator', 'Risk Manager', 'AI Cyber Officer (beta)', 'Wsparcie priorytetowe'],
+                  cta: 'Wybierz Essential',
+                  highlight: true,
+                },
+                {
+                  name: 'Professional',
+                  price: '9 900',
+                  unit: 'zł / mc',
+                  desc: 'Dla organizacji z wymaganiami audytowanymi — ISO 27001, DORA, sektor krytyczny.',
+                  features: ['Wszystko z Essentiala', 'Incident Center', 'Integracje API / SIEM', 'Dedykowany opiekun techniczny', 'SLA 4h', 'Onboarding i szkolenie zespołu'],
+                  cta: 'Skontaktuj się',
+                  highlight: false,
+                },
+              ].map((plan) => (
+                <article key={plan.name} className={`rounded-3xl border p-8 shadow-sm transition-shadow hover:shadow-xl ${plan.highlight ? 'border-blue-200 bg-white ring-2 ring-blue-600' : 'border-slate-200 bg-white'}`}>
+                  {plan.highlight ? <span className="mb-4 inline-block rounded-full bg-blue-600 px-4 py-1 text-xs font-bold text-white">Najczęściej wybierany</span> : null}
+                  <h3 className="text-2xl font-bold text-slate-950">{plan.name}</h3>
+                  <p className="mt-2 text-sm text-slate-500">{plan.desc}</p>
+                  <div className="mt-6">
+                    <span className="text-4xl font-extrabold text-slate-950">{plan.price}</span>
+                    <span className="ml-2 text-sm text-slate-500">{plan.unit}</span>
+                  </div>
+                  <ul className="mt-6 space-y-3">
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-start gap-3 text-sm text-slate-700">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <GuardianTrackedLink
+                    href="/#contact"
+                    eventName="guardian_pricing_click"
+                    eventProperties={{ plan: plan.name }}
+                    className={`mt-8 flex w-full items-center justify-center rounded-full px-6 py-3 font-semibold transition-colors ${plan.highlight ? 'bg-blue-600 text-white hover:bg-blue-500' : 'border border-slate-300 bg-white text-slate-800 hover:border-blue-400'}`}
+                  >
+                    {plan.cta}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </GuardianTrackedLink>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700">FAQ</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 md:text-5xl">Najczęściej zadawane pytania</h2>
+            </div>
+            <div className="space-y-4">
+              {[
+                { q: 'Czy MULA Guardian AI zastępuje pełnoetatowego CISO?', a: 'Dla większości MŚP — tak. Guardian działa jako wirtualny CISO (vCISO): prowadzi audyty, monitoruje compliance, generuje dokumentację i priorytetyzuje działania. Dla dużych organizacji może wspierać zespół security jako platforma GRC.' },
+                { q: 'Jak szybko mogę zacząć?', a: 'Dostęp do platformy otrzymujesz od razu po rejestracji. Pierwszy audyt NIS2 możesz przeprowadzić tego samego dnia. Nie wymagamy długich wdrożeń ani integracji — wszystko działa w przeglądarce.' },
+                { q: 'Czy platforma jest zgodna z NIS2 i RODO?', a: 'Tak. Compliance Manager mapuje wymogi NIS2, RODO i DORA na konkretne działania. Document Generator tworzy polityki i procedury zgodne z tymi regulacjami. Platforma sama w sobie jest zgodna z RODO — dane hostowane są w UE.' },
+                { q: 'Co się stanie, gdy zrezygnuję z abonamentu?', a: 'Eksportujesz wszystkie swoje dane (audyty, dokumenty, rejestry) w formacie PDF/CSV. Po zakończeniu subskrypcji dane są przechowywane przez 30 dni, a następnie trwale usuwane. Możesz wrócić w dowolnym momencie.' },
+                { q: 'Czy oferujecie wsparcie techniczne?', a: 'W planie Essential i Professional — tak. Starter ma wsparcie e-mail w ciągu 48h. Essential dodaje priorytetowe wsparcie w ciągu 24h. Professional obejmuje dedykowanego opiekuna technicznego i SLA 4h.' },
+                { q: 'Czy mogę przetestować platformę przed zakupem?', a: 'Tak — Starter przez pierwsze 14 dni jest darmowy. Dodatkowo możesz umówić demo na żywo, gdzie pokażemy pełną funkcjonalność i odpowiemy na pytania. Wypełnij formularz kontaktowy poniżej.' },
+              ].map((item) => (
+                <details key={item.q} className="group rounded-2xl border border-slate-200 bg-white p-6 transition-colors hover:border-blue-200">
+                  <summary className="flex cursor-pointer items-center justify-between font-semibold text-slate-950">
+                    {item.q}
+                    <span className="ml-4 shrink-0 text-blue-500 transition-transform group-open:rotate-180">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                    </span>
+                  </summary>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="py-20 bg-slate-950 text-white">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">Demo</p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">Umów prezentację Guardian AI</h2>
+              <p className="mx-auto mt-4 max-w-xl text-lg text-slate-300">Zobacz, jak platforma może działać w Twojej firmie. Demo trwa około 30 minut — bez zobowiązań.</p>
+            </div>
+            <form action="https://formspree.io/f/your-form-id" method="POST" className="space-y-5">
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="demo-name" className="mb-2 block text-sm font-medium text-slate-200">Imię i nazwisko</label>
+                  <input id="demo-name" name="name" type="text" required className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/30" placeholder="Jan Kowalski" />
+                </div>
+                <div>
+                  <label htmlFor="demo-email" className="mb-2 block text-sm font-medium text-slate-200">E-mail służbowy</label>
+                  <input id="demo-email" name="email" type="email" required className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/30" placeholder="jan@firma.pl" />
+                </div>
+              </div>
+              <div>
+                <label htmlFor="demo-company" className="mb-2 block text-sm font-medium text-slate-200">Firma</label>
+                <input id="demo-company" name="company" type="text" required className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/30" placeholder="Nazwa firmy" />
+              </div>
+              <div>
+                <label htmlFor="demo-message" className="mb-2 block text-sm font-medium text-slate-200">Co chcesz omówić na demo?</label>
+                <textarea id="demo-message" name="message" rows={4} className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder:text-slate-500 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/30" placeholder="Interesuje mnie NIS2 / chcę zobaczyć moduł compliance / potrzebuję wyceny..." />
+              </div>
+              <button type="submit" className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-8 py-4 font-semibold text-white transition-colors hover:bg-blue-500 sm:w-auto">
+                Wyślij zgłoszenie
+                <ArrowRight className="h-5 w-5" />
+              </button>
+              <p className="text-xs text-slate-500">Przesyłając formularz, zgadzasz się na politykę prywatności Mula Group.</p>
+            </form>
+          </div>
+        </section>
+
         <section className="py-20">
           <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
             <LockKeyhole className="mx-auto mb-5 h-10 w-10 text-blue-700" />
