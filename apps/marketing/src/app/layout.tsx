@@ -103,7 +103,7 @@ export default function RootLayout({
         <ConsentAnalyticsScripts cookiebotCid={cookiebotCid} ga4Id={ga4Id} />
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
-        <a href="#main-content" className="skip-link">PrzejdŸ do treœci</a>
+        <a href="#main-content" className="skip-link">Przejdï¿½ do treï¿½ci</a>
         {children}
         <SpeedInsights />
         <Analytics />
