@@ -51,9 +51,9 @@ export function FAQSection() {
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <h3 id={`faq-question-${index}`} className="text-base md:text-lg font-medium text-mula-text pr-4">
+                  <span role="heading" aria-level={3} id={`faq-question-${index}`} className="text-base md:text-lg font-medium text-mula-text pr-4">
                     {faq.question}
-                  </h3>
+                  </span>
                   <div
                     className="flex-shrink-0 w-8 h-8 rounded-lg bg-mula-accent/10 flex items-center justify-center transition-transform duration-300"
                     style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}

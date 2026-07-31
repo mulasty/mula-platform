@@ -32,7 +32,7 @@ export default function MarketingPage() {
         ctaText="Bezpłatna konsultacja"
         ctaHref="#contact"
       />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <MarketingHero />
         <MarketingServices />
         <MarketingChannels />

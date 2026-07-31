@@ -143,7 +143,7 @@ export function EcomHero() {
           <motion.div className="flex flex-col sm:flex-row gap-4" variants={itemVariants}>
             <motion.a
               href="#contact"
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-mula-accent hover:bg-mula-accent-light text-black font-semibold transition-colors duration-200"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-mula-accent hover:bg-mula-accent-light text-white font-semibold transition-colors duration-200"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >

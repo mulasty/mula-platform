@@ -31,9 +31,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider">
+            <h3 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider">
               Usługi
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {firstPillarCol.map((pillar) => (
                 <li key={pillar.id}>
@@ -51,9 +51,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider invisible sm:visible">
+            <h3 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider invisible sm:visible">
               &nbsp;
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {secondPillarCol.map((pillar) => (
                 <li key={pillar.id}>
@@ -71,9 +71,9 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider">
+            <h3 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider">
               Kontakt
-            </h4>
+            </h3>
             <div className="space-y-4">
               <a
                 href={`mailto:${COMPANY.email}`}

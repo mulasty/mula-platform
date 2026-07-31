@@ -100,7 +100,8 @@ export function Navbar({
           <button
             className="md:hidden p-2"
             onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? 'Zamknij menu' : 'Otwórz menu'}
+            aria-expanded={mobileOpen}
           >
             {mobileOpen ? (
               <X className={`w-6 h-6 ${textClass}`} />

@@ -81,7 +81,7 @@ export function ConstructionHero() {
             </motion.a>
             <motion.a
               href="#portfolio"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-mula-border hover:border-construction/50 text-mula-text hover:text-white font-semibold rounded-full transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-mula-border hover:border-construction/50 hover:bg-construction text-mula-text hover:text-white font-semibold rounded-full transition-all duration-200"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
