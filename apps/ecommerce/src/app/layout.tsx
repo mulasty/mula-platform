@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   creator: 'Mula Group',
   publisher: 'Mula Group',
   alternates: {
-    canonical: 'https://ecommerce.mulagroup.eu',
+    canonical: 'https://ecommerce.mulagroup.eu/',
   },
   openGraph: {
     type: 'website',
