@@ -100,7 +100,7 @@ export function ContactForm({ competency: preselected, className }: ContactFormP
     setServerError('')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://mulagroup.eu/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
