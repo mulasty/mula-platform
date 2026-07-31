@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { ConsentAnalyticsScripts } from '@mula/ui'
 import { Analytics } from '@vercel/analytics/next'
 import { COMPANY } from '@/lib/data'
 import './globals.css'
@@ -84,39 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {cookiebotCid ? (
-          <Script
-            id="Cookiebot"
-            src="https://consent.cookiebot.com/uc.js"
-            strategy="beforeInteractive"
-            data-cbid={cookiebotCid}
-            data-blockingmode="auto"
-          />
-        ) : null}
-        {ga4Id && ga4Id !== 'G-XXXXXXXXXX' ? (
-          <>
-            <Script
-              id="ga4-script"
-              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
-              strategy="afterInteractive"
-              type="text/plain"
-              data-cookieconsent="statistics"
-            />
-            <Script
-              id="ga4-config"
-              strategy="afterInteractive"
-              type="text/plain"
-              data-cookieconsent="statistics"
-            >
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${ga4Id}', { anonymize_ip: true });
-              `}
-            </Script>
-          </>
-        ) : null}
+        <ConsentAnalyticsScripts cookiebotCid={cookiebotCid} ga4Id={ga4Id} />
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
         <a href="#main-content" className="skip-link">
