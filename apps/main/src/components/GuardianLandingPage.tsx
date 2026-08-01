@@ -254,7 +254,8 @@ export function GuardianLandingPage() {
               <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">Umów prezentację Guardian AI</h2>
               <p className="mx-auto mt-4 max-w-xl text-lg text-slate-300">Zobacz, jak platforma może działać w Twojej firmie. Demo trwa około 30 minut — bez zobowiązań.</p>
             </div>
-            <form action="https://formspree.io/f/your-form-id" method="POST" className="space-y-5">
+            <form action="/api/contact" method="POST" className="space-y-5">
+              <input type="hidden" name="competency" value="Cyberbezpieczeństwo" />
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="demo-name" className="mb-2 block text-sm font-medium text-slate-200">Imię i nazwisko</label>
