@@ -98,6 +98,54 @@ function buildFingerprint(request: Request, body: ContactBody): string {
   return [ip, body.email.trim().toLowerCase(), body.name.trim(), body.message.trim().slice(0, 50)].join('|')
 }
 
+const RESEND_API_URL = 'https://api.resend.com/emails'
+const CONTACT_TO_EMAIL = 'kontakt@mulagroup.eu'
+
+async function sendContactEmail(body: ContactBody): Promise<void> {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey || apiKey === 're_placeholder') {
+    console.log('[contact] Email not sent — RESEND_API_KEY is not configured')
+    return
+  }
+
+  const payload = {
+    from: `Mula Group <${CONTACT_TO_EMAIL}>`,
+    to: [CONTACT_TO_EMAIL],
+    subject: `Nowe zgłoszenie: ${body.competency} — ${body.name.trim()}`,
+    reply_to: body.email.trim(),
+    html: `<h2>Nowe zgłoszenie kontaktowe</h2>
+<p><strong>Imię i nazwisko:</strong> ${body.name.trim()}</p>
+<p><strong>Email:</strong> ${body.email.trim()}</p>
+<p><strong>Firma:</strong> ${body.company?.trim() || '—'}</p>
+<p><strong>Obszar:</strong> ${body.competency}</p>
+<p><strong>Wiadomość:</strong></p>
+<blockquote>${body.message.trim().replace(/\n/g, '<br>')}</blockquote>
+<hr>
+<p><small>Wysłano z formularza kontaktowego Mula Group</small></p>`,
+  }
+
+  try {
+    const response = await fetch(RESEND_API_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    })
+
+    if (!response.ok) {
+      const errorBody = await response.text()
+      console.error('[contact] Resend API error %d: %s', response.status, errorBody)
+      return
+    }
+
+    console.log('[contact] Email sent to %s', CONTACT_TO_EMAIL)
+  } catch (error) {
+    console.error('[contact] Failed to send email:', error)
+  }
+}
+
 export async function POST(request: Request) {
   try {
     // Only accept JSON payloads
@@ -126,6 +174,13 @@ export async function POST(request: Request) {
     }
 
     // TODO: Integrate with email service (e.g. Resend, SendGrid, or SMTP)
+    // Email delivery via Resend API (Edge-compatible, no npm deps)
+    const ctx = (globalThis as unknown as { waitUntil?: (p: Promise<unknown>) => void })
+    if (ctx.waitUntil) {
+      ctx.waitUntil(sendContactEmail(body))
+    } else {
+      sendContactEmail(body).catch(() => {})
+    }
 
     console.log('[contact] New submission from %s (%s) regarding %s',
       body.name.trim(),
