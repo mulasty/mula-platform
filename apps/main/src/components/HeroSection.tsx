@@ -4,7 +4,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Building2, ChevronDown } from 'lucide-react'
-import { COMPANY, HERO_VARIANTS } from '@/lib/data'
+import { useTranslations } from 'next-intl'
+import { HERO_VARIANTS } from '@/lib/data'
 
 const stats = HERO_VARIANTS.enterprise.stats
 
@@ -56,6 +57,8 @@ function CountUpBadge({ label, value }: { label: string; value: string }) {
 export function HeroSection() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
   const sectionRef = useRef<HTMLElement>(null)
+  const t = useTranslations('hero')
+  const tc = useTranslations('company')
 
   const particles = useMemo(
     () =>
@@ -182,7 +185,7 @@ export function HeroSection() {
           >
             <Building2 className="w-4 h-4 text-mula-accent" />
               <span className="text-xs text-slate-600 uppercase tracking-wide">
-              {COMPANY.name}
+              {tc('name')}
             </span>
           </motion.div>
 
@@ -192,7 +195,7 @@ export function HeroSection() {
             variants={itemVariants}
           >
             <span className="bg-gradient-to-r from-mula-accent via-mula-accent-light to-mula-purple bg-clip-text text-transparent">
-              {COMPANY.heroTitle}
+              {t('headline')}
             </span>
           </motion.h1>
 
@@ -201,7 +204,7 @@ export function HeroSection() {
             className="text-base md:text-lg text-mula-text-muted max-w-2xl mb-10 leading-relaxed"
             variants={itemVariants}
           >
-            {COMPANY.heroSubtitle}
+            {t('subheadline')}
           </motion.p>
 
           {/* CTA */}
@@ -212,7 +215,7 @@ export function HeroSection() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              Poznaj MULA Guardian AI
+              {t('cta')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             <motion.a
@@ -221,7 +224,7 @@ export function HeroSection() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {COMPANY.heroSecondaryCTA}
+              {t('secondaryCTA')}
               <ChevronDown className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
           </motion.div>
@@ -231,9 +234,12 @@ export function HeroSection() {
             className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-2xl"
             variants={containerVariants}
           >
-            {stats.map((stat) => (
-              <CountUpBadge key={stat.label} label={stat.label} value={stat.value} />
-            ))}
+            {stats.map((stat, i) => {
+              const keys = ['founded', 'pillars', 'projects', 'region'] as const
+              return (
+                <CountUpBadge key={keys[i]} label={t(`stats.${keys[i]}`)} value={stat.value} />
+              )
+            })}
           </motion.div>
         </motion.div>
       </div>

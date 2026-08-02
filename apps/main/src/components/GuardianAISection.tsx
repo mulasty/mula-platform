@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Activity } from 'lucide-react'
-import { GUARDIAN_AI } from '@/lib/data'
+import { useTranslations } from 'next-intl'
 
 const cardVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -16,6 +16,7 @@ const cardVariants = {
  * EMOTIONAL TARGET: "This is a focused AI company with a clear product direction."
  */
 export function GuardianAISection() {
+  const tg = useTranslations('guardianAI')
   return (
     <section id="guardian-ai" className="relative py-24 scroll-mt-24 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(59,130,246,0.16),transparent_34%),linear-gradient(180deg,#ffffff_0%,#f8fafc_100%)]" />
@@ -38,21 +39,21 @@ export function GuardianAISection() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-[0.2em] mb-6">
               <Sparkles className="w-4 h-4" />
-              {GUARDIAN_AI.eyebrow}
+              {tg('eyebrow')}
             </div>
 
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-950 mb-6">
-              <span className="mula-gradient-text">{GUARDIAN_AI.name}</span>
+              <span className="mula-gradient-text">{tg('name')}</span>
               <br />
-              {GUARDIAN_AI.headline}
+              {tg('headline')}
             </h2>
 
             <p className="text-lg text-slate-600 leading-relaxed max-w-2xl mb-8">
-              {GUARDIAN_AI.description}
+              {tg('description')}
             </p>
 
             <div className="space-y-3 mb-8">
-              {GUARDIAN_AI.bullets.map((bullet) => (
+              {tg.raw('bullets').map((bullet: string) => (
                 <div key={bullet} className="flex items-start gap-3 text-slate-700">
                   <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                   <span>{bullet}</span>
@@ -65,7 +66,7 @@ export function GuardianAISection() {
                 href="/guardian"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-slate-950 hover:bg-blue-700 text-white font-semibold transition-colors"
               >
-                {GUARDIAN_AI.cta}
+                {tg('cta')}
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
@@ -74,7 +75,7 @@ export function GuardianAISection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white border border-slate-200 hover:border-blue-300 text-slate-800 font-semibold transition-colors shadow-sm"
               >
-                {GUARDIAN_AI.secondaryCta}
+                {tg('secondaryCta')}
               </a>
             </div>
           </motion.div>
@@ -105,7 +106,7 @@ export function GuardianAISection() {
                 </div>
 
                 <div className="grid grid-cols-3 gap-3">
-                  {GUARDIAN_AI.metrics.map((metric) => (
+                  {tg.raw('metrics').map((metric: { value: string; label: string }) => (
                     <div key={metric.label} className="rounded-2xl bg-white/5 border border-white/10 p-4">
                       <p className="text-2xl font-bold text-white">{metric.value}</p>
                       <p className="text-xs text-slate-400 mt-1">{metric.label}</p>

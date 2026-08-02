@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion'
 import { Bot, Clock, ShieldCheck, Smartphone } from 'lucide-react'
 import type { Product } from '@/lib/types'
+import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
-import { PRODUCTS } from '@/lib/data'
 
 type IconComponent = React.ComponentType<{ className?: string; style?: React.CSSProperties }>
 
@@ -40,18 +40,42 @@ const statusConfig: Record<
  * EMOTIONAL TARGET: "They build their own products too — impressive."
  */
 export function ProductsPreview() {
+  const tp = useTranslations('products')
+  const products = tp.raw as unknown as { name: string; description: string; status: string }[] || []
+  const statusConfig: Record<
+    string,
+    { label: string; classes: string }
+  > = {
+    live: {
+      label: tp.raw.length > 0 ? 'Live' : 'Dostępny',
+      classes: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    },
+    beta: {
+      label: 'Beta',
+      classes: 'bg-blue-50 text-blue-700 border-blue-200',
+    },
+    development: {
+      label: tp.raw.length > 0 ? 'In Development' : 'W rozwoju',
+      classes: 'bg-purple-50 text-purple-700 border-purple-200',
+    },
+  }
   return (
     <section id="products" className="py-20 scroll-mt-24 bg-slate-50/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          title="Produkty Mula Group"
-          subtitle="Od MULA Guardian AI po kolejne systemy automatyzacji"
+          title={products.length > 0 ? products[0].name.split(':')[0] || 'Products' : 'Produkty Mula Group'}
+          subtitle={products.length > 0 ? `From ${products[0].name} to automation systems` : 'Od MULA Guardian AI po kolejne systemy automatyzacji'}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {PRODUCTS.map((product, index) => {
-            const Icon = iconMap[product.icon] || Bot
-            const status = statusConfig[product.status]
+          {products.map((product, index) => {
+            const Icon = iconMap[{
+              'MULA Guardian AI': 'ShieldCheck',
+              'Automation Audit Robot': 'Bot',
+              'Presence System': 'Clock',
+              'Mula Mobile AI Commander': 'Smartphone',
+            }[product.name] || 'Bot'] || Bot
+            const status = statusConfig[product.status] || statusConfig.development
 
             return (
               <motion.div

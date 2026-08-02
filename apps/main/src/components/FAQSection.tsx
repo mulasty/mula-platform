@@ -3,8 +3,8 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Plus, Minus } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
-import { FAQ_ITEMS } from '@/lib/data'
 
 /**
  * SECTION: FAQ
@@ -14,6 +14,8 @@ import { FAQ_ITEMS } from '@/lib/data'
  */
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const tf = useTranslations('faq')
+  const faqItems = tf.raw as unknown as { question: string; answer: string }[] || []
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -32,12 +34,12 @@ export function FAQSection() {
 
       <div className="relative max-w-3xl mx-auto">
         <SectionHeader
-          title="Często zadawane pytania"
-          subtitle="Znajdź odpowiedzi na najczęściej pojawiające się pytania"
+          title="FAQ"
+          subtitle={faqItems.length > 0 ? faqItems[0].question.split('?')[0] + '?' : 'FAQ'}
         />
 
         <div className="space-y-3">
-          {FAQ_ITEMS.map((faq, index) => {
+          {faqItems.map((faq, index) => {
             const isOpen = openIndex === index
 
             return (

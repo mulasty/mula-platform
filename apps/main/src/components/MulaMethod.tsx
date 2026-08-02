@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Cpu, Workflow, Bot } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import { MULA_METHOD } from '@/lib/data'
+import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
 
 const iconMap: Record<string, LucideIcon> = {
@@ -27,6 +27,8 @@ const cardVariant = {
 }
 
 export function MulaMethod() {
+  const tm = useTranslations('mulaMethod')
+  const items = tm.raw as unknown as { id: string; title: string; description: string; icon: string; color: string }[] || []
   return (
     <section id="method" className="relative py-20 px-6 overflow-hidden scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/40 to-white pointer-events-none" />
@@ -56,7 +58,7 @@ export function MulaMethod() {
           viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer}
         >
-          {MULA_METHOD.map((item) => {
+          {items.map((item) => {
             const Icon = iconMap[item.icon] || Cpu
             return (
               <motion.div

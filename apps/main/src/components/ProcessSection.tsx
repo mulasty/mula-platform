@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Search, Compass, PenTool, Play, RefreshCw, TrendingUp } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
-import { PROCESS_STEPS } from '@/lib/data'
+import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
 
 const iconMap: Record<string, LucideIcon> = {
@@ -36,6 +36,8 @@ const cardVariant = {
  * EMOTIONAL TARGET: "I know what to expect."
  */
 export function ProcessSection() {
+  const tp = useTranslations('process')
+  const steps = tp.raw as unknown as { step: number; title: string; description: string; icon: string }[] || []
   return (
     <section id="process" className="relative py-20 px-6 scroll-mt-24 overflow-hidden">
       <Image
@@ -64,7 +66,7 @@ export function ProcessSection() {
           {/* Gradient connecting line */}
           <div className="absolute top-10 left-8 right-8 h-0.5 bg-gradient-to-r from-mula-accent via-mula-purple to-mula-accent/20" />
 
-          {PROCESS_STEPS.map((step) => {
+          {steps.map((step) => {
             const Icon = iconMap[step.icon] || Search
             return (
               <motion.div
@@ -105,7 +107,7 @@ export function ProcessSection() {
           viewport={{ once: true, margin: '-50px' }}
           variants={staggerContainer}
         >
-          {PROCESS_STEPS.map((step) => {
+          {steps.map((step) => {
             const Icon = iconMap[step.icon] || Search
             return (
               <motion.div

@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Brain, TrendingUp, ShoppingCart, RefreshCw, Shield, Building2, Lightbulb, ArrowRight } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
-import { CLIENT_NEEDS } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {
   Brain,
@@ -23,6 +23,18 @@ const iconMap: Record<string, LucideIcon> = {
  * EMOTIONAL TARGET: "They understand my needs."
  */
 export function ClientNeedsSection() {
+  const tn = useTranslations('clientNeeds')
+  const needs = tn.raw as unknown as { title: string; desc: string; icon: string; href: string; color: string }[] || []
+  const defaultNeeds = [
+    { icon: 'Brain', title: 'AI', desc: 'Audit → wdrożenie', href: 'https://ai.mulagroup.eu', color: '#3b82f6' },
+    { icon: 'TrendingUp', title: 'Marketing', desc: 'SEO, kampanie, lejek', href: 'https://marketing.mulagroup.eu', color: '#ec4899' },
+    { icon: 'ShoppingCart', title: 'E-commerce', desc: 'Sprzedaż online', href: 'https://ecommerce.mulagroup.eu', color: '#f59e0b' },
+    { icon: 'RefreshCw', title: 'Automatyzacja', desc: 'Workflow, integracje', href: 'https://digital.mulagroup.eu', color: '#8b5cf6' },
+    { icon: 'Shield', title: 'Bezpieczeństwo', desc: 'NIS2, audyty, monitoring', href: 'https://cyber.mulagroup.eu', color: '#10b981' },
+    { icon: 'Building2', title: 'Konstrukcje', desc: 'Projekt, produkcja, montaż', href: 'https://construction.mulagroup.eu', color: '#ef4444' },
+    { icon: 'Lightbulb', title: 'Nowy produkt', desc: 'MVP, prototyp, SaaS', href: 'https://innovation.mulagroup.eu', color: '#06b6d4' },
+  ]
+  const displayNeeds = needs.length > 0 ? needs : defaultNeeds
   return (
     <section id="needs" className="relative py-24 scroll-mt-24 overflow-hidden">
       <Image
@@ -37,7 +49,7 @@ export function ClientNeedsSection() {
       <div className="relative max-w-7xl mx-auto px-4">
         <SectionHeader title="W czym możemy pomóc?" subtitle="Wybierz obszar, w którym potrzebujesz wsparcia — wskażemy Ci drogę." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
-          {CLIENT_NEEDS.map((need, i) => {
+          {displayNeeds.map((need: { title: string; desc: string; icon: string; href: string; color: string }, i: number) => {
             const Icon = iconMap[need.icon] || Brain
             return (
               <motion.a

@@ -3,10 +3,11 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
-import { COMPANY } from '@/lib/data'
+import { useTranslations } from 'next-intl'
 
 export function StickyCTA() {
   const [visible, setVisible] = useState(false)
+  const t = useTranslations('hero')
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 1500)
@@ -28,7 +29,7 @@ export function StickyCTA() {
             <div className="flex items-center justify-center gap-3 px-6 py-4">
               <MessageCircle className="w-5 h-5 text-white" />
               <span className="text-white font-semibold text-sm">
-                {COMPANY.heroCTA}
+                {t('cta')}
               </span>
             </div>
           </div>

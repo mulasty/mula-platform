@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Layers, Search, Play, TrendingUp, User } from 'lucide-react'
-import { COMPANY } from '@/lib/data'
+import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
 
 const valueIcons = [Layers, Search, Play, TrendingUp]
@@ -28,10 +28,12 @@ const staggerContainer = {
  * EMOTIONAL TARGET: "These people understand business, not just tech."
  */
 export function AboutSection() {
+  const t = useTranslations()
+  const tc = useTranslations('company')
   return (
     <section id="about" className="relative py-20 px-6 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
-        <SectionHeader title="O Mula Group" />
+        <SectionHeader title={t('nav.about')} />
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left column */}
@@ -45,7 +47,7 @@ export function AboutSection() {
               className="text-lg text-mula-text-muted leading-relaxed mb-10"
               variants={fadeInVariant}
             >
-              {COMPANY.aboutText}
+              {t('aboutText')}
             </motion.p>
 
             <motion.div
@@ -57,11 +59,11 @@ export function AboutSection() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-mula-text">
-                  {COMPANY.founderName}
+                  {tc('founderName')}
                 </h3>
-                <p className="text-sm text-mula-accent mb-2">{COMPANY.founderRole}</p>
+                <p className="text-sm text-mula-accent mb-2">{tc('founderRole')}</p>
                 <p className="text-sm text-mula-text-muted leading-relaxed">
-                  {COMPANY.founderBio}
+                  {tc('founderBio')}
                 </p>
               </div>
             </motion.div>
@@ -90,12 +92,12 @@ export function AboutSection() {
               <h3 className="relative z-10 text-sm uppercase tracking-wider text-mula-accent mb-3 font-semibold">
                 Misja
               </h3>
-              <p className="relative z-10 text-lg text-mula-text leading-relaxed">{COMPANY.mission}</p>
+              <p className="relative z-10 text-lg text-mula-text leading-relaxed">{tc('mission')}</p>
             </motion.div>
 
             {/* Values grid */}
             <motion.div className="grid sm:grid-cols-2 gap-4" variants={staggerContainer}>
-              {COMPANY.values.map((value, i) => {
+              {t.raw('values').map((value: { title: string; description: string }, i: number) => {
                 const Icon = valueIcons[i]
                 return (
                   <motion.div

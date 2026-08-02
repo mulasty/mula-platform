@@ -4,8 +4,15 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Grid3X3, Briefcase, GitBranch, MapPin } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
-import { WHY_US_STATS } from '@/lib/data'
+
+const stats = [
+  { value: 7, suffix: '', labelKey: 'pillars', icon: 'Grid3X3' },
+  { value: 10, suffix: '+', labelKey: 'projects', icon: 'Briefcase' },
+  { value: 3, suffix: '+', labelKey: 'years', icon: 'GitBranch' },
+  { value: 0, suffix: '', labelKey: 'region', icon: 'MapPin', raw: true },
+]
 
 const iconMap: Record<string, LucideIcon> = {
   Grid3X3,
@@ -47,9 +54,8 @@ function AnimatedNumber({ target, suffix = '' }: { target: number; suffix?: stri
   return <span ref={ref}>{count}{suffix}</span>
 }
 
-const stats = WHY_US_STATS
-
 export function WhyUsSection() {
+  const t = useTranslations('whyUs')
   return (
     <section id="why-us" className="py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,7 +93,7 @@ export function WhyUsSection() {
               const Icon = iconMap[stat.icon] || Grid3X3
               return (
               <motion.div
-                key={stat.label}
+                key={stat.labelKey}
                 className="rounded-2xl bg-mula-surface border border-mula-border p-6 flex flex-col items-center text-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +111,7 @@ export function WhyUsSection() {
                     <AnimatedNumber target={stat.value} suffix={stat.suffix} />
                   )}
                 </span>
-                <span className="text-sm text-mula-text-muted">{stat.label}</span>
+                <span className="text-sm text-mula-text-muted">{t(stat.labelKey)}</span>
               </motion.div>
               )
             })}
