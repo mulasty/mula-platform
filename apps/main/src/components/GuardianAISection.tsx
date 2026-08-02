@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Activity } from 'lucide-react'
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 
 const cardVariants = {
@@ -62,13 +63,13 @@ export function GuardianAISection() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <a
+              <Link
                 href="/guardian"
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-slate-950 hover:bg-blue-700 text-white font-semibold transition-colors"
               >
                 {tg('cta')}
                 <ArrowRight className="w-5 h-5" />
-              </a>
+              </Link>
               <a
                 href="https://app.guardian.mulagroup.eu/login"
                 target="_blank"
