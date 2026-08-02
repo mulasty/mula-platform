@@ -15,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
+      url: 'https://mulagroup.eu/audyt-nis2',
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
       url: 'https://guardian.mulagroup.eu',
       lastModified: new Date(),
       changeFrequency: 'weekly',
