@@ -50,25 +50,9 @@ export default async function HomePage() {
   return (
     <>
       <Navbar />
-      <main id="main-content" tabIndex={-1}>
-        <HeroSection />
-        <ClientNeedsSection />
-        <AboutSection />
-        <WhyUsSection />
-        <PillarsGrid />
-        <ProcessSection />
-        <MulaMethod />
-        <TechnologyCloud />
-        <ProductsPreview />
-        <CTASection
-          title={t('cta.title')}
-          subtitle={t('cta.subtitle')}
-          ctaText={t('cta.button')}
-          ctaHref="#contact"
-        />
-        <ContactSection />
+      <main id="main-content" tabIndex={-1} className="pt-32 pb-16 px-6 text-center">
+        <h1 className="text-4xl font-bold">WORKING - Navbar OK</h1>
       </main>
-      <Footer />
     </>
   )
 }
