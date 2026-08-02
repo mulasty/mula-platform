@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion'
 import { Bot, Clock, ShieldCheck, Smartphone } from 'lucide-react'
-import type { Product } from '@/lib/types'
 import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
 
@@ -13,24 +12,6 @@ const iconMap: Record<string, IconComponent> = {
   Clock,
   ShieldCheck,
   Smartphone,
-}
-
-const statusConfig: Record<
-  Product['status'],
-  { label: string; classes: string }
-> = {
-  live: {
-    label: 'Dostępny',
-    classes: 'bg-emerald-50 text-emerald-700 border-emerald-200',
-  },
-  beta: {
-    label: 'Beta',
-    classes: 'bg-blue-50 text-blue-700 border-blue-200',
-  },
-  development: {
-    label: 'W rozwoju',
-    classes: 'bg-purple-50 text-purple-700 border-purple-200',
-  },
 }
 
 /**
