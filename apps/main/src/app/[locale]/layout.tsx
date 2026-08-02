@@ -3,6 +3,9 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { ConsentAnalyticsScripts } from '@mula/ui'
+import { Analytics } from '@vercel/analytics/next'
 import { routing } from '@/i18n/routing'
 import { loadMessages } from '@/i18n/messages'
 import './globals.css'
@@ -22,6 +25,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       template: `%s | ${messages.meta.siteName}`,
     },
     description: messages.meta.description,
+    openGraph: {
+      type: 'website',
+      locale,
+      url: `https://mulagroup.eu/${locale}`,
+      siteName: messages.meta.siteName,
+      title: messages.meta.title,
+      description: messages.meta.description,
+      images: [{ url: '/images/competencies/home-og.svg', width: 1200, height: 630, alt: messages.meta.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: messages.meta.title,
+      description: messages.meta.description,
+      images: ['/images/competencies/home-og.svg'],
+    },
     alternates: {
       languages: Object.fromEntries(
         routing.locales.map((loc) => [loc, `https://mulagroup.eu/${loc === routing.defaultLocale ? '' : loc}`])
@@ -38,10 +56,22 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale)
 
   const messages = await getMessages()
+  const cookiebotCid = process.env.NEXT_PUBLIC_COOKIEBOT_CID ?? ''
+  const ga4Id = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID ?? ''
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      <link rel="preconnect" href="https://consent.cookiebot.com" />
+      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="https://consent.cookiebot.com" />
+      <ConsentAnalyticsScripts cookiebotCid={cookiebotCid} ga4Id={ga4Id} />
+      <a href="#main-content" className="skip-link">
+        {String(messages.skipLink ?? 'Skip to content')}
+      </a>
       {children}
+      <SpeedInsights />
+      <Analytics />
     </NextIntlClientProvider>
   )
 }
