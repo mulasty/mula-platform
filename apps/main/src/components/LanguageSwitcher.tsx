@@ -14,6 +14,9 @@ const FLAG_LABELS: Record<string, string> = {
   ru: '🇷🇺',
   it: '🇮🇹',
   zh: '🇨🇳',
+  fr: '🇫🇷',
+  es: '🇪🇸',
+  uk: '🇺🇦',
 }
 
 export function LanguageSwitcher() {
