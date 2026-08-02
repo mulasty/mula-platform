@@ -1,6 +1,5 @@
 {
-  "buildCommand": "cd apps/main && npx next build",
-  "installCommand": "npm ci",
-  "outputDirectory": "apps/main/.next",
-  "framework": "nextjs"
+  "buildCommand": "npm -w @mula/main run build",
+  "installCommand": "npm install",
+  "outputDirectory": "apps/main/.next"
 }
