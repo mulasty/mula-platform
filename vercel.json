@@ -1,11 +1,6 @@
 {
-  "buildCommand": "node vercel-build.mjs",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "crons": [
-    {
-      "path": "/api/cron/health",
-      "schedule": "*/5 * * * *"
-    }
-  ]
+  "buildCommand": "npm run build --workspace=@mula/main",
+  "installCommand": "npm ci",
+  "outputDirectory": "apps/main/.next",
+  "framework": "nextjs"
 }
