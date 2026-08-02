@@ -1,18 +1,11 @@
 import type { Metadata } from 'next'
+import { NextIntlClientProvider } from 'next-intl'
+import { getMessages, setRequestLocale } from 'next-intl/server'
+import { hasLocale } from 'next-intl'
+import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 
-export const metadata: Metadata = {
-  title: 'Mula Group',
-  metadataBase: new URL('https://mulagroup.eu'),
-  alternates: {
-    canonical: 'https://mulagroup.eu/',
-    languages: Object.fromEntries(
-      routing.locales.map((locale) => [locale, `https://mulagroup.eu/${locale}`])
-    ),
-  },
-}
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className="theme-light">
       <head>

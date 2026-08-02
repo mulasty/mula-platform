@@ -41,7 +41,6 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <a href="#main-content" className="skip-link">{String(messages.skipLink ?? 'Skip to content')}</a>
       {children}
     </NextIntlClientProvider>
   )
