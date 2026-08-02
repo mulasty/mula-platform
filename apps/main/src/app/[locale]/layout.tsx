@@ -3,9 +3,6 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages, setRequestLocale } from 'next-intl/server'
 import { hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { ConsentAnalyticsScripts } from '@mula/ui'
-import { Analytics } from '@vercel/analytics/next'
 import { routing } from '@/i18n/routing'
 import { loadMessages } from '@/i18n/messages'
 import './globals.css'
@@ -56,8 +53,6 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale)
 
   const messages = await getMessages()
-  const cookiebotCid = process.env.NEXT_PUBLIC_COOKIEBOT_CID ?? ''
-  const ga4Id = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID ?? ''
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
@@ -65,13 +60,10 @@ export default async function LocaleLayout({ children, params }: Props) {
       <link rel="preconnect" href="https://consent.cookiebot.com" />
       <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       <link rel="dns-prefetch" href="https://consent.cookiebot.com" />
-      <ConsentAnalyticsScripts cookiebotCid={cookiebotCid} ga4Id={ga4Id} />
       <a href="#main-content" className="skip-link">
         {String(messages.skipLink ?? 'Skip to content')}
       </a>
       {children}
-      <SpeedInsights />
-      <Analytics />
     </NextIntlClientProvider>
   )
 }
