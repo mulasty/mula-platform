@@ -9,14 +9,6 @@ import { routing } from '@/i18n/routing'
 const FLAG_LABELS: Record<string, string> = {
   pl: '🇵🇱',
   en: '🇬🇧',
-  de: '🇩🇪',
-  nl: '🇳🇱',
-  ru: '🇷🇺',
-  it: '🇮🇹',
-  zh: '🇨🇳',
-  fr: '🇫🇷',
-  es: '🇪🇸',
-  uk: '🇺🇦',
 }
 
 export function LanguageSwitcher() {

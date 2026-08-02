@@ -4,6 +4,7 @@ import { Navbar } from '@/components/Navbar'
 import { HeroSection } from '@/components/HeroSection'
 import { GuardianAISection } from '@/components/GuardianAISection'
 import { Footer } from '@/components/Footer'
+import { GuardianLandingPage } from '@/components/GuardianLandingPage'
 import { GuardianJsonLdScript, guardianMetadata } from '@/lib/guardianSeo'
 
 export const revalidate = 3600
