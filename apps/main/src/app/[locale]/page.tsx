@@ -52,8 +52,28 @@ export default async function HomePage() {
       <Navbar />
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
-        <h1 className="pt-4 pb-16 px-6 text-center text-2xl">HeroSection loaded OK</h1>
+        <GuardianAISection />
+        <ClientNeedsSection />
+        <AboutSection />
+        <WhyUsSection />
+        <PillarsGrid />
+        <ProcessSection />
+        <MulaMethod />
+        <TechnologyCloud />
+        <ProductsPreview />
+        <CTASection
+          title={t('cta.title')}
+          subtitle={t('cta.subtitle')}
+          ctaText={t('cta.button')}
+          ctaHref="#contact"
+        />
+        <TestimonialsSection />
+        <PartnersSection />
+        <FAQSection />
+        <ContactSection />
       </main>
+      <Footer />
+      <StickyCTA />
     </>
   )
 }
