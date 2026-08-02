@@ -6,6 +6,9 @@ const messageModules: Record<string, () => Promise<{ default: Record<string, unk
   ru: () => import('../../messages/ru.json'),
   it: () => import('../../messages/it.json'),
   zh: () => import('../../messages/zh.json'),
+  fr: () => import('../../messages/fr.json'),
+  es: () => import('../../messages/es.json'),
+  uk: () => import('../../messages/uk.json'),
 }
 
 export async function loadMessages(locale: string): Promise<Record<string, unknown>> {
