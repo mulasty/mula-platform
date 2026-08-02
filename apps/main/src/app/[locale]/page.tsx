@@ -52,7 +52,6 @@ export default async function HomePage() {
       <Navbar />
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
-        <GuardianAISection />
         <ClientNeedsSection />
         <AboutSection />
         <WhyUsSection />
@@ -67,13 +66,9 @@ export default async function HomePage() {
           ctaText={t('cta.button')}
           ctaHref="#contact"
         />
-        <TestimonialsSection />
-        <PartnersSection />
-        <FAQSection />
         <ContactSection />
       </main>
       <Footer />
-      <StickyCTA />
     </>
   )
 }
