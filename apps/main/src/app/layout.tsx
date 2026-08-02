@@ -1,102 +1,25 @@
 import type { Metadata } from 'next'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { ConsentAnalyticsScripts } from '@mula/ui'
-import { Analytics } from '@vercel/analytics/next'
-import { COMPANY } from '@/lib/data'
-import './globals.css'
+import { routing } from '@/i18n/routing'
 
 export const metadata: Metadata = {
-  title: {
-    default: `${COMPANY.name} — ${COMPANY.tagline}`,
-    template: `%s | ${COMPANY.name}`,
-  },
-  description: `${COMPANY.name} — ${COMPANY.tagline}. Ekosystem biznesowy łączący strategię cyfrową, sztuczną inteligencję, automatyzację procesów, e-commerce, marketing, cyberbezpieczeństwo oraz inżynierię w jeden spójny model operacyjny. Projektujemy, wdrażamy i skalujemy technologie dla firm w Polsce i UE.`,
+  title: 'Mula Group',
   metadataBase: new URL('https://mulagroup.eu'),
-  keywords: ['Mula Group', 'AI', 'automatyzacja', 'e-commerce', 'marketing', 'cyberbezpieczeństwo', 'transformacja cyfrowa', 'budownictwo', 'startupy', 'Next.js', 'sztuczna inteligencja', 'automatyzacja procesów', 'ekosystem biznesowy'],
-  authors: [{ name: COMPANY.name }],
-  creator: COMPANY.name,
-  publisher: COMPANY.name,
   alternates: {
     canonical: 'https://mulagroup.eu/',
+    languages: Object.fromEntries(
+      routing.locales.map((locale) => [locale, `https://mulagroup.eu/${locale}`])
+    ),
   },
-  openGraph: {
-    type: 'website',
-    locale: 'pl_PL',
-    url: 'https://mulagroup.eu',
-    siteName: COMPANY.name,
-    title: `${COMPANY.name} — ${COMPANY.tagline}`,
-    description: 'Ekosystem biznesowy: AI, automatyzacja, e-commerce, marketing, cyberbezpieczeństwo i inżynieria. Jeden partner, jedna odpowiedzialność — od diagnozy po skalowanie.',
-    images: [
-      {
-        url: '/images/competencies/home-og.svg',
-        width: 1200,
-        height: 630,
-        alt: `${COMPANY.name} — ${COMPANY.tagline}`,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: `${COMPANY.name} — ${COMPANY.tagline}`,
-    description: 'Ekosystem biznesowy: AI, automatyzacja, e-commerce, marketing, cyberbezpieczeństwo i inżynieria. Jeden partner, jedna odpowiedzialność.',
-    images: ['/images/competencies/home-og.svg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-}
-
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: COMPANY.fullName,
-  alternateName: COMPANY.name,
-  url: 'https://mulagroup.eu',
-  email: COMPANY.email,
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'ul. gen. Władysława Sikorskiego 166/0.03',
-    addressLocality: 'Łomża',
-    postalCode: '18-400',
-    addressCountry: 'PL',
-  },
-  foundingDate: '2023-01-02',
-  founder: { '@type': 'Person', name: COMPANY.founderName },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const cookiebotCid = process.env.NEXT_PUBLIC_COOKIEBOT_CID ?? ''
-  const ga4Id = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID ?? ''
-
   return (
-    <html lang="pl" className="theme-light">
+    <html className="theme-light">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
-        <link rel="preconnect" href="https://consent.cookiebot.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://consent.cookiebot.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <ConsentAnalyticsScripts cookiebotCid={cookiebotCid} ga4Id={ga4Id} />
       </head>
       <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
-        <a href="#main-content" className="skip-link">
-          Przejdź do treści
-        </a>
         {children}
-        <SpeedInsights />
-        <Analytics />
       </body>
     </html>
   )

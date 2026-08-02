@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "title": "Mula Group — 技术、自动化与商业人工智能",
+    "description": "Mula Group — 技术、自动化与商业人工智能。融合数字战略、人工智能、流程自动化、电子商务、市场营销、网络安全和工程于一体的商业生态系统。我们为波兰和欧盟的企业设计、实施和扩展技术解决方案。",
+    "siteName": "Mula Group"
+  },
+  "skipLink": "跳转到内容",
+  "company": {
+    "name": "Mula Group",
+    "fullName": "MULA GROUP SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+    "tagline": "技术、自动化与商业人工智能",
+    "krs": "0001010842",
+    "regon": "524057460",
+    "nip": "718-216-41-12",
+    "address": "ul. gen. Władysława Sikorskiego 166/0.03, 18-400 Łomża, 波兰",
+    "email": "info@mulagroup.eu",
+    "founded": 2023,
+    "founderName": "Piotr Muła",
+    "founderRole": "创始人兼首席执行官",
+    "founderBio": "多年电子商务、技术和数字化转型经验。将实践运营经验与战略思维相结合。",
+    "mission": "我们通过技术帮助公司更快成长、更高效运作并做出更好的决策。"
+  },
+  "nav": {
+    "about": "关于我们",
+    "guardianAI": "Guardian AI",
+    "activities": "服务",
+    "howWeWork": "我们的工作方式",
+    "contact": "联系我们",
+    "cta": "开始对话"
+  },
+  "hero": {
+    "headline": "我们为希望更快速、更安全发展的企业构建AI产品和操作系统。",
+    "subheadline": "Mula Group融合战略、自动化、网络安全和自主AI产品。我们的旗舰产品是MULA Guardian AI——一个旨在帮助企业在自动化时代保护数据、流程和决策的系统。",
+    "cta": "讨论您的项目",
+    "secondaryCTA": "了解我们的工作方式",
+    "stats": {
+      "founded": "成立年份",
+      "pillars": "能力支柱",
+      "projects": "完成项目",
+      "region": "运营区域"
+    }
+  },
+  "values": [
+    { "title": "生态而非孤岛", "description": "我们整体思考，而非碎片化" },
+    { "title": "先理解，后行动", "description": "没有诊断就没有解决方案" },
+    { "title": "执行而非演示", "description": "我们的角色是从架构走向实施" },
+    { "title": "从第一天起的可扩展性", "description": "我们设计为增长而准备的系统" }
+  ],
+  "aboutText": "Mula Group是一家融合AI、软件、电子商务、市场营销、网络安全和工程的技术集团。我们帮助公司从运营混乱过渡到结构化、可扩展的运营系统。",
+  "pillars": [
+    { "id": "ai", "title": "AI技术", "subtitle": "人工智能与自动化", "description": "我们实施真正缩短服务时间、自动化重复任务并为公司带来运营优势的AI。从简单的助手到多智能体架构——始终关注具体的业务成果。" },
+    { "id": "digital", "title": "数字化转型", "subtitle": "企业数字化和自动化", "description": "我们帮助企业消除手动流程、整合分散的系统并完全掌控数据。我们部署真正缩短任务完成时间和降低错误率的CRM、ERP和工作流。" },
+    { "id": "ecommerce", "title": "电子商务", "subtitle": "全渠道销售和市场", "description": "我们扩大销售覆盖范围并降低运营成本。将网店与市场连接成一个自动同步库存、订单和价格的系统。" },
+    { "id": "marketing", "title": "市场营销与媒体", "subtitle": "战略、创意、可见性", "description": "我们提升可见性并生成真正转化为销售的线索。将SEO、广告活动和内容营销结合成一个基于数据持续优化的可衡量系统。" },
+    { "id": "cyber", "title": "网络安全", "subtitle": "基础设施保护和合规", "description": "我们保护企业免受昂贵的停机、数据泄露和不合规处罚。部署NIS2和ISO 27001合规的监控、备份和文档系统。" },
+    { "id": "construction", "title": "建筑与工程", "subtitle": "钢结构与建筑项目", "description": "我们交付从概念到装配的钢结构和建筑项目——按时并符合规范。使用AI工具优化成本和进度。" },
+    { "id": "innovation", "title": "创新与创业工作室", "subtitle": "自主产品和新企业", "description": "我们开发自主SaaS产品、构建MVP并进行研发。探索AI、自动化与真实市场需求交汇处的新商业模式。" }
+  ],
+  "process": [
+    { "step": 1, "title": "分析", "description": "我们诊断流程，识别瓶颈和机会。从理解您的业务开始。" },
+    { "step": 2, "title": "战略", "description": "我们设计符合您业务目标的行动计划。每一步都有理据和可衡量的目标。" },
+    { "step": 3, "title": "设计", "description": "我们架构解决方案：从系统集成到用户界面。" },
+    { "step": 4, "title": "实施", "description": "我们按计划交付项目。代码、配置、测试——全部在一个流程中。" },
+    { "step": 5, "title": "自动化", "description": "我们消除手动任务。将系统连接成24/7运行的自动化工作流。" },
+    { "step": 6, "title": "增长", "description": "系统已准备好扩展。我们监控、优化并与您的业务共同成长。" }
+  ],
+  "mulaMethod": [
+    { "id": "tech", "title": "技术", "description": "我们设计和部署现代数字系统——从云架构到API集成。Next.js、TypeScript、Python、Docker。根据您的业务规模量身定制的技术栈。" },
+    { "id": "automation", "title": "自动化", "description": "我们消除重复流程并用智能工作流替代。AI代理系统、CRM/ERP自动化、多渠道同步。更少点击，更多成果。" },
+    { "id": "ai", "title": "AI", "description": "我们在真正提升竞争优势的地方部署人工智能。具有记忆和RAG的AI代理、预测分析、基于数据的业务建议。" }
+  ],
+  "products": [
+    { "name": "MULA Guardian AI", "description": "Mula Group旗舰产品：面向企业的智能网络安全和合规平台，结合风险监控、文档自动化、NIS2/GDPR合规分析和支持运营决策的AI代理。", "status": "beta" },
+    { "name": "Automation Audit Robot", "description": "带有AI驱动建议的自主业务流程审计系统", "status": "development" },
+    { "name": "Presence System", "description": "带有生产力分析的智能工作时间跟踪系统", "status": "beta" },
+    { "name": "Mula Mobile AI Commander", "description": "用于项目和团队任务管理的移动AI助手", "status": "development" }
+  ],
+  "guardianAI": {
+    "eyebrow": "Mula Group旗舰产品",
+    "name": "MULA Guardian AI",
+    "headline": "守护您公司安全、合规和运营的AI。",
+    "description": "MULA Guardian AI是我们融合网络安全、合规自动化和AI代理的产品方向。该系统旨在支持公司进行风险监控、NIS2/GDPR文档整理、事件分析和安全的运营决策。",
+    "bullets": [
+      "风险和安全事件监控",
+      "自动化的NIS2、GDPR和安全政策文档",
+      "用于流程、数据和运营决策分析的AI代理",
+      "管理仪表板：什么是关键的，什么需要行动，什么可以自动化"
+    ],
+    "metrics": [
+      { "value": "NIS2", "label": "监管准备" },
+      { "value": "AI", "label": "代理与自动化" },
+      { "value": "24/7", "label": "监控与警报" }
+    ],
+    "cta": "了解Guardian AI",
+    "secondaryCta": "登录应用"
+  },
+  "clientNeeds": [
+    { "title": "您想在公司中利用AI", "desc": "从审计到代理部署" },
+    { "title": "您想吸引更多客户", "desc": "营销、SEO、广告活动、销售漏斗" },
+    { "title": "您想发展在线销售", "desc": "电子商务、市场、自动化" },
+    { "title": "您想自动化流程", "desc": "工作流、集成、消除手动工作" },
+    { "title": "您想保护公司安全", "desc": "NIS2、审计、监控、合规" },
+    { "title": "您需要厂房或钢结构", "desc": "设计、生产、装配" },
+    { "title": "您想创建新产品", "desc": "MVP、原型、SaaS、创业工作室" }
+  ],
+  "whyUs": { "pillars": "个支柱", "projects": "个项目", "years": "年市场经验", "region": "波兰/欧盟" },
+  "cta": {
+    "title": "准备加速您的业务了吗？",
+    "subtitle": "让我们讨论Mula Group如何支持您的增长。",
+    "button": "预约免费咨询"
+  },
+  "faq": [
+    { "question": "Mula Group做什么？", "answer": "Mula Group是一个在单一运营环境中融合7项能力的商业生态系统。我们从事AI技术、数字化转型、电子商务、市场营销、网络安全、建筑和创新。无需寻找多家供应商，您获得一个拥有全面服务范围的合作伙伴。" },
+    { "question": "合作流程是怎样的？", "answer": "我们采用6阶段模型工作：分析（诊断）、战略（解决方案设计）、设计（架构和集成）、实施（技术执行）、自动化（连接能力和工作流）以及增长（扩展和优化）。每个项目都从深入了解您的业务、挑战和目标开始。" },
+    { "question": "你们与小型企业合作吗？", "answer": "是的，我们与小型和中型企业合作。我们根据组织规模和预算调整解决方案。我们相信，现代技术和自动化的使用应在公司发展的每个阶段都是可行的。" },
+    { "question": "你们使用什么技术？", "answer": "我们使用现代技术栈，包括Next.js、TypeScript、React、Python、LangChain、OpenAI API、PostgreSQL、Supabase、Docker等。我们不强制使用单一技术——我们选择最适合您业务规模和需求的工具。" },
+    { "question": "项目实施需要多长时间？", "answer": "实施时间取决于项目的规模和复杂性——从简单部署的几周到复杂系统的几个月。在设计阶段，我们会提供详细的里程碑时间表。" },
+    { "question": "你们提供上线后支持吗？", "answer": "是的，上线后支持是我们服务的组成部分。我们提供已部署系统的监控、维护和开发。我们方法论中的增长阶段意味着我们不会在上线后将您抛下——我们建立长期合作伙伴关系。" }
+  ],
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "让我们谈谈您的项目",
+    "heading": "预约免费咨询",
+    "text": "首次咨询是免费的30分钟通话，我们会了解您的挑战并提出具体的下一步建议。无义务——只有价值。",
+    "writeText": "直接给我们写信。我们通常在工作日几小时内回复。简要描述您的项目，我们将给您回复具体方案。",
+    "buttonLabel": "发送消息"
+  },
+  "footer": {
+    "services": "服务",
+    "contact": "联系我们",
+    "privacy": "隐私政策",
+    "rights": "版权所有。"
+  },
+  "languageSwitcher": {
+    "label": "语言",
+    "pl": "Polski",
+    "en": "English",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "ru": "Русский",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}

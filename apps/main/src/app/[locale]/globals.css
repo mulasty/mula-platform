@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import "@mula/design-system/tokens.css";
+
+@theme {
+  --color-mula-bg: #f8fafc;
+  --color-mula-surface: #ffffff;
+  --color-mula-border: #e2e8f0;
+  --color-mula-accent: #3b82f6;
+  --color-mula-accent-light: #2563eb;
+  --color-mula-purple: #8b5cf6;
+  --color-mula-text: #0f172a;
+  --color-mula-text-muted: #475569;
+  --color-mula-text-dim: #64748b;
+  --color-mula-success: #10b981;
+  --color-mula-warning: #f59e0b;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-mula-bg);
+    color: var(--color-mula-text);
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { letter-spacing: -0.02em; font-weight: 700; }
+  h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+  h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.2; }
+  h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.3; }
+  p { line-height: 1.7; }
+
+  :focus-visible {
+    outline: 2px solid var(--color-mula-accent);
+    outline-offset: 2px;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-mula-accent focus:text-white focus:font-medium;
+  }
+}
+
+@layer components {
+  .mula-card {
+    @apply bg-mula-surface border border-mula-border rounded-2xl transition-all duration-300;
+    &:hover {
+      @apply border-blue-200 shadow-xl shadow-slate-200/70 -translate-y-1;
+    }
+  }
+  .mula-gradient-text {
+    @apply bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-600 bg-clip-text text-transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

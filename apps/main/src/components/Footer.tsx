@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Building2, Mail, MapPin } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { COMPANY, PILLARS } from '@/lib/data'
 
 const firstPillarCol = PILLARS.slice(0, 4)
@@ -7,6 +8,8 @@ const secondPillarCol = PILLARS.slice(4)
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const tf = useTranslations('footer')
+  const tc = useTranslations('company')
 
   return (
     <footer className="bg-white border-t border-slate-200">
@@ -15,10 +18,10 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="#hero" className="flex items-center gap-2 text-slate-950 font-bold text-xl tracking-tight mb-4">
               <Building2 className="w-6 h-6 text-mula-accent" />
-              <span>{COMPANY.name}</span>
+              <span>{tc('name')}</span>
             </Link>
             <p className="text-mula-text-muted text-sm leading-relaxed mb-6 max-w-sm">
-              {COMPANY.tagline}
+              {tc('tagline')}
             </p>
             <div className="space-y-1 text-xs text-mula-text-dim">
               <p>
@@ -32,7 +35,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider">
-              Usługi
+              {tf('services')}
             </h3>
             <ul className="space-y-3">
               {firstPillarCol.map((pillar) => (
@@ -72,7 +75,7 @@ export function Footer() {
 
           <div>
             <h3 className="text-slate-950 text-sm font-semibold mb-4 uppercase tracking-wider">
-              Kontakt
+              {tf('contact')}
             </h3>
             <div className="space-y-4">
               <a
@@ -94,13 +97,13 @@ export function Footer() {
       <div className="border-t border-mula-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-mula-text-dim text-xs">
-            &copy; {currentYear} {COMPANY.name}. Wszelkie prawa zastrzeżone.
+            &copy; {currentYear} {tc('name')}. {tf('rights')}
           </p>
           <Link
             href="/polityka-prywatnosci"
             className="text-mula-text-dim hover:text-mula-text-muted text-xs transition-colors"
           >
-            Polityka prywatności
+            {tf('privacy')}
           </Link>
         </div>
       </div>

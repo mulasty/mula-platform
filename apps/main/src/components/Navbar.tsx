@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Building2 } from 'lucide-react'
-import { NAV_ITEMS, COMPANY } from '@/lib/data'
+import { useTranslations } from 'next-intl'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const t = useTranslations('nav')
+  const tc = useTranslations('company')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -42,19 +45,16 @@ export function Navbar() {
             className="flex items-center gap-2 text-slate-950 font-bold text-xl tracking-tight"
           >
             <Building2 className="w-6 h-6 text-mula-accent" />
-            <span>{COMPANY.name}</span>
+            <span>{tc('name')}</span>
           </Link>
 
-          <div className="hidden md:flex items-center gap-8">
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm text-slate-600 hover:text-blue-700 transition-colors"
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className="hidden md:flex items-center gap-6">
+            <a href="#about" className="text-sm text-slate-600 hover:text-blue-700 transition-colors">{t('about')}</a>
+            <a href="#guardian-ai" className="text-sm text-slate-600 hover:text-blue-700 transition-colors">{t('guardianAI')}</a>
+            <a href="#pillars" className="text-sm text-slate-600 hover:text-blue-700 transition-colors">{t('activities')}</a>
+            <a href="#process" className="text-sm text-slate-600 hover:text-blue-700 transition-colors">{t('howWeWork')}</a>
+            <a href="#contact" className="text-sm text-slate-600 hover:text-blue-700 transition-colors">{t('contact')}</a>
+            <LanguageSwitcher />
           </div>
 
           <div className="hidden md:block">
@@ -62,7 +62,7 @@ export function Navbar() {
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25"
             >
-              {COMPANY.navCTA}
+              {t('cta')}
             </a>
           </div>
 
@@ -86,19 +86,59 @@ export function Navbar() {
             transition={{ type: 'tween', duration: 0.3 }}
             className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 md:hidden"
           >
-            {NAV_ITEMS.map((item, i) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                onClick={() => setMobileOpen(false)}
-                className="text-2xl font-medium text-slate-700 hover:text-blue-700 transition-colors"
-              >
-                {item.label}
-              </motion.a>
-            ))}
+            <motion.a
+              href="#about"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0 }}
+              onClick={() => setMobileOpen(false)}
+              className="text-2xl font-medium text-slate-700 hover:text-blue-700 transition-colors"
+            >
+              {t('about')}
+            </motion.a>
+            <motion.a
+              href="#guardian-ai"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              onClick={() => setMobileOpen(false)}
+              className="text-2xl font-medium text-slate-700 hover:text-blue-700 transition-colors"
+            >
+              {t('guardianAI')}
+            </motion.a>
+            <motion.a
+              href="#pillars"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              onClick={() => setMobileOpen(false)}
+              className="text-2xl font-medium text-slate-700 hover:text-blue-700 transition-colors"
+            >
+              {t('activities')}
+            </motion.a>
+            <motion.a
+              href="#process"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              onClick={() => setMobileOpen(false)}
+              className="text-2xl font-medium text-slate-700 hover:text-blue-700 transition-colors"
+            >
+              {t('howWeWork')}
+            </motion.a>
+            <motion.a
+              href="#contact"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              onClick={() => setMobileOpen(false)}
+              className="text-2xl font-medium text-slate-700 hover:text-blue-700 transition-colors"
+            >
+              {t('contact')}
+            </motion.a>
+            <div className="mt-2">
+              <LanguageSwitcher />
+            </div>
             <motion.a
               href="#contact"
               initial={{ opacity: 0, y: 20 }}
@@ -107,7 +147,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="mt-4 px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-medium transition-all"
             >
-              {COMPANY.navCTA}
+              {t('cta')}
             </motion.a>
           </motion.div>
         )}

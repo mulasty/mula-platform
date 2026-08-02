@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "title": "Mula Group — Technologie, Automatisering & AI voor Bedrijven",
+    "description": "Mula Group — Technologie, Automatisering & AI voor Bedrijven. Een bedrijfsecosysteem dat digitale strategie, kunstmatige intelligentie, procesautomatisering, e-commerce, marketing, cyberbeveiliging en engineering combineert in één samenhangend operationeel model. Wij ontwerpen, implementeren en schalen technologieën voor bedrijven in Polen en de EU.",
+    "siteName": "Mula Group"
+  },
+  "skipLink": "Naar de inhoud",
+  "company": {
+    "name": "Mula Group",
+    "fullName": "MULA GROUP SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+    "tagline": "Technologie, Automatisering & AI voor Bedrijven",
+    "krs": "0001010842",
+    "regon": "524057460",
+    "nip": "718-216-41-12",
+    "address": "ul. gen. Władysława Sikorskiego 166/0.03, 18-400 Łomża, Polen",
+    "email": "info@mulagroup.eu",
+    "founded": 2023,
+    "founderName": "Piotr Muła",
+    "founderRole": "Oprichter & CEO",
+    "founderBio": "Jarenlange ervaring in e-commerce, technologie en digitale transformatie. Combineert praktische operationele ervaring met strategisch denken.",
+    "mission": "Wij helpen bedrijven sneller te groeien, efficiënter te werken en betere beslissingen te nemen door middel van technologie."
+  },
+  "nav": {
+    "about": "Over ons",
+    "guardianAI": "Guardian AI",
+    "activities": "Diensten",
+    "howWeWork": "Hoe we werken",
+    "contact": "Contact",
+    "cta": "Laten we praten"
+  },
+  "hero": {
+    "headline": "Wij bouwen AI-producten en besturingssystemen voor bedrijven die sneller en veiliger willen opereren.",
+    "subheadline": "Mula Group combineert strategie, automatisering, cyberbeveiliging en eigen AI-producten. Ons vlaggenschip is MULA Guardian AI — een systeem ontworpen om bedrijven te helpen bij het beschermen van data, processen en beslissingen in het tijdperk van automatisering.",
+    "cta": "Laten we uw project bespreken",
+    "secondaryCTA": "Bekijk hoe we werken",
+    "stats": {
+      "founded": "Opgericht",
+      "pillars": "Competentiepijlers",
+      "projects": "Voltooide projecten",
+      "region": "Actief in"
+    }
+  },
+  "values": [
+    { "title": "Ecosysteem, geen silo's", "description": "Wij denken holistisch, niet in fragmenten" },
+    { "title": "Eerst begrijpen, dan handelen", "description": "Geen oplossing zonder diagnose" },
+    { "title": "Uitvoering, geen presentaties", "description": "Onze rol is om van architectuur naar implementatie te gaan" },
+    { "title": "Schaalbaarheid vanaf dag één", "description": "Wij ontwerpen systemen die klaar zijn voor groei" }
+  ],
+  "aboutText": "Mula Group is een technologiegroep die AI, software, e-commerce, marketing, cyberbeveiliging en engineering combineert. Wij helpen bedrijven bij de overgang van operationele chaos naar gestructureerde, schaalbare besturingssystemen.",
+  "pillars": [
+    { "id": "ai", "title": "AI-technologieën", "subtitle": "Kunstmatige intelligentie en automatisering", "description": "Wij implementeren AI die servicetijd echt verkort, repetitieve taken automatiseert en bedrijven een operationeel voordeel geeft. Van eenvoudige copilots tot multi-agent architecturen — altijd gericht op concrete bedrijfsresultaten." },
+    { "id": "digital", "title": "Digitale Transformatie", "subtitle": "Digitalisering en automatisering van ondernemingen", "description": "Wij helpen bedrijven handmatige processen te elimineren, gefragmenteerde systemen te integreren en volledige controle over hun data te krijgen. We implementeren CRM, ERP en workflows die doorlooptijden verkorten en foutpercentages verlagen." },
+    { "id": "ecommerce", "title": "E-commerce", "subtitle": "Multichannel-verkoop en marktplaatsen", "description": "Wij vergroten het verkoopbereik en verlagen operationele kosten. We verbinden online winkels met marktplaatsen in één systeem dat voorraden, bestellingen en prijzen automatisch synchroniseert." },
+    { "id": "marketing", "title": "Marketing & Media", "subtitle": "Strategie, creatie, zichtbaarheid", "description": "Wij vergroten de zichtbaarheid en genereren leads die daadwerkelijk tot verkoop leiden. We combineren SEO, advertentiecampagnes en contentmarketing in een meetbaar systeem dat we continu optimaliseren op basis van data." },
+    { "id": "cyber", "title": "Cyberbeveiliging", "subtitle": "Infrastructuurbescherming en compliance", "description": "Wij beschermen bedrijven tegen kostbare downtime, datalekken en boetes voor niet-naleving. We implementeren monitoring, backup en documentatie voor NIS2- en ISO 27001-compliance." },
+    { "id": "construction", "title": "Bouw & Engineering", "subtitle": "Staalconstructies en bouwprojecten", "description": "Wij leveren staalconstructies en bouwprojecten van concept tot montage — op tijd en volgens specificatie. We gebruiken AI-tools om kosten en planningen te optimaliseren." },
+    { "id": "innovation", "title": "Innovatie & Startup Studio", "subtitle": "Eigen producten en nieuwe ondernemingen", "description": "Wij ontwikkelen eigen SaaS-producten, bouwen MVP's en doen R&D. We verkennen nieuwe bedrijfsmodellen op het snijvlak van AI, automatisering en reële marktbehoeften." }
+  ],
+  "process": [
+    { "step": 1, "title": "Analyse", "description": "Wij diagnosticeren processen, identificeren knelpunten en kansen. We beginnen met het begrijpen van uw bedrijf." },
+    { "step": 2, "title": "Strategie", "description": "Wij ontwerpen een actieplan op maat van uw bedrijfsdoelen. Elke stap heeft een onderbouwing en een meetbaar doel." },
+    { "step": 3, "title": "Ontwerp", "description": "Wij architeren de oplossing: van systeemintegraties tot gebruikersinterface." },
+    { "step": 4, "title": "Implementatie", "description": "Wij leveren het project volgens planning. Code, configuratie, testen — alles in één proces." },
+    { "step": 5, "title": "Automatisering", "description": "Wij elimineren handmatige taken. We verbinden systemen tot geautomatiseerde workflows die 24/7 draaien." },
+    { "step": 6, "title": "Groei", "description": "Het systeem is klaar om te schalen. We monitoren, optimaliseren en groeien mee met uw bedrijf." }
+  ],
+  "mulaMethod": [
+    { "id": "tech", "title": "Technologie", "description": "Wij ontwerpen en implementeren moderne digitale systemen — van cloudarchitectuur tot API-integraties. Next.js, TypeScript, Python, Docker. Een stack afgestemd op de schaal van uw bedrijf." },
+    { "id": "automation", "title": "Automatisering", "description": "Wij elimineren repetitieve processen en vervangen ze door intelligente workflows. AI-agentsystemen, CRM/ERP-automatisering, multichannel-synchronisatie. Minder klikken, meer resultaten." },
+    { "id": "ai", "title": "AI", "description": "Wij implementeren kunstmatige intelligentie waar het het concurrentievoordeel werkelijk vergroot. AI-agents met geheugen en RAG, voorspellende analyses, datagedreven bedrijfsaanbevelingen." }
+  ],
+  "products": [
+    { "name": "MULA Guardian AI", "description": "Het vlaggenschipproduct van Mula Group: een intelligent cyberbeveiligings- en complianceplatform voor bedrijven, dat risicomonitoring, documentatieautomatisering, NIS2/AVG-compliance-analyse en AI-agents combineert.", "status": "beta" },
+    { "name": "Automation Audit Robot", "description": "Autonoom auditsysteem voor bedrijfsprocessen met AI-gedreven aanbevelingen", "status": "development" },
+    { "name": "Presence System", "description": "Intelligent werktijdregistratiesysteem met productiviteitsanalyse", "status": "beta" },
+    { "name": "Mula Mobile AI Commander", "description": "Mobiele AI-assistent voor project- en teamtaakbeheer", "status": "development" }
+  ],
+  "guardianAI": {
+    "eyebrow": "Vlaggenschipproduct van Mula Group",
+    "name": "MULA Guardian AI",
+    "headline": "AI die de beveiliging, compliance en operaties van uw bedrijf bewaakt.",
+    "description": "MULA Guardian AI is een productrichting waarin we cyberbeveiliging, compliance-automatisering en AI-agents combineren. Het systeem is ontworpen om bedrijven te ondersteunen bij risicomonitoring, NIS2/AVG-documentatie, incidentanalyse en veilige operationele beslissingen.",
+    "bullets": [
+      "monitoring van risico's en beveiligingsincidenten",
+      "geautomatiseerde NIS2-, AVG- en beveiligingsbeleidsdocumentatie",
+      "AI-agents voor proces-, data- en operationele beslissingsanalyse",
+      "managementdashboard: wat is kritiek, wat vereist actie, wat kan worden geautomatiseerd"
+    ],
+    "metrics": [
+      { "value": "NIS2", "label": "regelgevende paraatheid" },
+      { "value": "AI", "label": "agents & automatisering" },
+      { "value": "24/7", "label": "monitoring & waarschuwingen" }
+    ],
+    "cta": "Ontdek Guardian AI",
+    "secondaryCta": "Inloggen op de app"
+  },
+  "clientNeeds": [
+    { "title": "U wilt AI in uw bedrijf inzetten", "desc": "Van audit tot agentimplementatie" },
+    { "title": "U wilt meer klanten aantrekken", "desc": "Marketing, SEO, campagnes, verkooptrechter" },
+    { "title": "U wilt online verkoop laten groeien", "desc": "E-commerce, marktplaatsen, automatisering" },
+    { "title": "U wilt processen automatiseren", "desc": "Workflows, integraties, eliminatie van handmatig werk" },
+    { "title": "U wilt uw bedrijf beveiligen", "desc": "NIS2, audits, monitoring, compliance" },
+    { "title": "U heeft een hal of staalconstructie nodig", "desc": "Ontwerp, productie, montage" },
+    { "title": "U wilt een nieuw product bouwen", "desc": "MVP, prototype, SaaS, startup studio" }
+  ],
+  "whyUs": { "pillars": "pijlers", "projects": "projecten", "years": "jaar op de markt", "region": "Polen / EU" },
+  "cta": {
+    "title": "Klaar om uw bedrijf te versnellen?",
+    "subtitle": "Laten we bespreken hoe Mula Group uw groei kan ondersteunen.",
+    "button": "Boek een gratis consult"
+  },
+  "faq": [
+    { "question": "Wat doet Mula Group?", "answer": "Mula Group is een bedrijfsecosysteem dat 7 competenties verenigt in één operationele omgeving. Wij houden ons bezig met AI-technologieën, digitale transformatie, e-commerce, marketing, cyberbeveiliging, bouw en innovatie. In plaats van meerdere leveranciers krijgt u één partner met een volledig dienstenpakket." },
+    { "question": "Hoe ziet het samenwerkingsproces eruit?", "answer": "Wij werken in een 6-fasenmodel: Analyse (diagnose), Strategie (oplossingsontwerp), Ontwerp (architectuur en integraties), Implementatie (technische uitvoering), Automatisering (koppeling van competenties en workflows) en Groei (schaling en optimalisatie). Elk project begint met een grondig begrip van uw bedrijf, uitdagingen en doelen." },
+    { "question": "Werkt u met kleine bedrijven?", "answer": "Ja, wij werken zowel met kleine als middelgrote bedrijven. We schalen onze oplossingen naar de omvang en het budget van de organisatie. Wij geloven dat toegang tot moderne technologieën en automatisering mogelijk moet zijn in elke fase van de ontwikkeling van een bedrijf." },
+    { "question": "Welke technologieën gebruikt u?", "answer": "Wij gebruiken een moderne technologiestack met Next.js, TypeScript, React, Python, LangChain, OpenAI API, PostgreSQL, Supabase, Docker en vele andere. We leggen niet één technologie op — we kiezen tools die optimaal zijn voor de schaal en behoeften van uw bedrijf." },
+    { "question": "Hoe lang duurt de projectimplementatie?", "answer": "De implementatietijd hangt af van de schaal en complexiteit van het project — van enkele weken voor eenvoudige implementaties tot enkele maanden voor complexe systemen. In de ontwerpfase presenteren we een gedetailleerd schema met mijlpalen." },
+    { "question": "Biedt u ondersteuning na de lancering?", "answer": "Ja, post-lanceringsondersteuning is een integraal onderdeel van ons aanbod. Wij bieden monitoring, onderhoud en ontwikkeling van geïmplementeerde systemen. De groeifase in onze methodologie betekent dat we u na de lancering niet alleen laten — we bouwen een langdurig partnerschap." }
+  ],
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Laten we uw project bespreken",
+    "heading": "Boek een gratis consult",
+    "text": "Het eerste consult is een gratis gesprek van 30 minuten waarin we uw uitdagingen begrijpen en een concrete volgende stap voorstellen. Geen verplichtingen — alleen waarde.",
+    "writeText": "Schrijf ons rechtstreeks. We reageren doorgaans binnen enkele uren op werkdagen. Beschrijf kort uw project en wij komen bij u terug met een concreet voorstel.",
+    "buttonLabel": "Bericht verzenden"
+  },
+  "footer": {
+    "services": "Diensten",
+    "contact": "Contact",
+    "privacy": "Privacybeleid",
+    "rights": "Alle rechten voorbehouden."
+  },
+  "languageSwitcher": {
+    "label": "Taal",
+    "pl": "Polski",
+    "en": "English",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "ru": "Русский",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}

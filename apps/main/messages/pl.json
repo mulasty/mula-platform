@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Mula Group — Technologia, Automatyzacja i AI dla Biznesu",
+    "description": "Mula Group — Technologia, Automatyzacja i AI dla Biznesu. Ekosystem biznesowy łączący strategię cyfrową, sztuczną inteligencję, automatyzację procesów, e-commerce, marketing, cyberbezpieczeństwo oraz inżynierię w jeden spójny model operacyjny. Projektujemy, wdrażamy i skalujemy technologie dla firm w Polsce i UE.",
+    "siteName": "Mula Group"
+  },
+  "skipLink": "Przejdź do treści",
+  "company": {
+    "name": "Mula Group",
+    "fullName": "MULA GROUP SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+    "tagline": "Technologia, Automatyzacja i AI dla Biznesu",
+    "krs": "0001010842",
+    "regon": "524057460",
+    "nip": "718-216-41-12",
+    "address": "ul. gen. Władysława Sikorskiego 166/0.03, 18-400 Łomża",
+    "email": "info@mulagroup.eu",
+    "founded": 2023,
+    "founderName": "Piotr Muła",
+    "founderRole": "Założyciel i Prezes",
+    "founderBio": "Od lat związany z e-commerce, technologią i transformacją cyfrową. Łączy praktyczne doświadczenie operacyjne z myśleniem strategicznym.",
+    "mission": "Pomagamy firmom rosnąć szybciej, działać sprawniej i podejmować lepsze decyzje dzięki technologii."
+  },
+  "nav": {
+    "about": "O nas",
+    "guardianAI": "Guardian AI",
+    "activities": "Działalność",
+    "howWeWork": "Jak pracujemy",
+    "contact": "Kontakt",
+    "cta": "Porozmawiajmy"
+  },
+  "hero": {
+    "headline": "Budujemy produkty AI i systemy operacyjne dla firm, które chcą działać szybciej i bezpieczniej.",
+    "subheadline": "Mula Group łączy strategię, automatyzację, cyberbezpieczeństwo i własne produkty AI. Naszym flagowym kierunkiem jest MULA Guardian AI — system, który ma pomagać firmom chronić dane, procesy i decyzje w erze automatyzacji.",
+    "cta": "Porozmawiajmy o projekcie",
+    "secondaryCTA": "Zobacz jak pracujemy",
+    "stats": {
+      "founded": "Rok założenia",
+      "pillars": "Filarów kompetencji",
+      "projects": "Zrealizowanych projektów",
+      "region": "Działamy w"
+    }
+  },
+  "values": [
+    { "title": "Ekosystem, nie silos", "description": "Myślimy całościowo, nie wycinamy wycinków" },
+    { "title": "Najpierw zrozumieć, potem działać", "description": "Żadnego rozwiązania bez diagnozy" },
+    { "title": "Wykonanie, nie prezentacje", "description": "Naszą rolą jest przejść od architektury do realizacji" },
+    { "title": "Skalowalność od pierwszego dnia", "description": "Projektujemy systemy gotowe na rozwój" }
+  ],
+  "aboutText": "Mula Group to grupa technologiczna łącząca AI, software, e-commerce, marketing, cyberbezpieczeństwo i inżynierię. Pomagamy firmom przechodzić od chaosu operacyjnego do uporządkowanych, skalowalnych systemów działania.",
+  "pillars": [
+    {
+      "id": "ai",
+      "title": "Technologie AI",
+      "subtitle": "Sztuczna inteligencja i automatyzacja",
+      "description": "Wdrażamy AI, która realnie skraca czas obsługi, automatyzuje powtarzalne zadania i daje firmom przewagę operacyjną. Od prostych copilotów po wieloagentowe architektury — zawsze z myślą o konkretnym wyniku biznesowym."
+    },
+    {
+      "id": "digital",
+      "title": "Transformacja Cyfrowa",
+      "subtitle": "Cyfryzacja i automatyzacja przedsiębiorstw",
+      "description": "Pomagamy firmom wyeliminować ręczne procesy, zintegrować rozproszone systemy i zyskać pełną kontrolę nad danymi. Wdrażamy CRM, ERP i workflow, które realnie skracają czas realizacji zadań i redukują liczbę błędów."
+    },
+    {
+      "id": "ecommerce",
+      "title": "E-commerce",
+      "subtitle": "Sprzedaż wielokanałowa i marketplace",
+      "description": "Zwiększamy zasięg sprzedaży i redukujemy koszty operacyjne. Łączymy sklepy internetowe z marketplace w jeden system, który automatycznie synchronizuje stany magazynowe, zamówienia i cenniki."
+    },
+    {
+      "id": "marketing",
+      "title": "Marketing i Media",
+      "subtitle": "Strategia, kreacja, widoczność",
+      "description": "Zwiększamy widoczność i generujemy leady, które realnie przekładają się na sprzedaż. Łączymy SEO, kampanie reklamowe i content marketing w mierzalny system, który stale optymalizujemy na podstawie danych."
+    },
+    {
+      "id": "cyber",
+      "title": "Cyberbezpieczeństwo",
+      "subtitle": "Ochrona infrastruktury i zgodność",
+      "description": "Chronimy firmy przed kosztownymi przestojami, wyciekami danych i karami za brak zgodności. Wdrażamy monitoring, backup i dokumentację pod NIS2 oraz ISO 27001."
+    },
+    {
+      "id": "construction",
+      "title": "Budownictwo i Inżynieria",
+      "subtitle": "Konstrukcje stalowe i projekty budowlane",
+      "description": "Dostarczamy konstrukcje stalowe i projekty budowlane od koncepcji po montaż — terminowo i zgodnie z dokumentacją. Wykorzystujemy narzędzia AI do optymalizacji kosztów i harmonogramów."
+    },
+    {
+      "id": "innovation",
+      "title": "Innowacje i Startup Studio",
+      "subtitle": "Własne produkty i nowe przedsięwzięcia",
+      "description": "Rozwijamy własne produkty SaaS, budujemy MVP, prowadzimy badania i rozwój. Szukamy nowych modeli biznesowych na styku AI, automatyzacji i realnych potrzeb rynku."
+    }
+  ],
+  "process": [
+    { "step": 1, "title": "Analiza", "description": "Diagnozujemy procesy, identyfikujemy wąskie gardła i możliwości. Zaczynamy od zrozumienia Twojego biznesu." },
+    { "step": 2, "title": "Strategia", "description": "Opracowujemy plan działania dopasowany do celów biznesowych. Każdy krok ma uzasadnienie i mierzalny cel." },
+    { "step": 3, "title": "Projekt", "description": "Projektujemy architekturę rozwiązania: od integracji systemów po interfejs użytkownika." },
+    { "step": 4, "title": "Wdrożenie", "description": "Realizujemy projekt zgodnie z harmonogramem. Kod, konfiguracja, testy — wszystko w jednym procesie." },
+    { "step": 5, "title": "Automatyzacja", "description": "Eliminujemy ręczne zadania. Łączymy systemy w zautomatyzowany workflow, który działa 24/7." },
+    { "step": 6, "title": "Rozwój", "description": "System gotowy na skalowanie. Monitorujemy, optymalizujemy i rozwijamy wraz z Twoim biznesem." }
+  ],
+  "mulaMethod": [
+    {
+      "id": "tech",
+      "title": "Technologia",
+      "description": "Projektujemy i wdrażamy nowoczesne systemy cyfrowe — od architektury chmurowej po integracje API. Next.js, TypeScript, Python, Docker. Stack dopasowany do skali Twojego biznesu, nie odwrotnie."
+    },
+    {
+      "id": "automation",
+      "title": "Automatyzacja",
+      "description": "Eliminujemy powtarzalne procesy i zastępujemy je inteligentnymi workflowami. Agentowe systemy AI, automatyzacja CRM/ERP, synchronizacja wielokanałowa. Mniej klikania, więcej wyników."
+    },
+    {
+      "id": "ai",
+      "title": "AI",
+      "description": "Wdrażamy sztuczną inteligencję tam, gdzie realnie zwiększa przewagę konkurencyjną. Agenci AI z pamięcią i RAG, analityka predykcyjna, rekomendacje biznesowe oparte na danych."
+    }
+  ],
+  "products": [
+    { "name": "MULA Guardian AI", "description": "Flagowy produkt Mula Group: inteligentna platforma cyberbezpieczeństwa i compliance dla firm, łącząca monitoring ryzyk, automatyzację dokumentacji, analizę zgodności NIS2/RODO i agentów AI wspierających decyzje operacyjne.", "status": "beta" },
+    { "name": "Automation Audit Robot", "description": "Autonomiczny system audytu procesów biznesowych z rekomendacjami AI", "status": "development" },
+    { "name": "Presence System", "description": "Inteligentny system rejestracji czasu pracy z analizą produktywności", "status": "beta" },
+    { "name": "Mula Mobile AI Commander", "description": "Mobilny asystent AI do zarządzania projektami i zadaniami zespołu", "status": "development" }
+  ],
+  "guardianAI": {
+    "eyebrow": "Produkt flagowy Mula Group",
+    "name": "MULA Guardian AI",
+    "headline": "AI, które pilnuje bezpieczeństwa, zgodności i operacji firmy.",
+    "description": "MULA Guardian AI to kierunek produktowy, w którym łączymy cyberbezpieczeństwo, automatyzację compliance i agentów AI. System ma wspierać firmy w monitorowaniu ryzyk, porządkowaniu dokumentacji NIS2/RODO, analizie incydentów i podejmowaniu bezpiecznych decyzji operacyjnych.",
+    "bullets": [
+      "monitorowanie ryzyk i incydentów bezpieczeństwa",
+      "automatyzacja dokumentacji NIS2, RODO i polityk bezpieczeństwa",
+      "agenci AI do analizy procesów, danych i decyzji operacyjnych",
+      "dashboard zarządczy: co jest krytyczne, co wymaga reakcji, co można zautomatyzować"
+    ],
+    "metrics": [
+      { "value": "NIS2", "label": "gotowość regulacyjna" },
+      { "value": "AI", "label": "agenci i automatyzacja" },
+      { "value": "24/7", "label": "monitoring i alerty" }
+    ],
+    "cta": "Poznaj Guardian AI",
+    "secondaryCta": "Zaloguj się do aplikacji"
+  },
+  "clientNeeds": [
+    { "title": "Chcesz wykorzystać AI w firmie", "desc": "Od audytu po wdrożenie agentów" },
+    { "title": "Chcesz zdobywać więcej klientów", "desc": "Marketing, SEO, kampanie, lejek sprzedażowy" },
+    { "title": "Chcesz rozwijać sprzedaż online", "desc": "E-commerce, marketplace, automatyzacja" },
+    { "title": "Chcesz zautomatyzować procesy", "desc": "Workflow, integracje, eliminacja ręcznej pracy" },
+    { "title": "Chcesz zabezpieczyć firmę", "desc": "NIS2, audyty, monitoring, zgodność" },
+    { "title": "Potrzebujesz hali lub konstrukcji", "desc": "Projekt, produkcja, montaż" },
+    { "title": "Chcesz stworzyć nowy produkt", "desc": "MVP, prototyp, SaaS, startup studio" }
+  ],
+  "whyUs": {
+    "pillars": "filarów",
+    "projects": "projektów",
+    "years": "lata na rynku",
+    "region": "Polska / UE"
+  },
+  "cta": {
+    "title": "Gotowy, żeby przyspieszyć swój biznes?",
+    "subtitle": "Porozmawiajmy o tym, jak Mula Group może wspierać Twój rozwój.",
+    "button": "Umów bezpłatną rozmowę"
+  },
+  "faq": [
+    {
+      "question": "Czym zajmuje się Mula Group?",
+      "answer": "Mula Group to ekosystem biznesowy łączący 7 kompetencji w jednym środowisku operacyjnym. Zajmujemy się technologiami AI, transformacją cyfrową, e-commerce, marketingiem, cyberbezpieczeństwem, budownictwem oraz innowacjami. Zamiast szukać wielu dostawców, otrzymujesz jednego partnera z pełnym spektrum usług."
+    },
+    {
+      "question": "Jak wygląda proces współpracy?",
+      "answer": "Pracujemy w 6-etapowym modelu: Analiza (diagnoza), Strategia (projekt rozwiązania), Projekt (architektura i integracje), Wdrożenie (realizacja techniczna), Automatyzacja (łączenie kompetencji i workflow) oraz Rozwój (skalowanie i optymalizacja). Każdy projekt zaczynamy od dogłębnego zrozumienia Twojego biznesu, wyzwań i celów — dopiero potem projektujemy rozwiązanie."
+    },
+    {
+      "question": "Czy pracujecie z małymi firmami?",
+      "answer": "Tak, współpracujemy zarówno z małymi firmami, jak i średnimi przedsiębiorstwami. Nasze rozwiązania skalujemy odpowiednio do wielkości organizacji i budżetu. Wierzymy, że dostęp do nowoczesnych technologii i automatyzacji powinien być możliwy na każdym etapie rozwoju firmy."
+    },
+    {
+      "question": "Jakie technologie wykorzystujecie?",
+      "answer": "Korzystamy z nowoczesnego stacku technologicznego obejmującego Next.js, TypeScript, React, Python, LangChain, OpenAI API, PostgreSQL, Supabase, Docker i wiele innych. Nie narzucamy jednej technologii — dobieramy narzędzia optymalne do skali i potrzeb Twojego biznesu."
+    },
+    {
+      "question": "Ile trwa wdrożenie projektu?",
+      "answer": "Czas wdrożenia zależy od skali i złożoności projektu — od kilku tygodni dla prostych wdrożeń, po kilka miesięcy dla rozbudowanych systemów. Na etapie Design przedstawiamy szczegółowy harmonogram z kamieniami milowymi, dzięki czemu zawsze wiesz, na jakim etapie jesteśmy."
+    },
+    {
+      "question": "Czy oferujecie wsparcie po wdrożeniu?",
+      "answer": "Tak, wsparcie powdrożeniowe to integralna część naszej oferty. Zapewniamy monitoring, utrzymanie i rozwój wdrożonych systemów. Faza skalowania w naszej metodyce oznacza, że nie zostawiamy Cię po uruchomieniu — budujemy długoterminowe partnerstwo."
+    }
+  ],
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Porozmawiajmy o Twoim projekcie",
+    "heading": "Umów bezpłatną rozmowę",
+    "text": "Pierwsza konsultacja to bezpłatna, 30-minutowa rozmowa, podczas której zrozumiemy Twoje wyzwania i zaproponujemy konkretny następny krok. Bez zobowiązań — tylko wartość.",
+    "writeText": "Napisz do nas bezpośrednio. Odpowiadamy zazwyczaj w ciągu kilku godzin w dni robocze. Opisz krótko swój projekt, a my odezwiemy się z konkretną propozycją.",
+    "buttonLabel": "Wyślij wiadomość"
+  },
+  "footer": {
+    "services": "Usługi",
+    "contact": "Kontakt",
+    "privacy": "Polityka prywatności",
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "languageSwitcher": {
+    "label": "Język",
+    "pl": "Polski",
+    "en": "English",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "ru": "Русский",
+    "it": "Italiano",
+    "zh": "中文"
+  }
+}
