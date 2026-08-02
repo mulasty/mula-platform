@@ -3,9 +3,6 @@ import { headers } from 'next/headers'
 import { Navbar } from '@/components/Navbar'
 import { HeroSection } from '@/components/HeroSection'
 import { GuardianAISection } from '@/components/GuardianAISection'
-import { GuardianLandingPage } from '@/components/GuardianLandingPage'
-import { ClientNeedsSection } from '@/components/ClientNeedsSection'
-import { AboutSection } from '@/components/AboutSection'
 import { Footer } from '@/components/Footer'
 import { GuardianJsonLdScript, guardianMetadata } from '@/lib/guardianSeo'
 
@@ -29,8 +26,6 @@ export default async function HomePage() {
       <main id="main-content" tabIndex={-1}>
         <HeroSection />
         <GuardianAISection />
-        <ClientNeedsSection />
-        <AboutSection />
       </main>
       <Footer />
     </>
