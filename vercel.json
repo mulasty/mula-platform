@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm run build --workspace=@mula/main",
+  "buildCommand": "cd apps/main && npx next build",
   "installCommand": "npm ci",
   "outputDirectory": "apps/main/.next",
   "framework": "nextjs"
