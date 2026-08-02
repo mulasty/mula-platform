@@ -50,8 +50,9 @@ export default async function HomePage() {
   return (
     <>
       <Navbar />
-      <main id="main-content" tabIndex={-1} className="pt-32 pb-16 px-6 text-center">
-        <h1 className="text-4xl font-bold">WORKING - Navbar OK</h1>
+      <main id="main-content" tabIndex={-1}>
+        <HeroSection />
+        <h1 className="pt-4 pb-16 px-6 text-center text-2xl">HeroSection loaded OK</h1>
       </main>
     </>
   )
