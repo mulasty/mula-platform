@@ -1,0 +1,217 @@
+{
+  "meta": {
+    "title": "Mula Group — Technologie, Automatisation et IA pour les Entreprises",
+    "description": "Mula Group — Technologie, Automatisation et IA pour les Entreprises. Un écosystème d'affaires combinant stratégie numérique, intelligence artificielle, automatisation des processus, e-commerce, marketing, cybersécurité et ingénierie en un modèle opérationnel cohérent. Nous concevons, déployons et faisons évoluer des technologies pour les entreprises en Pologne et dans l'UE.",
+    "siteName": "Mula Group"
+  },
+  "skipLink": "Aller au contenu",
+  "company": {
+    "name": "Mula Group",
+    "fullName": "MULA GROUP SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ",
+    "tagline": "Technologie, Automatisation et IA pour les Entreprises",
+    "krs": "0001010842",
+    "regon": "524057460",
+    "nip": "718-216-41-12",
+    "address": "ul. gen. Władysława Sikorskiego 166/0.03, 18-400 Łomża",
+    "email": "info@mulagroup.eu",
+    "founded": 2023,
+    "founderName": "Piotr Muła",
+    "founderRole": "Fondateur et Président",
+    "founderBio": "Des années d'expérience dans l'e-commerce, la technologie et la transformation numérique. Allie une expérience opérationnelle pratique à une réflexion stratégique.",
+    "mission": "Nous aidons les entreprises à croître plus vite, à fonctionner plus efficacement et à prendre de meilleures décisions grâce à la technologie."
+  },
+  "nav": {
+    "about": "À propos",
+    "guardianAI": "Guardian AI",
+    "activities": "Activités",
+    "howWeWork": "Notre méthode",
+    "contact": "Contact",
+    "cta": "Parlons-en"
+  },
+  "hero": {
+    "headline": "Nous construisons des produits IA et des systèmes opérationnels pour les entreprises qui veulent aller plus vite et en toute sécurité.",
+    "subheadline": "Mula Group allie stratégie, automatisation, cybersécurité et produits IA propriétaires. Notre produit phare est MULA Guardian AI — un système conçu pour aider les entreprises à protéger leurs données, leurs processus et leurs décisions à l'ère de l'automatisation.",
+    "cta": "Parlons de votre projet",
+    "secondaryCTA": "Découvrez notre méthode",
+    "stats": {
+      "founded": "Année de création",
+      "pillars": "Piliers de compétences",
+      "projects": "Projets réalisés",
+      "region": "Zone d'activité"
+    }
+  },
+  "values": [
+    { "title": "Écosystème, pas silos", "description": "Nous pensons de manière globale, pas en fragments" },
+    { "title": "Comprendre d'abord, agir ensuite", "description": "Aucune solution sans diagnostic" },
+    { "title": "Exécution, pas présentations", "description": "Notre rôle est de passer de l'architecture à la réalisation" },
+    { "title": "Scalabilité dès le premier jour", "description": "Nous concevons des systèmes prêts pour la croissance" }
+  ],
+  "aboutText": "Mula Group est un groupe technologique alliant IA, logiciel, e-commerce, marketing, cybersécurité et ingénierie. Nous aidons les entreprises à passer du chaos opérationnel à des systèmes de fonctionnement structurés et évolutifs.",
+  "pillars": [
+    {
+      "id": "ai",
+      "title": "Technologies IA",
+      "subtitle": "Intelligence artificielle et automatisation",
+      "description": "Nous déployons une IA qui réduit concrètement les délais de traitement, automatise les tâches répétitives et donne aux entreprises un avantage opérationnel. Des simples copilotes aux architectures multi-agents — toujours orientés vers un résultat business concret."
+    },
+    {
+      "id": "digital",
+      "title": "Transformation Numérique",
+      "subtitle": "Numérisation et automatisation des entreprises",
+      "description": "Nous aidons les entreprises à éliminer les processus manuels, à intégrer les systèmes fragmentés et à obtenir un contrôle total sur leurs données. Nous déployons des CRM, ERP et workflows qui réduisent concrètement les délais d'exécution et le taux d'erreurs."
+    },
+    {
+      "id": "ecommerce",
+      "title": "E-commerce",
+      "subtitle": "Vente multicanal et marketplaces",
+      "description": "Nous élargissons la portée des ventes et réduisons les coûts opérationnels. Nous connectons les boutiques en ligne aux marketplaces en un système unique qui synchronise automatiquement les stocks, les commandes et les tarifs."
+    },
+    {
+      "id": "marketing",
+      "title": "Marketing et Médias",
+      "subtitle": "Stratégie, création, visibilité",
+      "description": "Nous augmentons la visibilité et générons des leads qui se traduisent concrètement en ventes. Nous combinons SEO, campagnes publicitaires et marketing de contenu en un système mesurable que nous optimisons en continu sur la base des données."
+    },
+    {
+      "id": "cyber",
+      "title": "Cybersécurité",
+      "subtitle": "Protection de l'infrastructure et conformité",
+      "description": "Nous protégeons les entreprises contre les interruptions coûteuses, les fuites de données et les sanctions pour non-conformité. Nous déployons la surveillance, la sauvegarde et la documentation pour la conformité NIS2 et ISO 27001."
+    },
+    {
+      "id": "construction",
+      "title": "Construction et Ingénierie",
+      "subtitle": "Structures métalliques et projets de construction",
+      "description": "Nous livrons des structures métalliques et des projets de construction, du concept à l'assemblage — dans les délais et conformément aux spécifications. Nous utilisons des outils IA pour optimiser les coûts et les plannings."
+    },
+    {
+      "id": "innovation",
+      "title": "Innovation et Startup Studio",
+      "subtitle": "Produits propriétaires et nouvelles entreprises",
+      "description": "Nous développons nos propres produits SaaS, construisons des MVP et menons des activités de R&D. Nous explorons de nouveaux modèles économiques à l'intersection de l'IA, de l'automatisation et des besoins réels du marché."
+    }
+  ],
+  "process": [
+    { "step": 1, "title": "Analyse", "description": "Nous diagnostiquons les processus, identifions les goulets d'étranglement et les opportunités. Nous commençons par comprendre votre activité." },
+    { "step": 2, "title": "Stratégie", "description": "Nous élaborons un plan d'action adapté à vos objectifs commerciaux. Chaque étape a une justification et un objectif mesurable." },
+    { "step": 3, "title": "Conception", "description": "Nous concevons l'architecture de la solution : des intégrations systèmes à l'interface utilisateur." },
+    { "step": 4, "title": "Déploiement", "description": "Nous réalisons le projet conformément au planning. Code, configuration, tests — le tout dans un processus unique." },
+    { "step": 5, "title": "Automatisation", "description": "Nous éliminons les tâches manuelles. Nous connectons les systèmes en flux de travail automatisés qui fonctionnent 24h/24 et 7j/7." },
+    { "step": 6, "title": "Croissance", "description": "Le système est prêt à évoluer. Nous surveillons, optimisons et développons en même temps que votre activité." }
+  ],
+  "mulaMethod": [
+    {
+      "id": "tech",
+      "title": "Technologie",
+      "description": "Nous concevons et déployons des systèmes numériques modernes — de l'architecture cloud aux intégrations API. Next.js, TypeScript, Python, Docker. Une stack adaptée à l'échelle de votre entreprise, et non l'inverse."
+    },
+    {
+      "id": "automation",
+      "title": "Automatisation",
+      "description": "Nous éliminons les processus répétitifs et les remplaçons par des workflows intelligents. Systèmes d'agents IA, automatisation CRM/ERP, synchronisation multicanal. Moins de clics, plus de résultats."
+    },
+    {
+      "id": "ai",
+      "title": "IA",
+      "description": "Nous déployons l'intelligence artificielle là où elle renforce concrètement l'avantage concurrentiel. Agents IA avec mémoire et RAG, analyse prédictive, recommandations business fondées sur les données."
+    }
+  ],
+  "products": [
+    { "name": "MULA Guardian AI", "description": "Produit phare de Mula Group : une plateforme intelligente de cybersécurité et de conformité pour les entreprises, combinant surveillance des risques, automatisation de la documentation, analyse de conformité NIS2/RGPD et agents IA soutenant les décisions opérationnelles.", "status": "beta" },
+    { "name": "Automation Audit Robot", "description": "Système autonome d'audit des processus métier avec recommandations basées sur l'IA", "status": "development" },
+    { "name": "Presence System", "description": "Système intelligent d'enregistrement du temps de travail avec analyse de la productivité", "status": "beta" },
+    { "name": "Mula Mobile AI Commander", "description": "Assistant IA mobile pour la gestion de projets et des tâches d'équipe", "status": "development" }
+  ],
+  "guardianAI": {
+    "eyebrow": "Produit phare de Mula Group",
+    "name": "MULA Guardian AI",
+    "headline": "L'IA qui veille sur la sécurité, la conformité et les opérations de votre entreprise.",
+    "description": "MULA Guardian AI est une orientation produit où nous combinons cybersécurité, automatisation de la conformité et agents IA. Le système est conçu pour accompagner les entreprises dans la surveillance des risques, l'organisation de la documentation NIS2/RGPD, l'analyse des incidents et la prise de décisions opérationnelles sécurisées.",
+    "bullets": [
+      "surveillance des risques et des incidents de sécurité",
+      "automatisation de la documentation NIS2, RGPD et des politiques de sécurité",
+      "agents IA pour l'analyse des processus, des données et des décisions opérationnelles",
+      "tableau de bord de gestion : ce qui est critique, ce qui nécessite une action, ce qui peut être automatisé"
+    ],
+    "metrics": [
+      { "value": "NIS2", "label": "préparation réglementaire" },
+      { "value": "IA", "label": "agents et automatisation" },
+      { "value": "24h/24", "label": "surveillance et alertes" }
+    ],
+    "cta": "Découvrir Guardian AI",
+    "secondaryCta": "Se connecter à l'application"
+  },
+  "clientNeeds": [
+    { "title": "Vous souhaitez tirer parti de l'IA dans votre entreprise", "desc": "De l'audit au déploiement d'agents" },
+    { "title": "Vous souhaitez attirer plus de clients", "desc": "Marketing, SEO, campagnes, tunnel de vente" },
+    { "title": "Vous souhaitez développer vos ventes en ligne", "desc": "E-commerce, marketplaces, automatisation" },
+    { "title": "Vous souhaitez automatiser vos processus", "desc": "Workflows, intégrations, élimination du travail manuel" },
+    { "title": "Vous souhaitez sécuriser votre entreprise", "desc": "NIS2, audits, surveillance, conformité" },
+    { "title": "Vous avez besoin d'un hall ou d'une structure", "desc": "Conception, production, montage" },
+    { "title": "Vous souhaitez créer un nouveau produit", "desc": "MVP, prototype, SaaS, startup studio" }
+  ],
+  "whyUs": {
+    "pillars": "piliers",
+    "projects": "projets",
+    "years": "ans sur le marché",
+    "region": "Pologne / UE"
+  },
+  "cta": {
+    "title": "Prêt à accélérer votre activité ?",
+    "subtitle": "Parlons de la manière dont Mula Group peut soutenir votre croissance.",
+    "button": "Réserver une consultation gratuite"
+  },
+  "faq": [
+    {
+      "question": "Que fait Mula Group ?",
+      "answer": "Mula Group est un écosystème d'affaires combinant 7 compétences dans un environnement opérationnel unique. Nous intervenons dans les technologies IA, la transformation numérique, l'e-commerce, le marketing, la cybersécurité, la construction et l'innovation. Au lieu de chercher plusieurs prestataires, vous bénéficiez d'un partenaire unique avec un spectre complet de services."
+    },
+    {
+      "question": "Comment se déroule le processus de collaboration ?",
+      "answer": "Nous travaillons selon un modèle en 6 étapes : Analyse (diagnostic), Stratégie (conception de la solution), Conception (architecture et intégrations), Déploiement (réalisation technique), Automatisation (connexion des compétences et workflows) et Croissance (mise à l'échelle et optimisation). Chaque projet commence par une compréhension approfondie de votre activité, de vos défis et de vos objectifs — c'est seulement ensuite que nous concevons la solution."
+    },
+    {
+      "question": "Travaillez-vous avec les petites entreprises ?",
+      "answer": "Oui, nous collaborons aussi bien avec les petites qu'avec les moyennes entreprises. Nous adaptons nos solutions à la taille de l'organisation et au budget. Nous croyons que l'accès aux technologies modernes et à l'automatisation doit être possible à chaque étape du développement d'une entreprise."
+    },
+    {
+      "question": "Quelles technologies utilisez-vous ?",
+      "answer": "Nous utilisons une stack technologique moderne comprenant Next.js, TypeScript, React, Python, LangChain, OpenAI API, PostgreSQL, Supabase, Docker et bien d'autres. Nous n'imposons pas une technologie unique — nous sélectionnons les outils optimaux pour l'échelle et les besoins de votre entreprise."
+    },
+    {
+      "question": "Combien de temps dure le déploiement d'un projet ?",
+      "answer": "La durée de déploiement dépend de l'ampleur et de la complexité du projet — de quelques semaines pour les déploiements simples à plusieurs mois pour les systèmes complexes. À l'étape de Conception, nous présentons un planning détaillé avec des jalons, afin que vous sachiez toujours où nous en sommes."
+    },
+    {
+      "question": "Proposez-vous un support après le déploiement ?",
+      "answer": "Oui, le support post-déploiement fait partie intégrante de notre offre. Nous assurons la surveillance, la maintenance et le développement des systèmes déployés. La phase de croissance dans notre méthodologie signifie que nous ne vous abandonnons pas après le lancement — nous construisons un partenariat à long terme."
+    }
+  ],
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Parlons de votre projet",
+    "heading": "Réserver une consultation gratuite",
+    "text": "La première consultation est un appel gratuit de 30 minutes au cours duquel nous comprenons vos défis et proposons une prochaine étape concrète. Sans engagement — uniquement de la valeur.",
+    "writeText": "Écrivez-nous directement. Nous répondons généralement dans les heures qui suivent les jours ouvrés. Décrivez brièvement votre projet et nous vous répondrons avec une proposition concrète.",
+    "buttonLabel": "Envoyer le message"
+  },
+  "footer": {
+    "services": "Services",
+    "contact": "Contact",
+    "privacy": "Politique de confidentialité",
+    "rights": "Tous droits réservés."
+  },
+  "languageSwitcher": {
+    "label": "Langue",
+    "pl": "Polski",
+    "en": "English",
+    "de": "Deutsch",
+    "nl": "Nederlands",
+    "ru": "Русский",
+    "it": "Italiano",
+    "zh": "中文",
+    "fr": "Français",
+    "es": "Español",
+    "uk": "Українська"
+  }
+}
