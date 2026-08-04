@@ -2,6 +2,9 @@
   "buildCommand": "node vercel-build.mjs",
   "installCommand": "npm install --legacy-peer-deps",
   "framework": "nextjs",
+  "github": {
+    "silent": true
+  },
   "crons": [
     { "path": "/api/cron/health", "schedule": "*/5 * * * *" }
   ]

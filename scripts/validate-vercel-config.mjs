@@ -40,6 +40,7 @@ assert(
   'Root vercel.json installCommand must preserve the monorepo dependency graph.',
 )
 assert(rootConfig.framework === 'nextjs', 'Root vercel.json framework must be nextjs.')
+assert(rootConfig.github?.silent === true, 'Root vercel.json must disable incompatible preview comments.')
 assert(!('outputDirectory' in rootConfig), 'Root vercel.json must not set a global outputDirectory.')
 
 assert(Array.isArray(rootConfig.crons), 'Root vercel.json must keep the production health cron.')
