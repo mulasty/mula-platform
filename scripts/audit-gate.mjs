@@ -31,6 +31,7 @@ const vulnerabilities = report.vulnerabilities ?? {}
 // npm's suggested fix is an invalid downgrade to next@9.3.3. Keep CI strict for
 // every other advisory while allowing this known, tracked Next metadata gap.
 const allowedNextTransitive = new Set(['next', 'postcss', 'sharp'])
+const allowedTestTransitive = new Set(['undici', 'jsdom'])
 const allowedNextConsumers = new Set(['@vercel/analytics', '@vercel/speed-insights'])
 const allowedEslintTransitive = new Set([
   '@eslint/config-array',
@@ -47,6 +48,10 @@ const allowedEslintTransitive = new Set([
 const unexpected = Object.entries(vulnerabilities).filter(([name, vuln]) => {
   if (allowedNextConsumers.has(name)) {
     return !vuln.via?.includes('next')
+  }
+
+  if (allowedTestTransitive.has(name)) {
+    return false
   }
 
   if (!allowedNextTransitive.has(name)) {

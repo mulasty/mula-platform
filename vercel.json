@@ -1,6 +1,8 @@
 {
-  "buildCommand": "npx turbo build --filter=@mula/main",
+  "buildCommand": "node vercel-build.mjs",
   "installCommand": "npm install",
-  "outputDirectory": "apps/main/.next",
-  "framework": "nextjs"
+  "framework": "nextjs",
+  "crons": [
+    { "path": "/api/cron/health", "schedule": "*/5 * * * *" }
+  ]
 }
