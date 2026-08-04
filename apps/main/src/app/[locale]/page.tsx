@@ -9,10 +9,19 @@ import { GuardianJsonLdScript, guardianMetadata } from '@/lib/guardianSeo'
 
 export const revalidate = 3600
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  params: Promise<{ locale: string }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const host = (await headers()).get('host')?.toLowerCase().split(':')[0]
   if (host === 'guardian.mulagroup.eu') return guardianMetadata
-  return {}
+  const { locale } = await params
+  return {
+    alternates: {
+      canonical: locale === 'pl' ? 'https://mulagroup.eu' : `https://mulagroup.eu/${locale}`,
+    },
+  }
 }
 
 export default async function HomePage() {
