@@ -35,7 +35,10 @@ assert(
   rootConfig.buildCommand === 'node vercel-build.mjs',
   'Root vercel.json must use the project-aware Vercel build router.',
 )
-assert(rootConfig.installCommand === 'npm install', 'Root vercel.json installCommand must be npm install.')
+assert(
+  rootConfig.installCommand === 'npm install --legacy-peer-deps',
+  'Root vercel.json installCommand must preserve the monorepo dependency graph.',
+)
 assert(rootConfig.framework === 'nextjs', 'Root vercel.json framework must be nextjs.')
 assert(!('outputDirectory' in rootConfig), 'Root vercel.json must not set a global outputDirectory.')
 
