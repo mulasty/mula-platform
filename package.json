@@ -1,40 +1,41 @@
 {
-  "name": "mula-platform",
-  "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
-  "scripts": {
-    "dev": "turbo dev",
-    "build": "turbo build",
-    "lint": "turbo lint",
-    "typecheck": "turbo typecheck",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:e2e": "playwright test",
-    "smoke:production": "node scripts/production-smoke.mjs",
-    "validate:vercel-config": "node scripts/validate-vercel-config.mjs",
-    "clean": "turbo clean"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.61.1",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
-    "@vitejs/plugin-react": "^6.0.3",
-    "eslint": "^9.39.4",
-    "eslint-config-next": "^16.2.10",
-    "jsdom": "^29.1.1",
-    "turbo": "^2.5.0",
-    "typescript": "^5.0.0",
-    "vitest": "^4.1.10"
-  },
-  "overrides": {
-    "postcss": "^8.5.25"
-  },
-  "engines": {
-    "node": ">=22.0.0",
-    "npm": ">=11.0.0"
-  },
-  "packageManager": "npm@11.12.1"
+    "name":  "mula-platform",
+    "private":  true,
+    "workspaces":  [
+                       "apps/*",
+                       "packages/*"
+                   ],
+    "scripts":  {
+                    "dev":  "turbo dev",
+                    "build":  "turbo build",
+                    "lint":  "turbo lint",
+                    "typecheck":  "turbo typecheck",
+                    "test":  "vitest run",
+                    "test:watch":  "vitest",
+                    "test:e2e":  "playwright test",
+                    "smoke:production":  "node scripts/production-smoke.mjs",
+                    "validate:vercel-config":  "node scripts/validate-vercel-config.mjs",
+                    "clean":  "turbo clean"
+                },
+    "devDependencies":  {
+                            "@playwright/test":  "^1.61.1",
+                            "@testing-library/jest-dom":  "^6.9.1",
+                            "@testing-library/react":  "^16.3.2",
+                            "@vitejs/plugin-react":  "^6.0.3",
+                            "eslint":  "^9.39.4",
+                            "eslint-config-next":  "^16.2.10",
+                            "jsdom":  "^29.1.1",
+                            "turbo":  "^2.5.0",
+                            "typescript":  "^5.0.0",
+                            "vitest":  "^4.1.10",
+                            "@testing-library/dom":  "^10.4.0"
+                        },
+    "overrides":  {
+                      "postcss":  "^8.5.25"
+                  },
+    "engines":  {
+                    "node":  "\u003e=22.0.0",
+                    "npm":  "\u003e=11.0.0"
+                },
+    "packageManager":  "npm@11.12.1"
 }
