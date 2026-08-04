@@ -11,17 +11,18 @@
                 },
     "dependencies":  {
                          "@mula/ui":  "*",
-                         "@vercel/analytics": "^2.0.1",
-                         "@vercel/speed-insights": "^2.0.0",
+                         "@vercel/analytics":  "^2.0.1",
+                         "@vercel/speed-insights":  "^2.0.0",
                          "framer-motion":  "^12.0.0",
                          "lucide-react":  "^1.0.0",
                          "next":  "^16.0.0",
                          "react":  "^19.0.0",
-                         "react-dom":  "^19.0.0"
+                         "react-dom":  "^19.0.0",
+                         "@mula/content":  "*"
                      },
     "devDependencies":  {
                             "@tailwindcss/postcss":  "^4",
-                            "@types/node": "^22",
+                            "@types/node":  "^22",
                             "@types/react":  "^19",
                             "tailwindcss":  "^4",
                             "typescript":  "^5"
