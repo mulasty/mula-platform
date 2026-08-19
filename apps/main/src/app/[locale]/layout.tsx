@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const messages = (await loadMessages(locale)) as unknown as { meta: { title: string; description: string; siteName: string } }
 
   return {
+    metadataBase: new URL('https://mulagroup.eu'),
     title: {
       default: messages.meta.title,
       template: `%s | ${messages.meta.siteName}`,
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       type: 'website',
       locale,
-      url: `https://mulagroup.eu/${locale}`,
+      url: locale === routing.defaultLocale ? 'https://mulagroup.eu' : `https://mulagroup.eu/${locale}`,
       siteName: messages.meta.siteName,
       title: messages.meta.title,
       description: messages.meta.description,
@@ -54,16 +55,52 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   const messages = await getMessages()
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Organization',
+        name: 'Mula Group',
+        url: 'https://mulagroup.eu',
+        logo: 'https://mulagroup.eu/favicon.ico',
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: 'info@mulagroup.eu',
+          contactType: 'customer service',
+          availableLanguage: ['pl', 'en'],
+        },
+      },
+      {
+        '@type': 'WebSite',
+        name: messages.meta.siteName,
+        url: 'https://mulagroup.eu',
+        inLanguage: locale,
+        description: messages.meta.description,
+      },
+    ],
+  }
+
   return (
-    <NextIntlClientProvider messages={messages} locale={locale}>
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
-      <link rel="preconnect" href="https://consent.cookiebot.com" />
-      <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-      <link rel="dns-prefetch" href="https://consent.cookiebot.com" />
-      <a href="#main-content" className="skip-link">
-        {String(messages.skipLink ?? 'Skip to content')}
-      </a>
-      {children}
-    </NextIntlClientProvider>
+    <html lang={locale} className="theme-light">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className="min-h-screen bg-mula-bg text-mula-text antialiased">
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+          <link rel="preconnect" href="https://www.googletagmanager.com" />
+          <link rel="preconnect" href="https://consent.cookiebot.com" />
+          <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+          <link rel="dns-prefetch" href="https://consent.cookiebot.com" />
+          <a href="#main-content" className="skip-link">
+            {String(messages.skipLink ?? 'Skip to content')}
+          </a>
+          {children}
+        </NextIntlClientProvider>
+      </body>
+    </html>
   )
 }

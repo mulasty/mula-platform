@@ -175,7 +175,7 @@ export function HeroSection() {
         <motion.div
           className="max-w-4xl"
           variants={containerVariants}
-          initial="hidden"
+          initial={false}
           animate="visible"
         >
           {/* Badge */}
