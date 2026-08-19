@@ -101,11 +101,11 @@ function buildFingerprint(request: Request, body: ContactBody): string {
 const RESEND_API_URL = 'https://api.resend.com/emails'
 const CONTACT_TO_EMAIL = 'kontakt@mulagroup.eu'
 
-async function sendContactEmail(body: ContactBody): Promise<void> {
+async function sendContactEmail(body: ContactBody): Promise<boolean> {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey || apiKey === 're_placeholder') {
-    console.log('[contact] Email not sent — RESEND_API_KEY is not configured')
-    return
+    console.error('[contact] Email NOT sent — RESEND_API_KEY is not configured (visitor was told the message was sent)')
+    return false
   }
 
   const payload = {
@@ -137,12 +137,14 @@ async function sendContactEmail(body: ContactBody): Promise<void> {
     if (!response.ok) {
       const errorBody = await response.text()
       console.error('[contact] Resend API error %d: %s', response.status, errorBody)
-      return
+      return false
     }
 
     console.log('[contact] Email sent to %s', CONTACT_TO_EMAIL)
+    return true
   } catch (error) {
     console.error('[contact] Failed to send email:', error)
+    return false
   }
 }
 
@@ -173,7 +175,6 @@ export async function POST(request: Request) {
       return Response.json({ success: true })
     }
 
-    // TODO: Integrate with email service (e.g. Resend, SendGrid, or SMTP)
     // Email delivery via Resend API (Edge-compatible, no npm deps)
     const ctx = (globalThis as unknown as { waitUntil?: (p: Promise<unknown>) => void })
     if (ctx.waitUntil) {

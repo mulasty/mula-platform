@@ -16,7 +16,7 @@ export default function middleware(request: NextRequest) {
       return NextResponse.redirect(guardianAppLoginUrl)
     }
     if (pathname === '/') {
-      return NextResponse.rewrite(new URL(`/${routing.defaultLocale}`, request.url))
+      return NextResponse.rewrite(new URL(`/${routing.defaultLocale}/guardian`, request.url))
     }
     return NextResponse.next()
   }
@@ -26,6 +26,6 @@ export default function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|images|guardian|polityka-prywatnosci|audyt-nis2|.*\\.svg|.*\\.png).*)',
+    '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|\.well-known|images|guardian|polityka-prywatnosci|audyt-nis2|.*\\.svg|.*\\.png).*)',
   ],
 }

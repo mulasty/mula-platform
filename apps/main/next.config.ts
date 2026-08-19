@@ -3,11 +3,12 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-eval' 'unsafe-inline';
+  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://consent.cookiebot.com https://www.googletagmanager.com;
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: https: blob:;
   font-src 'self';
-  connect-src 'self' https://vitals.vercel-insights.com https://*.vercel.app;
+  connect-src 'self' https://vitals.vercel-insights.com https://*.vercel.app https://consent.cookiebot.com https://www.google-analytics.com https://*.googletagmanager.com;
+  frame-src https://consent.cookiebot.com;
   frame-ancestors 'none';
   base-uri 'self';
   form-action 'self';
@@ -16,6 +17,7 @@ const cspHeader = `
 
 const nextConfig: NextConfig = {
   transpilePackages: ['@mula/ui'],
+  poweredByHeader: false,
   async headers() {
     return [
       {
@@ -44,6 +46,15 @@ const nextConfig: NextConfig = {
           {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, must-revalidate",
           },
         ],
       },
