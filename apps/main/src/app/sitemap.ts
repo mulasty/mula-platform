@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: 'https://mulagroup.eu/en',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: 'https://mulagroup.eu/polityka-prywatnosci',
       lastModified: new Date(),
       changeFrequency: 'yearly',

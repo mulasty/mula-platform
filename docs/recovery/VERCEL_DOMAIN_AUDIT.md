@@ -69,3 +69,62 @@ Some DNS records remain at third-party DNS while selected domains use Vercel-man
 4. Third-party DNS coordination: update A records within 24h of any Vercel project migration
 5. Audit this file after any domain addition, removal, or Vercel project change
 6. Run `npm run smoke:production` after production domain or routing changes
+
+---
+
+## Live Site Map & Services — Audit 2026-08-19
+
+**Scope:** full page tree per domain, linked repos, and third-party services. Verified live via curl.
+
+### mulagroup.eu (repo `mula-platform`, app `main`, Vercel project `mula-platform`, Next.js 16 + next-intl)
+
+| Route | Status | Notes |
+|---|---|---|
+| `/` | ✅ 200 | PL home (default locale) |
+| `/en` | ✅ 200 | EN version |
+| `/audyt-nis2` | ✅ 200 | NIS2 audit offer |
+| `/guardian` | ✅ 200 | Guardian landing (same content as guardian.mulagroup.eu) |
+| `/polityka-prywatnosci` | ✅ 200 | RODO privacy policy |
+| `/api/cron/health` | ✅ 200 | `{"status":"ok","service":"mula-platform-main"}` (Vercel cron `*/5 * * * *`) |
+| `/api/contact` | ✅ 405 | POST-only contact form endpoint (GET rejected correctly) |
+| `/pl/*` | ✅ 307 | Redirect to prefix-less URLs (`localePrefix: as-needed`) |
+
+### Subdomain competency apps (repo `mula-platform`, one page each: `/`)
+
+| Domain | Vercel project | App dir | Status |
+|---|---|---|---|
+| ai.mulagroup.eu | mula-ai-tech | apps/ai | ✅ prerendered, cache HIT |
+| digital.mulagroup.eu | mula-digital | apps/digital | ✅ |
+| ecommerce.mulagroup.eu | mula-ecom | apps/ecommerce | ✅ |
+| marketing.mulagroup.eu | mula-marketing | apps/marketing | ✅ |
+| cyber.mulagroup.eu | mula-cyber | apps/cyber | ✅ prerendered, cache HIT |
+| construction.mulagroup.eu | mula-construction | apps/construction | ✅ |
+| innovation.mulagroup.eu | mula-innovation | apps/innovation | ✅ |
+
+### Guardian cluster
+
+| Domain | Serves | Repo |
+|---|---|---|
+| guardian.mulagroup.eu | Landing (middleware rewrite to `/{defaultLocale}`) | mula-platform |
+| app.guardian.mulagroup.eu | Guardian app (Next.js + PWA `manifest.json`) | cyber-guardian-ai |
+| guardian-app.mulagroup.eu | Alias of app.guardian.mulagroup.eu | cyber-guardian-ai |
+
+### Other services
+
+| Service | Repo | Role |
+|---|---|---|
+| matrix-api-sigma.vercel.app (`/api/health`) | matrix-mcp | MATRIX API |
+| mulasty.vercel.app | mulasty | Product/API app: `/api/v1/products`, `/suppliers`, `/rfqs`, `/import/*` |
+| pizzatorra.vercel.app | unknown (not in registry) | Next.js site (pl) — needs onboarding |
+| Railway | cyber-guardian-ai | Guardian backend (NestJS/FastAPI), Auth0 auth |
+| Neon (neon.tech) | — | Database provider |
+| OpenAI API | — | LLM provider |
+
+### Audit grades (2026-08-19)
+
+Performance **B** · Security **A-** · SEO **C+**
+
+- 🔴 sitemap.xml → 404 (robots.txt references it) — fixed: single root `src/app/sitemap.ts`, `sitemap.xml` excluded from middleware matcher
+- 🟠 missing `lang` on `<html>`, missing canonical/OG on `/audyt-nis2` + `/polityka-prywatnosci` — fixed
+- 🟡 CSP `unsafe-inline/unsafe-eval`, no JSON-LD on home, `og:url=/pl` mismatch, no security.txt, images without cache, JS bundle ~825 KB, `X-Powered-By`, hero H1 `opacity:0` (LCP risk), NEXT_LOCALE cookie without Secure
+- ✅ SSL Let's Encrypt `*.mulagroup.eu` valid until 2026-10-28, full security header set, no mixed content
