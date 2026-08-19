@@ -16,6 +16,27 @@ export const metadata: Metadata = {
   title: 'Audyt NIS2 — Wyniki',
   description:
     'Przykładowy raport audytu NIS2 dla firmy z sektora finansowego. Zobacz wyniki oceny zgodności i rekomendacje działań naprawczych.',
+  metadataBase: new URL('https://mulagroup.eu'),
+  alternates: {
+    canonical: '/audyt-nis2',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'pl_PL',
+    url: 'https://mulagroup.eu/audyt-nis2',
+    siteName: 'Mula Group',
+    title: 'Audyt NIS2 — Wyniki',
+    description:
+      'Przykładowy raport audytu NIS2 dla firmy z sektora finansowego. Zobacz wyniki oceny zgodności i rekomendacje działań naprawczych.',
+    images: [{ url: '/images/competencies/home-og.svg', width: 1200, height: 630, alt: 'Audyt NIS2 — Mula Group' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Audyt NIS2 — Wyniki',
+    description:
+      'Przykładowy raport audytu NIS2 dla firmy z sektora finansowego. Zobacz wyniki oceny zgodności i rekomendacje działań naprawczych.',
+    images: ['/images/competencies/home-og.svg'],
+  },
   robots: {
     index: true,
     follow: true,
