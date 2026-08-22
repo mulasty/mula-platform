@@ -213,5 +213,31 @@
     "fr": "Français",
     "es": "Español",
     "uk": "Українська"
+  },
+  "sections": {
+    "process": {
+      "title": "Jak pracujemy",
+      "subtitle": "Model operacyjny Mula Group"
+    },
+    "technology": {
+      "title": "Technologie",
+      "subtitle": "Narzędzia z którymi pracujemy"
+    },
+    "whyUs": {
+      "title": "Dlaczego Mula Group",
+      "subtitle": ""
+    },
+    "clientNeeds": {
+      "title": "W czym możemy pomóc?",
+      "subtitle": "Wybierz obszar, w którym potrzebujesz wsparcia — wskażemy Ci drogę."
+    },
+    "method": {
+      "title": "Mula Method — Jak przyspieszamy Twój biznes",
+      "subtitle": "Trzy filary akceleracji biznesowej"
+    },
+    "products": {
+      "title": "Produkty Mula Group",
+      "subtitle": "Od MULA Guardian AI po kolejne systemy automatyzacji"
+    }
   }
 }

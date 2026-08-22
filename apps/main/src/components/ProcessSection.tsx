@@ -51,8 +51,8 @@ export function ProcessSection() {
 
       <div className="relative max-w-7xl mx-auto">
         <SectionHeader
-          title="Jak pracujemy"
-          subtitle="Model operacyjny Mula Group"
+          title={t('sections.process.title')}
+          subtitle={t('sections.process.subtitle')}
         />
 
         {/* Desktop: horizontal steps with connecting line */}

@@ -50,7 +50,7 @@ export function ClientNeedsSection() {
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-slate-50/90 to-white/80" />
 
       <div className="relative max-w-7xl mx-auto px-4">
-        <SectionHeader title="W czym możemy pomóc?" subtitle="Wybierz obszar, w którym potrzebujesz wsparcia — wskażemy Ci drogę." />
+        <SectionHeader title={t('sections.clientNeeds.title')} subtitle={t('sections.clientNeeds.subtitle')} />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
           {needs.map((need, i) => {
             const Icon = iconMap[need.icon] || Brain

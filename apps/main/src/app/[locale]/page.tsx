@@ -12,8 +12,6 @@ import { MulaMethod } from '@/components/MulaMethod'
 import { TechnologyCloud } from '@/components/TechnologyCloud'
 import { ProductsPreview } from '@/components/ProductsPreview'
 import { CTASection } from '@/components/CTASection'
-import { TestimonialsSection } from '@/components/TestimonialsSection'
-import { PartnersSection } from '@/components/PartnersSection'
 import { FAQSection } from '@/components/FAQSection'
 import { ContactSection } from '@/components/ContactSection'
 import { Footer } from '@/components/Footer'
@@ -63,8 +61,6 @@ export default async function HomePage({ params }: Props) {
           ctaText={t('cta.button')}
           ctaHref="#contact"
         />
-        <TestimonialsSection />
-        <PartnersSection />
         <FAQSection />
         <ContactSection />
       </main>

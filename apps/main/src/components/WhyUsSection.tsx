@@ -56,10 +56,11 @@ function AnimatedNumber({ target, suffix = '' }: { target: number; suffix?: stri
 
 export function WhyUsSection() {
   const t = useTranslations('whyUs')
+  const ts = useTranslations('sections')
   return (
     <section id="why-us" className="py-24 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader title="Dlaczego Mula Group" />
+        <SectionHeader title={ts('whyUs.title')} />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div

@@ -22,6 +22,7 @@ const iconMap: Record<string, IconComponent> = {
  */
 export function ProductsPreview() {
   const t = useTranslations()
+  const ts = useTranslations('sections')
   const products = (t.raw('products') as unknown as { name: string; description: string; status: string }[]) || []
   const statusConfig: Record<
     string,
@@ -44,8 +45,8 @@ export function ProductsPreview() {
     <section id="products" className="py-20 scroll-mt-24 bg-slate-50/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          title={products.length > 0 ? products[0].name.split(':')[0] || 'Products' : 'Produkty Mula Group'}
-          subtitle={products.length > 0 ? `From ${products[0].name} to automation systems` : 'Od MULA Guardian AI po kolejne systemy automatyzacji'}
+          title={ts('products.title')}
+          subtitle={ts('products.subtitle')}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
