@@ -6,6 +6,7 @@ import { Search, Compass, PenTool, Play, RefreshCw, TrendingUp } from 'lucide-re
 import type { LucideIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
+import { PROCESS_STEPS } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {
   Search,
@@ -37,7 +38,11 @@ const cardVariant = {
  */
 export function ProcessSection() {
   const t = useTranslations()
-  const steps = (t.raw('process') as unknown as { step: number; title: string; description: string; icon: string }[]) || []
+  const localized = (t.raw('process') as unknown as { step: number; title: string; description: string }[]) || []
+  const steps = PROCESS_STEPS.map((def, i) => ({
+    ...def,
+    ...(localized[i] ?? {}),
+  }))
   return (
     <section id="process" className="relative py-20 px-6 scroll-mt-24 overflow-hidden">
       <Image

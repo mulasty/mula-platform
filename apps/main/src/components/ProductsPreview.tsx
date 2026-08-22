@@ -29,7 +29,7 @@ export function ProductsPreview() {
     { label: string; classes: string }
   > = {
     live: {
-      label: products.length > 0 ? 'Live' : 'Dostępny',
+      label: ts('products.statusLive'),
       classes: 'bg-emerald-50 text-emerald-700 border-emerald-200',
     },
     beta: {
@@ -37,7 +37,7 @@ export function ProductsPreview() {
       classes: 'bg-blue-50 text-blue-700 border-blue-200',
     },
     development: {
-      label: products.length > 0 ? 'In Development' : 'W rozwoju',
+      label: ts('products.statusDevelopment'),
       classes: 'bg-purple-50 text-purple-700 border-purple-200',
     },
   }

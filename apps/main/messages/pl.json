@@ -237,7 +237,9 @@
     },
     "products": {
       "title": "Produkty Mula Group",
-      "subtitle": "Od MULA Guardian AI po kolejne systemy automatyzacji"
+      "subtitle": "Od MULA Guardian AI po kolejne systemy automatyzacji",
+      "statusLive": "Dostępny",
+      "statusDevelopment": "W rozwoju"
     }
   }
 }
