@@ -14,8 +14,8 @@ import { SectionHeader } from '@mula/ui'
  */
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const tf = useTranslations('faq')
-  const faqItems = tf.raw as unknown as { question: string; answer: string }[] || []
+  const t = useTranslations()
+  const faqItems = (t.raw('faq') as unknown as { question: string; answer: string }[]) || []
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)

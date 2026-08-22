@@ -21,14 +21,14 @@ const iconMap: Record<string, IconComponent> = {
  * EMOTIONAL TARGET: "They build their own products too — impressive."
  */
 export function ProductsPreview() {
-  const tp = useTranslations('products')
-  const products = tp.raw as unknown as { name: string; description: string; status: string }[] || []
+  const t = useTranslations()
+  const products = (t.raw('products') as unknown as { name: string; description: string; status: string }[]) || []
   const statusConfig: Record<
     string,
     { label: string; classes: string }
   > = {
     live: {
-      label: tp.raw.length > 0 ? 'Live' : 'Dostępny',
+      label: products.length > 0 ? 'Live' : 'Dostępny',
       classes: 'bg-emerald-50 text-emerald-700 border-emerald-200',
     },
     beta: {
@@ -36,7 +36,7 @@ export function ProductsPreview() {
       classes: 'bg-blue-50 text-blue-700 border-blue-200',
     },
     development: {
-      label: tp.raw.length > 0 ? 'In Development' : 'W rozwoju',
+      label: products.length > 0 ? 'In Development' : 'W rozwoju',
       classes: 'bg-purple-50 text-purple-700 border-purple-200',
     },
   }

@@ -36,8 +36,8 @@ const cardVariant = {
  * EMOTIONAL TARGET: "I know what to expect."
  */
 export function ProcessSection() {
-  const tp = useTranslations('process')
-  const steps = tp.raw as unknown as { step: number; title: string; description: string; icon: string }[] || []
+  const t = useTranslations()
+  const steps = (t.raw('process') as unknown as { step: number; title: string; description: string; icon: string }[]) || []
   return (
     <section id="process" className="relative py-20 px-6 scroll-mt-24 overflow-hidden">
       <Image

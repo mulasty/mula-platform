@@ -23,8 +23,8 @@ const iconMap: Record<string, LucideIcon> = {
  * EMOTIONAL TARGET: "They understand my needs."
  */
 export function ClientNeedsSection() {
-  const tn = useTranslations('clientNeeds')
-  const needs = tn.raw as unknown as { title: string; desc: string; icon: string; href: string; color: string }[] || []
+  const t = useTranslations()
+  const localized = (t.raw('clientNeeds') as unknown as { title: string; desc: string }[]) || []
   const defaultNeeds = [
     { icon: 'Brain', title: 'AI', desc: 'Audit → wdrożenie', href: 'https://ai.mulagroup.eu', color: '#3b82f6' },
     { icon: 'TrendingUp', title: 'Marketing', desc: 'SEO, kampanie, lejek', href: 'https://marketing.mulagroup.eu', color: '#ec4899' },
@@ -34,7 +34,10 @@ export function ClientNeedsSection() {
     { icon: 'Building2', title: 'Konstrukcje', desc: 'Projekt, produkcja, montaż', href: 'https://construction.mulagroup.eu', color: '#ef4444' },
     { icon: 'Lightbulb', title: 'Nowy produkt', desc: 'MVP, prototyp, SaaS', href: 'https://innovation.mulagroup.eu', color: '#06b6d4' },
   ]
-  const displayNeeds = needs.length > 0 ? needs : defaultNeeds
+  const needs = defaultNeeds.map((def, i) => ({
+    ...def,
+    ...(localized[i] ?? {}),
+  }))
   return (
     <section id="needs" className="relative py-24 scroll-mt-24 overflow-hidden">
       <Image
@@ -49,7 +52,7 @@ export function ClientNeedsSection() {
       <div className="relative max-w-7xl mx-auto px-4">
         <SectionHeader title="W czym możemy pomóc?" subtitle="Wybierz obszar, w którym potrzebujesz wsparcia — wskażemy Ci drogę." />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
-          {displayNeeds.map((need: { title: string; desc: string; icon: string; href: string; color: string }, i: number) => {
+          {needs.map((need, i) => {
             const Icon = iconMap[need.icon] || Brain
             return (
               <motion.a

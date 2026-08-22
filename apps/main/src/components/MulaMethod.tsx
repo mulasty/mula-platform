@@ -27,8 +27,8 @@ const cardVariant = {
 }
 
 export function MulaMethod() {
-  const tm = useTranslations('mulaMethod')
-  const items = tm.raw as unknown as { id: string; title: string; description: string; icon: string; color: string }[] || []
+  const t = useTranslations()
+  const items = (t.raw('mulaMethod') as unknown as { id: string; title: string; description: string; icon: string; color: string }[]) || []
   return (
     <section id="method" className="relative py-20 px-6 overflow-hidden scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/40 to-white pointer-events-none" />
