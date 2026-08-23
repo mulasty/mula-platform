@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { afterEach, describe, it, expect, vi } from 'vitest'
 import { POST } from './route'
 
 function contactRequest(body: Record<string, unknown>) {
@@ -8,6 +8,17 @@ function contactRequest(body: Record<string, unknown>) {
     body: JSON.stringify(body),
   })
 }
+
+const ORIGINAL_API_KEY = process.env.RESEND_API_KEY
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+  if (ORIGINAL_API_KEY === undefined) {
+    delete process.env.RESEND_API_KEY
+  } else {
+    process.env.RESEND_API_KEY = ORIGINAL_API_KEY
+  }
+})
 
 describe('POST /api/contact', () => {
   it('returns validation errors for empty body', async () => {
@@ -20,6 +31,17 @@ describe('POST /api/contact', () => {
   })
 
   it('accepts valid submission', async () => {
+    process.env.RESEND_API_KEY = 're_test_123'
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue(
+        new Response('{}', {
+          status: 200,
+          headers: { 'content-type': 'application/json' },
+        }),
+      ),
+    )
+
     const res = await POST(
       contactRequest({
         name: 'Jan Kowalski',
@@ -32,6 +54,70 @@ describe('POST /api/contact', () => {
 
     expect(res.status).toBe(200)
     expect(data.success).toBe(true)
+  })
+
+  it('reports delivery failure to the visitor', async () => {
+    delete process.env.RESEND_API_KEY
+
+    const res = await POST(
+      contactRequest({
+        name: 'Anna Nowak',
+        email: 'anna.nowak@example.com',
+        competency: 'Inne',
+        message: 'To jest odrębna testowa wiadomość o innym treści fingerprint.',
+      }),
+    )
+    const data = await res.json()
+
+    expect(res.status).toBe(502)
+    expect(data.success).toBe(false)
+  })
+
+  it('allows a retry after delivery failure (fingerprint is not suppressed)', async () => {
+    delete process.env.RESEND_API_KEY
+
+    const body = {
+      name: 'Maria Wiśniewska',
+      email: 'maria.wisniewska@example.com',
+      competency: 'Cyberbezpieczeństwo',
+      message: 'Pierwsza próba wysyłki, która nie powinna się powtórzyć jako duplikat.',
+    }
+
+    const first = await POST(contactRequest(body))
+    expect(first.status).toBe(502)
+
+    // Fresh Request — a consumed body would otherwise throw on the retry.
+    const retry = await POST(contactRequest(body))
+    const data = await retry.json()
+
+    // The retry must reach delivery again (still failing due to missing key),
+    // not short-circuit through the duplicate guard with a fake success.
+    expect(retry.status).toBe(502)
+    expect(data.success).toBe(false)
+  })
+
+  it('does not report fake success for an overlapping in-flight delivery', async () => {
+    delete process.env.RESEND_API_KEY
+
+    const body = {
+      name: 'Katarzyna Zielińska',
+      email: 'katarzyna.zielinska@example.com',
+      competency: 'Marketing',
+      message: 'Nakładające się żądania nie mogą zwrócić fałszywego sukcesu.',
+    }
+
+    // Both requests arrive while the first delivery is still in flight.
+    const [first, second] = await Promise.all([
+      POST(contactRequest(body)),
+      POST(contactRequest(body)),
+    ])
+    const firstData = await first.json()
+    const secondData = await second.json()
+
+    expect(first.status).toBe(502)
+    expect(second.status).toBe(502)
+    expect(firstData.success).toBe(false)
+    expect(secondData.success).toBe(false)
   })
 
   it('rejects invalid competency value', async () => {

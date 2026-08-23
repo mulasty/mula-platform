@@ -73,6 +73,9 @@ function validate(body: ContactBody): ValidationError[] {
 // limiter, but catches bots that submit the same payload repeatedly in one burst.
 const RECENT_WINDOW_MS = 10_000
 const recentSubmissions = new Map<string, number>()
+// In-flight delivery promises keyed by fingerprint, so overlapping identical
+// submissions observe the real delivery result instead of a fake success.
+const inFlightDeliveries = new Map<string, Promise<boolean>>()
 
 function isRecentDuplicate(fingerprint: string): boolean {
   const now = Date.now()
@@ -85,12 +88,7 @@ function isRecentDuplicate(fingerprint: string): boolean {
   }
 
   const last = recentSubmissions.get(fingerprint)
-  if (last && now - last < RECENT_WINDOW_MS) {
-    return true
-  }
-
-  recentSubmissions.set(fingerprint, now)
-  return false
+  return !!(last && now - last < RECENT_WINDOW_MS)
 }
 
 function buildFingerprint(request: Request, body: ContactBody): string {
@@ -169,26 +167,52 @@ export async function POST(request: Request) {
       return Response.json({ success: false, errors }, { status: 400 })
     }
 
-    // Guard against rapid duplicate submissions
+    // Guard against rapid duplicate submissions. If a delivery for this exact
+    // payload is still in flight, wait for its real result instead of a fake
+    // success; only recently *delivered* fingerprints are deduplicated.
     const fingerprint = buildFingerprint(request, body)
+    const inFlight = inFlightDeliveries.get(fingerprint)
+    if (inFlight) {
+      const delivered = await inFlight
+      if (!delivered) {
+        return Response.json(
+          { success: false, errors: [{ field: 'server', message: 'Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę.' }] },
+          { status: 502 }
+        )
+      }
+      return Response.json({ success: true })
+    }
+
     if (isRecentDuplicate(fingerprint)) {
       return Response.json({ success: true })
     }
 
-    // Email delivery via Resend API (Edge-compatible, no npm deps)
-    const ctx = (globalThis as unknown as { waitUntil?: (p: Promise<unknown>) => void })
-    if (ctx.waitUntil) {
-      ctx.waitUntil(sendContactEmail(body))
-    } else {
-      sendContactEmail(body).catch(() => {})
-    }
+    // Email delivery via Resend API (Edge-compatible, no npm deps).
+    // Track the promise while it runs so overlapping duplicates observe the
+    // real outcome, and await the result so a delivery failure is reported
+    // to the visitor instead of silently claiming success for a lost lead.
+    const delivery = sendContactEmail(body)
+    inFlightDeliveries.set(fingerprint, delivery)
+    const delivered = await delivery
+    inFlightDeliveries.delete(fingerprint)
 
-    console.log('[contact] New submission from %s (%s) regarding %s',
+    console.log('[contact] New submission from %s (%s) regarding %s — delivered=%s',
       body.name.trim(),
       body.email.trim(),
       body.competency,
+      delivered,
     )
 
+    if (!delivered) {
+      // Do not mark the fingerprint as delivered, so a genuine retry is not
+      // swallowed by the duplicate guard and can reach Resend again.
+      return Response.json(
+        { success: false, errors: [{ field: 'server', message: 'Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę.' }] },
+        { status: 502 }
+      )
+    }
+
+    recentSubmissions.set(fingerprint, Date.now())
     return Response.json({ success: true })
   } catch {
     return Response.json(

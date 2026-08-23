@@ -10,7 +10,7 @@ export function PillarsGrid() {
     <section id="pillars" className="py-20 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          title={tp('0.title').split(' ')[tp.raw.length > 0 ? 0 : 0] + ' & więcej'}
+          title={tp('0.title').split(' ')[0] + ' & więcej'}
           subtitle="7 kompetencji. Jeden ekosystem."
         />
 

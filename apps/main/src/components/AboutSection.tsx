@@ -90,7 +90,7 @@ export function AboutSection() {
               />
               <div className="absolute inset-0 bg-mula-bg/60" />
               <h3 className="relative z-10 text-sm uppercase tracking-wider text-mula-accent mb-3 font-semibold">
-                Misja
+                {t('aboutMission')}
               </h3>
               <p className="relative z-10 text-lg text-mula-text leading-relaxed">{tc('mission')}</p>
             </motion.div>

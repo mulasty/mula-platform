@@ -126,7 +126,12 @@ export function ContactForm({ competency: preselected, className }: ContactFormP
         })
       } else {
         setStatus('error')
-        setServerError('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.')
+        const serverMsg = data.errors?.[0]?.message
+        setServerError(
+          typeof serverMsg === 'string' && serverMsg
+            ? serverMsg
+            : 'Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie.'
+        )
       }
     } catch {
       setStatus('error')

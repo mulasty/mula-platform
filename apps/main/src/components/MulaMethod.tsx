@@ -6,6 +6,7 @@ import { Cpu, Workflow, Bot } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
+import { MULA_METHOD } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {
   Cpu,
@@ -27,8 +28,13 @@ const cardVariant = {
 }
 
 export function MulaMethod() {
-  const tm = useTranslations('mulaMethod')
-  const items = tm.raw as unknown as { id: string; title: string; description: string; icon: string; color: string }[] || []
+  const t = useTranslations()
+  const ts = useTranslations('sections')
+  const localized = (t.raw('mulaMethod') as unknown as { id: string; title: string; description: string }[]) || []
+  const items = MULA_METHOD.map((def, i) => ({
+    ...def,
+    ...(localized[i] ?? {}),
+  }))
   return (
     <section id="method" className="relative py-20 px-6 overflow-hidden scroll-mt-24">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/40 to-white pointer-events-none" />
@@ -47,8 +53,8 @@ export function MulaMethod() {
 
       <div className="relative max-w-7xl mx-auto">
         <SectionHeader
-          title="Mula Method — Jak przyspieszamy Twój biznes"
-          subtitle="Trzy filary akceleracji biznesowej"
+          title={ts('method.title')}
+          subtitle={ts('method.subtitle')}
         />
 
         <motion.div

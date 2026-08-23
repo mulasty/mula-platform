@@ -14,8 +14,8 @@ import { SectionHeader } from '@mula/ui'
  */
 export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  const tf = useTranslations('faq')
-  const faqItems = tf.raw as unknown as { question: string; answer: string }[] || []
+  const t = useTranslations()
+  const faqItems = (t.raw('faq') as unknown as { question: string; answer: string }[]) || []
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
@@ -71,16 +71,16 @@ export function FAQSection() {
 
                 <div
                   id={`faq-answer-${index}`}
-                  className="overflow-hidden transition-all duration-300 ease-in-out"
-                  style={{
-                    maxHeight: isOpen ? '300px' : '0px',
-                    opacity: isOpen ? 1 : 0,
-                  }}
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                  }`}
                   role="region"
                   aria-labelledby={`faq-question-${index}`}
                 >
-                  <div className="px-6 pb-5 text-mula-text-muted leading-relaxed text-sm">
-                    {faq.answer}
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-5 text-mula-text-muted leading-relaxed text-sm">
+                      {faq.answer}
+                    </div>
                   </div>
                 </div>
               </div>

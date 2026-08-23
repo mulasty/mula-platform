@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
 import { TECH_STACK } from '@/lib/data'
 
@@ -11,12 +12,13 @@ import { TECH_STACK } from '@/lib/data'
  * EMOTIONAL TARGET: "They use professional-grade technology."
  */
 export function TechnologyCloud() {
+  const t = useTranslations('sections')
   return (
     <section id="tech" className="py-20 bg-mula-surface/50 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          title="Technologie"
-          subtitle="Narzędzia z którymi pracujemy"
+          title={t('technology.title')}
+          subtitle={t('technology.subtitle')}
         />
 
         <motion.div

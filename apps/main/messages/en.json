@@ -47,6 +47,7 @@
     { "title": "Scalability from day one", "description": "We design systems ready for growth" }
   ],
   "aboutText": "Mula Group is a technology group combining AI, software, e-commerce, marketing, cybersecurity, and engineering. We help companies transition from operational chaos to structured, scalable operating systems.",
+  "aboutMission": "Mission",
   "pillars": [
     {
       "id": "ai",
@@ -213,5 +214,33 @@
     "fr": "Français",
     "es": "Español",
     "uk": "Українська"
+  },
+  "sections": {
+    "process": {
+      "title": "How we work",
+      "subtitle": "The Mula Group operating model"
+    },
+    "technology": {
+      "title": "Technologies",
+      "subtitle": "The tools we work with"
+    },
+    "whyUs": {
+      "title": "Why Mula Group",
+      "subtitle": ""
+    },
+    "clientNeeds": {
+      "title": "How can we help?",
+      "subtitle": "Pick the area where you need support — we'll show you the way."
+    },
+    "method": {
+      "title": "Mula Method — How we accelerate your business",
+      "subtitle": "Three pillars of business acceleration"
+    },
+    "products": {
+      "title": "Mula Group Products",
+      "subtitle": "From MULA Guardian AI to more automation systems",
+      "statusLive": "Live",
+      "statusDevelopment": "In Development"
+    }
   }
 }

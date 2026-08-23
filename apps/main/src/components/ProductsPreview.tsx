@@ -21,14 +21,15 @@ const iconMap: Record<string, IconComponent> = {
  * EMOTIONAL TARGET: "They build their own products too — impressive."
  */
 export function ProductsPreview() {
-  const tp = useTranslations('products')
-  const products = tp.raw as unknown as { name: string; description: string; status: string }[] || []
+  const t = useTranslations()
+  const ts = useTranslations('sections')
+  const products = (t.raw('products') as unknown as { name: string; description: string; status: string }[]) || []
   const statusConfig: Record<
     string,
     { label: string; classes: string }
   > = {
     live: {
-      label: tp.raw.length > 0 ? 'Live' : 'Dostępny',
+      label: ts('products.statusLive'),
       classes: 'bg-emerald-50 text-emerald-700 border-emerald-200',
     },
     beta: {
@@ -36,7 +37,7 @@ export function ProductsPreview() {
       classes: 'bg-blue-50 text-blue-700 border-blue-200',
     },
     development: {
-      label: tp.raw.length > 0 ? 'In Development' : 'W rozwoju',
+      label: ts('products.statusDevelopment'),
       classes: 'bg-purple-50 text-purple-700 border-purple-200',
     },
   }
@@ -44,8 +45,8 @@ export function ProductsPreview() {
     <section id="products" className="py-20 scroll-mt-24 bg-slate-50/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          title={products.length > 0 ? products[0].name.split(':')[0] || 'Products' : 'Produkty Mula Group'}
-          subtitle={products.length > 0 ? `From ${products[0].name} to automation systems` : 'Od MULA Guardian AI po kolejne systemy automatyzacji'}
+          title={ts('products.title')}
+          subtitle={ts('products.subtitle')}
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

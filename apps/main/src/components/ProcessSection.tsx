@@ -6,6 +6,7 @@ import { Search, Compass, PenTool, Play, RefreshCw, TrendingUp } from 'lucide-re
 import type { LucideIcon } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { SectionHeader } from '@mula/ui'
+import { PROCESS_STEPS } from '@/lib/data'
 
 const iconMap: Record<string, LucideIcon> = {
   Search,
@@ -36,8 +37,12 @@ const cardVariant = {
  * EMOTIONAL TARGET: "I know what to expect."
  */
 export function ProcessSection() {
-  const tp = useTranslations('process')
-  const steps = tp.raw as unknown as { step: number; title: string; description: string; icon: string }[] || []
+  const t = useTranslations()
+  const localized = (t.raw('process') as unknown as { step: number; title: string; description: string }[]) || []
+  const steps = PROCESS_STEPS.map((def, i) => ({
+    ...def,
+    ...(localized[i] ?? {}),
+  }))
   return (
     <section id="process" className="relative py-20 px-6 scroll-mt-24 overflow-hidden">
       <Image
@@ -51,8 +56,8 @@ export function ProcessSection() {
 
       <div className="relative max-w-7xl mx-auto">
         <SectionHeader
-          title="Jak pracujemy"
-          subtitle="Model operacyjny Mula Group"
+          title={t('sections.process.title')}
+          subtitle={t('sections.process.subtitle')}
         />
 
         {/* Desktop: horizontal steps with connecting line */}
