@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { afterEach, describe, it, expect, vi } from 'vitest'
 import { POST } from './route'
 
 function contactRequest(body: Record<string, unknown>) {
@@ -8,6 +8,17 @@ function contactRequest(body: Record<string, unknown>) {
     body: JSON.stringify(body),
   })
 }
+
+const ORIGINAL_API_KEY = process.env.RESEND_API_KEY
+
+afterEach(() => {
+  vi.unstubAllGlobals()
+  if (ORIGINAL_API_KEY === undefined) {
+    delete process.env.RESEND_API_KEY
+  } else {
+    process.env.RESEND_API_KEY = ORIGINAL_API_KEY
+  }
+})
 
 describe('POST /api/contact', () => {
   it('returns validation errors for empty body', async () => {
@@ -20,6 +31,17 @@ describe('POST /api/contact', () => {
   })
 
   it('accepts valid submission', async () => {
+    process.env.RESEND_API_KEY = 're_test_123'
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue(
+        new Response('{}', {
+          status: 200,
+          headers: { 'content-type': 'application/json' },
+        }),
+      ),
+    )
+
     const res = await POST(
       contactRequest({
         name: 'Jan Kowalski',
@@ -32,6 +54,23 @@ describe('POST /api/contact', () => {
 
     expect(res.status).toBe(200)
     expect(data.success).toBe(true)
+  })
+
+  it('reports delivery failure to the visitor', async () => {
+    delete process.env.RESEND_API_KEY
+
+    const res = await POST(
+      contactRequest({
+        name: 'Anna Nowak',
+        email: 'anna.nowak@example.com',
+        competency: 'Inne',
+        message: 'To jest odrębna testowa wiadomość o innym treści fingerprint.',
+      }),
+    )
+    const data = await res.json()
+
+    expect(res.status).toBe(502)
+    expect(data.success).toBe(false)
   })
 
   it('rejects invalid competency value', async () => {

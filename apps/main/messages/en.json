@@ -47,6 +47,7 @@
     { "title": "Scalability from day one", "description": "We design systems ready for growth" }
   ],
   "aboutText": "Mula Group is a technology group combining AI, software, e-commerce, marketing, cybersecurity, and engineering. We help companies transition from operational chaos to structured, scalable operating systems.",
+  "aboutMission": "Mission",
   "pillars": [
     {
       "id": "ai",

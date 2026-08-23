@@ -175,19 +175,24 @@ export async function POST(request: Request) {
       return Response.json({ success: true })
     }
 
-    // Email delivery via Resend API (Edge-compatible, no npm deps)
-    const ctx = (globalThis as unknown as { waitUntil?: (p: Promise<unknown>) => void })
-    if (ctx.waitUntil) {
-      ctx.waitUntil(sendContactEmail(body))
-    } else {
-      sendContactEmail(body).catch(() => {})
-    }
+    // Email delivery via Resend API (Edge-compatible, no npm deps).
+    // Await the result so a delivery failure is reported to the visitor
+    // instead of silently claiming success for a lost lead.
+    const delivered = await sendContactEmail(body)
 
-    console.log('[contact] New submission from %s (%s) regarding %s',
+    console.log('[contact] New submission from %s (%s) regarding %s — delivered=%s',
       body.name.trim(),
       body.email.trim(),
       body.competency,
+      delivered,
     )
+
+    if (!delivered) {
+      return Response.json(
+        { success: false, errors: [{ field: 'server', message: 'Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę.' }] },
+        { status: 502 }
+      )
+    }
 
     return Response.json({ success: true })
   } catch {
