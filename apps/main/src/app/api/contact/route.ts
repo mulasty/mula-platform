@@ -188,6 +188,9 @@ export async function POST(request: Request) {
     )
 
     if (!delivered) {
+      // Forget the fingerprint so a genuine retry is not swallowed by the
+      // duplicate guard and can actually reach Resend again.
+      recentSubmissions.delete(fingerprint)
       return Response.json(
         { success: false, errors: [{ field: 'server', message: 'Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę.' }] },
         { status: 502 }

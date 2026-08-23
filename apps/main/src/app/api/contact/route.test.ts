@@ -73,6 +73,29 @@ describe('POST /api/contact', () => {
     expect(data.success).toBe(false)
   })
 
+  it('allows a retry after delivery failure (fingerprint is not suppressed)', async () => {
+    delete process.env.RESEND_API_KEY
+
+    const body = {
+      name: 'Maria Wiśniewska',
+      email: 'maria.wisniewska@example.com',
+      competency: 'Cyberbezpieczeństwo',
+      message: 'Pierwsza próba wysyłki, która nie powinna się powtórzyć jako duplikat.',
+    }
+
+    const first = await POST(contactRequest(body))
+    expect(first.status).toBe(502)
+
+    // Fresh Request — a consumed body would otherwise throw on the retry.
+    const retry = await POST(contactRequest(body))
+    const data = await retry.json()
+
+    // The retry must reach delivery again (still failing due to missing key),
+    // not short-circuit through the duplicate guard with a fake success.
+    expect(retry.status).toBe(502)
+    expect(data.success).toBe(false)
+  })
+
   it('rejects invalid competency value', async () => {
     const res = await POST(
       contactRequest({
