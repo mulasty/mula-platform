@@ -96,6 +96,30 @@ describe('POST /api/contact', () => {
     expect(data.success).toBe(false)
   })
 
+  it('does not report fake success for an overlapping in-flight delivery', async () => {
+    delete process.env.RESEND_API_KEY
+
+    const body = {
+      name: 'Katarzyna Zielińska',
+      email: 'katarzyna.zielinska@example.com',
+      competency: 'Marketing',
+      message: 'Nakładające się żądania nie mogą zwrócić fałszywego sukcesu.',
+    }
+
+    // Both requests arrive while the first delivery is still in flight.
+    const [first, second] = await Promise.all([
+      POST(contactRequest(body)),
+      POST(contactRequest(body)),
+    ])
+    const firstData = await first.json()
+    const secondData = await second.json()
+
+    expect(first.status).toBe(502)
+    expect(second.status).toBe(502)
+    expect(firstData.success).toBe(false)
+    expect(secondData.success).toBe(false)
+  })
+
   it('rejects invalid competency value', async () => {
     const res = await POST(
       contactRequest({
