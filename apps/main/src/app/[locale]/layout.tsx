@@ -30,13 +30,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: messages.meta.siteName,
       title: messages.meta.title,
       description: messages.meta.description,
-      images: [{ url: '/images/competencies/home-og.svg', width: 1200, height: 630, alt: messages.meta.title }],
+      images: [{ url: '/images/competencies/home-og.webp', width: 1200, height: 630, alt: messages.meta.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: messages.meta.title,
       description: messages.meta.description,
-      images: ['/images/competencies/home-og.svg'],
+      images: ['/images/competencies/home-og.webp'],
     },
     alternates: {
       languages: Object.fromEntries(

@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       'Nowoczesne konstrukcje stalowe, hale magazynowe, przemysłowe i rolnicze. Projekt, produkcja i montaż.',
     images: [
       {
-        url: '/images/og/home-og.svg',
+        url: '/images/competencies/construction-og.webp',
         width: 1200,
         height: 630,
         alt: 'Mula Construction – Konstrukcje i Hale Stalowe',
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: 'Mula Construction – Konstrukcje i Hale Stalowe',
     description:
       'Nowoczesne konstrukcje stalowe, hale magazynowe, przemysłowe i rolnicze. Projekt, produkcja i montaż.',
-    images: ['/images/og/home-og.svg'],
+    images: ['/images/competencies/construction-og.webp'],
   },
   robots: {
     index: true,

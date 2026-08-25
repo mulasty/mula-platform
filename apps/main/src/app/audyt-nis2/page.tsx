@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     title: 'Audyt NIS2 — Wyniki',
     description:
       'Przykładowy raport audytu NIS2 dla firmy z sektora finansowego. Zobacz wyniki oceny zgodności i rekomendacje działań naprawczych.',
-    images: [{ url: '/images/competencies/home-og.svg', width: 1200, height: 630, alt: 'Audyt NIS2 — Mula Group' }],
+    images: [{ url: '/images/competencies/home-og.webp', width: 1200, height: 630, alt: 'Audyt NIS2 — Mula Group' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Audyt NIS2 — Wyniki',
     description:
       'Przykładowy raport audytu NIS2 dla firmy z sektora finansowego. Zobacz wyniki oceny zgodności i rekomendacje działań naprawczych.',
-    images: ['/images/competencies/home-og.svg'],
+    images: ['/images/competencies/home-og.webp'],
   },
   robots: {
     index: true,

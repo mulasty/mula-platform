@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState, useRef } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { TrendingUp, ArrowRight } from 'lucide-react'
 
@@ -67,6 +68,19 @@ export default function MarketingHero() {
             'radial-gradient(circle at 30% 40%, rgba(139, 92, 246, 0.06) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(236, 72, 153, 0.08) 0%, transparent 50%)',
         }}
       />
+
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <Image
+          src="/images/competencies/marketing-desktop.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-transparent to-mula-bg" />
+      </div>
 
       <motion.div
         className="absolute w-[600px] h-[600px] rounded-full pointer-events-none"

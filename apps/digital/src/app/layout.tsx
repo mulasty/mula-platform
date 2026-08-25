@@ -39,7 +39,7 @@ export const metadata: Metadata = {
       'CRM, ERP, workflow, automatyzacja dokumentów i cyfryzacja firm.',
     images: [
       {
-        url: '/images/og/home-og.svg',
+        url: '/images/competencies/digital-og.webp',
         width: 1200,
         height: 630,
         alt: 'Mula Digital – Transformacja Cyfrowa',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: 'Mula Digital – Transformacja Cyfrowa',
     description:
       'CRM, ERP, workflow, automatyzacja dokumentów i cyfryzacja firm.',
-    images: ['/images/og/home-og.svg'],
+    images: ['/images/competencies/digital-og.webp'],
   },
   robots: {
     index: true,

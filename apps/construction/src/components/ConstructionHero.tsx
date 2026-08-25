@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
+import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { HardHat, ArrowRight } from 'lucide-react'
 
@@ -15,6 +16,18 @@ export function ConstructionHero() {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center overflow-hidden pt-20">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <Image
+          src="/images/competencies/construction-desktop.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-transparent to-mula-bg" />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-b from-construction/5 via-transparent to-mula-bg" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-construction/10 via-transparent to-transparent" />
 

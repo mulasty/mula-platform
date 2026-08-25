@@ -39,11 +39,11 @@ const itemVariants = {
 function CountUpBadge({ label, value }: { label: string; value: string }) {
   return (
     <motion.div
-      className="flex flex-col items-center p-3 md:p-4 rounded-xl bg-mula-surface/50 border border-mula-border/50 backdrop-blur-sm"
+      className="flex flex-col items-center p-3 md:p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-sm"
       variants={itemVariants}
     >
-      <span className="text-xl md:text-2xl font-bold text-mula-text">{value}</span>
-      <span className="text-xs text-mula-text-dim mt-1">{label}</span>
+      <span className="text-xl md:text-2xl font-bold text-white">{value}</span>
+      <span className="text-xs text-slate-400 mt-1">{label}</span>
     </motion.div>
   )
 }
@@ -96,21 +96,22 @@ export function HeroSection() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden scroll-mt-24 bg-gradient-to-br from-white via-slate-50 to-blue-50/70"
+      className="relative min-h-screen flex items-center pt-24 pb-24 overflow-hidden scroll-mt-24 bg-slate-950"
     >
-      {/* Hero background: premium Data 1 grid texture */}
+      {/* Hero background: premium dark-tech graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <Image
-          src="/images/backgrounds/bg-hero-grid.webp"
+          src="/images/competencies/home-desktop.webp"
           alt=""
           fill
-          className="object-cover opacity-[0.16] mix-blend-multiply"
+          className="object-cover opacity-50"
           aria-hidden="true"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/78 to-blue-50/45" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/70 to-blue-950/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-slate-950/40 to-transparent" />
         <motion.div
-          className="absolute w-[600px] h-[600px] rounded-full bg-blue-300/25 blur-[120px]"
+          className="absolute w-[600px] h-[600px] rounded-full bg-blue-500/20 blur-[120px]"
           animate={{
             x: mousePos.x * 0.05 - 200,
             y: mousePos.y * 0.05 - 200,
@@ -118,14 +119,14 @@ export function HeroSection() {
           transition={{ type: 'spring', stiffness: 30, damping: 30 }}
         />
         <motion.div
-          className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full bg-cyan-300/25 blur-[120px]"
+          className="absolute right-0 bottom-0 w-[500px] h-[500px] rounded-full bg-cyan-500/20 blur-[120px]"
           animate={{
             x: mousePos.x * -0.03 + 100,
             y: mousePos.y * -0.03 + 100,
           }}
           transition={{ type: 'spring', stiffness: 20, damping: 30 }}
         />
-        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-purple-200/25 blur-[100px]" />
+        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-purple-500/15 blur-[100px]" />
       </div>
 
       {/* Floating particles */}
@@ -133,7 +134,7 @@ export function HeroSection() {
         {particles.map((p) => (
           <motion.div
             key={p.key}
-            className="absolute w-1 h-1 rounded-full bg-blue-500/25"
+            className="absolute w-1 h-1 rounded-full bg-blue-400/40"
             style={{
               left: `${p.left}%`,
               top: `${p.top}%`,
@@ -154,22 +155,28 @@ export function HeroSection() {
 
       {/* Grid background */}
       <div
-        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        className="absolute inset-0 opacity-[0.08] pointer-events-none"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(15,23,42,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(15,23,42,0.06) 1px, transparent 1px)',
+            'linear-gradient(rgba(148,163,184,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.12) 1px, transparent 1px)',
           backgroundSize: '80px 80px',
         }}
       />
 
       {/* Dot pattern overlay */}
       <div
-        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        className="absolute inset-0 opacity-[0.06] pointer-events-none"
         style={{
-          backgroundImage: 'radial-gradient(circle, rgba(37,99,235,0.35) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(circle, rgba(96,165,250,0.35) 1px, transparent 1px)',
           backgroundSize: '24px 24px',
         }}
       />
+
+      {/* Content-readable dark backdrop (keeps bottom stats legible on any viewport) */}
+      <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent pointer-events-none" />
+
+      {/* Bottom fade into light sections — thin lip below the content zone */}
+      <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <motion.div
@@ -180,11 +187,11 @@ export function HeroSection() {
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-blue-100 shadow-sm shadow-blue-100/60 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8"
             variants={itemVariants}
           >
-            <Building2 className="w-4 h-4 text-mula-accent" />
-              <span className="text-xs text-slate-600 uppercase tracking-wide">
+            <Building2 className="w-4 h-4 text-mula-accent-light" />
+              <span className="text-xs text-slate-200 uppercase tracking-wide">
               {tc('name')}
             </span>
           </motion.div>
@@ -201,7 +208,7 @@ export function HeroSection() {
 
           {/* Subtitle */}
           <motion.p
-            className="text-base md:text-lg text-mula-text-muted max-w-2xl mb-10 leading-relaxed"
+            className="text-base md:text-lg text-slate-300 max-w-2xl mb-10 leading-relaxed"
             variants={itemVariants}
           >
             {t('subheadline')}
@@ -220,7 +227,7 @@ export function HeroSection() {
             </motion.a>
             <motion.a
               href="#process"
-              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-mula-border hover:border-mula-accent/50 text-mula-text-muted hover:text-mula-text transition-colors duration-200"
+              className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl border border-white/25 hover:border-white/50 text-slate-200 hover:text-white transition-colors duration-200"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
