@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Lightbulb } from 'lucide-react'
 
@@ -62,6 +63,16 @@ export function InnovationHero() {
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <Image
+          src="/images/competencies/innovation-desktop.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-mula-bg/70 via-transparent to-mula-bg" />
         <motion.div
           className="absolute w-[600px] h-[600px] rounded-full bg-mula-accent/10 blur-[120px]"
           animate={{ x: mousePos.x * 0.05 - 200, y: mousePos.y * 0.05 - 200 }}

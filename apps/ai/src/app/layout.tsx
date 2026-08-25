@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       'Agenci AI, automatyzacja, RAG i systemy multi-agent dla biznesu.',
     images: [
       {
-        url: '/images/og/home-og.svg',
+        url: '/images/competencies/ai-og.webp',
         width: 1200,
         height: 630,
         alt: 'Mula AI – Sztuczna Inteligencja i Automatyzacja',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: 'Mula AI – Sztuczna Inteligencja i Automatyzacja',
     description:
       'Agenci AI, automatyzacja, RAG i systemy multi-agent dla biznesu.',
-    images: ['/images/og/home-og.svg'],
+    images: ['/images/competencies/ai-og.webp'],
   },
   robots: {
     index: true,

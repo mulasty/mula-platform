@@ -86,7 +86,7 @@ export const GRAPHICS = {
 } as const
 
 export const VIDEOS = {
-  hero: '/videos/hero.mp4',
+  hero: '/images/competencies/home-hero-poster.webp',
 } as const
 
 export const OG = {

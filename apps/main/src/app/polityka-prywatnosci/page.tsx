@@ -16,13 +16,13 @@ export const metadata: Metadata = {
     siteName: 'Mula Group',
     title: 'Polityka prywatności',
     description: `Polityka prywatności i cookies ${COMPANY.name}. Informacje o przetwarzaniu danych osobowych zgodnie z RODO.`,
-    images: [{ url: '/images/competencies/home-og.svg', width: 1200, height: 630, alt: 'Polityka prywatności — Mula Group' }],
+    images: [{ url: '/images/competencies/home-og.webp', width: 1200, height: 630, alt: 'Polityka prywatności — Mula Group' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Polityka prywatności',
     description: `Polityka prywatności i cookies ${COMPANY.name}. Informacje o przetwarzaniu danych osobowych zgodnie z RODO.`,
-    images: ['/images/competencies/home-og.svg'],
+    images: ['/images/competencies/home-og.webp'],
   },
   robots: {
     index: true,
