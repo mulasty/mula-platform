@@ -96,7 +96,7 @@ export function HeroSection() {
     <section
       id="hero"
       ref={sectionRef}
-      className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden scroll-mt-24 bg-slate-950"
+      className="relative min-h-screen flex items-center pt-24 pb-24 overflow-hidden scroll-mt-24 bg-slate-950"
     >
       {/* Hero background: premium dark-tech graphics */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -172,8 +172,11 @@ export function HeroSection() {
         }}
       />
 
-      {/* Bottom fade into light sections */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none" />
+      {/* Content-readable dark backdrop (keeps bottom stats legible on any viewport) */}
+      <div className="absolute inset-x-0 bottom-0 h-56 bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent pointer-events-none" />
+
+      {/* Bottom fade into light sections — thin lip below the content zone */}
+      <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-slate-50 to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <motion.div
